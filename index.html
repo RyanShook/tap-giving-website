@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap.Giving - Increase Church Giving by Over 300% with NFC Tap Technology</title>
+    <meta name="description" content="The most affordable NFC tap-to-give solution for churches. No setup fees, no monthly costs. Prices as low as $3.50 per plate. Limited time pricing.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Inter', 'system-ui', 'sans-serif'],
+                        'body': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased">
+    <!-- =================================================================== -->
+    <!-- HEADER SECTION: Sticky navigation with logo and primary CTA        -->
+    <!-- Purpose: Immediate access to contact and quote request              -->
+    <!-- Key elements: Logo, phone number, Get Quote button                 -->
+    <!-- =================================================================== -->
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-xl shadow-lg sticky top-0 z-50 border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl flex items-center justify-center shadow-lg">
+                    <i class="fas fa-mobile-alt text-white text-lg"></i>
+                </div>
+                <span class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">Tap.Giving</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="tel:+18325108788" class="hidden md:flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition duration-300 font-medium">
+                    <i class="fas fa-phone text-sm"></i>
+                    <span>(832) 510-8788</span>
+                </a>
+                <button onclick="scrollToForm()" class="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    Get Quote
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- =================================================================== -->
+    <!-- HERO SECTION: Primary conversion area above the fold               -->
+    <!-- Purpose: Capture attention, communicate value prop, drive action    -->
+    <!-- Key elements: Headline, urgency badge, CTAs, hero image            -->
+    <!-- Conversion focus: "Get Your Free Quote" primary CTA                -->
+    <!-- =================================================================== -->
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-20 lg:py-32">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br from-primary-100 to-primary-200 opacity-50 blur-3xl animate-pulse-slow"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-accent-100 to-accent-200 opacity-50 blur-3xl animate-pulse-slow"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <!-- Urgency Badge -->
+                <div class="text-center mb-8">
+                    <div class="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full text-sm font-bold mb-6 shadow-lg animate-pulse">
+                        <i class="fas fa-bolt mr-2"></i>
+                        Pricing Increases Soon - Lock In Today
+                    </div>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <!-- Headline -->
+                        <h1 class="text-5xl lg:text-7xl font-black text-gray-900 mb-8 leading-tight">
+                            Increase Church Giving by 
+                            <span class="bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500 bg-clip-text text-transparent animate-pulse-slow">Over 300%</span> 
+                            with Tap-to-Give Technology
+                        </h1>
+                        
+                        <!-- Subheading -->
+                        <p class="text-xl lg:text-2xl text-gray-600 mb-10 leading-relaxed font-medium">
+                            No setup fees. No monthly costs. Limited time pricing as low as 
+                            <span class="bg-gradient-to-r from-accent-600 to-accent-700 bg-clip-text text-transparent font-bold">$3.50 per plate</span>.
+                        </p>
+                        
+                        <!-- CTAs -->
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <button onclick="scrollToForm()" class="group bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-10 py-5 rounded-2xl text-lg font-bold transition-all duration-300 shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1">
+                                <i class="fas fa-calculator mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                                Get Your Free Quote
+                            </button>
+                            <button onclick="scrollToPricing()" class="group bg-white hover:bg-gray-50 text-primary-600 px-10 py-5 rounded-2xl text-lg font-bold border-2 border-primary-200 hover:border-primary-300 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                <i class="fas fa-chart-line mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                                See Pricing Calculator
+                            </button>
+                        </div>
+                        
+                        <!-- Trust Indicators -->
+                        <div class="flex flex-wrap justify-center lg:justify-start items-center gap-6 text-sm text-gray-500">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-shield-alt text-accent-500"></i>
+                                <span>Bank-Level Security</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-shipping-fast text-accent-500"></i>
+                                <span>Free Shipping</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-clock text-accent-500"></i>
+                                <span>2-3 Week Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <!-- HERO IMAGE: Replace this placeholder with actual product photo -->
+                        <!-- Recommended: 1200x800px image of NFC plate on church pew -->
+                        <!-- Alternative: Video demo of tap-to-give process -->
+                        <div class="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/20 animate-float">
+                            <!-- PLACEHOLDER: Replace with actual hero image -->
+                            <img src="https://placehold.co/600x400/3B82F6/white?text=Hero+Image%0ANFC+Plate+on+Church+Pew" 
+                                 alt="NFC tap plate mounted on church pew with smartphone" 
+                                 class="w-full h-64 object-cover rounded-2xl mb-4">
+                            
+                            <!-- Fallback content if image fails to load -->
+                            <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 text-center relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-accent-500"></div>
+                                
+                                <div class="relative z-10">
+                                    <div class="w-32 h-32 bg-gradient-to-br from-primary-600 to-primary-700 rounded-full mx-auto mb-6 flex items-center justify-center shadow-2xl animate-pulse-slow">
+                                        <i class="fas fa-mobile-alt text-white text-4xl"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Tap Your Phone Here</h3>
+                                    <p class="text-gray-600 font-medium">Instant, secure donations with one simple tap</p>
+                                    
+                                    <!-- Animated Rings -->
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="absolute w-40 h-40 border-4 border-primary-200 rounded-full animate-ping opacity-20"></div>
+                                        <div class="absolute w-48 h-48 border-4 border-primary-300 rounded-full animate-ping opacity-10" style="animation-delay: 0.5s"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-6 -right-6 bg-gradient-to-br from-accent-400 to-accent-500 text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg animate-float" style="animation-delay: 1s">
+                            <i class="fas fa-chart-line mr-2"></i>
+                            300% Increase
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-gradient-to-br from-primary-400 to-primary-500 text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg animate-float" style="animation-delay: 2s">
+                            <i class="fas fa-dollar-sign mr-2"></i>
+                            From $3.50
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- SOCIAL PROOF STATS: Key performance metrics in visual cards        -->
+    <!-- Purpose: Build credibility with research-backed statistics          -->
+    <!-- Key metrics: 300%+ increase, 81% participation, 3x higher, $3.50   -->
+    <!-- Conversion element: Reinforces value proposition                    -->
+    <!-- =================================================================== -->
+    <!-- Social Proof Stats -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center group">
+                        <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
+                            <div class="text-4xl font-black bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-2">300%+</div>
+                            <p class="text-gray-600 font-semibold">Donation Increase</p>
+                        </div>
+                    </div>
+                    <div class="text-center group">
+                        <div class="bg-gradient-to-br from-accent-50 to-accent-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
+                            <div class="text-4xl font-black bg-gradient-to-r from-accent-600 to-accent-700 bg-clip-text text-transparent mb-2">81%</div>
+                            <p class="text-gray-600 font-semibold">Participation Rate</p>
+                        </div>
+                    </div>
+                    <div class="text-center group">
+                        <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
+                            <div class="text-4xl font-black bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent mb-2">3x</div>
+                            <p class="text-gray-600 font-semibold">Higher Donations</p>
+                        </div>
+                    </div>
+                    <div class="text-center group">
+                        <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 mb-4 group-hover:shadow-lg transition-all duration-300">
+                            <div class="text-4xl font-black bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent mb-2">$3.50</div>
+                            <p class="text-gray-600 font-semibold">Starting Price</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PROBLEM/AGITATION SECTION: Identify customer pain points           -->
+    <!-- Purpose: Create urgency by highlighting current giving challenges   -->
+    <!-- Pain points: High costs, security concerns, effectiveness doubts   -->
+    <!-- Conversion strategy: Prepare for solution presentation             -->
+    <!-- =================================================================== -->
+    <!-- Problem/Agitation Section -->
+    <section class="bg-gradient-to-br from-slate-50 to-gray-100 py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-16 leading-tight">
+                    Are You Tired of These Common 
+                    <span class="bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">Church Giving Challenges</span>?
+                </h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="group bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
+                        <div class="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-dollar-sign text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Expensive Solutions with Hidden Fees?</h3>
+                        <p class="text-gray-600 leading-relaxed font-medium">Setup fees of <strong class="text-red-600">$500-2000</strong>, monthly costs of <strong class="text-red-600">$50-200</strong>, and surprise charges eating into your donations.</p>
+                    </div>
+                    
+                    <div class="group bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
+                        <div class="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-shield-alt text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Worried About Donation Security?</h3>
+                        <p class="text-gray-600 leading-relaxed font-medium">Concerned about <strong class="text-red-600">data protection</strong>, transaction security, and keeping sensitive member information safe.</p>
+                    </div>
+                    
+                    <div class="group bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
+                        <div class="w-20 h-20 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-question-circle text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Wondering if Digital Giving Actually Works?</h3>
+                        <p class="text-gray-600 leading-relaxed font-medium">Unsure if the investment will actually <strong class="text-red-600">increase giving</strong> or just add complexity to your services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- SOLUTION/BENEFITS SECTION: Present competitive advantages          -->
+    <!-- Purpose: Address pain points with specific solutions               -->
+    <!-- Benefits: Cost-effective, proven results, security, easy setup    -->
+    <!-- Conversion element: Build confidence in solution                   -->
+    <!-- =================================================================== -->
+    <!-- Solution/Benefits Section -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-8">
+                    The Simple Solution That's 
+                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Transforming Church Giving</span>
+                </h2>
+                <p class="text-xl text-gray-600 font-medium mb-12">
+                    Research-backed results from churches already using tap-to-give technology
+                </p>
+                
+                <!-- PRODUCT SHOWCASE: Add actual NFC plate photos here -->
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 mb-16 shadow-xl">
+                    <img src="https://placehold.co/800x400/E5E7EB/6B7280?text=Product+Gallery%0ANFC+Plates+%26+Installation" 
+                         alt="NFC tap plates and installation examples" 
+                         class="w-full h-64 object-cover rounded-2xl">
+                    <p class="text-gray-600 text-sm mt-4">Professional NFC tap plates designed specifically for churches</p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-dollar-sign text-accent-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Most Cost-Effective</h3>
+                    <p class="text-gray-600 leading-relaxed">No setup fees, no monthly fees, transparent per-plate pricing starting at $3.50</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-chart-line text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Proven Results</h3>
+                    <p class="text-gray-600 leading-relaxed">300%+ increase in giving, 3x higher donation amounts, 81% participation rates</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shield-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Bank-Level Security</h3>
+                    <p class="text-gray-600 leading-relaxed">Encrypted transactions, PCI compliance, secure data protection you can trust</p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-bolt text-orange-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Easy Implementation</h3>
+                    <p class="text-gray-600 leading-relaxed">Install in minutes, works with any smartphone, no app downloads required</p>
+                </div>
+            </div>
+            
+            <!-- SECURITY BADGES: Add actual certification logos here -->
+            <div class="mt-16 text-center">
+                <h4 class="text-lg font-semibold text-gray-700 mb-6">Trusted Security Standards</h4>
+                <div class="flex justify-center items-center space-x-8">
+                    <img src="https://placehold.co/120x60/3B82F6/white?text=PCI+DSS" 
+                         alt="PCI DSS Compliance" 
+                         class="h-12 opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/120x60/22C55E/white?text=SSL+Secured" 
+                         alt="SSL Secured" 
+                         class="h-12 opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://placehold.co/120x60/6366F1/white?text=Bank+Grade" 
+                         alt="Bank Grade Security" 
+                         class="h-12 opacity-70 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- HOW IT WORKS SECTION: Simple 3-step process explanation           -->
+    <!-- Purpose: Remove complexity concerns, show ease of implementation   -->
+    <!-- Steps: 1) Install, 2) Tap, 3) Grow                               -->
+    <!-- Conversion element: Reduce friction and objections                 -->
+    <!-- =================================================================== -->
+    <!-- How It Works -->
+    <section class="bg-gradient-to-br from-slate-50 to-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-8">
+                    How It Works 
+                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">(3 Simple Steps)</span>
+                </h2>
+                <p class="text-xl text-gray-600 font-medium">
+                    From installation to increased giving in minutes
+                </p>
+            </div>
+            
+            <!-- PROCESS DEMONSTRATION: Add actual step-by-step photos/video -->
+            <div class="bg-white/80 backdrop-blur-xl rounded-3xl p-8 mb-16 shadow-xl">
+                <img src="https://placehold.co/1000x300/F3F4F6/6B7280?text=Step-by-Step+Process+Demo%0AInstall+%E2%86%92+Tap+%E2%86%92+Grow" 
+                     alt="Step by step process demonstration" 
+                     class="w-full h-48 object-cover rounded-2xl">
+                <p class="text-gray-600 text-center mt-4">Watch our 2-minute installation and demo video</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center group">
+                    <div class="w-24 h-24 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white text-3xl font-black">1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Install</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Attach NFC plates to pew backs, chairs, or any convenient location in your sanctuary</p>
+                    
+                    <!-- STEP 1 IMAGE: Installation photo -->
+                    <div class="mt-6">
+                        <img src="https://placehold.co/300x200/E5E7EB/6B7280?text=Installation%0APhoto" 
+                             alt="NFC plate installation" 
+                             class="w-full h-32 object-cover rounded-xl">
+                    </div>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-24 h-24 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white text-3xl font-black">2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Tap</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Guests tap their smartphones to the plate and are instantly directed to your giving page</p>
+                    
+                    <!-- STEP 2 IMAGE: Tapping demonstration -->
+                    <div class="mt-6">
+                        <img src="https://placehold.co/300x200/E5E7EB/6B7280?text=Tap%0ADemonstration" 
+                             alt="Smartphone tapping NFC plate" 
+                             class="w-full h-32 object-cover rounded-xl">
+                    </div>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="w-24 h-24 bg-gradient-to-br from-purple-600 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <span class="text-white text-3xl font-black">3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Grow</h3>
+                    <p class="text-gray-600 leading-relaxed font-medium">Watch donations increase month over month with effortless digital giving</p>
+                    
+                    <!-- STEP 3 IMAGE: Results/growth chart -->
+                    <div class="mt-6">
+                        <img src="https://placehold.co/300x200/E5E7EB/6B7280?text=Growth%0AChart" 
+                             alt="Donation growth results" 
+                             class="w-full h-32 object-cover rounded-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- PRICING SECTION: Interactive calculator with volume discounts      -->
+    <!-- Purpose: Transparent pricing builds trust, calculator engages users -->
+    <!-- Key elements: Interactive slider, tier cards, urgency messaging    -->
+    <!-- Conversion focus: "Lock In Your Pricing Today" CTA                 -->
+    <!-- =================================================================== -->
+    <!-- Pricing Section -->
+    <section id="pricing" class="bg-gradient-to-br from-slate-50 to-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">
+                    Transparent Pricing with 
+                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Volume Discounts</span>
+                </h2>
+                <p class="text-xl text-gray-600 mb-4 font-medium">
+                    No hidden fees. Free shipping. 2-3 week delivery.
+                </p>
+                <div class="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg animate-pulse">
+                    <i class="fas fa-clock mr-3"></i>
+                    Limited time pricing - rates increasing soon
+                </div>
+            </div>
+            
+            <!-- PRICING CALCULATOR: Interactive volume-based pricing tool -->
+            <!-- JavaScript function: updatePricing() handles calculations -->
+            <!-- Tiers: 100-199($5), 200-399($4.00), 400+($3.50) -->
+            <!-- Pricing Calculator -->
+            <div class="bg-white/80 backdrop-blur-xl rounded-3xl p-10 max-w-4xl mx-auto mb-16 shadow-2xl border border-white/20">
+                <h3 class="text-3xl font-bold text-gray-900 mb-10 text-center">Calculate Your Investment</h3>
+                
+                <div class="mb-10">
+                    <label class="block text-2xl font-bold text-gray-800 mb-6 text-center">
+                        Number of Plates: <span id="plateCount" class="bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">100</span>
+                    </label>
+                    <div class="relative">
+                        <input type="range" id="plateSlider" min="100" max="1000" step="50" value="100" 
+                               class="w-full h-4 bg-gradient-to-r from-primary-200 to-primary-300 rounded-full appearance-none cursor-pointer slider">
+                        <div class="flex justify-between text-sm font-semibold text-gray-500 mt-4">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full">100</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full">1000+</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 text-center border border-primary-100">
+                    <div class="text-5xl font-black bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-4">
+                        $<span id="pricePerPlate">5.00</span>
+                    </div>
+                    <p class="text-gray-600 font-semibold mb-6">per plate</p>
+                    <div class="text-3xl font-bold text-gray-900 mb-6">
+                        Total Investment: <span class="bg-gradient-to-r from-accent-600 to-accent-700 bg-clip-text text-transparent">$<span id="totalPrice">500</span></span>
+                    </div>
+                    <div class="flex justify-center items-center space-x-2 text-accent-600 font-bold">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Free shipping included</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRICING TIERS: Visual representation of volume discounts -->
+            <!-- Purpose: Show value of larger orders, highlight best value -->
+            <!-- Design: Cards with hover effects, "Best Value" badge on 400+ -->
+            <!-- Pricing Tiers -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="group bg-white/80 backdrop-blur-xl border-2 border-gray-200 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <h4 class="font-bold text-gray-900 mb-4 text-lg">100-199 Plates</h4>
+                    <div class="text-3xl font-black bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-2">$5.00</div>
+                    <p class="text-gray-600 font-semibold">per plate</p>
+                </div>
+                
+                <div class="group bg-white/80 backdrop-blur-xl border-2 border-primary-200 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <h4 class="font-bold text-gray-900 mb-4 text-lg">200-399 Plates</h4>
+                    <div class="text-3xl font-black bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-2">$4.00</div>
+                    <p class="text-gray-600 font-semibold">per plate</p>
+                </div>
+                
+                
+                <div class="group bg-gradient-to-br from-primary-50 to-accent-50 border-2 border-primary-400 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-accent-500"></div>
+                    <div class="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4 inline-block">
+                        <i class="fas fa-star mr-2"></i>Best Value
+                    </div>
+                    <h4 class="font-bold text-gray-900 mb-4 text-lg">400+ Plates</h4>
+                    <div class="text-3xl font-black bg-gradient-to-r from-accent-600 to-accent-700 bg-clip-text text-transparent mb-2">$3.50</div>
+                    <p class="text-gray-600 font-semibold">per plate</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button onclick="scrollToForm()" class="group bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-12 py-5 rounded-2xl text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1">
+                    <i class="fas fa-lock mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                    Lock In Your Pricing Today
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- CONTACT FORM SECTION: Primary conversion goal - lead capture       -->
+    <!-- Purpose: Convert visitors to qualified leads for sales follow-up   -->
+    <!-- Form fields: Church name, pastor name, email, phone, congregation  -->
+    <!-- Conversion optimization: Minimal friction, value proposition        -->
+    <!-- Form handler: Formspree integration (replace YOUR_FORM_ID)         -->
+    <!-- =================================================================== -->
+    <!-- Contact Form Section -->
+    <section id="contact" class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-primary-800 py-20">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br from-primary-400/20 to-accent-400/20 blur-3xl animate-pulse-slow"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-accent-400/20 to-primary-400/20 blur-3xl animate-pulse-slow"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-black text-white mb-8 leading-tight">
+                        Get Your Custom Pricing & 
+                        <span class="bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">ROI Projection</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 font-medium">
+                        Join hundreds of churches increasing their giving by 300%
+                    </p>
+                </div>
+                
+                <div class="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20">
+                    <!-- CONVERSION FORM: Critical for lead generation -->
+                    <!-- ✅ LIVE FORM: Connected to real Formspree endpoint -->
+                    <!-- Form validation handled by script.js -->
+                    <!-- Success metrics: Target 15-25% conversion rate -->
+                    <form id="contactForm" action="https://formspree.io/p/2803072267095900016/f/contact" method="POST">
+                        <!-- ✅ Form submissions go to hello@tap.giving -->
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div class="space-y-2">
+                                <label for="pastorName" class="block text-sm font-bold text-gray-800 mb-3">
+                                    <i class="fas fa-user mr-2 text-primary-600"></i>Pastor/Leader Name *
+                                </label>
+                                <input type="text" id="pastorName" name="pastor_name" required 
+                                       class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white" 
+                                       placeholder="Your full name">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="churchName" class="block text-sm font-bold text-gray-800 mb-3">
+                                    <i class="fas fa-church mr-2 text-primary-600"></i>Church Name *
+                                </label>
+                                <input type="text" id="churchName" name="church_name" required 
+                                       class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white" 
+                                       placeholder="Your church's name">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div class="space-y-2">
+                                <label for="email" class="block text-sm font-bold text-gray-800 mb-3">
+                                    <i class="fas fa-envelope mr-2 text-primary-600"></i>Email Address *
+                                </label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="phone" class="block text-sm font-bold text-gray-800 mb-3">
+                                    <i class="fas fa-phone mr-2 text-primary-600"></i>Phone Number (optional)
+                                </label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white" 
+                                       placeholder="For faster response">
+                            </div>
+                        </div>
+                        
+                        <!-- PRICING CALCULATOR: Moved into form for better conversion -->
+                        <div class="mb-10 bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 border border-primary-100">
+                            <h4 class="text-xl font-bold text-gray-900 mb-6 text-center">
+                                <i class="fas fa-calculator mr-2 text-primary-600"></i>
+                                Calculate Your Investment
+                            </h4>
+                            
+                            <div class="mb-6">
+                                <label class="block text-lg font-bold text-gray-800 mb-4 text-center">
+                                    Number of Plates: <span id="formPlateCount" class="bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">100</span>
+                                </label>
+                                <div class="relative">
+                                    <input type="range" id="formPlateSlider" name="plate_quantity" min="100" max="1000" step="50" value="100" 
+                                           class="w-full h-4 bg-gradient-to-r from-primary-200 to-primary-300 rounded-full appearance-none cursor-pointer slider">
+                                    <div class="flex justify-between text-sm font-semibold text-gray-500 mt-4">
+                                        <span class="bg-gray-100 px-3 py-1 rounded-full">100</span>
+                                        <span class="bg-gray-100 px-3 py-1 rounded-full">1000+</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="text-4xl font-black bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-2">
+                                    $<span id="formPricePerPlate">5.00</span>
+                                </div>
+                                <p class="text-gray-600 font-semibold mb-4">per plate</p>
+                                <div class="text-2xl font-bold text-gray-900 mb-4">
+                                    Total Investment: <span class="bg-gradient-to-r from-accent-600 to-accent-700 bg-clip-text text-transparent">$<span id="formTotalPrice">500</span></span>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-center items-center space-x-2 text-accent-600 font-bold">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Free shipping included • 2-3 week delivery</span>
+                                    </div>
+                                    <div class="flex justify-center items-center space-x-2 text-accent-600 font-bold">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>No Monthly Fees • No Setup Fees</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="group w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 mb-6">
+                            <i class="fas fa-calculator mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                            Get My Free Quote & ROI Projection
+                        </button>
+                        
+                        <div class="text-center">
+                            <p class="text-gray-600 mb-3 font-medium">Or call us directly for immediate assistance</p>
+                            <a href="tel:+18325108788" class="inline-flex items-center space-x-3 bg-gradient-to-r from-accent-600 to-accent-700 hover:from-accent-700 hover:to-accent-800 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                                <i class="fas fa-phone"></i>
+                                <span>(832) 510-8788</span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- FOOTER SECTION: Final contact information and brand reinforcement  -->
+    <!-- Purpose: Provide contact details, maintain professional appearance -->
+    <!-- Elements: Logo, contact info, copyright, trust messaging          -->
+    <!-- =================================================================== -->
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl flex items-center justify-center shadow-lg">
+                        <i class="fas fa-mobile-alt text-white text-xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">Tap.Giving</div>
+                </div>
+                <p class="text-gray-400 mb-8 text-lg font-medium">Transforming church giving with simple tap technology</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-8">
+                    <a href="mailto:hello@tap.giving" class="flex items-center space-x-2 text-gray-400 hover:text-accent-400 transition duration-300 font-medium">
+                        <i class="fas fa-envelope"></i>
+                        <span>hello@tap.giving</span>
+                    </a>
+                    <a href="tel:+18325108788" class="flex items-center space-x-2 text-gray-400 hover:text-accent-400 transition duration-300 font-medium">
+                        <i class="fas fa-phone"></i>
+                        <span>(832) 510-8788</span>
+                    </a>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-500 text-sm font-medium">
+                        © 2025 Tap.Giving. All rights reserved. | Increasing church giving through innovative technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.emailjs.com/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your public key (you'll need to replace this)
+        // emailjs.init("YOUR_PUBLIC_KEY");
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

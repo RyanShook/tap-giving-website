@@ -1,0 +1,341 @@
+/* Professional Tap.Giving Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+    50% { 
+        box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+    }
+}
+
+/* Glass Morphism Effect */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Slider Styles */
+.slider {
+    -webkit-appearance: none;
+    background: linear-gradient(to right, #3B82F6 0%, #3B82F6 0%, #E5E7EB 0%, #E5E7EB 100%);
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    transition: all 0.3s ease;
+    border: 3px solid white;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+}
+
+.slider::-moz-range-thumb {
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+    border: 3px solid white;
+    transition: all 0.3s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+}
+
+/* Enhanced Form Styles */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+}
+
+/* Button Enhancements */
+button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient Text Animation */
+.gradient-text {
+    background: linear-gradient(-45deg, #3B82F6, #1D4ED8, #22C55E, #16A34A);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease infinite;
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Scroll Animations */
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+    }
+    
+    .text-5xl {
+        font-size: 2.5rem !important;
+    }
+    
+    .text-4xl {
+        font-size: 2rem !important;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .lg\:text-7xl {
+        font-size: 3rem !important;
+    }
+    
+    .lg\:text-5xl {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* High Performance Animations */
+.will-change-transform {
+    will-change: transform;
+}
+
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .animate-pulse,
+    .animate-float,
+    .animate-pulse-slow {
+        animation: none;
+    }
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+    .bg-gradient-to-r,
+    .bg-gradient-to-br {
+        background: #ffffff;
+        color: #000000;
+    }
+    
+    .text-gray-600 {
+        color: #000000;
+    }
+    
+    .border-gray-300 {
+        border-color: #000000;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .sticky {
+        position: static;
+    }
+    
+    button,
+    .animate-pulse,
+    .animate-float {
+        display: none;
+    }
+    
+    .bg-gradient-to-br,
+    .bg-gradient-to-r {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+    
+    * {
+        box-shadow: none !important;
+    }
+}
+
+/* Dark Mode Support (Future Enhancement) */
+@media (prefers-color-scheme: dark) {
+    /* Dark mode styles can be added here if needed */
+}
+
+/* Advanced Typography */
+.font-display {
+    font-feature-settings: 'liga', 'kern';
+    text-rendering: optimizeLegibility;
+}
+
+/* Performance Optimizations */
+.transform-gpu {
+    transform: translate3d(0, 0, 0);
+}
+
+/* Custom Focus States */
+.focus-visible:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Enhanced Shadows */
+.shadow-premium {
+    box-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24),
+        0 10px 40px rgba(59, 130, 246, 0.1);
+}
+
+.shadow-premium-lg {
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.15),
+        0 20px 40px rgba(59, 130, 246, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Backdrop Blur Fallback */
+.backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+}
+
+@supports not (backdrop-filter: blur(24px)) {
+    .backdrop-blur-xl {
+        background: rgba(255, 255, 255, 0.9);
+    }
+}

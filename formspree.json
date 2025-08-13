@@ -1,0 +1,13 @@
+{
+  "forms": {
+    "contact": {
+      "name": "Tap.Giving Quote Requests",
+      "actions": [
+        {
+          "type": "email",
+          "to": "hello@tap.giving"
+        }
+      ]
+    }
+  }
+}
