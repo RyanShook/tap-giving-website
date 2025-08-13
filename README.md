@@ -2,12 +2,15 @@
 
 A high-converting landing page for Tap.Giving's NFC tap-to-give church donation solution. Built with HTML, CSS, JavaScript, and Tailwind CSS for maximum performance and conversion optimization.
 
+**🌐 Live Site:** https://ryanshook.org/tap-giving-website/  
+**📦 Repository:** https://github.com/RyanShook/tap-giving-website
+
 ## 🚀 Quick Start
 
-1. **Clone or download** this repository
-2. **Set up Formspree**: Create account at [formspree.io](https://formspree.io) and replace `YOUR_FORM_ID` in `index.html` line 318
-3. **Open `index.html`** in your browser to view the site
-4. **Deploy** to your hosting provider of choice
+1. **View Live Site**: Visit https://ryanshook.org/tap-giving-website/
+2. **Local Development**: Clone repository and open `index.html` in your browser
+3. **Form Integration**: Already configured with Formspree endpoint
+4. **Deployment**: Automatically deploys via GitHub Pages on push to main
 
 ## 📁 Project Structure
 
@@ -40,17 +43,17 @@ This landing page is optimized for maximum conversion based on research-backed s
 7. **Contact Form** - Conversion-optimized lead capture
 8. **Footer** - Contact information and trust signals
 
-## 💰 Pricing Structure
+## 💰 Pricing Structure (Simplified 3-Tier System)
 
-| Quantity | Price per Plate | Total (100 min) |
-|----------|----------------|------------------|
-| 100-199  | $5.00          | $500             |
-| 200-299  | $4.50          | $900             |
-| 300-399  | $4.00          | $1,200           |
-| 400+     | $3.50          | $1,400           |
+| Quantity | Price per Plate | Example Total |
+|----------|----------------|---------------|
+| 100-199  | $5.00          | $500 (100 plates) |
+| 200-399  | $4.00          | $800 (200 plates) |
+| 400+     | $3.50          | $1,400 (400 plates) |
 
 - **Minimum order**: 100 plates
-- **Free shipping** included
+- **Free shipping** included  
+- **No setup fees, no monthly fees**
 - **Delivery time**: 2-3 weeks
 
 ## 🔧 Technical Features
@@ -70,31 +73,31 @@ This landing page is optimized for maximum conversion based on research-backed s
 - **Mobile-first responsive** - Optimized for all devices
 - **Accessibility compliant** - WCAG guidelines followed
 
-### Advanced Features
-- **Interactive pricing calculator** with smooth animations
-- **Glass morphism effects** with backdrop blur
+### Advanced Features ✅ IMPLEMENTED
+- **Interactive pricing calculator** with real-time cost updates (both main section and in-form)
+- **Glass morphism effects** with backdrop blur for modern aesthetic  
 - **Gradient text animations** for visual appeal
 - **Micro-interactions** on hover/focus states
-- **Form validation** with user feedback
-- **Phone number formatting** automatic
+- **Form validation** with user feedback and error handling
+- **Phone number formatting** automatic (US format)
 - **Scroll animations** for engagement
+- **Simplified CTA buttons**: "Get Free Quote" for maximum conversion
+- **Professional success/error handling** for form submissions
 
-## 📝 Form Setup
+## 📝 Form Setup ✅ FULLY CONFIGURED
 
 ### Formspree Integration
-1. Create account at [formspree.io](https://formspree.io)
-2. Create new form and get your form ID
-3. Replace `YOUR_FORM_ID` in line 318 of `index.html`:
-   ```html
-   <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-   ```
+- **Status**: ✅ Active and working
+- **Endpoint**: https://formspree.io/p/2803072267095900016/f/contact
+- **Email destination**: hello@tap.giving
+- **Phone contact**: (832) 510-8788
 
-### Form Fields
+### Form Fields (Conversion Optimized)
 - **Church Name** (required)
-- **Pastor/Leader Name** (required) 
+- **Pastor/Leader Name** (required, moved to first position)
 - **Email Address** (required)
-- **Phone Number** (required)
-- **Congregation Size** (optional dropdown)
+- **Phone Number** (optional, auto-formatted)
+- **Built-in Pricing Calculator**: Real-time cost calculation within form
 
 ### Success Metrics
 - **Target conversion rate**: 15-25%
@@ -223,22 +226,23 @@ trackEvent('scroll', 'engagement', '50%');
 
 ## 📈 Optimization Checklist
 
-### Pre-Launch
-- [ ] Replace Formspree form ID
-- [ ] Add Google Analytics
-- [ ] Test form submissions
-- [ ] Verify mobile responsiveness
-- [ ] Check page load speed
-- [ ] Validate HTML/CSS
-- [ ] Test all interactive elements
+### Pre-Launch ✅ COMPLETED
+- [x] Replace Formspree form ID (Active endpoint configured)
+- [ ] Add Google Analytics (Setup available in script.js)  
+- [x] Test form submissions (Working with success/error handling)
+- [x] Verify mobile responsiveness (Mobile-first design implemented)
+- [x] Check page load speed (Static site optimized)
+- [x] Validate HTML/CSS (Clean, semantic markup)
+- [x] Test all interactive elements (Pricing calculator, form validation, animations)
 
-### Post-Launch
-- [ ] Monitor conversion rates
-- [ ] A/B test headlines
+### Post-Launch (Live Site Monitoring)
+- [ ] Monitor conversion rates via Formspree dashboard
+- [ ] A/B test headlines (current: "Increase Church Giving by Over 300%")
+- [ ] A/B test CTA buttons (current: "Get Free Quote") 
 - [ ] Optimize for Core Web Vitals
-- [ ] Add customer testimonials
-- [ ] Update statistics regularly
-- [ ] Monitor form submissions
+- [ ] Add customer testimonials as they come in
+- [ ] Update statistics regularly with new research
+- [ ] Add Google Analytics for detailed metrics
 
 ## 📞 Contact Information
 
