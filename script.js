@@ -386,14 +386,14 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => {
                 if (response.ok) {
                     // Show success message
-                    document.getElementById('exitPopupForm').innerHTML = \`
+                    document.getElementById('exitPopupForm').innerHTML = `
                         <div style="text-align: center; padding: 20px;">
                             <div style="color: #10B981; font-size: 48px; margin-bottom: 15px;">✓</div>
                             <h4 style="color: #10B981; font-size: 20px; font-weight: 700; margin-bottom: 10px; font-family: 'Inter', sans-serif;">Success!</h4>
                             <p style="color: #6B7280; font-size: 16px; margin-bottom: 15px; font-family: 'Inter', sans-serif;">Check your email for the 10% discount code</p>
                             <p style="color: #3B82F6; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif;">We'll also send your priority quote within 2 hours!</p>
                         </div>
-                    \`;
+                    `;
                     
                     // Auto-close popup after 3 seconds
                     setTimeout(() => {
