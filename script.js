@@ -280,6 +280,60 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Hero Phone Tap Animation based on scroll
+function animatePhoneTap() {
+    const phoneImage = document.getElementById('phone-image');
+    const tapRings = document.getElementById('tap-rings');
+    const container = document.getElementById('tap-animation-container');
+    
+    if (!phoneImage || !tapRings || !container) return;
+    
+    // Get the container's position relative to the viewport
+    const containerRect = container.getBoundingClientRect();
+    const containerTop = containerRect.top;
+    const containerHeight = containerRect.height;
+    
+    // Calculate animation progress based on container visibility
+    // When container top is at window height, progress = 0
+    // When container top is at 0, progress = 1
+    let progress = 0;
+    
+    if (containerTop <= window.innerHeight && containerTop >= -containerHeight) {
+        // Container is in viewport
+        progress = Math.max(0, Math.min(1, (window.innerHeight - containerTop) / (window.innerHeight + containerHeight)));
+    } else if (containerTop < -containerHeight) {
+        // Container has passed viewport completely
+        progress = 1;
+    }
+    
+    // Animate phone position (moves up from plate as user scrolls down)
+    const maxDistance = 120; // Distance phone travels upward from plate
+    const currentPosition = -progress * maxDistance; // Negative to move up from starting position
+    
+    // Update phone position (starts at bottom of plate, moves up)
+    phoneImage.style.transform = `translate(-50%, ${currentPosition}px)`;
+    
+    // Show tap rings when phone is close to plate (first 20% of animation)
+    if (progress < 0.2) {
+        tapRings.style.opacity = Math.max(0, (0.2 - progress) / 0.2);
+    } else {
+        tapRings.style.opacity = '0';
+    }
+    
+    // Add subtle rotation to phone as it approaches
+    const rotation = progress * -3; // Slight counter-clockwise rotation
+    phoneImage.style.transform += ` rotate(${rotation}deg)`;
+}
+
+// Add scroll listener for phone animation
+window.addEventListener('scroll', animatePhoneTap);
+window.addEventListener('resize', animatePhoneTap);
+
+// Initialize animation on load
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(animatePhoneTap, 100); // Small delay to ensure elements are rendered
+});
+
 // Exit Intent Popup Configuration
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize exit intent popup after page loads
