@@ -314,3 +314,107 @@ window.addEventListener('scroll', function() {
         trackEvent('scroll', 'engagement', `${scrollPercent}%`);
     }
 });
+
+// Exit Intent Popup Configuration
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize exit intent popup after page loads
+    bioEp.init({
+        html: `
+            <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 20px; padding: 40px; max-width: 500px; text-align: center; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);">
+                <div style="margin-bottom: 20px;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3B82F6, #1D4ED8); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-percentage" style="color: white; font-size: 24px;"></i>
+                    </div>
+                    <h3 style="font-size: 28px; font-weight: 900; color: #111827; margin-bottom: 15px; font-family: 'Inter', sans-serif;">Wait! Don't Leave Yet</h3>
+                    <p style="font-size: 18px; color: #6B7280; margin-bottom: 25px; font-family: 'Inter', sans-serif;">Get <strong style="color: #3B82F6;">10% off</strong> your first order plus priority processing</p>
+                </div>
+                
+                <form id="exitPopupForm" style="margin-bottom: 20px;">
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <input type="email" id="exitEmail" name="email" placeholder="Enter your email address" required 
+                               style="flex: 1; padding: 15px; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 16px; font-family: 'Inter', sans-serif; outline: none; transition: all 0.3s ease;"
+                               onFocus="this.style.borderColor='#3B82F6'; this.style.boxShadow='0 0 0 3px rgba(59, 130, 246, 0.1)';"
+                               onBlur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none';">
+                        <button type="submit" 
+                                style="background: linear-gradient(135deg, #3B82F6, #1D4ED8); color: white; border: none; padding: 15px 25px; border-radius: 12px; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.3s ease; font-family: 'Inter', sans-serif;"
+                                onMouseOver="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(59, 130, 246, 0.3)';"
+                                onMouseOut="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            Get Discount
+                        </button>
+                    </div>
+                </form>
+                
+                <div style="margin-bottom: 20px;">
+                    <p style="font-size: 14px; color: #9CA3AF; margin-bottom: 15px; font-family: 'Inter', sans-serif;">✅ Limited time offer &nbsp; ✅ No spam, unsubscribe anytime</p>
+                </div>
+                
+                <button onclick="bioEp.hidePopup()" 
+                        style="background: none; border: none; color: #9CA3AF; font-size: 14px; cursor: pointer; text-decoration: underline; font-family: 'Inter', sans-serif;">
+                    No thanks, I'll pay full price
+                </button>
+            </div>
+        `,
+        css: '',
+        width: 520,
+        height: 400,
+        delay: 3000, // Wait 3 seconds before allowing popup
+        showOnDelay: false,
+        cookieExp: 7 // Don't show again for 7 days after closing
+    });
+
+    // Handle exit popup form submission
+    document.addEventListener('submit', function(e) {
+        if (e.target.id === 'exitPopupForm') {
+            e.preventDefault();
+            
+            const email = document.getElementById('exitEmail').value;
+            
+            // Create form data for Formspree
+            const formData = new FormData();
+            formData.append('email', email);
+            formData.append('source', 'Exit Intent Popup - 10% Discount');
+            formData.append('discount_type', '10% Off First Order');
+            
+            // Submit to Formspree
+            fetch('https://formspree.io/p/2803072267095900016/f/contact', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    document.getElementById('exitPopupForm').innerHTML = \`
+                        <div style="text-align: center; padding: 20px;">
+                            <div style="color: #10B981; font-size: 48px; margin-bottom: 15px;">✓</div>
+                            <h4 style="color: #10B981; font-size: 20px; font-weight: 700; margin-bottom: 10px; font-family: 'Inter', sans-serif;">Success!</h4>
+                            <p style="color: #6B7280; font-size: 16px; margin-bottom: 15px; font-family: 'Inter', sans-serif;">Check your email for the 10% discount code</p>
+                            <p style="color: #3B82F6; font-size: 14px; font-weight: 600; font-family: 'Inter', sans-serif;">We'll also send your priority quote within 2 hours!</p>
+                        </div>
+                    \`;
+                    
+                    // Auto-close popup after 3 seconds
+                    setTimeout(() => {
+                        bioEp.hidePopup();
+                    }, 3000);
+                    
+                    // Track conversion
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'exit_intent_conversion', {
+                            event_category: 'engagement',
+                            event_label: 'discount_signup'
+                        });
+                    }
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Exit popup form error:', error);
+                alert('Sorry, there was an error. Please try again or call us at (832) 510-8788');
+            });
+        }
+    });
+});
