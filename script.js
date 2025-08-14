@@ -1,42 +1,7 @@
 // Tap.Giving JavaScript functionality
 
-// Pricing calculator logic
+// Form pricing calculator logic  
 document.addEventListener('DOMContentLoaded', function() {
-    const plateSlider = document.getElementById('plateSlider');
-    const plateCount = document.getElementById('plateCount');
-    const pricePerPlate = document.getElementById('pricePerPlate');
-    const totalPrice = document.getElementById('totalPrice');
-
-    // Update pricing calculator
-    function updatePricing() {
-        const plates = parseInt(plateSlider.value);
-        let pricePerUnit;
-
-        // Pricing tiers (3 simplified levels)
-        if (plates >= 400) {
-            pricePerUnit = 3.50;
-        } else if (plates >= 200) {
-            pricePerUnit = 4.00;
-        } else {
-            pricePerUnit = 5.00;
-        }
-
-        const total = plates * pricePerUnit;
-
-        plateCount.textContent = plates;
-        pricePerPlate.textContent = pricePerUnit.toFixed(2);
-        totalPrice.textContent = total.toFixed(0);
-
-        // Update slider track color
-        const percentage = ((plates - 100) / (1000 - 100)) * 100;
-        plateSlider.style.background = `linear-gradient(to right, #3B82F6 ${percentage}%, #E5E7EB ${percentage}%)`;
-    }
-
-    // Initialize pricing
-    if (plateSlider) {
-        updatePricing();
-        plateSlider.addEventListener('input', updatePricing);
-    }
     // Form pricing calculator elements
     const formPlateSlider = document.getElementById('formPlateSlider');
     const formPlateCount = document.getElementById('formPlateCount');
