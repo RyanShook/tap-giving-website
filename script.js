@@ -293,29 +293,30 @@ function animatePhoneTap() {
     const containerTop = containerRect.top;
     const containerHeight = containerRect.height;
     
-    // Calculate animation progress based on container visibility
-    // When container top is at window height, progress = 0
-    // When container top is at 0, progress = 1
+    // Calculate animation progress based on scroll into container
+    // Animation starts when container comes into view (earlier trigger)
     let progress = 0;
     
-    if (containerTop <= window.innerHeight && containerTop >= -containerHeight) {
-        // Container is in viewport
-        progress = Math.max(0, Math.min(1, (window.innerHeight - containerTop) / (window.innerHeight + containerHeight)));
+    if (containerTop <= window.innerHeight * 0.8 && containerTop >= -containerHeight) {
+        // Container is coming into view, start animation sooner
+        const triggerPoint = window.innerHeight * 0.8;
+        const totalAnimationRange = triggerPoint + containerHeight;
+        progress = Math.max(0, Math.min(1, (triggerPoint - containerTop) / totalAnimationRange));
     } else if (containerTop < -containerHeight) {
         // Container has passed viewport completely
         progress = 1;
     }
     
-    // Animate phone position (moves up from plate as user scrolls down)
-    const maxDistance = 120; // Distance phone travels upward from plate
+    // Animate phone position (moves up to plate as user scrolls down)
+    const maxDistance = 120; // Distance phone travels upward to reach plate
     const currentPosition = -progress * maxDistance; // Negative to move up from starting position
     
-    // Update phone position (starts at bottom of plate, moves up)
+    // Update phone position (starts just below plate, moves up to touch it)
     phoneImage.style.transform = `translate(-50%, ${currentPosition}px)`;
     
-    // Show tap rings when phone is close to plate (first 20% of animation)
-    if (progress < 0.2) {
-        tapRings.style.opacity = Math.max(0, (0.2 - progress) / 0.2);
+    // Show tap rings when phone reaches the plate (last 30% of animation)
+    if (progress > 0.7) {
+        tapRings.style.opacity = Math.min(1, (progress - 0.7) / 0.3);
     } else {
         tapRings.style.opacity = '0';
     }
