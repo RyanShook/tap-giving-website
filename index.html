@@ -5,6 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tap.Giving - Increase Church Giving by Over 300% with NFC Tap Technology</title>
     <meta name="description" content="The most affordable NFC tap-to-give solution for churches. No setup fees, no monthly costs. Prices as low as $3.50 per plate. Limited time pricing.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="assets/Logo-Crop-Large-1024x295.png">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="1 days">
+    <meta name="author" content="Tap.Giving">
+    <meta name="copyright" content="© 2025 Tap.Giving. All rights reserved.">
+    <meta name="keywords" content="church giving, digital giving, NFC giving, church donations, tap to give, contactless donations, church technology, donation increase, church fundraising, digital tithing">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tap.Giving - Increase Church Giving by Over 300% with NFC Technology">
+    <meta property="og:description" content="The most affordable NFC tap-to-give solution for churches. No setup fees, no monthly costs. Prices as low as $3.50 per plate.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ryanshook.org/tap-giving-website/">
+    <meta property="og:image" content="https://ryanshook.org/tap-giving-website/assets/phone-and-plate.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Tap.Giving">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tap.Giving - Increase Church Giving by Over 300%">
+    <meta name="twitter:description" content="NFC tap-to-give solution for churches. No setup fees, no monthly costs. Prices as low as $3.50 per plate.">
+    <meta name="twitter:image" content="https://ryanshook.org/tap-giving-website/assets/phone-and-plate.png">
+    <meta name="twitter:creator" content="@tapgiving">
+    <meta name="twitter:site" content="@tapgiving">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ryanshook.org/tap-giving-website/">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://formspree.io">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Replace GA_MEASUREMENT_ID with your actual Google Analytics 4 Measurement ID
+        gtag('config', 'GA_MEASUREMENT_ID', {
+            page_title: 'Tap.Giving Landing Page',
+            page_location: window.location.href,
+            send_page_view: true,
+            anonymize_ip: true,
+            cookie_flags: 'SameSite=None;Secure',
+            // Enhanced e-commerce tracking
+            enhanced_ecommerce: true,
+            // Conversion tracking
+            conversion_linker: true,
+            // Custom dimensions for church giving analytics
+            custom_map: {
+                'custom_parameter_1': 'church_size',
+                'custom_parameter_2': 'quote_amount',
+                'custom_parameter_3': 'discount_used'
+            }
+        });
+        
+        // Enhanced conversion tracking for form submissions
+        window.gtag_form_conversion = function(value, currency) {
+            gtag('event', 'conversion', {
+                'send_to': 'GA_MEASUREMENT_ID/CONVERSION_LABEL',
+                'value': value,
+                'currency': currency || 'USD',
+                'event_category': 'form_submission',
+                'event_label': 'quote_request'
+            });
+        };
+        
+        // Track pricing calculator interactions
+        window.gtag_pricing_interaction = function(plate_count, price_per_plate, total_cost) {
+            gtag('event', 'pricing_calculator_interaction', {
+                'event_category': 'engagement',
+                'event_label': 'calculator_adjustment',
+                'plate_count': plate_count,
+                'price_per_plate': price_per_plate,
+                'total_cost': total_cost,
+                'value': total_cost
+            });
+        };
+        
+        // Track exit intent popup interactions
+        window.gtag_exit_intent = function(action, email) {
+            gtag('event', 'exit_intent_' + action, {
+                'event_category': 'lead_generation',
+                'event_label': action,
+                'email_captured': email ? 'yes' : 'no'
+            });
+        };
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -49,6 +152,119 @@
                 }
             }
         }
+    </script>
+    
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tap.Giving",
+        "url": "https://ryanshook.org/tap-giving-website/",
+        "logo": "https://ryanshook.org/tap-giving-website/assets/Logo-Crop-Large-1024x295.png",
+        "description": "The most affordable NFC tap-to-give solution for churches. No setup fees, no monthly costs. Prices as low as $3.50 per plate.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-832-510-8788",
+            "contactType": "sales",
+            "email": "hello@tap.giving",
+            "availableLanguage": "English"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+        },
+        "sameAs": [
+            "https://github.com/RyanShook/tap-giving-website"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "NFC Tap-to-Give Plates",
+        "description": "Professional NFC plates for church giving that increase donations by over 300%. Easy installation, no setup fees, no monthly costs.",
+        "brand": {
+            "@type": "Brand",
+            "name": "Tap.Giving"
+        },
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "USD",
+            "price": "3.50",
+            "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "3.50",
+                "priceCurrency": "USD",
+                "unitText": "per plate"
+            },
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "Tap.Giving"
+            }
+        },
+        "category": "Church Technology",
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "Churches and Religious Organizations"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Tap.Giving - Church NFC Giving Solution",
+        "description": "Increase church giving by over 300% with NFC tap-to-give technology. Professional solution with transparent pricing starting at $3.50 per plate.",
+        "url": "https://ryanshook.org/tap-giving-website/",
+        "mainEntity": {
+            "@type": "Service",
+            "name": "Church NFC Giving Implementation",
+            "description": "Complete NFC tap-to-give solution for churches including plates, setup, and support.",
+            "provider": {
+                "@type": "Organization",
+                "name": "Tap.Giving"
+            },
+            "areaServed": "United States",
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "NFC Giving Solutions",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Product",
+                            "name": "100-199 NFC Plates"
+                        },
+                        "price": "5.00",
+                        "priceCurrency": "USD"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Product",
+                            "name": "200-399 NFC Plates"
+                        },
+                        "price": "4.00",
+                        "priceCurrency": "USD"
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Product",
+                            "name": "400+ NFC Plates"
+                        },
+                        "price": "3.50",
+                        "priceCurrency": "USD"
+                    }
+                ]
+            }
+        }
+    }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -277,84 +493,6 @@
         </div>
     </section>
 
-    <!-- =================================================================== -->
-    <!-- SOLUTION/BENEFITS SECTION: Present competitive advantages          -->
-    <!-- Purpose: Address pain points with specific solutions               -->
-    <!-- Benefits: Cost-effective, proven results, security, easy setup    -->
-    <!-- Conversion element: Build confidence in solution                   -->
-    <!-- =================================================================== -->
-    <!-- Solution/Benefits Section -->
-    <section class="bg-white py-16">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-8">
-                    The Simple Solution That's 
-                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Transforming Church Giving</span>
-                </h2>
-                <p class="text-xl text-gray-600 font-medium mb-12">
-                    Research-backed results from churches already using tap-to-give technology
-                </p>
-                
-                <!-- PRODUCT SHOWCASE: Add actual NFC plate photos here -->
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 mb-16 shadow-xl">
-                    <img src="https://placehold.co/800x400/E5E7EB/6B7280?text=Product+Gallery%0ANFC+Plates+%26+Installation" 
-                         alt="NFC tap plates and installation examples" 
-                         class="w-full h-64 object-cover rounded-2xl">
-                    <p class="text-gray-600 text-sm mt-4">Professional NFC tap plates designed specifically for churches</p>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-dollar-sign text-accent-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Most Cost-Effective</h3>
-                    <p class="text-gray-600 leading-relaxed">No setup fees, no monthly fees, transparent per-plate pricing starting at $3.50</p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-chart-line text-primary-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Proven Results</h3>
-                    <p class="text-gray-600 leading-relaxed">300%+ increase in giving, 3x higher donation amounts, 81% participation rates</p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-shield-alt text-purple-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Bank-Level Security</h3>
-                    <p class="text-gray-600 leading-relaxed">Encrypted transactions, PCI compliance, secure data protection you can trust</p>
-                </div>
-                
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-bolt text-orange-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Easy Implementation</h3>
-                    <p class="text-gray-600 leading-relaxed">Install in minutes, works with any smartphone, no app downloads required</p>
-                </div>
-            </div>
-            
-            <!-- SECURITY BADGES: Add actual certification logos here -->
-            <div class="mt-16 text-center">
-                <h4 class="text-lg font-semibold text-gray-700 mb-6">Trusted Security Standards</h4>
-                <div class="flex justify-center items-center space-x-8">
-                    <img src="https://placehold.co/120x60/3B82F6/white?text=PCI+DSS" 
-                         alt="PCI DSS Compliance" 
-                         class="h-12 opacity-70 hover:opacity-100 transition-opacity">
-                    <img src="https://placehold.co/120x60/22C55E/white?text=SSL+Secured" 
-                         alt="SSL Secured" 
-                         class="h-12 opacity-70 hover:opacity-100 transition-opacity">
-                    <img src="https://placehold.co/120x60/6366F1/white?text=Bank+Grade" 
-                         alt="Bank Grade Security" 
-                         class="h-12 opacity-70 hover:opacity-100 transition-opacity">
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- =================================================================== -->
     <!-- HOW IT WORKS SECTION: Simple 3-step process explanation           -->
@@ -395,7 +533,9 @@
                     <div class="mt-6">
                         <img src="assets/image2.png" 
                              alt="Hand holding smartphone in church environment with NFC plate" 
-                             class="w-full h-32 object-cover rounded-xl">
+                             class="w-full h-32 object-cover rounded-xl"
+                             loading="lazy"
+                             decoding="async">
                     </div>
                 </div>
                 
@@ -410,7 +550,9 @@
                     <div class="mt-6">
                         <img src="assets/image.png" 
                              alt="Hand holding smartphone with QR code display and NFC plate interaction" 
-                             class="w-full h-32 object-cover rounded-xl">
+                             class="w-full h-32 object-cover rounded-xl"
+                             loading="lazy"
+                             decoding="async">
                     </div>
                 </div>
                 
@@ -425,7 +567,9 @@
                     <div class="mt-6">
                         <img src="assets/phone-and-plate.png" 
                              alt="Smartphone displaying $500 donation success screen demonstrating growth results" 
-                             class="w-full h-32 object-contain rounded-xl">
+                             class="w-full h-32 object-contain rounded-xl"
+                             loading="lazy"
+                             decoding="async">
                     </div>
                 </div>
             </div>
