@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="text-green-600 text-2xl">✓</span>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">Thank You!</h3>
-                        <p class="text-gray-600 mb-6">We've received your request and will contact you within 24 hours with your custom pricing and ROI projection.</p>
+                        <p class="text-gray-600 mb-6">We've received your request and will contact you within 24 hours with your custom pricing.</p>
                         <p class="text-primary-600 font-semibold">For immediate assistance, call: (832) 510-8788</p>
                         <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                             <p class="text-green-800 text-sm font-semibold">✅ Form Successfully Submitted</p>
