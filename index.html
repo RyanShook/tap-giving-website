@@ -64,6 +64,10 @@
       name="twitter:image"
       content="https://tap.giving/assets/phone-and-plate.png"
     />
+    <meta
+      name="twitter:image:alt"
+      content="NFC tap-to-give plate with smartphone showing $500 donation - increase church giving by 300%"
+    />
     <meta name="twitter:creator" content="@tapgiving" />
     <meta name="twitter:site" content="@tapgiving" />
 
@@ -302,6 +306,101 @@
         }
       }
     </script>
+
+    <!-- FAQ Schema for Rich Snippets -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much do NFC tap-to-give plates cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our NFC tap-to-give plates start at $3.50 per plate for orders of 400+. We offer volume discounts: 100-199 plates at $5.00 each, 200-399 plates at $4.00 each, and 400+ plates at $3.50 each. No setup fees or monthly costs."
+            }
+          },
+          {
+            "@type": "Question", 
+            "name": "How much can churches increase giving with tap-to-give technology?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Churches using our NFC tap-to-give solution have increased donations by over 300% on average. Digital giving solutions typically see 81% participation rates and contactless donations are 3x higher than traditional cash donations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to set up NFC giving plates?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Setup takes just minutes. Simply attach the NFC plates to pew backs, chairs, or any convenient location in your sanctuary. Guests tap their smartphones to the plate and are instantly directed to your giving page. No technical expertise required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are NFC tap-to-give donations secure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our NFC tap-to-give solution uses bank-level security. All transactions are processed through secure, encrypted payment platforms that comply with industry standards for data protection and financial security."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- HowTo Schema for 3-Step Process -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Set Up Church NFC Tap-to-Give Donations",
+        "description": "Simple 3-step process to implement NFC tap-to-give technology in your church to increase donations by over 300%",
+        "image": "https://tap.giving/assets/phone-and-plate.png",
+        "totalTime": "PT10M",
+        "estimatedCost": {
+          "@type": "MonetaryAmount", 
+          "currency": "USD",
+          "value": "350"
+        },
+        "supply": [
+          {
+            "@type": "HowToSupply",
+            "name": "NFC Tap-to-Give Plates"
+          }
+        ],
+        "tool": [
+          {
+            "@type": "HowToTool",
+            "name": "Smartphone with NFC capability"
+          }
+        ],
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Install",
+            "text": "Attach NFC plates to pew backs, chairs, or any convenient location in your sanctuary",
+            "image": "https://tap.giving/assets/image2.png",
+            "url": "https://tap.giving/#contact"
+          },
+          {
+            "@type": "HowToStep", 
+            "name": "Tap",
+            "text": "Guests tap their smartphones to the plate and are instantly directed to your giving page",
+            "image": "https://tap.giving/assets/image.png",
+            "url": "https://tap.giving/#contact"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Grow", 
+            "text": "Watch donations increase month over month with effortless digital giving",
+            "image": "https://tap.giving/assets/phone-and-plate.png",
+            "url": "https://tap.giving/#contact"
+          }
+        ]
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
