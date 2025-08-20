@@ -376,13 +376,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Exit Intent Popup Configuration
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if bioEp library is loaded
+    if (typeof bioEp === 'undefined') {
+        console.error('bioEp library not loaded. Make sure bioep.min.js is included.');
+        return;
+    }
+    
+    console.log('Initializing exit intent popup...');
+    
     // Initialize exit intent popup after page loads
     bioEp.init({
         html: `
             <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border-radius: 20px; padding: 40px; max-width: 500px; text-align: center; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.3);">
                 <div style="margin-bottom: 20px;">
                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3B82F6, #1D4ED8); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-percentage" style="color: white; font-size: 24px;"></i>
+                        <span style="color: white; font-size: 24px; font-weight: bold;">%</span>
                     </div>
                     <h3 style="font-size: 28px; font-weight: 900; color: #111827; margin-bottom: 15px; font-family: 'Inter', sans-serif;">Wait! Don't Leave Yet</h3>
                     <p style="font-size: 18px; color: #6B7280; margin-bottom: 25px; font-family: 'Inter', sans-serif;">Get <strong style="color: #3B82F6;">10% off</strong> your first order plus priority processing</p>
@@ -413,13 +421,83 @@ document.addEventListener('DOMContentLoaded', function() {
                 </button>
             </div>
         `,
-        css: '',
+        css: `
+            #bio_ep {
+                background: none !important;
+                box-shadow: none !important;
+            }
+        `,
         width: 520,
         height: 400,
-        delay: 3000, // Wait 3 seconds before allowing popup
+        delay: 3, // Wait 3 seconds before allowing popup (in seconds, not milliseconds)
         showOnDelay: false,
         cookieExp: 7 // Don't show again for 7 days after closing
     });
+
+    // Add a test trigger for debugging (remove in production)
+    // You can test the popup by pressing Ctrl+Shift+P
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && e.shiftKey && e.key === 'P') {
+            console.log('Manually triggering exit intent popup');
+            bioEp.showPopup();
+        }
+    });
+
+    // Add additional exit intent triggers
+    let exitIntentTimer;
+    let scrollDepth = 0;
+    
+    // Track scroll depth
+    window.addEventListener('scroll', function() {
+        const currentScroll = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        scrollDepth = Math.max(scrollDepth, currentScroll);
+    });
+
+    // Trigger on aggressive mouse movement towards browser chrome
+    let mouseY = 0;
+    document.addEventListener('mousemove', function(e) {
+        mouseY = e.clientY;
+    });
+
+    document.addEventListener('mouseleave', function(e) {
+        // Only trigger if user has spent some time on page and scrolled a bit
+        if (scrollDepth > 25 && mouseY <= 10) {
+            console.log('Exit intent detected via mouseleave');
+            if (!bioEp.shown) {
+                bioEp.showPopup();
+            }
+        }
+    });
+
+    // Alternative: detect when user tries to close tab/window
+    window.addEventListener('beforeunload', function(e) {
+        if (!bioEp.shown && scrollDepth > 15) {
+            // This won't show our popup due to browser restrictions, 
+            // but we can track the attempt
+            console.log('User attempting to leave page');
+        }
+    });
+
+    // Additional trigger: page visibility change (tab switching)
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'hidden' && !bioEp.shown && scrollDepth > 20) {
+            // User switched away from tab - potential exit intent
+            setTimeout(function() {
+                if (document.visibilityState === 'visible' && !bioEp.shown) {
+                    console.log('Exit intent detected via tab switch return');
+                    bioEp.showPopup();
+                }
+            }, 100);
+        }
+    });
+
+    // Timeout trigger - show after user has been on page for 30 seconds
+    setTimeout(function() {
+        if (!bioEp.shown && scrollDepth > 10) {
+            console.log('Exit intent triggered by timeout');
+            bioEp.showPopup();
+        }
+    }, 30000);
 
     // Handle exit popup form submission
     document.addEventListener('submit', function(e) {
