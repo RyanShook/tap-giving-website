@@ -67,6 +67,45 @@ function scrollToPricing() {
     }
 }
 
+// Pricing tier selection function
+function selectPricingTier(plateCount) {
+    // Scroll to the contact form
+    const formSection = document.getElementById('contact');
+    if (formSection) {
+        formSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+    
+    // Wait for scroll to complete, then update the calculator
+    setTimeout(() => {
+        const plateSlider = document.getElementById('formPlateSlider');
+        const plateCountDisplay = document.getElementById('formPlateCount');
+        
+        if (plateSlider && plateCountDisplay) {
+            // Set the slider value
+            plateSlider.value = plateCount;
+            
+            // Update the display
+            plateCountDisplay.textContent = plateCount;
+            
+            // Trigger the calculator update
+            updateFormCalculator();
+            
+            // Add a subtle highlight effect to show the form was updated
+            const calculatorSection = plateSlider.closest('.bg-gradient-to-br');
+            if (calculatorSection) {
+                calculatorSection.style.transform = 'scale(1.02)';
+                calculatorSection.style.transition = 'transform 0.3s ease';
+                setTimeout(() => {
+                    calculatorSection.style.transform = 'scale(1)';
+                }, 300);
+            }
+        }
+    }, 800); // Wait for scroll animation to complete
+}
+
 // Form handling
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
