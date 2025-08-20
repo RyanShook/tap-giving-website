@@ -332,18 +332,19 @@ function animatePhoneTap() {
     const containerTop = containerRect.top;
     const containerHeight = containerRect.height;
     
-    // Calculate animation progress based on scroll into container
-    // Animation starts when container comes into view (earlier trigger)
+    // Calculate animation progress based on scroll
+    // Animation starts immediately when user scrolls and moves faster
     let progress = 0;
     
-    if (containerTop <= window.innerHeight * 0.8 && containerTop >= -containerHeight) {
-        // Container is coming into view, start animation sooner
-        const triggerPoint = window.innerHeight * 0.8;
-        const totalAnimationRange = triggerPoint + containerHeight;
-        progress = Math.max(0, Math.min(1, (triggerPoint - containerTop) / totalAnimationRange));
-    } else if (containerTop < -containerHeight) {
-        // Container has passed viewport completely
-        progress = 1;
+    // Start animation as soon as any scrolling happens
+    const scrollY = window.scrollY;
+    
+    if (scrollY > 0) {
+        // Animation starts immediately on scroll and completes faster
+        const animationStartScroll = 0; // Start immediately
+        const animationCompleteScroll = 200; // Complete animation after 200px of scroll (faster)
+        
+        progress = Math.max(0, Math.min(1, (scrollY - animationStartScroll) / (animationCompleteScroll - animationStartScroll)));
     }
     
     // Animate phone position (moves up to plate as user scrolls down)
