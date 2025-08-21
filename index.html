@@ -459,7 +459,7 @@
     <!-- =================================================================== -->
     <!-- Hero Section -->
     <section
-      class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-20 lg:py-32"
+      class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-20 lg:py-16"
     >
       <!-- Background Elements -->
       <div class="absolute inset-0 overflow-hidden">
@@ -473,12 +473,11 @@
 
       <div class="container mx-auto px-6 relative z-10">
         <div class="max-w-6xl mx-auto">
-
           <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div class="text-center lg:text-left">
               <!-- Headline -->
               <h1
-                class="text-5xl lg:text-7xl font-black text-gray-900 mb-8 leading-tight"
+                class="text-5xl lg:text-7xl font-black text-gray-900 mb-0 lg:mb-8 leading-tight"
               >
                 Increase Church Giving by
                 <span
@@ -488,9 +487,34 @@
                 with Tap-to-Give Technology
               </h1>
 
+              <!-- Mobile Tap Animation (between headline and subheading) -->
+              <div class="lg:hidden relative mb-12">
+                <div class="relative w-full h-64 flex items-center justify-center">
+                  <!-- Plate Image -->
+                  <img
+                    id="mobile-plate-image"
+                    src="assets/plate.png"
+                    alt="NFC Tap Plate"
+                    class="absolute top-4 left-1/2 transform -translate-x-1/2 w-48 h-auto z-10 transition-all duration-500 ease-out"
+                  />
+                  <!-- Phone Image -->
+                  <img
+                    id="mobile-phone-image"
+                    src="assets/phone.png"
+                    alt="Smartphone for tap-to-give donation"
+                    class="absolute top-24 left-1/2 w-40 h-auto z-20 transition-all duration-500 ease-out"
+                  />
+                  <!-- Animated Rings -->
+                  <div id="mobile-tap-rings" class="absolute top-4 left-1/2 transform -translate-x-1/2 opacity-0 transition-opacity duration-300">
+                    <div class="absolute w-48 h-48 border-4 border-primary-200 rounded-full animate-ping opacity-20"></div>
+                    <div class="absolute w-56 h-56 border-4 border-primary-300 rounded-full animate-ping opacity-10" style="animation-delay: 0.3s"></div>
+                  </div>
+                </div>
+              </div>
+
               <!-- Subheading -->
               <p
-                class="text-xl lg:text-2xl text-gray-600 mb-10 leading-relaxed font-medium"
+                class="text-xl lg:text-2xl text-gray-600 mb-10 mt-10 lg:mt-0 leading-relaxed font-medium"
               >
                 No setup fees. No monthly costs. Limited time pricing as low as
                 <span
@@ -498,6 +522,14 @@
                   >$3.50 per plate</span
                 >.
               </p>
+
+              <!-- Pricing Banner (below $3.50 per plate on all views) -->
+              <div class="text-center mb-6">
+                <div class="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg animate-pulse">
+                  <i class="fas fa-bolt mr-2"></i>
+                  Pricing Increases Soon - Lock In Today
+                </div>
+              </div>
 
               <!-- CTAs -->
               <div class="flex flex-col sm:flex-row gap-4 mb-8">
@@ -540,15 +572,15 @@
               </div>
             </div>
 
-            <div class="relative">
-              <!-- HERO ANIMATION: Phone tapping to plate on scroll -->
+            <div class="relative lg:-mt-32 hidden lg:block">
+              <!-- HERO ANIMATION: Phone tapping to plate on scroll (all views) -->
               <div id="tap-animation-container" class="relative w-full h-96">
                 <!-- Plate Image - Fixed position higher up in container -->
                 <img
                   id="plate-image"
                   src="assets/plate.png"
                   alt="NFC Tap Plate"
-                  class="absolute top-16 left-1/2 transform -translate-x-1/2 w-80 h-auto z-10"
+                  class="absolute top-16 lg:-top-24 left-1/2 transform -translate-x-1/2 w-80 h-auto z-10"
                 />
 
                 <!-- Phone Image - Starts with top touching bottom of plate, moves up on scroll -->
@@ -556,13 +588,13 @@
                   id="phone-image"
                   src="assets/phone.png"
                   alt="Smartphone for tap-to-give donation"
-                  class="absolute top-80 left-1/2 transform -translate-x-1/2 w-64 h-auto z-20 transition-all duration-300 ease-out"
+                  class="absolute top-80 lg:top-40 left-1/2 transform -translate-x-1/2 w-64 h-auto z-20 transition-all duration-300 ease-out"
                 />
 
                 <!-- Animated Rings around tap area -->
                 <div
                   id="tap-rings"
-                  class="absolute top-16 left-1/2 transform -translate-x-1/2 opacity-0 transition-opacity duration-300"
+                  class="absolute top-16 lg:-top-24 left-1/2 transform -translate-x-1/2 opacity-0 transition-opacity duration-300"
                 >
                   <div
                     class="absolute w-80 h-80 border-4 border-primary-200 rounded-full animate-ping opacity-20"
@@ -575,20 +607,6 @@
               </div>
 
               <!-- Floating Elements -->
-              <div
-                class="absolute -top-6 left-1/2 transform -translate-x-1/2 lg:left-auto lg:right-0 lg:-right-6 lg:translate-x-0 bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg animate-pulse"
-                style="animation-delay: 1s"
-              >
-                <i class="fas fa-bolt mr-2"></i>
-                Pricing Increases Soon - Lock In Today
-              </div>
-              <div
-                class="absolute -bottom-6 -left-6 bg-gradient-to-br from-primary-400 to-primary-500 text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg animate-float"
-                style="animation-delay: 2s"
-              >
-                <i class="fas fa-dollar-sign mr-2"></i>
-                From $3.50
-              </div>
             </div>
           </div>
         </div>
@@ -1252,7 +1270,17 @@
     <script src="assets/bioep.min.js"></script>
 
     <!-- Crisp Chat -->
-    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="ad8857a0-36b5-4cab-97d2-ad9913058ee1";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <script type="text/javascript">
+      window.$crisp = [];
+      window.CRISP_WEBSITE_ID = "ad8857a0-36b5-4cab-97d2-ad9913058ee1";
+      (function () {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      })();
+    </script>
 
     <script src="script.js"></script>
   </body>

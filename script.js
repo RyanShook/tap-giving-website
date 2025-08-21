@@ -322,6 +322,7 @@ window.addEventListener('scroll', function() {
 // Hero Phone Tap Animation based on scroll
 function animatePhoneTap() {
     const phoneImage = document.getElementById('phone-image');
+    const plateImage = document.getElementById('plate-image');
     const tapRings = document.getElementById('tap-rings');
     const container = document.getElementById('tap-animation-container');
     
@@ -347,12 +348,23 @@ function animatePhoneTap() {
         progress = Math.max(0, Math.min(1, (scrollY - animationStartScroll) / (animationCompleteScroll - animationStartScroll)));
     }
     
-    // Animate phone position (moves up to plate as user scrolls down)
+    // Animate phone position (moves up and left to plate as user scrolls down)
     const maxDistance = 120; // Distance phone travels upward to reach plate
     const currentPosition = -progress * maxDistance; // Negative to move up from starting position
+    const leftMovement = progress * 30; // Move 30px to the left as it approaches
     
-    // Update phone position (starts just below plate, moves up to touch it)
-    phoneImage.style.transform = `translate(-50%, ${currentPosition}px)`;
+    // Update phone position (starts just below plate, moves up and left to touch it)
+    phoneImage.style.transform = `translate(calc(-50% - ${leftMovement}px), ${currentPosition}px)`;
+    
+    // Add rotation to phone as it approaches
+    const rotation = progress * 20; // 20 degrees clockwise rotation
+    phoneImage.style.transform += ` rotate(${rotation}deg)`;
+    
+    // Plate scaling animation - scale up 10% during animation
+    if (plateImage) {
+        const plateScale = 1 + (progress * 0.1); // Scales from 1.0 to 1.1
+        plateImage.style.transform = `translate(-50%, 0) scale(${plateScale})`;
+    }
     
     // Show tap rings when phone reaches the plate (last 30% of animation)
     if (progress > 0.7) {
@@ -360,10 +372,6 @@ function animatePhoneTap() {
     } else {
         tapRings.style.opacity = '0';
     }
-    
-    // Add subtle rotation to phone as it approaches
-    const rotation = progress * -3; // Slight counter-clockwise rotation
-    phoneImage.style.transform += ` rotate(${rotation}deg)`;
 }
 
 // Add scroll listener for phone animation
@@ -373,6 +381,67 @@ window.addEventListener('resize', animatePhoneTap);
 // Initialize animation on load
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(animatePhoneTap, 100); // Small delay to ensure elements are rendered
+});
+
+// Mobile Phone Scroll Animation
+function animateMobilePhone() {
+    const mobilePhone = document.getElementById('mobile-phone-image');
+    const mobilePlate = document.getElementById('mobile-plate-image');
+    const mobileRings = document.getElementById('mobile-tap-rings');
+    
+    if (!mobilePhone) return;
+    
+    // Check if we're on mobile (screen width less than 1024px)
+    if (window.innerWidth >= 1024) return;
+    
+    // Get scroll progress
+    const scrollY = window.scrollY;
+    const animationStart = 100; // Animation starts after 100px of scroll (1/4 of original 400px)
+    const animationDuration = 200; // Animation runs for 200px (2/4 of original 400px)
+    const animationEnd = animationStart + animationDuration; // Ends at 300px
+    
+    // Calculate animation progress (0 to 1) only during the active animation window
+    let progress = 0;
+    if (scrollY >= animationStart) {
+        progress = Math.min(1, (scrollY - animationStart) / animationDuration);
+    }
+    
+    // Mobile phone animation
+    const translateX = -150 + (progress * 70); // Moves from -150% to -80%
+    const rotation = 30 - (progress * 20); // Rotation decreases from 30deg to 10deg
+    
+    // Apply the transforms to phone
+    mobilePhone.style.transform = `translateX(${translateX}%) rotate(${rotation}deg)`;
+    
+    // Add subtle opacity animation to phone
+    const opacity = 0.9 + (progress * 0.1);
+    mobilePhone.style.opacity = opacity;
+    
+    // Plate animation - scale up 10% during animation
+    if (mobilePlate) {
+        const plateScale = 1 + (progress * 0.1); // Scales from 1.0 to 1.1
+        mobilePlate.style.transform = `translate(-50%, 0) scale(${plateScale})`;
+    }
+    
+    // Rings animation - appear only at the end (last 20% of animation) and stay visible
+    if (mobileRings) {
+        if (progress >= 0.8) {
+            // Rings appear in the last 20% of the animation and stay up
+            mobileRings.style.opacity = '1';
+        } else {
+            // Keep rings hidden during most of the animation
+            mobileRings.style.opacity = '0';
+        }
+    }
+}
+
+// Add scroll listener for mobile phone animation
+window.addEventListener('scroll', animateMobilePhone);
+window.addEventListener('resize', animateMobilePhone);
+
+// Initialize mobile animation on load
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(animateMobilePhone, 100);
 });
 
 // Exit Intent Popup Configuration
