@@ -1,0 +1,26 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Developer: Tap.Giving Team
+    Contact: hello [at] tap.giving
+    Location: United States
+
+# THANKS
+
+    Churches worldwide using our NFC giving solution
+
+# TECHNOLOGY COLOPHON
+
+    Standards: HTML5, CSS3, JavaScript
+    Components: Tailwind CSS, Font Awesome
+    Analytics: Google Analytics 4
+    Hosting: GitHub Pages
+    Domain: Namecheap
+    Build: Static Site
+    
+# PURPOSE
+
+    Increase church giving by over 300% with NFC tap-to-give technology
+    Making digital donations simple and effective for churches

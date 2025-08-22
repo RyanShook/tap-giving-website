@@ -10,10 +10,15 @@ Sitemap: https://tap.giving/sitemap.xml
 # Crawl delay (optional - helps with server load)
 Crawl-delay: 1
 
-# Block access to sensitive files (if any exist in future)
+# Block access to sensitive files and duplicates
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.json$
+Disallow: /*?*utm_source=*
+Disallow: /*?*utm_medium=*
+Disallow: /*?*utm_campaign=*
+Disallow: /*?*fbclid=*
+Disallow: /*?*gclid=*
 
 # Allow specific assets that are important for SEO
 Allow: /assets/
