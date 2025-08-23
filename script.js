@@ -348,16 +348,16 @@ function animatePhoneTap() {
         progress = Math.max(0, Math.min(1, (scrollY - animationStartScroll) / (animationCompleteScroll - animationStartScroll)));
     }
     
-    // Animate phone position (moves up and left to plate as user scrolls down)
+    // Animate phone position (moves up and right to plate as user scrolls down)
     const maxDistance = 120; // Distance phone travels upward to reach plate
     const currentPosition = -progress * maxDistance; // Negative to move up from starting position
-    const leftMovement = progress * 30; // Move 30px to the left as it approaches
+    const rightMovement = progress * 50; // Move 50px to the right as it approaches (starts much more left, ends even further left)
     
-    // Update phone position (starts just below plate, moves up and left to touch it)
-    phoneImage.style.transform = `translate(calc(-50% - ${leftMovement}px), ${currentPosition}px)`;
+    // Update phone position (starts much further left, moves up and right but ends left of plate)
+    phoneImage.style.transform = `translate(calc(-50% - 120px + ${rightMovement}px), ${currentPosition}px)`;
     
     // Add rotation to phone as it approaches
-    const rotation = progress * 20; // 20 degrees clockwise rotation
+    const rotation = progress * 10; // 10 degrees clockwise rotation (more subtle)
     phoneImage.style.transform += ` rotate(${rotation}deg)`;
     
     // Plate scaling animation - scale up 10% during animation
@@ -406,9 +406,9 @@ function animateMobilePhone() {
         progress = Math.min(1, (scrollY - animationStart) / animationDuration);
     }
     
-    // Mobile phone animation
-    const translateX = -150 + (progress * 70); // Moves from -150% to -80%
-    const rotation = 30 - (progress * 20); // Rotation decreases from 30deg to 10deg
+    // Mobile phone animation - starts closer to plate, travels less distance, positioned more to the left
+    const translateX = -120 + (progress * 40); // Moves from -120% to -80% (shifted left by 20%)
+    const rotation = 20 - (progress * 10); // Rotation decreases from 20deg to 10deg (ends more rotated clockwise)
     
     // Apply the transforms to phone
     mobilePhone.style.transform = `translateX(${translateX}%) rotate(${rotation}deg)`;

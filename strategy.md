@@ -44,13 +44,13 @@
 ### 3. Solution/Benefits Section
 - **Most Cost-Effective**: No setup fees, no monthly fees, transparent per-plate pricing
 - **Proven Results**: 32% increase in giving, 3x higher donation amounts
-- **Bank-Level Security**: Encrypted transactions, PCI compliance
+- **Industry-Standard Security**: Encrypted transactions, PCI compliance
 - **Easy Implementation**: Install in minutes, works with any smartphone
 
 ### 4. How It Works (3 Simple Steps)
-1. **Install**: Attach NFC plates to pew backs
-2. **Tap**: Guests tap with smartphones to give instantly
-3. **Grow**: Watch donations increase month over month
+1. **Order**: Choose your quantity and get custom NFC plates designed for your church
+2. **Install**: Attach NFC plates to pew backs, chairs, or any convenient location
+3. **Measure**: Track your giving increase and ROI with detailed analytics and reporting
 
 ### 5. Pricing Section ✅ IMPLEMENTED  
 - **Interactive Pricing Slider**: Volume-based pricing with real-time calculation
