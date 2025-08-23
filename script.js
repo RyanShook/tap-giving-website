@@ -470,12 +470,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div style="display: flex; gap: 10px; margin-bottom: 20px;">
                         <input type="email" id="exitEmail" name="email" placeholder="Enter your email address" required 
                                style="flex: 1; padding: 15px; border: 2px solid #E5E7EB; border-radius: 12px; font-size: 16px; font-family: 'Inter', sans-serif; outline: none; transition: all 0.3s ease;"
-                               onFocus="this.style.borderColor='#3B82F6'; this.style.boxShadow='0 0 0 3px rgba(59, 130, 246, 0.1)';"
-                               onBlur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none';">
+                               onfocus="this.style.borderColor='#3B82F6'; this.style.boxShadow='0 0 0 3px rgba(59, 130, 246, 0.1)';"
+                               onblur="this.style.borderColor='#E5E7EB'; this.style.boxShadow='none';">
                         <button type="submit" 
                                 style="background: linear-gradient(135deg, #3B82F6, #1D4ED8); color: white; border: none; padding: 15px 25px; border-radius: 12px; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.3s ease; font-family: 'Inter', sans-serif;"
-                                onMouseOver="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(59, 130, 246, 0.3)';"
-                                onMouseOut="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                                onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(59, 130, 246, 0.3)';"
+                                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
                             Get Discount
                         </button>
                     </div>
@@ -496,26 +496,99 @@ document.addEventListener('DOMContentLoaded', function() {
                 background: none !important;
                 box-shadow: none !important;
             }
+            #bio_ep_bg {
+                background-color: rgba(0, 0, 0, 0.6) !important;
+                opacity: 1 !important;
+            }
         `,
         width: 520,
         height: 400,
-        delay: 3, // Wait 3 seconds before allowing popup (in seconds, not milliseconds)
+        delay: 1, // Reduced delay to 1 second
         showOnDelay: false,
-        cookieExp: 7 // Don't show again for 7 days after closing
+        cookieExp: 1 // Reduced to 1 day for testing
     });
 
-    // Add a test trigger for debugging (remove in production)
+    // Add multiple test triggers for debugging (remove in production)
     // You can test the popup by pressing Ctrl+Shift+P
     document.addEventListener('keydown', function(e) {
         if (e.ctrlKey && e.shiftKey && e.key === 'P') {
-            console.log('Manually triggering exit intent popup');
+            console.log('Manually triggering exit intent popup via Ctrl+Shift+P');
             bioEp.showPopup();
+        }
+        // Also add Escape key to close popup for testing
+        if (e.key === 'Escape' && bioEp.shown) {
+            console.log('Manually closing popup via Escape key');
+            bioEp.hidePopup();
         }
     });
 
-    // Add additional exit intent triggers
+    // Add a simple click trigger for testing - click on logo 5 times quickly
+    let logoClickCount = 0;
+    let logoClickTimer;
+    const logo = document.querySelector('img[alt="Tap.Giving Logo"]');
+    if (logo) {
+        logo.addEventListener('click', function() {
+            logoClickCount++;
+            clearTimeout(logoClickTimer);
+            
+            if (logoClickCount >= 5) {
+                console.log('Logo clicked 5 times - showing popup for testing');
+                bioEp.showPopup();
+                logoClickCount = 0;
+                return;
+            }
+            
+            // Reset click count after 2 seconds
+            logoClickTimer = setTimeout(() => {
+                logoClickCount = 0;
+            }, 2000);
+        });
+    }
+
+    // Add debug info to console every 5 seconds
+    setInterval(function() {
+        console.log('Exit Intent Debug - timeOnPage:', timeOnPage, 'scrollDepth:', scrollDepth, 'hasMouseMovement:', hasMouseMovement, 'popup shown:', bioEp.shown);
+    }, 5000);
+
+    // Add function to clear cookies for testing (call tapGivingDebug.clearCookies() in console)
+    window.tapGivingDebug = {
+        clearCookies: function() {
+            document.cookie = 'bioep_shown=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+            document.cookie = 'bioep_shown_session=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+            bioEp.shown = false;
+            console.log('Exit intent cookies cleared and popup reset');
+        },
+        showPopup: function() {
+            bioEp.showPopup();
+        },
+        hidePopup: function() {
+            bioEp.hidePopup();
+        },
+        getStatus: function() {
+            return {
+                timeOnPage: timeOnPage,
+                scrollDepth: scrollDepth,
+                hasMouseMovement: hasMouseMovement,
+                popupShown: bioEp.shown,
+                cookies: {
+                    bioep_shown: document.cookie.includes('bioep_shown=true'),
+                    bioep_shown_session: document.cookie.includes('bioep_shown_session=true')
+                }
+            };
+        }
+    };
+
+    // Add additional exit intent triggers with more aggressive detection
     let exitIntentTimer;
     let scrollDepth = 0;
+    let timeOnPage = 0;
+    let hasMouseMovement = false;
+    
+    // Track time on page
+    const startTime = Date.now();
+    setInterval(function() {
+        timeOnPage = Math.floor((Date.now() - startTime) / 1000);
+    }, 1000);
     
     // Track scroll depth
     window.addEventListener('scroll', function() {
@@ -523,51 +596,66 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollDepth = Math.max(scrollDepth, currentScroll);
     });
 
-    // Trigger on aggressive mouse movement towards browser chrome
+    // Track mouse movement to ensure user is active
     let mouseY = 0;
     document.addEventListener('mousemove', function(e) {
         mouseY = e.clientY;
+        hasMouseMovement = true;
     });
 
+    // More aggressive mouse leave detection
     document.addEventListener('mouseleave', function(e) {
-        // Only trigger if user has spent some time on page and scrolled a bit
-        if (scrollDepth > 25 && mouseY <= 10) {
-            console.log('Exit intent detected via mouseleave');
+        // Trigger if user has been on page for at least 5 seconds OR scrolled at least 10%
+        if ((timeOnPage >= 5 || scrollDepth >= 10) && hasMouseMovement) {
+            console.log('Exit intent detected via mouseleave - timeOnPage:', timeOnPage, 'scrollDepth:', scrollDepth);
             if (!bioEp.shown) {
                 bioEp.showPopup();
             }
         }
     });
 
+    // Detect upward mouse movement to top of screen (more sensitive)
+    let lastMouseY = 0;
+    document.addEventListener('mousemove', function(e) {
+        if (e.clientY < 50 && lastMouseY > 50 && timeOnPage >= 3) {
+            // Mouse moved to top 50px of screen and user has been here 3+ seconds
+            console.log('Exit intent detected via mouse movement to top');
+            if (!bioEp.shown) {
+                bioEp.showPopup();
+            }
+        }
+        lastMouseY = e.clientY;
+    });
+
     // Alternative: detect when user tries to close tab/window
     window.addEventListener('beforeunload', function(e) {
-        if (!bioEp.shown && scrollDepth > 15) {
+        if (!bioEp.shown && timeOnPage >= 5) {
             // This won't show our popup due to browser restrictions, 
             // but we can track the attempt
-            console.log('User attempting to leave page');
+            console.log('User attempting to leave page after', timeOnPage, 'seconds');
         }
     });
 
     // Additional trigger: page visibility change (tab switching)
     document.addEventListener('visibilitychange', function() {
-        if (document.visibilityState === 'hidden' && !bioEp.shown && scrollDepth > 20) {
-            // User switched away from tab - potential exit intent
+        if (document.visibilityState === 'hidden' && !bioEp.shown && timeOnPage >= 10) {
+            // User switched away from tab after 10+ seconds - potential exit intent
             setTimeout(function() {
                 if (document.visibilityState === 'visible' && !bioEp.shown) {
                     console.log('Exit intent detected via tab switch return');
                     bioEp.showPopup();
                 }
-            }, 100);
+            }, 500);
         }
     });
 
-    // Timeout trigger - show after user has been on page for 30 seconds
+    // Reduced timeout trigger - show after user has been on page for 20 seconds
     setTimeout(function() {
-        if (!bioEp.shown && scrollDepth > 10) {
-            console.log('Exit intent triggered by timeout');
+        if (!bioEp.shown && (scrollDepth >= 15 || timeOnPage >= 20)) {
+            console.log('Exit intent triggered by timeout - scrollDepth:', scrollDepth, 'timeOnPage:', timeOnPage);
             bioEp.showPopup();
         }
-    }, 30000);
+    }, 20000);
 
     // Handle exit popup form submission
     document.addEventListener('submit', function(e) {
