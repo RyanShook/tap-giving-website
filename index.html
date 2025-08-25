@@ -457,12 +457,13 @@
     <!-- =================================================================== -->
     <!-- Header -->
     <header
-      class="bg-white/90 backdrop-blur-xl shadow-lg sticky top-0 z-50 border-b border-gray-100"
+      class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50"
     >
-      <div class="container mx-auto px-6 py-4">
-        <div class="flex items-center justify-between">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
           <div class="flex items-center">
-            <a href="/">
+            <a href="/" class="flex-shrink-0">
               <img
                 src="assets/Logo-Crop-Large-1024x295.png"
                 alt="Tap.Giving - Church NFC Giving Solution Logo"
@@ -473,20 +474,109 @@
               />
             </a>
           </div>
-          <div class="flex items-center space-x-6">
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a
+                href="/"
+                class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+              >
+                Home
+              </a>
+              <a
+                href="/pricing.html"
+                class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+              >
+                Pricing
+              </a>
+              <a
+                href="/#how-it-works"
+                class="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+              >
+                How It Works
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Side Actions -->
+          <div class="flex items-center space-x-4">
+            <!-- Phone Number - Desktop Only -->
             <a
               href="tel:+18325108788"
-              class="hidden md:flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition duration-300 font-medium"
+              class="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors duration-200"
             >
-              <i class="fas fa-phone text-sm"></i>
-              <span>(832) 510-8788</span>
+              <i class="fas fa-mobile-alt text-sm"></i>
+              <span class="text-sm font-medium">(832) 510-8788</span>
             </a>
+
+            <!-- Quick Action Button - Always Visible -->
             <button
               onclick="scrollToForm()"
-              class="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              class="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
             >
-              Get Free Quote
+              Order Now
             </button>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+              <button
+                id="mobile-menu-toggle"
+                type="button"
+                class="text-gray-700 hover:text-primary-600 focus:outline-none focus:text-primary-600 p-2"
+                aria-label="Toggle mobile menu"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+          <div
+            class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200/50 bg-white/95 backdrop-blur-xl"
+          >
+            <a
+              href="/"
+              class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors duration-200"
+            >
+              Home
+            </a>
+            <a
+              href="/pricing.html"
+              class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors duration-200"
+            >
+              Pricing
+            </a>
+            <a
+              href="/#how-it-works"
+              class="text-gray-700 hover:text-primary-600 block px-3 py-2 text-base font-medium transition-colors duration-200"
+            >
+              How It Works
+            </a>
+            <div class="pt-4 pb-3 border-t border-gray-200/50">
+              <div class="px-3">
+                <button
+                  onclick="scrollToForm(); document.getElementById('mobile-menu').classList.add('hidden');"
+                  class="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  Order Now
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -595,7 +685,7 @@
                   <i
                     class="fas fa-rocket mr-3 group-hover:scale-110 transition-transform duration-300"
                   ></i>
-                  Get Free Quote
+                  Order Now
                 </button>
                 <button
                   onclick="scrollToPricing()"
@@ -1039,14 +1129,14 @@
             <h2
               class="text-4xl lg:text-5xl font-black text-white mb-8 leading-tight"
             >
-              Get Your Custom Pricing &
+              Order Your
               <span
                 class="bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent"
-                >Free Quote</span
+                >Custom NFC Tap Plates</span
               >
             </h2>
             <p class="text-xl text-gray-300 font-medium">
-              Join hundreds of churches increasing their giving by 300%
+              Join hundreds of churches increasing giving and connection
             </p>
           </div>
 
@@ -1070,7 +1160,7 @@
                     class="block text-sm font-bold text-gray-800 mb-3"
                   >
                     <i class="fas fa-user mr-2 text-primary-600"></i
-                    >Pastor/Leader Name *
+                    >Your Name *
                   </label>
                   <input
                     type="text"
@@ -1100,7 +1190,7 @@
                 </div>
               </div>
 
-              <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <div class="mb-8">
                 <div class="space-y-2">
                   <label
                     for="email"
@@ -1115,22 +1205,6 @@
                     name="email"
                     required
                     class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white"
-                  />
-                </div>
-                <div class="space-y-2">
-                  <label
-                    for="phone"
-                    class="block text-sm font-bold text-gray-800 mb-3"
-                  >
-                    <i class="fas fa-phone mr-2 text-primary-600"></i>Phone
-                    Number (optional)
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white"
-                    placeholder="For faster response"
                   />
                 </div>
               </div>
@@ -1221,9 +1295,9 @@
                 class="group w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 mb-6"
               >
                 <i
-                  class="fas fa-rocket mr-3 group-hover:scale-110 transition-transform duration-300"
+                  class="fas fa-arrow-right mr-3 group-hover:scale-110 transition-transform duration-300"
                 ></i>
-                Get My Free Quote
+                Next Step
               </button>
 
               <div class="text-center">
@@ -1364,6 +1438,28 @@
         s.async = 1;
         d.getElementsByTagName("head")[0].appendChild(s);
       })();
+    </script>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (mobileMenuToggle && mobileMenu) {
+          mobileMenuToggle.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+          });
+
+          // Close mobile menu when clicking on links
+          const mobileLinks = mobileMenu.querySelectorAll("a");
+          mobileLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              mobileMenu.classList.add("hidden");
+            });
+          });
+        }
+      });
     </script>
 
     <script src="script.js"></script>
