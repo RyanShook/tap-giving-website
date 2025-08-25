@@ -41,10 +41,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize form pricing calculator
     if (formPlateSlider) {
+        // Check for preset quantity from pricing page
+        const presetQuantity = sessionStorage.getItem('presetQuantity');
+        if (presetQuantity) {
+            formPlateSlider.value = presetQuantity;
+            sessionStorage.removeItem('presetQuantity'); // Clear it after use
+        }
+        
         updateFormPricing();
         formPlateSlider.addEventListener('input', updateFormPricing);
     }
 });
+
+// Set quantity and scroll to form function
+function setQuantity(quantity) {
+    // Store the quantity for when the page loads
+    sessionStorage.setItem('presetQuantity', quantity);
+    
+    // If we're on the same page, try to set immediately
+    const formPlateSlider = document.getElementById('formPlateSlider');
+    if (formPlateSlider) {
+        formPlateSlider.value = quantity;
+        // Trigger the update function
+        const event = new Event('input');
+        formPlateSlider.dispatchEvent(event);
+    }
+}
 
 // Smooth scrolling functions
 function scrollToForm() {
