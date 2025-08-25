@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Tap.Giving NFC Church Giving Solution</title>
+    <meta name="description" content="Learn how Tap.Giving's NFC tap-to-give technology works. Simple 3-step process: Tap, Give, Done. Increase church donations by 300% with contactless giving.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tap.giving/how-it-works.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Structured Data for How It Works Page -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How Tap.Giving NFC Church Giving Works",
+        "description": "Simple 3-step process for contactless church giving using NFC technology",
+        "image": "https://tap.giving/assets/phone-and-plate.png",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Tap Your Phone",
+                "text": "Hold your smartphone near the NFC plate for instant connection"
+            },
+            {
+                "@type": "HowToStep", 
+                "name": "Choose Amount",
+                "text": "Select your giving amount on the secure donation page"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Complete Donation",
+                "text": "Finish your donation in seconds with secure payment processing"
+            }
+        ]
+    }
+    </script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#eff6ff", 100: "#dbeafe", 200: "#bfdbfe", 300: "#93c5fd", 400: "#60a5fa", 500: "#3b82f6", 600: "#2563eb", 700: "#1d4ed8", 800: "#1e40af", 900: "#1e3a8a",
+              },
+              accent: {
+                50: "#f0fdf4", 100: "#dcfce7", 200: "#bbf7d0", 300: "#86efac", 400: "#4ade80", 500: "#22c55e", 600: "#16a34a", 700: "#15803d", 800: "#166534", 900: "#14532d",
+              },
+            }
+          }
+        }
+      };
+    </script>
+</head>
+<body class="font-inter antialiased bg-white">
+    <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <img src="assets/Logo-Crop-Large-1024x295.png" alt="Tap.Giving Logo" class="h-8 w-auto">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Home</a>
+                    <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+                    <a href="/how-it-works.html" class="text-blue-600 font-semibold">How It Works</a>
+                </nav>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Phone Number (hidden on smaller screens) -->
+                    <a href="tel:+18325108788" class="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition duration-300 font-medium">
+                        <i class="fas fa-mobile-alt text-sm"></i>
+                        <span>(832) 510-8788</span>
+                    </a>
+                    
+                    <!-- Order Now Button (always visible) -->
+                    <a href="/#contact" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Order Now
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu()">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="md:hidden" id="mobile-menu" style="display: none;">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="/" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Home</a>
+                    <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+                    <a href="/how-it-works.html" class="block px-3 py-2 text-blue-600 font-semibold">How It Works</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+        <!-- Hero Section -->
+        <div class="max-w-4xl mx-auto text-center mb-20">
+            <div class="mb-6">
+                <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent text-sm font-bold uppercase tracking-wider">Simple Process</span>
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">
+                How <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Tap.Giving</span> Works
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+                Transform your church's giving experience with our simple 3-step NFC process. No apps to download, no accounts to create - just tap and give.
+            </p>
+        </div>
+
+        <!-- 3-Step Process -->
+        <section class="mb-20">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-12">
+                    <!-- Step 1 -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">
+                            <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                        </div>
+                        <div class="mb-4">
+                            <span class="bg-primary-100 text-primary-600 px-3 py-1 rounded-full text-sm font-bold">STEP 1</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Tap Your Phone</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Simply hold your smartphone near any Tap.Giving plate. Your phone will automatically detect the NFC signal and open the giving page instantly.
+                        </p>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <p class="text-sm text-gray-500 font-medium">Works with 95% of smartphones without any app downloads</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">
+                            <i class="fas fa-dollar-sign text-white text-2xl"></i>
+                        </div>
+                        <div class="mb-4">
+                            <span class="bg-accent-100 text-accent-600 px-3 py-1 rounded-full text-sm font-bold">STEP 2</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Choose Amount</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Select your giving amount from preset options or enter a custom amount. Add a note if desired. Everything is secure and encrypted.
+                        </p>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <p class="text-sm text-gray-500 font-medium">Preset amounts: $25, $50, $100, $250, or custom</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-gradient-to-br from-primary-600 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">
+                            <i class="fas fa-check-circle text-white text-2xl"></i>
+                        </div>
+                        <div class="mb-4">
+                            <span class="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-3 py-1 rounded-full text-sm font-bold">STEP 3</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Complete Donation</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Complete your secure donation with Apple Pay, Google Pay, or any major credit/debit card. Receive instant confirmation.
+                        </p>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <p class="text-sm text-gray-500 font-medium">Average donation time: 15-30 seconds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Demo Section -->
+        <section class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl py-16 mb-20">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-8">See It In Action</h2>
+                <div class="aspect-video bg-gray-200 rounded-2xl flex items-center justify-center shadow-lg">
+                    <div class="text-center">
+                        <i class="fas fa-play-circle text-6xl text-primary-600 mb-4"></i>
+                        <p class="text-gray-600 font-medium">Demo video coming soon</p>
+                        <p class="text-sm text-gray-500">Watch the complete tap-to-give process</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="mb-20">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Churches Choose Tap.Giving</h2>
+                    <p class="text-xl text-gray-600">Simple, affordable, and proven to increase giving by 300%</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Left Column -->
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-bolt text-primary-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Lightning Fast</h3>
+                                <p class="text-gray-600">Complete donations in 15-30 seconds. No waiting, no friction, no barriers to giving.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-accent-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Bank-Level Security</h3>
+                                <p class="text-gray-600">All transactions encrypted and processed through secure payment gateways. PCI DSS compliant.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-users text-primary-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Increases Participation</h3>
+                                <p class="text-gray-600">Churches report 300%+ increases in giving when implementing contactless options.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-mobile-alt text-accent-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">No App Required</h3>
+                                <p class="text-gray-600">Works with any NFC-enabled smartphone. No downloads, no accounts, no barriers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-dollar-sign text-primary-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Transparent Pricing</h3>
+                                <p class="text-gray-600">$3.50-$5.00 per plate, one-time cost. No setup fees, no monthly costs, no hidden charges.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-chart-line text-accent-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Analytics & Reporting</h3>
+                                <p class="text-gray-600">Track giving trends, popular locations, and engagement metrics through our dashboard.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                    <p class="text-lg text-gray-600">Everything you need to know about implementing Tap.Giving</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq1')">
+                            <h3 class="text-lg font-semibold text-gray-900">What phones work with Tap.Giving?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="faq1-icon"></i>
+                        </button>
+                        <div class="px-6 pb-5 hidden" id="faq1-content">
+                            <p class="text-gray-600 leading-relaxed">
+                                Tap.Giving works with 95% of modern smartphones including iPhone 6 and newer, and most Android phones from 2014 onward. The phone must have NFC (Near Field Communication) enabled, which is standard on virtually all smartphones today. No app download required.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq2')">
+                            <h3 class="text-lg font-semibold text-gray-900">How much do the NFC plates cost?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="faq2-icon"></i>
+                        </button>
+                        <div class="px-6 pb-5 hidden" id="faq2-content">
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Our transparent pricing ranges from $3.50 to $5.00 per plate based on quantity:
+                            </p>
+                            <ul class="text-gray-600 space-y-1 ml-4">
+                                <li>• 1000+ plates: $3.50 each</li>
+                                <li>• 400-999 plates: $4.00 each</li>
+                                <li>• 200-399 plates: $4.50 each</li>
+                                <li>• 100-199 plates: $5.00 each</li>
+                            </ul>
+                            <p class="text-gray-600 mt-4">
+                                No setup fees, no monthly costs, no hidden charges. One-time purchase that lasts for years.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq3')">
+                            <h3 class="text-lg font-semibold text-gray-900">Where should we place the NFC plates?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="faq3-icon"></i>
+                        </button>
+                        <div class="px-6 pb-5 hidden" id="faq3-content">
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Popular placement options include:
+                            </p>
+                            <ul class="text-gray-600 space-y-1 ml-4">
+                                <li>• Chair/pew backs (most popular)</li>
+                                <li>• Bulletins or programs</li>
+                                <li>• Entry/exit areas</li>
+                                <li>• Connection tables</li>
+                                <li>• Lobby displays</li>
+                                <li>• Children's ministry check-in</li>
+                            </ul>
+                            <p class="text-gray-600 mt-4">
+                                Most churches start with every other row or strategic high-traffic areas, then expand based on usage patterns.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq4')">
+                            <h3 class="text-lg font-semibold text-gray-900">How secure are the donations?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="faq4-icon"></i>
+                        </button>
+                        <div class="px-6 pb-5 hidden" id="faq4-content">
+                            <p class="text-gray-600 leading-relaxed">
+                                Security is our top priority. All donations are processed through PCI DSS compliant payment processors with bank-level encryption. The NFC plates contain no sensitive information - they simply redirect to a secure donation page. All financial data is encrypted in transit and at rest, and we never store payment information.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq5')">
+                            <h3 class="text-lg font-semibold text-gray-900">Do the plates require batteries or maintenance?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="faq5-icon"></i>
+                        </button>
+                        <div class="px-6 pb-5 hidden" id="faq5-content">
+                            <p class="text-gray-600 leading-relaxed">
+                                No batteries required! NFC plates are passive devices that are powered by the smartphone's NFC field when tapped. They're designed to last for years with zero maintenance. The plates are also waterproof and scratch-resistant, making them perfect for high-traffic church environments.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq6')">
+                            <h3 class="text-lg font-semibold text-gray-900">How long does shipping take?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="faq6-icon"></i>
+                        </button>
+                        <div class="px-6 pb-5 hidden" id="faq6-content">
+                            <p class="text-gray-600 leading-relaxed">
+                                Typical production and shipping time is 2-3 weeks for standard orders. Rush orders (1 week) are available for an additional fee. We ship throughout the United States via FedEx or UPS with tracking provided. International shipping is available upon request.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 7 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq7')">
+                            <h3 class="text-lg font-semibold text-gray-900">Can we customize the plates with our church logo?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="faq7-icon"></i>
+                        </button>
+                        <div class="px-6 pb-5 hidden" id="faq7-content">
+                            <p class="text-gray-600 leading-relaxed">
+                                Yes! We offer full customization including your church logo, colors, and messaging. Our design team will work with you to create plates that match your church's branding and aesthetic. Custom artwork is included at no additional cost for orders over 200 plates.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 8 -->
+                    <div class="bg-white border border-gray-200 rounded-xl shadow-sm">
+                        <button class="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq('faq8')">
+                            <h3 class="text-lg font-semibold text-gray-900">What payment methods do donors use?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transform transition-transform" id="faq8-icon"></i>
+                        </button>
+                        <div class="px-6 pb-5 hidden" id="faq8-content">
+                            <p class="text-gray-600 leading-relaxed">
+                                Donors can give using Apple Pay, Google Pay, PayPal, or any major credit/debit card (Visa, MasterCard, American Express, Discover). The checkout process is optimized for mobile and typically takes 15-30 seconds to complete. Recurring giving options are also available.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-gradient-to-r from-primary-600 to-accent-600 rounded-3xl py-16 text-center text-white">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Church's Giving?</h2>
+                <p class="text-xl mb-8 opacity-90">Join hundreds of churches already using Tap.Giving to increase donations by 300%+</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/#contact" class="bg-white text-primary-600 px-8 py-4 rounded-xl text-lg font-bold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        <i class="fas fa-rocket mr-2"></i>Order Now
+                    </a>
+                    <a href="/pricing.html" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-white hover:text-primary-600 transition-all duration-300">
+                        <i class="fas fa-tag mr-2"></i>View Pricing
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <!-- Logo & Description -->
+                    <div class="md:col-span-2">
+                        <img src="assets/Logo-Crop-Large-1024x295.png" alt="Tap.Giving Logo" class="h-10 w-auto mb-4 brightness-0 invert">
+                        <p class="text-gray-400 leading-relaxed mb-4">
+                            The most affordable and transparent NFC giving solution for churches. Increase donations by 300%+ with contactless tap-to-give technology.
+                        </p>
+                        <a href="mailto:hello@tap.giving" class="text-accent-400 hover:text-accent-300 transition duration-300 font-medium">
+                            <i class="fas fa-envelope mr-2"></i>hello@tap.giving
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="/" class="text-gray-400 hover:text-accent-400 transition duration-300">Home</a></li>
+                            <li><a href="/pricing.html" class="text-gray-400 hover:text-accent-400 transition duration-300">Pricing</a></li>
+                            <li><a href="/how-it-works.html" class="text-gray-400 hover:text-accent-400 transition duration-300">How It Works</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contact -->
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Contact</h4>
+                        <a href="tel:+18325108788" class="flex items-center space-x-2 text-gray-400 hover:text-accent-400 transition duration-300 font-medium">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>(832) 510-8788</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8">
+                    <div class="mb-4 space-x-4">
+                        <a href="/" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Home</a>
+                        <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+                        <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+                    </div>
+                    <p class="text-gray-500 text-sm font-medium">
+                        © 2025 Tap.Giving. All rights reserved. | The transparent choice for church giving technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3B3M72XEP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L3B3M72XEP', {
+            page_title: 'How It Works - Tap.Giving',
+            page_location: window.location.href
+        });
+    </script>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const isHidden = mobileMenu.style.display === 'none' || !mobileMenu.style.display;
+            
+            if (isHidden) {
+                mobileMenu.style.display = 'block';
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                mobileMenu.style.display = 'none';
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
+
+        // Close mobile menu when clicking on a link
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const menuIcon = document.getElementById('menu-icon');
+                    mobileMenu.style.display = 'none';
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                });
+            });
+        });
+
+        // FAQ Toggle Function
+        function toggleFaq(faqId) {
+            const content = document.getElementById(faqId + '-content');
+            const icon = document.getElementById(faqId + '-icon');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
