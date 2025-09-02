@@ -866,20 +866,12 @@
     <section class="bg-gradient-to-br from-slate-50 to-white py-20">
       <div class="container mx-auto px-6">
         <!-- PROCESS DEMONSTRATION: Video demo comes first -->
-        <div
-          class="bg-white/80 backdrop-blur-xl rounded-3xl p-8 mb-16 shadow-xl"
-        >
-          <div
-            class="relative w-full h-0 pb-[56.25%] rounded-2xl overflow-hidden"
-          >
-            <iframe
-              src="https://www.youtube.com/embed/b27jP_KXBeo"
-              title="Tap-to-Give Process Demonstration"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              class="absolute top-0 left-0 w-full h-full rounded-2xl"
-            ></iframe>
+        <div class="mb-16">
+          <div class="relative w-full rounded-2xl overflow-hidden">
+            <script src="https://fast.wistia.com/player.js" async></script>
+            <script src="https://fast.wistia.com/embed/3175yfg5hu.js" async type="module"></script>
+            <style>wistia-player[media-id='3175yfg5hu']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/3175yfg5hu/swatch'); display: block; filter: blur(5px); padding-top:56.25%; border-radius: 1rem; }</style>
+            <wistia-player media-id="3175yfg5hu" aspect="1.7777777777777777" style="border-radius: 1rem;"></wistia-player>
           </div>
         </div>
 
@@ -1287,44 +1279,6 @@
             </a>
           </div>
 
-          <!-- Social Media Section -->
-          <div class="mb-8">
-            <h3
-              class="text-gray-400 text-sm font-semibold mb-4 uppercase tracking-wider"
-            >
-              Connect With Us
-            </h3>
-            <div class="flex justify-center space-x-6 mb-6">
-              <a
-                href="#"
-                class="text-gray-400 hover:text-blue-400 transition duration-300 text-2xl"
-                aria-label="Follow us on Facebook"
-              >
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-blue-400 transition duration-300 text-2xl"
-                aria-label="Follow us on Twitter"
-              >
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-blue-400 transition duration-300 text-2xl"
-                aria-label="Follow us on LinkedIn"
-              >
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-blue-400 transition duration-300 text-2xl"
-                aria-label="Follow us on Instagram"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
 
 
           <!-- Sources Section -->
@@ -1423,6 +1377,7 @@
             });
         });
     </script>
+
 
     <script src="script.js"></script>
   </body>
