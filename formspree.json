@@ -1,13 +1,47 @@
 {
   "forms": {
     "contact": {
-      "name": "Tap.Giving Quote Requests",
+      "name": "Tap.Giving Contact Form",
       "actions": [
         {
           "type": "email",
-          "to": "hello@tap.giving"
+          "to": "hello@tap.giving",
+          "subject": "New Contact Form Submission - {{subject}} - Tap.Giving",
+          "template": "Contact Form Submission\n\nName: {{firstName}} {{lastName}}\nEmail: {{email}}\nPhone: {{phone}}\nChurch: {{churchName}}\nSubject: {{subject}}\n\nMessage:\n{{message}}"
         }
-      ]
+      ],
+      "replyTo": "{{email}}",
+      "fields": {
+        "firstName": {
+          "type": "text",
+          "required": true
+        },
+        "lastName": {
+          "type": "text", 
+          "required": true
+        },
+        "email": {
+          "type": "email",
+          "required": true
+        },
+        "phone": {
+          "type": "tel",
+          "required": false
+        },
+        "churchName": {
+          "type": "text",
+          "required": false
+        },
+        "subject": {
+          "type": "select",
+          "required": true,
+          "options": ["quote", "support", "demo", "partnership", "other"]
+        },
+        "message": {
+          "type": "textarea",
+          "required": true
+        }
+      }
     }
   }
 }

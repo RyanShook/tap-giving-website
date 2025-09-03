@@ -78,6 +78,7 @@
             <a href="/" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Home</a>
             <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
             <a href="/how-it-works.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">How It Works</a>
+            <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
             <a href="/contact.html" class="text-blue-600 font-semibold">Contact</a>
           </nav>
           <!-- Right Side Actions -->
@@ -99,6 +100,7 @@
             <a href="/" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Home</a>
             <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
             <a href="/how-it-works.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">How It Works</a>
+            <a href="/blog.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
             <a href="/contact.html" class="block px-3 py-2 text-blue-600 font-semibold">Contact</a>
           </div>
         </div>
@@ -134,11 +136,7 @@
             
             <h2 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h2>
             
-            <form action="https://formspree.io/hello@tap.giving" method="POST" class="space-y-6">
-              <!-- Formspree configuration -->
-              <input type="hidden" name="_subject" value="New Contact Form Submission - Tap.Giving" />
-              <input type="hidden" name="_next" value="https://tap.giving/contact.html?success=true" />
-              <input type="hidden" name="_captcha" value="false" />
+            <form id="contact-form" action="https://formspree.io/f/mwpnrkgr" method="POST" class="space-y-6">
               
               <div class="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -358,7 +356,7 @@
           <div>
             <h3 class="font-semibold mb-4">Contact</h3>
             <ul class="space-y-2 text-gray-400">
-              <li>1-855-TAP-GIVE</li>
+              <li>(832) 510-8788</li>
               <li>hello@tap.giving</li>
             </ul>
           </div>
@@ -400,15 +398,62 @@
           });
         });
         
-        // Show success message if form was submitted successfully
+        // Handle contact form submission
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+        
+        if (contactForm) {
+          contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            
+            try {
+              const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                  'Accept': 'application/json'
+                }
+              });
+              
+              if (response.ok) {
+                // Show success message
+                successMessage.classList.remove('hidden');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Hide success message after 10 seconds
+                setTimeout(() => {
+                  successMessage.classList.add('hidden');
+                }, 10000);
+              } else {
+                throw new Error('Form submission failed');
+              }
+            } catch (error) {
+              alert('There was a problem sending your message. Please try again or contact us directly.');
+            } finally {
+              // Reset button
+              submitButton.disabled = false;
+              submitButton.innerHTML = originalButtonText;
+            }
+          });
+        }
+        
+        // Show success message if form was submitted successfully (fallback for URL parameter)
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('success') === 'true') {
-          const successMessage = document.getElementById('success-message');
           if (successMessage) {
             successMessage.classList.remove('hidden');
-            // Scroll to success message
             successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            // Clear the URL parameter
             window.history.replaceState({}, document.title, window.location.pathname);
           }
         }

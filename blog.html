@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church NFC Giving Blog - Latest Insights and Comparisons | Tap.Giving</title>
+    <meta name="description" content="Stay updated with the latest insights on church NFC giving technology, platform comparisons, and digital donation trends. Expert analysis from Tap.Giving.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tap.giving/blog.html">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Structured Data for Blog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Tap.Giving Blog",
+        "description": "Expert insights on church NFC giving technology, platform comparisons, and digital donation trends",
+        "url": "https://tap.giving/blog.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tap.Giving",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://tap.giving/assets/Logo-Crop-Large-1024x295.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://tap.giving/blog.html"
+        }
+    }
+    </script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#eff6ff", 100: "#dbeafe", 200: "#bfdbfe", 300: "#93c5fd", 
+                400: "#60a5fa", 500: "#3b82f6", 600: "#2563eb", 700: "#1d4ed8", 
+                800: "#1e40af", 900: "#1e3a8a",
+              },
+              accent: {
+                50: "#f0fdf4", 100: "#dcfce7", 200: "#bbf7d0", 300: "#86efac", 
+                400: "#4ade80", 500: "#22c55e", 600: "#16a34a", 700: "#15803d", 
+                800: "#166534", 900: "#14532d",
+              },
+            },
+            fontFamily: {
+              inter: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+            }
+          }
+        }
+      };
+    </script>
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+<body class="font-inter antialiased bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="flex-shrink-0">
+                        <img src="assets/Logo-Crop-Large-1024x295.png" alt="Tap.Giving Logo" class="h-8 w-auto">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Home</a>
+                    <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+                    <a href="/how-it-works.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">How It Works</a>
+                    <a href="/blog.html" class="text-blue-600 font-semibold">Blog</a>
+                </nav>
+
+                <!-- Contact Info & CTA -->
+                <div class="flex items-center space-x-6">
+                    <!-- Phone Number - Desktop Only -->
+                    <a href="tel:+18325108788" class="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors duration-200">
+                        <i class="fas fa-mobile-alt text-sm"></i>
+                        <span class="text-sm font-medium">(832) 510-8788</span>
+                    </a>
+                    
+                    <!-- Quick Action Button -->
+                    <button onclick="window.location.href='/#contact'" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Order Now
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden" id="mobile-menu" style="display: none;">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="/" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium">Home</a>
+                    <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium">Pricing</a>
+                    <a href="/how-it-works.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium">How It Works</a>
+                    <a href="/blog.html" class="block px-3 py-2 text-blue-600 font-semibold">Blog</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20">
+        <!-- Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br from-primary-100 to-primary-200 opacity-50 blur-3xl animate-pulse-slow"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-accent-100 to-accent-200 opacity-50 blur-3xl animate-pulse-slow"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6 animate-fade-in">
+                    Church NFC Giving 
+                    <span class="bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500 bg-clip-text text-transparent">
+                        Insights
+                    </span>
+                </h1>
+                <p class="text-xl lg:text-2xl text-gray-600 mb-8 font-medium animate-slide-up">
+                    Expert analysis, platform comparisons, and the latest trends in digital church giving technology
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-500 animate-fade-in">
+                    <div class="flex items-center space-x-2 bg-white/70 px-4 py-2 rounded-full">
+                        <i class="fas fa-clock text-accent-500"></i>
+                        <span>Updated Weekly</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-white/70 px-4 py-2 rounded-full">
+                        <i class="fas fa-user-check text-accent-500"></i>
+                        <span>Expert Analysis</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-white/70 px-4 py-2 rounded-full">
+                        <i class="fas fa-chart-line text-accent-500"></i>
+                        <span>Data-Driven</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post Banner -->
+    <section class="container mx-auto px-6 mb-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-gradient-to-r from-primary-600 to-accent-600 rounded-3xl p-8 text-white relative overflow-hidden">
+                <div class="absolute inset-0 bg-black/10"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm font-semibold">Featured</span>
+                        <span class="ml-3 text-sm opacity-90">
+                            <i class="fas fa-calendar-alt mr-1"></i>
+                            Latest Comparison
+                        </span>
+                    </div>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+                        Complete Guide: Top NFC Giving Platforms Compared
+                    </h2>
+                    <p class="text-lg opacity-90 mb-6">
+                        We've analyzed every major church NFC giving platform to help you make the best choice for your congregation.
+                    </p>
+                    <a href="/tap-to-give-platform-comparison.html" class="inline-flex items-center bg-white text-primary-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
+                        Read Full Comparison
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="container mx-auto px-6 pb-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="text-3xl lg:text-4xl font-black text-gray-900">
+                    Latest Articles
+                </h2>
+                <div class="flex items-center space-x-4">
+                    <select class="bg-white border border-gray-200 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500" onchange="filterPosts(this.value)">
+                        <option value="all">All Categories</option>
+                        <option value="comparison">Platform Comparisons</option>
+                        <option value="insights">Industry Insights</option>
+                        <option value="tips">Best Practices</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8" id="blog-posts">
+                <!-- SecureGive Comparison -->
+                <article class="blog-card bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/20 overflow-hidden" data-category="comparison">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">Comparison</span>
+                            <span class="ml-3 text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>
+                                Jan 2025
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
+                            <a href="/securegive-tap-vs-tap-giving.html">SecureGive Tap vs Tap.Giving: Complete NFC Comparison</a>
+                        </h3>
+                        <p class="text-gray-600 mb-6 line-clamp-3">
+                            Compare SecureGive Tap vs Tap.Giving for church NFC giving. See cost differences, setup complexity, and why Tap.Giving offers better value with no monthly fees.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Jan 15, 2025
+                                </span>
+                            </div>
+                            <a href="/securegive-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Subsplash Comparison -->
+                <article class="blog-card bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/20 overflow-hidden" data-category="comparison">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Comparison</span>
+                            <span class="ml-3 text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>
+                                Jan 2025
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
+                            <a href="/subsplash-tap-vs-tap-giving.html">Subsplash Tap vs Tap.Giving: 2025 Church NFC Comparison</a>
+                        </h3>
+                        <p class="text-gray-600 mb-6 line-clamp-3">
+                            Subsplash Tap vs Tap.Giving comparison: See why Tap.Giving's transparent $3.50-$5.00 pricing beats Subsplash's quote-based model.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Jan 12, 2025
+                                </span>
+                            </div>
+                            <a href="/subsplash-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tithely Comparison -->
+                <article class="blog-card bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/20 overflow-hidden" data-category="comparison">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Comparison</span>
+                            <span class="ml-3 text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>
+                                Dec 2024
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
+                            <a href="/tithely-vs-tap-giving.html">Tithe.ly vs Tap.Giving: Which NFC Solution Wins?</a>
+                        </h3>
+                        <p class="text-gray-600 mb-6 line-clamp-3">
+                            Compare Tithe.ly's comprehensive platform with Tap.Giving's specialized NFC approach. See which solution fits your church's needs and budget.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Jan 8, 2025
+                                </span>
+                            </div>
+                            <a href="/tithely-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- TapTag Comparison -->
+                <article class="blog-card bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/20 overflow-hidden" data-category="comparison">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">Comparison</span>
+                            <span class="ml-3 text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>
+                                Dec 2024
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
+                            <a href="/tap-tag-vs-tap-giving.html">TapTag vs Tap.Giving: NFC Church Giving Face-Off</a>
+                        </h3>
+                        <p class="text-gray-600 mb-6 line-clamp-3">
+                            TapTag vs Tap.Giving comparison for church NFC giving. Compare features, pricing, and setup complexity to find your ideal solution.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Jan 5, 2025
+                                </span>
+                            </div>
+                            <a href="/tap-tag-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Overflow Comparison -->
+                <article class="blog-card bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/20 overflow-hidden" data-category="comparison">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">Comparison</span>
+                            <span class="ml-3 text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>
+                                Dec 2024
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
+                            <a href="/overflow-tap-vs-tap-giving.html">Overflow Tap vs Tap.Giving: Complete Feature Analysis</a>
+                        </h3>
+                        <p class="text-gray-600 mb-6 line-clamp-3">
+                            Compare Overflow's comprehensive giving platform with Tap.Giving's specialized NFC focus. See pricing, features, and integration options.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Jan 3, 2025
+                                </span>
+                            </div>
+                            <a href="/overflow-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
+                                Read More →
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Coming Soon Placeholder -->
+                <article class="blog-card bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl shadow-xl border-2 border-dashed border-gray-300 overflow-hidden" data-category="insights">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm font-semibold">Coming Soon</span>
+                            <span class="ml-3 text-sm text-gray-500">
+                                <i class="fas fa-calendar-alt mr-1"></i>
+                                Jan 2025
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-700 mb-4">
+                            2025 Church Giving Trends Report
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            Our comprehensive analysis of how digital giving is transforming church donations in 2025. Data from over 500 churches nationwide.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-1"></i>
+                                    Coming Soon
+                                </span>
+                            </div>
+                            <button class="text-gray-500 font-semibold text-sm cursor-not-allowed">
+                                Publishing Soon
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-16">
+                <button class="bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <i class="fas fa-plus mr-2"></i>
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="bg-gradient-to-r from-primary-600 to-accent-600 py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl lg:text-4xl font-black text-white mb-4">
+                    Stay Updated with Church Tech Insights
+                </h2>
+                <p class="text-xl text-white/90 mb-8">
+                    Get the latest NFC giving trends, platform comparisons, and expert analysis delivered to your inbox.
+                </p>
+                <div class="flex flex-col sm:flex-row max-w-lg mx-auto">
+                    <input type="email" placeholder="Enter your email address" class="flex-1 px-6 py-4 text-gray-900 bg-white rounded-l-xl sm:rounded-r-none rounded-r-xl focus:outline-none focus:ring-2 focus:ring-white/20">
+                    <button class="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-r-xl sm:rounded-l-none rounded-l-xl font-semibold transition-colors duration-300">
+                        Subscribe
+                    </button>
+                </div>
+                <p class="text-sm text-white/70 mt-4">
+                    No spam. Unsubscribe anytime. 2-3 emails per month.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="mb-6">
+                    <img src="assets/Logo-Crop-Large-1024x295.png" alt="Tap.Giving Logo" class="h-10 w-auto mx-auto filter brightness-0 invert">
+                </div>
+                <p class="text-gray-400 mb-8 text-lg font-medium">
+                    Transforming church giving with simple tap technology
+                </p>
+
+                <div class="mb-8">
+                    <a href="/contact.html" class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        <i class="fas fa-envelope mr-3"></i>
+                        Contact Us
+                    </a>
+                </div>
+
+                <div class="border-t border-gray-800 pt-8">
+                    <div class="mb-4 space-x-4">
+                        <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+                        <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+                    </div>
+                    <p class="text-gray-500 text-sm font-medium">
+                        © 2025 Tap.Giving. All rights reserved. | Increasing church giving through innovative technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dynamic Features Script -->
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const isHidden = mobileMenu.style.display === 'none' || !mobileMenu.style.display;
+            
+            if (isHidden) {
+                mobileMenu.style.display = 'block';
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                mobileMenu.style.display = 'none';
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
+
+        // Filter blog posts
+        function filterPosts(category) {
+            const posts = document.querySelectorAll('#blog-posts article');
+            
+            posts.forEach(post => {
+                if (category === 'all' || post.getAttribute('data-category') === category) {
+                    post.style.display = 'block';
+                    post.style.opacity = '0';
+                    setTimeout(() => {
+                        post.style.opacity = '1';
+                    }, 100);
+                } else {
+                    post.style.opacity = '0';
+                    setTimeout(() => {
+                        post.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+
+        // Add scroll animations
+        function addScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.blog-card').forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Initialize dynamic features
+        document.addEventListener('DOMContentLoaded', function() {
+            addScrollAnimations();
+        });
+    </script>
+</body>
+</html>
