@@ -13,7 +13,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon.png" />
-    <link rel="apple-touch-icon" href="assets/Logo-Crop-Large-1024x295.png" />
+    <link rel="apple-touch-icon" href="assets/favicon.png" />
 
     <!-- SEO Meta Tags -->
     <meta
@@ -33,7 +33,7 @@
     <!-- Open Graph Meta Tags -->
     <meta
       property="og:title"
-      content="Tap.Giving - Increase Church Giving by Over 300% with NFC Technology"
+      content="Tap.Giving - Increase Church Giving with NFC Technology"
     />
     <meta
       property="og:description"
@@ -207,7 +207,15 @@
         "@type": "Organization",
         "name": "Tap.Giving",
         "url": "https://tap.giving/",
-        "logo": "https://tap.giving/assets/Logo-Crop-Large-1024x295.png",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://tap.giving/assets/favicon.png",
+          "url": "https://tap.giving/assets/favicon.png",
+          "contentUrl": "https://tap.giving/assets/favicon.png",
+          "width": 512,
+          "height": 512,
+          "caption": "Tap.Giving Logo"
+        },
         "description": "The most affordable NFC tap-to-give solution for churches. No setup fees, no monthly costs. Prices as low as $3.50 per plate.",
         "contactPoint": {
           "@type": "ContactPoint",
@@ -443,7 +451,7 @@
     /></noscript>
 
     <!-- Preload critical images -->
-    <link rel="preload" as="image" href="assets/Logo-Crop-Large-1024x295.png" />
+    <link rel="preload" as="image" href="assets/favicon.png" />
     <link rel="preload" as="image" href="assets/plate.png" />
     <link rel="preload" as="image" href="assets/phone.png" />
 
@@ -478,9 +486,21 @@
           <!-- Desktop Navigation -->
           <nav class="hidden md:flex space-x-8">
             <a href="/" class="text-blue-600 font-semibold">Home</a>
-            <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
-            <a href="/how-it-works.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">How It Works</a>
-            <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
+            <a
+              href="/pricing.html"
+              class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium"
+              >Pricing</a
+            >
+            <a
+              href="/how-it-works.html"
+              class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium"
+              >How It Works</a
+            >
+            <a
+              href="/blog.html"
+              class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium"
+              >Blog</a
+            >
           </nav>
 
           <!-- Right Side Actions -->
@@ -503,7 +523,13 @@
             </button>
 
             <!-- Mobile Menu Button -->
-            <button type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu()">
+            <button
+              type="button"
+              class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              onclick="toggleMobileMenu()"
+            >
               <span class="sr-only">Open main menu</span>
               <i class="fas fa-bars text-xl" id="menu-icon"></i>
             </button>
@@ -511,12 +537,28 @@
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div class="md:hidden" id="mobile-menu" style="display: none;">
-          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-            <a href="/" class="block px-3 py-2 text-blue-600 font-semibold">Home</a>
-            <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
-            <a href="/how-it-works.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">How It Works</a>
-            <a href="/blog.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
+        <div class="md:hidden" id="mobile-menu" style="display: none">
+          <div
+            class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200"
+          >
+            <a href="/" class="block px-3 py-2 text-blue-600 font-semibold"
+              >Home</a
+            >
+            <a
+              href="/pricing.html"
+              class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300"
+              >Pricing</a
+            >
+            <a
+              href="/how-it-works.html"
+              class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300"
+              >How It Works</a
+            >
+            <a
+              href="/blog.html"
+              class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300"
+              >Blog</a
+            >
           </div>
         </div>
       </div>
@@ -871,9 +913,26 @@
         <div class="mb-16">
           <div class="relative w-full rounded-2xl overflow-hidden">
             <script src="https://fast.wistia.com/player.js" async></script>
-            <script src="https://fast.wistia.com/embed/3175yfg5hu.js" async type="module"></script>
-            <style>wistia-player[media-id='3175yfg5hu']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/3175yfg5hu/swatch'); display: block; filter: blur(5px); padding-top:56.25%; border-radius: 1rem; }</style>
-            <wistia-player media-id="3175yfg5hu" aspect="1.7777777777777777" style="border-radius: 1rem;"></wistia-player>
+            <script
+              src="https://fast.wistia.com/embed/3175yfg5hu.js"
+              async
+              type="module"
+            ></script>
+            <style>
+              wistia-player[media-id="3175yfg5hu"]:not(:defined) {
+                background: center / contain no-repeat
+                  url("https://fast.wistia.com/embed/medias/3175yfg5hu/swatch");
+                display: block;
+                filter: blur(5px);
+                padding-top: 56.25%;
+                border-radius: 1rem;
+              }
+            </style>
+            <wistia-player
+              media-id="3175yfg5hu"
+              aspect="1.7777777777777777"
+              style="border-radius: 1rem"
+            ></wistia-player>
           </div>
         </div>
 
@@ -1091,8 +1150,7 @@
                     for="pastorName"
                     class="block text-sm font-bold text-gray-800 mb-3"
                   >
-                    <i class="fas fa-user mr-2 text-primary-600"></i
-                    >Your Name *
+                    <i class="fas fa-user mr-2 text-primary-600"></i>Your Name *
                   </label>
                   <input
                     type="text"
@@ -1281,8 +1339,6 @@
             </a>
           </div>
 
-
-
           <!-- Sources Section -->
           <div class="mb-8">
             <h3
@@ -1294,10 +1350,12 @@
               class="text-gray-500 text-xs leading-relaxed max-w-4xl mx-auto"
             >
               <p class="mb-2">
-                • Digital giving statistics: Ministry Brands 2024 State of Church Giving Report
+                • Digital giving statistics: Ministry Brands 2024 State of
+                Church Giving Report
               </p>
               <p class="mb-2">
-                • Contactless payment trends: NFC Forum Contactless Trends and User Adoption Study 2024
+                • Contactless payment trends: NFC Forum Contactless Trends and
+                User Adoption Study 2024
               </p>
               <p class="mb-2">
                 • Church giving research: Digital Giving Trends Report 2025
@@ -1349,37 +1407,37 @@
 
     <!-- Mobile Menu Toggle Script -->
     <script>
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const isHidden = mobileMenu.style.display === 'none' || !mobileMenu.style.display;
-            
-            if (isHidden) {
-                mobileMenu.style.display = 'block';
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-times');
-            } else {
-                mobileMenu.style.display = 'none';
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
-            }
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const isHidden =
+          mobileMenu.style.display === "none" || !mobileMenu.style.display;
+
+        if (isHidden) {
+          mobileMenu.style.display = "block";
+          menuIcon.classList.remove("fa-bars");
+          menuIcon.classList.add("fa-times");
+        } else {
+          mobileMenu.style.display = "none";
+          menuIcon.classList.remove("fa-times");
+          menuIcon.classList.add("fa-bars");
         }
+      }
 
-        // Close mobile menu when clicking on a link
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    const menuIcon = document.getElementById('menu-icon');
-                    mobileMenu.style.display = 'none';
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
-                });
-            });
+      // Close mobile menu when clicking on a link
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+        mobileMenuLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            const mobileMenu = document.getElementById("mobile-menu");
+            const menuIcon = document.getElementById("menu-icon");
+            mobileMenu.style.display = "none";
+            menuIcon.classList.remove("fa-times");
+            menuIcon.classList.add("fa-bars");
+          });
         });
+      });
     </script>
-
 
     <script src="script.js"></script>
   </body>
