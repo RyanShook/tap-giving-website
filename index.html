@@ -470,63 +470,93 @@
     <!-- ======================================== -->
     <!-- CONSISTENT HEADER ACROSS ALL PAGES      -->
     <!-- ======================================== -->
-    <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center h-16">
-                <!-- Left: Logo -->
-                <div class="flex-shrink-0">
-                    <a href="/" class="flex items-center">
-                        <img
-                            src="assets/Logo-Crop-Large-1024x295.png"
-                            alt="Tap.Giving - Church NFC Giving Solution Logo"
-                            class="h-8 w-auto"
-                            width="1024"
-                            height="295"
-                            loading="eager"
-                        />
-                    </a>
-                </div>
+    <header
+      class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center h-16">
+          <!-- Left: Logo -->
+          <div class="flex-shrink-0">
+            <a href="/" class="flex items-center">
+              <img
+                src="assets/Logo-Crop-Large-1024x295.png"
+                alt="Tap.Giving - Church NFC Giving Solution Logo"
+                class="h-8 w-auto"
+                width="1024"
+                height="295"
+                loading="eager"
+              />
+            </a>
+          </div>
 
-                <!-- Center: Desktop Navigation -->
-                <nav class="hidden md:flex flex-1 justify-center space-x-8">
-                    <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
-                    <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
-                    <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
-                </nav>
+          <!-- Center: Desktop Navigation -->
+          <nav class="hidden md:flex flex-1 justify-center space-x-8">
+            <a
+              href="/pricing.html"
+              class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium"
+              >Pricing</a
+            >
+            <a
+              href="/blog.html"
+              class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium"
+              >Blog</a
+            >
+            <a
+              href="/contact.html"
+              class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium"
+              >Contact</a
+            >
+          </nav>
 
-                <!-- Right: Actions -->
-                <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
-                    <!-- Quick Action Button - Always Visible -->
-                    <button
-                        onclick="scrollToForm()"
-                        class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap"
-                    >
-                        Order Now
-                    </button>
+          <!-- Right: Actions -->
+          <div
+            class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0"
+          >
+            <!-- Quick Action Button - Always Visible -->
+            <button
+              onclick="scrollToForm()"
+              class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap"
+            >
+              Order Now
+            </button>
 
-                    <!-- Mobile Menu Button -->
-                    <button
-                        type="button"
-                        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-                        aria-controls="mobile-menu"
-                        aria-expanded="false"
-                        onclick="toggleMobileMenu()"
-                    >
-                        <span class="sr-only">Open main menu</span>
-                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile Navigation Menu -->
-            <div class="md:hidden" id="mobile-menu" style="display: none">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-                    <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
-                    <a href="/blog.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
-                    <a href="/contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
-                </div>
-            </div>
+            <!-- Mobile Menu Button -->
+            <button
+              type="button"
+              class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              onclick="toggleMobileMenu()"
+            >
+              <span class="sr-only">Open main menu</span>
+              <i class="fas fa-bars text-xl" id="menu-icon"></i>
+            </button>
+          </div>
         </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="md:hidden" id="mobile-menu" style="display: none">
+          <div
+            class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200"
+          >
+            <a
+              href="/pricing.html"
+              class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300"
+              >Pricing</a
+            >
+            <a
+              href="/blog.html"
+              class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300"
+              >Blog</a
+            >
+            <a
+              href="/contact.html"
+              class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- =================================================================== -->
@@ -849,10 +879,9 @@
                 Worried About Security?
               </h3>
               <p class="text-gray-600 leading-relaxed font-medium">
-                Concerned about
-                <strong class="text-red-600">data protection</strong>,
-                transaction security, and keeping sensitive member information
-                safe.
+                Our industry standard NTAG NFC chips are
+                <strong class="text-red-600">locked</strong> to the website or
+                platform of your choice and can only be adjusted by you.
               </p>
             </div>
 
@@ -865,12 +894,12 @@
                 <i class="fas fa-question-circle text-red-600 text-2xl"></i>
               </div>
               <h3 class="text-2xl font-bold text-gray-900 mb-6">
-                Wondering if Digital NFC Giving Actually Works?
+                Complicated solutions without results?
               </h3>
               <p class="text-gray-600 leading-relaxed font-medium">
-                Unsure if the investment will actually
-                <strong class="text-red-600">increase giving</strong> or just
-                add complexity to your services.
+                Our tap plates are compatible with every model of smartphone
+                <strong class="text-red-600">and don't require</strong> any new
+                software or apps.
               </p>
             </div>
           </div>
