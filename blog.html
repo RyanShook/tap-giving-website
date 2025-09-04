@@ -65,8 +65,6 @@
             },
             animation: {
               'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'fade-in': 'fadeIn 0.6s ease-out forwards',
-              'slide-up': 'slideUp 0.8s ease-out forwards',
             }
           }
         }
@@ -74,116 +72,73 @@
     </script>
 
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .blog-card {
-            transition: all 0.3s ease;
-        }
-        .blog-card:hover {
-            transform: translateY(-8px);
-        }
     </style>
 </head>
 <body class="font-inter antialiased bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-    <!-- Header -->
+    <!-- ======================================== -->
+    <!-- CONSISTENT HEADER ACROSS ALL PAGES      -->
+    <!-- ======================================== -->
     <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="/" class="flex-shrink-0">
-                        <picture>
-                            <source srcset="assets/Logo-Crop-Large-1024x295.webp" type="image/webp">
-                            <img src="assets/Logo-Crop-Large-1024x295.png" alt="Tap.Giving Logo" class="h-8 w-auto" loading="eager">
-                        </picture>
+            <div class="flex items-center h-16">
+                <!-- Left: Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <img
+                            src="assets/Logo-Crop-Large-1024x295.png"
+                            alt="Tap.Giving - Church NFC Giving Solution Logo"
+                            class="h-8 w-auto"
+                            width="1024"
+                            height="295"
+                            loading="eager"
+                        />
                     </a>
                 </div>
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="/" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Home</a>
+                <!-- Center: Desktop Navigation -->
+                <nav class="hidden md:flex flex-1 justify-center space-x-8">
                     <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
-                    <a href="/how-it-works.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">How It Works</a>
-                    <a href="/blog.html" class="text-blue-600 font-semibold">Blog</a>
+                    <a href="/blog.html" class="text-blue-600 font-semibold transition duration-300">Blog</a>
+                    <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
                 </nav>
 
-                <!-- Contact Info & CTA -->
-                <div class="flex items-center space-x-6">
-                    <!-- Phone Number - Desktop Only -->
-                    <a href="tel:+18325108788" class="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors duration-200">
-                        <i class="fas fa-mobile-alt text-sm"></i>
-                        <span class="text-sm font-medium">(832) 510-8788</span>
-                    </a>
-                    
-                    <!-- Quick Action Button -->
-                    <button onclick="window.location.href='/#contact'" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                <!-- Right: Actions -->
+                <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
+                    <!-- Quick Action Button - Always Visible -->
+                    <button
+                        onclick="scrollToForm()"
+                        class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap"
+                    >
                         Order Now
                     </button>
 
                     <!-- Mobile Menu Button -->
-                    <button type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100" onclick="toggleMobileMenu()">
+                    <button
+                        type="button"
+                        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                        onclick="toggleMobileMenu()"
+                    >
+                        <span class="sr-only">Open main menu</span>
                         <i class="fas fa-bars text-xl" id="menu-icon"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Mobile Menu -->
-            <div class="md:hidden" id="mobile-menu" style="display: none;">
+            <!-- Mobile Navigation Menu -->
+            <div class="md:hidden" id="mobile-menu" style="display: none">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
-                    <a href="/" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium">Home</a>
-                    <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium">Pricing</a>
-                    <a href="/how-it-works.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium">How It Works</a>
-                    <a href="/blog.html" class="block px-3 py-2 text-blue-600 font-semibold">Blog</a>
+                    <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+                    <a href="/blog.html" class="block px-3 py-2 text-blue-600 font-semibold transition duration-300">Blog</a>
+                    <a href="/contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden py-20">
-        <!-- Background Elements -->
-        <div class="absolute inset-0">
-            <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br from-primary-100 to-primary-200 opacity-50 blur-3xl animate-pulse-slow"></div>
-            <div class="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-accent-100 to-accent-200 opacity-50 blur-3xl animate-pulse-slow"></div>
-        </div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6 animate-fade-in">
-                    Church NFC Giving 
-                    <span class="bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500 bg-clip-text text-transparent">
-                        Insights
-                    </span>
-                </h1>
-                <p class="text-xl lg:text-2xl text-gray-600 mb-8 font-medium animate-slide-up">
-                    Expert analysis, platform comparisons, and the latest trends in digital church giving technology
-                </p>
-                <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-500 animate-fade-in">
-                    <div class="flex items-center space-x-2 bg-white/70 px-4 py-2 rounded-full">
-                        <i class="fas fa-clock text-accent-500"></i>
-                        <span>Updated Weekly</span>
-                    </div>
-                    <div class="flex items-center space-x-2 bg-white/70 px-4 py-2 rounded-full">
-                        <i class="fas fa-user-check text-accent-500"></i>
-                        <span>Expert Analysis</span>
-                    </div>
-                    <div class="flex items-center space-x-2 bg-white/70 px-4 py-2 rounded-full">
-                        <i class="fas fa-chart-line text-accent-500"></i>
-                        <span>Data-Driven</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Featured Post Banner -->
-    <section class="container mx-auto px-6 mb-16">
+    <section class="container mx-auto px-6 py-20">
         <div class="max-w-6xl mx-auto">
             <div class="bg-gradient-to-r from-primary-600 to-accent-600 rounded-3xl p-8 text-white relative overflow-hidden">
                 <div class="absolute inset-0 bg-black/10"></div>
@@ -235,7 +190,7 @@
                             <span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-semibold">Comparison</span>
                             <span class="ml-3 text-sm text-gray-500">
                                 <i class="fas fa-calendar-alt mr-1"></i>
-                                Jan 2025
+                                Feb 2024
                             </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
@@ -248,7 +203,7 @@
                             <div class="flex items-center space-x-4">
                                 <span class="text-sm text-gray-500">
                                     <i class="fas fa-calendar mr-1"></i>
-                                    Jan 15, 2025
+                                    Feb 15, 2024
                                 </span>
                             </div>
                             <a href="/securegive-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
@@ -265,7 +220,7 @@
                             <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Comparison</span>
                             <span class="ml-3 text-sm text-gray-500">
                                 <i class="fas fa-calendar-alt mr-1"></i>
-                                Jan 2025
+                                Mar 2024
                             </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
@@ -278,7 +233,7 @@
                             <div class="flex items-center space-x-4">
                                 <span class="text-sm text-gray-500">
                                     <i class="fas fa-calendar mr-1"></i>
-                                    Jan 12, 2025
+                                    Mar 12, 2024
                                 </span>
                             </div>
                             <a href="/subsplash-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
@@ -295,7 +250,7 @@
                             <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Comparison</span>
                             <span class="ml-3 text-sm text-gray-500">
                                 <i class="fas fa-calendar-alt mr-1"></i>
-                                Dec 2024
+                                Apr 2024
                             </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
@@ -308,7 +263,7 @@
                             <div class="flex items-center space-x-4">
                                 <span class="text-sm text-gray-500">
                                     <i class="fas fa-calendar mr-1"></i>
-                                    Jan 8, 2025
+                                    Apr 22, 2024
                                 </span>
                             </div>
                             <a href="/tithely-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
@@ -325,7 +280,7 @@
                             <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">Comparison</span>
                             <span class="ml-3 text-sm text-gray-500">
                                 <i class="fas fa-calendar-alt mr-1"></i>
-                                Dec 2024
+                                May 2024
                             </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
@@ -338,7 +293,7 @@
                             <div class="flex items-center space-x-4">
                                 <span class="text-sm text-gray-500">
                                     <i class="fas fa-calendar mr-1"></i>
-                                    Jan 5, 2025
+                                    May 18, 2024
                                 </span>
                             </div>
                             <a href="/tap-tag-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
@@ -355,7 +310,7 @@
                             <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">Comparison</span>
                             <span class="ml-3 text-sm text-gray-500">
                                 <i class="fas fa-calendar-alt mr-1"></i>
-                                Dec 2024
+                                Jun 2024
                             </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
@@ -368,7 +323,7 @@
                             <div class="flex items-center space-x-4">
                                 <span class="text-sm text-gray-500">
                                     <i class="fas fa-calendar mr-1"></i>
-                                    Jan 3, 2025
+                                    Jun 25, 2024
                                 </span>
                             </div>
                             <a href="/overflow-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
@@ -385,7 +340,7 @@
                             <span class="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm font-semibold">Coming Soon</span>
                             <span class="ml-3 text-sm text-gray-500">
                                 <i class="fas fa-calendar-alt mr-1"></i>
-                                Jan 2025
+                                Aug 2024
                             </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-700 mb-4">
@@ -409,13 +364,6 @@
                 </article>
             </div>
 
-            <!-- Load More Button -->
-            <div class="text-center mt-16">
-                <button class="bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                    <i class="fas fa-plus mr-2"></i>
-                    Load More Articles
-                </button>
-            </div>
         </div>
     </section>
 
@@ -429,12 +377,14 @@
                 <p class="text-xl text-white/90 mb-8">
                     Get the latest NFC giving trends, platform comparisons, and expert analysis delivered to your inbox.
                 </p>
-                <div class="flex flex-col sm:flex-row max-w-lg mx-auto">
-                    <input type="email" placeholder="Enter your email address" class="flex-1 px-6 py-4 text-gray-900 bg-white rounded-l-xl sm:rounded-r-none rounded-r-xl focus:outline-none focus:ring-2 focus:ring-white/20">
-                    <button class="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-r-xl sm:rounded-l-none rounded-l-xl font-semibold transition-colors duration-300">
+                <form action="https://formspree.io/f/xldekpay" method="POST" class="flex flex-col sm:flex-row max-w-lg mx-auto">
+                    <input type="email" name="email" placeholder="Enter your email address" required class="flex-1 px-6 py-4 text-gray-900 bg-white rounded-l-xl sm:rounded-r-none rounded-r-xl focus:outline-none focus:ring-2 focus:ring-white/20">
+                    <input type="hidden" name="form_type" value="newsletter_signup">
+                    <input type="hidden" name="source" value="blog_page">
+                    <button type="submit" class="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-r-xl sm:rounded-l-none rounded-l-xl font-semibold transition-colors duration-300">
                         Subscribe
                     </button>
-                </div>
+                </form>
                 <p class="text-sm text-white/70 mt-4">
                     No spam. Unsubscribe anytime. 2-3 emails per month.
                 </p>
@@ -516,25 +466,6 @@
         }
 
 
-        // Add scroll animations
-        function addScrollAnimations() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
-                    }
-                });
-            });
-
-            document.querySelectorAll('.blog-card').forEach(card => {
-                observer.observe(card);
-            });
-        }
-
-        // Initialize dynamic features
-        document.addEventListener('DOMContentLoaded', function() {
-            addScrollAnimations();
-        });
     </script>
 </body>
 </html>
