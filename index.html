@@ -467,112 +467,66 @@
     <!-- HEADER SECTION: Sticky navigation with logo and primary CTA        -->
     <!-- Purpose: Immediate access to contact and quote request              -->
     <!-- Key elements: Logo, phone number, Get Quote button                 -->
-    <!-- =================================================================== -->
-    <!-- Header -->
-    <header
-      class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50"
-    >
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <!-- Logo -->
-          <div class="flex-shrink-0">
-            <a href="/" class="flex items-center">
-              <picture>
-                <source
-                  srcset="assets/Logo-Crop-Large-1024x295.webp"
-                  type="image/webp"
-                />
-                <img
-                  src="assets/Logo-Crop-Large-1024x295.png"
-                  alt="Tap.Giving - Church NFC Giving Solution Logo"
-                  class="h-8 w-auto"
-                  width="1024"
-                  height="295"
-                  loading="eager"
-                />
-              </picture>
-            </a>
-          </div>
+    <!-- ======================================== -->
+    <!-- CONSISTENT HEADER ACROSS ALL PAGES      -->
+    <!-- ======================================== -->
+    <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-16">
+                <!-- Left: Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <img
+                            src="assets/Logo-Crop-Large-1024x295.png"
+                            alt="Tap.Giving - Church NFC Giving Solution Logo"
+                            class="h-8 w-auto"
+                            width="1024"
+                            height="295"
+                            loading="eager"
+                        />
+                    </a>
+                </div>
 
-          <!-- Desktop Navigation -->
-          <nav class="hidden md:flex space-x-8">
-            <a href="/" class="text-blue-600 font-semibold">Home</a>
-            <a
-              href="/pricing.html"
-              class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium"
-              >Pricing</a
-            >
-            <a
-              href="/how-it-works.html"
-              class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium"
-              >How It Works</a
-            >
-            <a
-              href="/blog.html"
-              class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium"
-              >Blog</a
-            >
-          </nav>
+                <!-- Center: Desktop Navigation -->
+                <nav class="hidden md:flex flex-1 justify-center space-x-8">
+                    <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+                    <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
+                    <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+                </nav>
 
-          <!-- Right Side Actions -->
-          <div class="flex items-center space-x-4">
-            <!-- Phone Number - Desktop Only -->
-            <a
-              href="tel:+18325108788"
-              class="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition duration-300 font-medium"
-            >
-              <i class="fas fa-mobile-alt text-sm"></i>
-              <span class="text-sm font-medium">(832) 510-8788</span>
-            </a>
+                <!-- Right: Actions -->
+                <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
+                    <!-- Quick Action Button - Always Visible -->
+                    <button
+                        onclick="scrollToForm()"
+                        class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap"
+                    >
+                        Order Now
+                    </button>
 
-            <!-- Quick Action Button - Always Visible -->
-            <button
-              onclick="scrollToForm()"
-              class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-            >
-              Order Now
-            </button>
+                    <!-- Mobile Menu Button -->
+                    <button
+                        type="button"
+                        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                        onclick="toggleMobileMenu()"
+                    >
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
 
-            <!-- Mobile Menu Button -->
-            <button
-              type="button"
-              class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-              onclick="toggleMobileMenu()"
-            >
-              <span class="sr-only">Open main menu</span>
-              <i class="fas fa-bars text-xl" id="menu-icon"></i>
-            </button>
-          </div>
+            <!-- Mobile Navigation Menu -->
+            <div class="md:hidden" id="mobile-menu" style="display: none">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+                    <a href="/blog.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
+                    <a href="/contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+                </div>
+            </div>
         </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div class="md:hidden" id="mobile-menu" style="display: none">
-          <div
-            class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200"
-          >
-            <a href="/" class="block px-3 py-2 text-blue-600 font-semibold"
-              >Home</a
-            >
-            <a
-              href="/pricing.html"
-              class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300"
-              >Pricing</a
-            >
-            <a
-              href="/how-it-works.html"
-              class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300"
-              >How It Works</a
-            >
-            <a
-              href="/blog.html"
-              class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300"
-              >Blog</a
-            >
-          </div>
-        </div>
-      </div>
     </header>
 
     <!-- =================================================================== -->
@@ -583,7 +537,7 @@
     <!-- =================================================================== -->
     <!-- Hero Section -->
     <section
-      class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-20 lg:py-16"
+      class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-16 lg:py-12"
     >
       <!-- Background Elements -->
       <div class="absolute inset-0 overflow-hidden">
@@ -850,7 +804,7 @@
     <!-- Conversion strategy: Prepare for solution presentation             -->
     <!-- =================================================================== -->
     <!-- Problem/Agitation Section -->
-    <section class="bg-gradient-to-br from-slate-50 to-gray-100 py-20">
+    <section class="bg-gradient-to-br from-slate-50 to-gray-100 py-16">
       <div class="container mx-auto px-6">
         <div class="max-w-6xl mx-auto text-center">
           <h2
@@ -876,7 +830,7 @@
                 Expensive Solutions with Hidden Fees?
               </h3>
               <p class="text-gray-600 leading-relaxed font-medium">
-                Pur pricing is
+                Our pricing is
                 <strong class="text-red-600">simple</strong> and
                 <strong class="text-red-600">transparent</strong>. Pay once for
                 your NFC tap plates with no setup fees or monthly costs.
@@ -931,9 +885,22 @@
     <!-- Conversion element: Reduce friction and objections                 -->
     <!-- =================================================================== -->
     <!-- How It Works -->
-    <section class="bg-gradient-to-br from-slate-50 to-white py-20">
+    <section class="bg-gradient-to-br from-slate-50 to-white pt-20 pb-12">
       <div class="container mx-auto px-6">
-        <!-- PROCESS DEMONSTRATION: Video demo comes first -->
+        <div class="max-w-6xl mx-auto text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-8">
+            How It Works
+            <span
+              class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent"
+              >(3 Simple Steps)</span
+            >
+          </h2>
+          <p class="text-xl text-gray-600 font-medium">
+            From order to measurable results in weeks
+          </p>
+        </div>
+
+        <!-- PROCESS DEMONSTRATION: Video demo comes after heading -->
         <div class="mb-16">
           <div class="relative w-full rounded-2xl overflow-hidden">
             <script src="https://fast.wistia.com/player.js" async></script>
@@ -960,20 +927,7 @@
           </div>
         </div>
 
-        <div class="max-w-6xl mx-auto text-center mb-16">
-          <h2 class="text-4xl lg:text-5xl font-black text-gray-900 mb-8">
-            How It Works
-            <span
-              class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent"
-              >(3 Simple Steps)</span
-            >
-          </h2>
-          <p class="text-xl text-gray-600 font-medium">
-            From order to measurable results in weeks
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-12 mb-16">
+        <div class="grid md:grid-cols-3 gap-12 mb-8">
           <div class="text-center">
             <div
               class="w-24 h-24 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-xl"
@@ -1025,7 +979,7 @@
     <!-- Pricing Section -->
     <section
       id="pricing"
-      class="bg-gradient-to-br from-slate-50 to-white py-20"
+      class="bg-gradient-to-br from-slate-50 to-gray-100 py-16"
     >
       <div class="container mx-auto px-6">
         <div class="max-w-6xl mx-auto text-center mb-16">
@@ -1038,15 +992,6 @@
               >Volume Discounts</span
             >
           </h2>
-          <p class="text-xl text-gray-600 mb-4 font-medium">
-            No hidden fees. Free shipping.
-          </p>
-          <div
-            class="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg animate-pulse"
-          >
-            <i class="fas fa-clock mr-3"></i>
-            Limited time pricing - rates increasing soon
-          </div>
         </div>
 
         <!-- PRICING TIERS: Visual representation of volume discounts -->
@@ -1102,6 +1047,18 @@
           </div>
         </div>
 
+        <div class="text-center mb-8">
+          <p class="text-xl text-gray-600 mb-4 font-medium">
+            No hidden fees. Free shipping.
+          </p>
+          <div
+            class="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg animate-pulse"
+          >
+            <i class="fas fa-clock mr-3"></i>
+            Limited time pricing - rates increasing soon
+          </div>
+        </div>
+
         <div class="text-center">
           <button
             onclick="scrollToForm()"
@@ -1126,7 +1083,7 @@
     <!-- Contact Form Section -->
     <section
       id="contact"
-      class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-primary-800 py-20"
+      class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-primary-800 py-16"
     >
       <!-- Background Elements -->
       <div class="absolute inset-0 overflow-hidden">

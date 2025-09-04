@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order NFC Tap-to-Give Plates - Tap.Giving</title>
+    <meta name="description" content="Order custom NFC tap-to-give plates for your church. Transparent pricing from $3.50-$5.00 per plate. No setup fees, no monthly costs, free shipping included.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tap.giving/order.html">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                200: "#bfdbfe",
+                300: "#93c5fd",
+                400: "#60a5fa",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+                800: "#1e40af",
+                900: "#1e3a8a",
+              },
+              accent: {
+                50: "#f0fdf4",
+                100: "#dcfce7",
+                200: "#bbf7d0",
+                300: "#86efac",
+                400: "#4ade80",
+                500: "#22c55e",
+                600: "#16a34a",
+                700: "#15803d",
+                800: "#166534",
+                900: "#14532d",
+              },
+            },
+            fontFamily: {
+              inter: ["Inter", "system-ui", "sans-serif"],
+            },
+            animation: {
+              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            },
+          },
+        },
+      };
+    </script>
+    
+    <!-- Font Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Order NFC Tap-to-Give Plates",
+      "description": "Order custom NFC tap-to-give plates for your church. Transparent pricing from $3.50-$5.00 per plate.",
+      "url": "https://tap.giving/order.html"
+    }
+    </script>
+</head>
+<body class="font-inter antialiased bg-white">
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-16">
+                <!-- Left: Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <img
+                            src="assets/Logo-Crop-Large-1024x295.png"
+                            alt="Tap.Giving - Church NFC Giving Solution Logo"
+                            class="h-8 w-auto"
+                            width="1024"
+                            height="295"
+                            loading="eager"
+                        />
+                    </a>
+                </div>
+
+                <!-- Center: Desktop Navigation -->
+                <nav class="hidden md:flex flex-1 justify-center space-x-8">
+                    <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+                    <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
+                    <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+                </nav>
+
+                <!-- Right: Actions -->
+                <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
+                    <!-- Quick Action Button - Always Visible -->
+                    <button
+                        onclick="scrollToForm()"
+                        class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap"
+                    >
+                        Order Now
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button
+                        type="button"
+                        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                        onclick="toggleMobileMenu()"
+                    >
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="md:hidden" id="mobile-menu" style="display: none">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+                    <a href="/blog.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
+                    <a href="/contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Order Form Section -->
+    <main>
+        <section
+            id="order"
+            class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-primary-800 py-20"
+        >
+            <!-- Background Elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br from-primary-400/20 to-accent-400/20 blur-3xl animate-pulse-slow"></div>
+                <div class="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-accent-400/20 to-primary-400/20 blur-3xl animate-pulse-slow"></div>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl lg:text-5xl font-black text-white mb-8 leading-tight">
+                            Order Your
+                            <span class="bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent">Custom NFC Tap Plates</span>
+                        </h1>
+                        <p class="text-xl text-gray-300 font-medium">
+                            Join hundreds of churches increasing giving and connection
+                        </p>
+                    </div>
+
+                    <div class="form-container bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20">
+                        <!-- Order Form -->
+                        <form
+                            id="orderForm"
+                            action="https://formspree.io/p/2803072267095900016/f/contact"
+                            method="POST"
+                        >
+                            <!-- Personal Information -->
+                            <div class="form-row grid md:grid-cols-2 gap-8 mb-8">
+                                <div class="space-y-2">
+                                    <label
+                                        for="pastorName"
+                                        class="block text-sm font-bold text-gray-800 mb-3"
+                                    >
+                                        <i class="fas fa-user mr-2 text-primary-600"></i>Your Name *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="pastorName"
+                                        name="pastor_name"
+                                        required
+                                        class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white"
+                                        placeholder="Your full name"
+                                    />
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        for="churchName"
+                                        class="block text-sm font-bold text-gray-800 mb-3"
+                                    >
+                                        <i class="fas fa-church mr-2 text-primary-600"></i>Church Name *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="churchName"
+                                        name="church_name"
+                                        required
+                                        class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white"
+                                        placeholder="Your church's name"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <div class="space-y-2">
+                                    <label
+                                        for="email"
+                                        class="block text-sm font-bold text-gray-800 mb-3"
+                                    >
+                                        <i class="fas fa-envelope mr-2 text-primary-600"></i>Email Address *
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        required
+                                        class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white"
+                                        placeholder="your@email.com"
+                                    />
+                                </div>
+                            </div>
+
+                            <!-- Pricing Calculator -->
+                            <div class="mb-10 bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 border border-primary-100">
+                                <h4 class="text-xl font-bold text-gray-900 mb-6 text-center">
+                                    <i class="fas fa-chart-line mr-2 text-primary-600"></i>
+                                    Select Number of NFC Tap Plates
+                                </h4>
+
+                                <div class="mb-6">
+                                    <label class="block text-lg font-bold text-gray-800 mb-4 text-center">
+                                        Number of Plates:
+                                        <span
+                                            id="formPlateCount"
+                                            class="bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent"
+                                        >250</span>
+                                    </label>
+                                    <div class="relative">
+                                        <input
+                                            type="range"
+                                            id="formPlateSlider"
+                                            name="plate_quantity"
+                                            min="100"
+                                            max="1000"
+                                            step="50"
+                                            value="250"
+                                            class="w-full h-4 bg-gradient-to-r from-primary-200 to-primary-300 rounded-full appearance-none cursor-pointer slider"
+                                        />
+                                        <div class="flex justify-between text-sm font-semibold text-gray-500 mt-4">
+                                            <span class="bg-gray-100 px-3 py-1 rounded-full">100</span>
+                                            <span class="bg-gray-100 px-3 py-1 rounded-full">1000+</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center">
+                                    <div class="text-4xl font-black bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-2">
+                                        $<span id="formPricePerPlate">4.50</span>
+                                    </div>
+                                    <p class="text-gray-600 font-semibold mb-4">per plate</p>
+                                    <div class="text-2xl font-bold text-gray-900 mb-4">
+                                        Total Investment:
+                                        <span class="bg-gradient-to-r from-accent-600 to-accent-700 bg-clip-text text-transparent">
+                                            $<span id="formTotalPrice">1125</span>
+                                        </span>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-center items-center space-x-2 text-accent-600 font-bold">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Free shipping included</span>
+                                        </div>
+                                        <div class="flex justify-center items-center space-x-2 text-accent-600 font-bold">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>No Monthly Fees</span>
+                                        </div>
+                                        <div class="flex justify-center items-center space-x-2 text-accent-600 font-bold">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>No Setup Fees</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="group w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 mb-6"
+                            >
+                                <i class="fas fa-arrow-right mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+                                Submit Order Request
+                            </button>
+
+                            <div class="text-center">
+                                <p class="text-gray-600 mb-3 font-medium">
+                                    Questions? Text us directly for faster help
+                                </p>
+                                <a
+                                    href="sms:+18325108788?body=I have questions about ordering tap to give plates."
+                                    class="inline-flex items-center space-x-3 bg-gradient-to-r from-accent-600 to-accent-700 hover:from-accent-700 hover:to-accent-800 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                                >
+                                    <i class="fas fa-sms text-lg"></i>
+                                    <span>(832) 510-8788</span>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- Logo and Contact Info -->
+                <div class="text-center mb-12">
+                    <div class="mb-6">
+                        <picture>
+                            <source srcset="assets/Logo-Crop-Large-1024x295.webp" type="image/webp">
+                            <img
+                                src="assets/Logo-Crop-Large-1024x295.png"
+                                alt="Tap.Giving Logo"
+                                class="h-12 w-auto mx-auto"
+                                loading="lazy"
+                            />
+                        </picture>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-gray-300">
+                        <a href="tel:+18325108788" class="flex items-center space-x-2 hover:text-white transition duration-300">
+                            <i class="fas fa-phone"></i>
+                            <span>(832) 510-8788</span>
+                        </a>
+                        <a href="mailto:hello@tap.giving" class="flex items-center space-x-2 hover:text-white transition duration-300">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@tap.giving</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <h4 class="font-bold text-white mb-4">Product</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/pricing.html" class="text-gray-300 hover:text-white transition duration-300">Pricing</a></li>
+                            <li><a href="/order.html" class="text-gray-300 hover:text-white transition duration-300">Order</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-white mb-4">Compare</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/tithely-vs-tap-giving.html" class="text-gray-300 hover:text-white transition duration-300">vs Tithely</a></li>
+                            <li><a href="/subsplash-tap-vs-tap-giving.html" class="text-gray-300 hover:text-white transition duration-300">vs Subsplash</a></li>
+                            <li><a href="/securegive-tap-vs-tap-giving.html" class="text-gray-300 hover:text-white transition duration-300">vs SecureGive</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-white mb-4">Resources</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/blog.html" class="text-gray-300 hover:text-white transition duration-300">Blog</a></li>
+                            <li><a href="/contact.html" class="text-gray-300 hover:text-white transition duration-300">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-white mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="/privacy.html" class="text-gray-300 hover:text-white transition duration-300">Privacy Policy</a></li>
+                            <li><a href="/terms.html" class="text-gray-300 hover:text-white transition duration-300">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="border-t border-gray-800 pt-8 text-center">
+                    <p class="text-gray-400">© 2025 Tap.Giving. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById("mobile-menu");
+            const menuIcon = document.getElementById("menu-icon");
+            const isHidden = mobileMenu.style.display === "none" || !mobileMenu.style.display;
+
+            if (isHidden) {
+                mobileMenu.style.display = "block";
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-times");
+            } else {
+                mobileMenu.style.display = "none";
+                menuIcon.classList.remove("fa-times");
+                menuIcon.classList.add("fa-bars");
+            }
+        }
+
+        // Close mobile menu when clicking on a link
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+            mobileMenuLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    const mobileMenu = document.getElementById("mobile-menu");
+                    const menuIcon = document.getElementById("menu-icon");
+                    mobileMenu.style.display = "none";
+                    menuIcon.classList.remove("fa-times");
+                    menuIcon.classList.add("fa-bars");
+                });
+            });
+        });
+
+        // Scroll to form function
+        function scrollToForm() {
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+    <!-- Pricing Calculator Script -->
+    <script>
+        // Pricing calculator functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.getElementById('formPlateSlider');
+            const plateCountDisplay = document.getElementById('formPlateCount');
+            const pricePerPlateDisplay = document.getElementById('formPricePerPlate');
+            const totalPriceDisplay = document.getElementById('formTotalPrice');
+
+            function calculatePrice(plateCount) {
+                if (plateCount >= 400) return 3.50;
+                if (plateCount >= 200) return 4.00;
+                return 5.00;
+            }
+
+            function updatePricing() {
+                const plateCount = parseInt(slider.value);
+                const pricePerPlate = calculatePrice(plateCount);
+                const totalPrice = plateCount * pricePerPlate;
+
+                plateCountDisplay.textContent = plateCount;
+                pricePerPlateDisplay.textContent = pricePerPlate.toFixed(2);
+                totalPriceDisplay.textContent = totalPrice.toLocaleString();
+            }
+
+            slider.addEventListener('input', updatePricing);
+            updatePricing(); // Initialize on page load
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3B3M72XEP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L3B3M72XEP', {
+            page_title: 'Order NFC Plates',
+            page_location: window.location.href
+        });
+    </script>
+</body>
+</html>
