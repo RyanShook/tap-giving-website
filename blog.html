@@ -16,6 +16,28 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
+    <!-- Structured Data for Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://tap.giving/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://tap.giving/blog.html"
+        }
+      ]
+    }
+    </script>
+
     <!-- Structured Data for Blog -->
     <script type="application/ld+json">
     {
@@ -137,6 +159,23 @@
         </div>
     </header>
 
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-gray-50 border-b border-gray-200" aria-label="Breadcrumb">
+      <div class="container mx-auto px-6 py-3">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li>
+            <a href="/" class="text-gray-500 hover:text-blue-600 transition-colors">
+              <i class="fas fa-home mr-1"></i>Home
+            </a>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+            <span class="text-gray-900 font-medium">Blog</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
     <!-- Featured Post Banner -->
     <section class="container mx-auto px-6 py-20">
         <div class="max-w-6xl mx-auto">
@@ -156,7 +195,7 @@
                     <p class="text-lg opacity-90 mb-6">
                         We've analyzed every major church NFC giving platform to help you make the best choice for your congregation.
                     </p>
-                    <a href="/tap-to-give-platform-comparison.html" class="inline-flex items-center bg-white text-primary-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
+                    <a href="/blog/tap-to-give-platform-comparison.html" class="inline-flex items-center bg-white text-primary-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-300">
                         Read Full Comparison
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>
@@ -169,9 +208,9 @@
     <section class="container mx-auto px-6 pb-20">
         <div class="max-w-6xl mx-auto">
             <div class="flex items-center justify-between mb-12">
-                <h2 class="text-3xl lg:text-4xl font-black text-gray-900">
-                    Latest Articles
-                </h2>
+                <h1 class="text-3xl lg:text-4xl font-black text-gray-900">
+                    Latest NFC Church Giving Insights & Comparisons
+                </h1>
                 <div class="flex items-center space-x-4">
                     <select class="bg-white border border-gray-200 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500" onchange="filterPosts(this.value)">
                         <option value="all">All Categories</option>
@@ -194,7 +233,7 @@
                             </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
-                            <a href="/securegive-tap-vs-tap-giving.html">SecureGive Tap vs Tap.Giving: Complete NFC Comparison</a>
+                            <a href="/blog/securegive-tap-vs-tap-giving.html">SecureGive Tap vs Tap.Giving: Complete NFC Comparison</a>
                         </h3>
                         <p class="text-gray-600 mb-6 line-clamp-3">
                             Compare SecureGive Tap vs Tap.Giving for church NFC giving. See cost differences, setup complexity, and why Tap.Giving offers better value with no monthly fees.
@@ -206,7 +245,7 @@
                                     Sep 4, 2025
                                 </span>
                             </div>
-                            <a href="/securegive-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
+                            <a href="/blog/securegive-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
                                 Read More →
                             </a>
                         </div>
@@ -224,7 +263,7 @@
                             </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
-                            <a href="/subsplash-tap-vs-tap-giving.html">Subsplash Tap vs Tap.Giving: 2025 Church NFC Comparison</a>
+                            <a href="/blog/subsplash-tap-vs-tap-giving.html">Subsplash Tap vs Tap.Giving: 2025 Church NFC Comparison</a>
                         </h3>
                         <p class="text-gray-600 mb-6 line-clamp-3">
                             Subsplash Tap vs Tap.Giving comparison: See why Tap.Giving's transparent $3.50-$5.00 pricing beats Subsplash's quote-based model.
@@ -236,7 +275,7 @@
                                     Aug 15, 2025
                                 </span>
                             </div>
-                            <a href="/subsplash-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
+                            <a href="/blog/subsplash-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
                                 Read More →
                             </a>
                         </div>
@@ -254,7 +293,7 @@
                             </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
-                            <a href="/tithely-vs-tap-giving.html">Tithe.ly vs Tap.Giving: Which NFC Solution Wins?</a>
+                            <a href="/blog/tithely-vs-tap-giving.html">Tithe.ly vs Tap.Giving: Which NFC Solution Wins?</a>
                         </h3>
                         <p class="text-gray-600 mb-6 line-clamp-3">
                             Compare Tithe.ly's comprehensive platform with Tap.Giving's specialized NFC approach. See which solution fits your church's needs and budget.
@@ -266,7 +305,7 @@
                                     Jul 18, 2025
                                 </span>
                             </div>
-                            <a href="/tithely-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
+                            <a href="/blog/tithely-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
                                 Read More →
                             </a>
                         </div>
@@ -284,7 +323,7 @@
                             </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
-                            <a href="/tap-tag-vs-tap-giving.html">TapTag vs Tap.Giving: NFC Church Giving Face-Off</a>
+                            <a href="/blog/tap-tag-vs-tap-giving.html">TapTag vs Tap.Giving: NFC Church Giving Face-Off</a>
                         </h3>
                         <p class="text-gray-600 mb-6 line-clamp-3">
                             TapTag vs Tap.Giving comparison for church NFC giving. Compare features, pricing, and setup complexity to find your ideal solution.
@@ -296,7 +335,7 @@
                                     Jun 12, 2025
                                 </span>
                             </div>
-                            <a href="/tap-tag-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
+                            <a href="/blog/tap-tag-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
                                 Read More →
                             </a>
                         </div>
@@ -314,7 +353,7 @@
                             </span>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
-                            <a href="/overflow-tap-vs-tap-giving.html">Overflow Tap vs Tap.Giving: Complete Feature Analysis</a>
+                            <a href="/blog/overflow-tap-vs-tap-giving.html">Overflow Tap vs Tap.Giving: Complete Feature Analysis</a>
                         </h3>
                         <p class="text-gray-600 mb-6 line-clamp-3">
                             Compare Overflow's comprehensive giving platform with Tap.Giving's specialized NFC focus. See pricing, features, and integration options.
@@ -326,7 +365,7 @@
                                     May 8, 2025
                                 </span>
                             </div>
-                            <a href="/overflow-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
+                            <a href="/blog/overflow-tap-vs-tap-giving.html" class="text-primary-600 hover:text-primary-700 font-semibold text-sm">
                                 Read More →
                             </a>
                         </div>
@@ -502,5 +541,86 @@
         }
 
     </script>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <img
+                        src="assets/Logo-Crop-Large-1024x295.png"
+                        alt="Tap.Giving Logo"
+                        class="h-8 w-auto mb-4 brightness-0 invert"
+                    />
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Simple, transparent NFC giving solutions that work with your
+                        existing church platform. No monthly fees, no lock-in.
+                    </p>
+                    <div class="mb-6">
+                        <a
+                            href="/contact.html"
+                            class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                        >
+                            <i class="fas fa-envelope mr-2"></i>
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a
+                                href="/"
+                                class="text-gray-300 hover:text-white transition duration-300"
+                            >Home</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/pricing.html"
+                                class="text-gray-300 hover:text-white transition duration-300"
+                            >Pricing</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/blog.html"
+                                class="text-gray-300 hover:text-white transition duration-300"
+                            >Blog</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/contact.html"
+                                class="text-gray-300 hover:text-white transition duration-300"
+                            >Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/tapgiving" target="_blank" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/tap.giving" target="_blank" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <div class="mb-4 space-x-4">
+                    <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+                    <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+                </div>
+                <p class="text-gray-500 text-sm font-medium">
+                    © 2025 Tap.Giving. All rights reserved. | Increasing church giving
+                    through innovative technology.
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

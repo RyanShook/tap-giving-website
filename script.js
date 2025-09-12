@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                             <span class="text-green-600 text-2xl">✓</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Order Received 🎉</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Order Started 🎉</h3>
                         <p class="text-gray-600 mb-6">Congratulations on taking your first step toward increased generosity and engagement! Our team will reach out to you within 24 hours to discuss your artwork and order details.</p>
                         <p class="text-primary-600 font-semibold">Have questions? Text or call <a href="tel:+18325108788" class="text-primary-600 hover:text-primary-700">(832) 510-8788</a></p>
                         <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">

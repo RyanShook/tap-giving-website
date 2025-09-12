@@ -14,6 +14,10 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="apple-touch-icon" href="assets/favicon.png" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="msapplication-TileColor" content="#2563eb" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
     <!-- SEO Meta Tags -->
     <meta
@@ -128,21 +132,6 @@
         });
       };
 
-      // Track pricing calculator interactions
-      window.gtag_pricing_interaction = function (
-        plate_count,
-        price_per_plate,
-        total_cost
-      ) {
-        gtag("event", "pricing_calculator_interaction", {
-          event_category: "engagement",
-          event_label: "calculator_adjustment",
-          plate_count: plate_count,
-          price_per_plate: price_per_plate,
-          total_cost: total_cost,
-          value: total_cost,
-        });
-      };
 
       // Track exit intent popup interactions
       window.gtag_exit_intent = function (action, email) {
@@ -999,108 +988,6 @@
       </div>
     </section>
 
-    <!-- =================================================================== -->
-    <!-- PRICING SECTION: Interactive calculator with volume discounts      -->
-    <!-- Purpose: Transparent pricing builds trust, calculator engages users -->
-    <!-- Key elements: Interactive slider, tier cards, urgency messaging    -->
-    <!-- Conversion focus: "Lock In Your Pricing Today" CTA                 -->
-    <!-- =================================================================== -->
-    <!-- Pricing Section -->
-    <section
-      id="pricing"
-      class="bg-gradient-to-br from-slate-50 to-gray-100 py-16"
-    >
-      <div class="container mx-auto px-6">
-        <div class="max-w-6xl mx-auto text-center mb-16">
-          <h2
-            class="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight"
-          >
-            Transparent Pricing with
-            <span
-              class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent"
-              >Volume Discounts</span
-            >
-          </h2>
-        </div>
-
-        <!-- PRICING TIERS: Visual representation of volume discounts -->
-        <!-- Purpose: Show value of larger orders, highlight best value -->
-        <!-- Design: Cards with hover effects, "Best Value" badge on 400+ -->
-        <!-- Pricing Tiers -->
-        <div class="grid md:grid-cols-3 gap-6 mb-12">
-          <div
-            class="bg-gradient-to-br from-primary-50 to-accent-50 border-2 border-primary-400 rounded-2xl p-8 text-center relative overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-accent-400"
-            onclick="selectPricingTier(500)"
-          >
-            <div
-              class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-500 to-accent-500"
-            ></div>
-            <div
-              class="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-4 py-2 rounded-full text-sm font-bold mb-4 inline-block"
-            >
-              <i class="fas fa-star mr-2"></i>Best Value
-            </div>
-            <h4 class="font-bold text-gray-900 mb-4 text-lg">400+ Plates</h4>
-            <div
-              class="text-3xl font-black bg-gradient-to-r from-accent-600 to-accent-700 bg-clip-text text-transparent mb-2"
-            >
-              $3.50
-            </div>
-            <p class="text-gray-600 font-semibold">per plate</p>
-          </div>
-
-          <div
-            class="bg-white/80 backdrop-blur-xl border-2 border-primary-200 rounded-2xl p-8 text-center cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-primary-400"
-            onclick="selectPricingTier(300)"
-          >
-            <h4 class="font-bold text-gray-900 mb-4 text-lg">200-399 Plates</h4>
-            <div
-              class="text-3xl font-black bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-2"
-            >
-              $4.00
-            </div>
-            <p class="text-gray-600 font-semibold">per plate</p>
-          </div>
-
-          <div
-            class="bg-white/80 backdrop-blur-xl border-2 border-gray-200 rounded-2xl p-8 text-center cursor-pointer hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:border-primary-300"
-            onclick="selectPricingTier(150)"
-          >
-            <h4 class="font-bold text-gray-900 mb-4 text-lg">100-199 Plates</h4>
-            <div
-              class="text-3xl font-black bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-2"
-            >
-              $5.00
-            </div>
-            <p class="text-gray-600 font-semibold">per plate</p>
-          </div>
-        </div>
-
-        <div class="text-center mb-8">
-          <p class="text-xl text-gray-600 mb-4 font-medium">
-            No hidden fees. Free shipping.
-          </p>
-          <div
-            class="inline-flex items-center bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg animate-pulse"
-          >
-            <i class="fas fa-clock mr-3"></i>
-            Limited time pricing - rates increasing soon
-          </div>
-        </div>
-
-        <div class="text-center">
-          <button
-            onclick="scrollToForm()"
-            class="group bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-12 py-5 rounded-2xl text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1"
-          >
-            <i
-              class="fas fa-lock mr-3 group-hover:scale-110 transition-transform duration-300"
-            ></i>
-            Lock In Your Pricing Today
-          </button>
-        </div>
-      </div>
-    </section>
 
     <!-- =================================================================== -->
     <!-- CONTACT FORM SECTION: Primary conversion goal - lead capture       -->
@@ -1139,6 +1026,29 @@
             <p class="text-xl text-gray-300 font-medium">
               Join hundreds of churches increasing giving and connection
             </p>
+          </div>
+
+          <div class="mb-8 text-center">
+            <div class="space-y-2">
+              <div
+                class="flex justify-center items-center space-x-2 text-white font-bold"
+              >
+                <i class="fas fa-check-circle text-accent-400"></i>
+                <span>Free shipping included</span>
+              </div>
+              <div
+                class="flex justify-center items-center space-x-2 text-white font-bold"
+              >
+                <i class="fas fa-check-circle text-accent-400"></i>
+                <span>No Monthly Fees</span>
+              </div>
+              <div
+                class="flex justify-center items-center space-x-2 text-white font-bold"
+              >
+                <i class="fas fa-check-circle text-accent-400"></i>
+                <span>No Setup Fees</span>
+              </div>
+            </div>
           </div>
 
           <div
@@ -1209,86 +1119,6 @@
                 </div>
               </div>
 
-              <!-- PRICING CALCULATOR: Moved into form for better conversion -->
-              <div
-                class="mb-10 bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 border border-primary-100"
-              >
-                <h4 class="text-xl font-bold text-gray-900 mb-6 text-center">
-                  <i class="fas fa-chart-line mr-2 text-primary-600"></i>
-                  Estimated NFC Tap Plates Needed
-                </h4>
-
-                <div class="mb-6">
-                  <label
-                    class="block text-lg font-bold text-gray-800 mb-4 text-center"
-                  >
-                    Number of Plates:
-                    <span
-                      id="formPlateCount"
-                      class="bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent"
-                      >250</span
-                    >
-                  </label>
-                  <div class="relative">
-                    <input
-                      type="range"
-                      id="formPlateSlider"
-                      name="plate_quantity"
-                      min="100"
-                      max="1000"
-                      step="50"
-                      value="250"
-                      class="w-full h-4 bg-gradient-to-r from-primary-200 to-primary-300 rounded-full appearance-none cursor-pointer slider"
-                    />
-                    <div
-                      class="flex justify-between text-sm font-semibold text-gray-500 mt-4"
-                    >
-                      <span class="bg-gray-100 px-3 py-1 rounded-full"
-                        >100</span
-                      >
-                      <span class="bg-gray-100 px-3 py-1 rounded-full"
-                        >1000+</span
-                      >
-                    </div>
-                  </div>
-                </div>
-
-                <div class="text-center">
-                  <div
-                    class="text-4xl font-black bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-2"
-                  >
-                    $<span id="formPricePerPlate">4.50</span>
-                  </div>
-                  <p class="text-gray-600 font-semibold mb-4">per plate</p>
-                  <div class="text-2xl font-bold text-gray-900 mb-4">
-                    Total Investment:
-                    <span
-                      class="bg-gradient-to-r from-accent-600 to-accent-700 bg-clip-text text-transparent"
-                      >$<span id="formTotalPrice">500</span></span
-                    >
-                  </div>
-                  <div class="space-y-2">
-                    <div
-                      class="flex justify-center items-center space-x-2 text-accent-600 font-bold"
-                    >
-                      <i class="fas fa-check-circle"></i>
-                      <span>Free shipping included</span>
-                    </div>
-                    <div
-                      class="flex justify-center items-center space-x-2 text-accent-600 font-bold"
-                    >
-                      <i class="fas fa-check-circle"></i>
-                      <span>No Monthly Fees</span>
-                    </div>
-                    <div
-                      class="flex justify-center items-center space-x-2 text-accent-600 font-bold"
-                    >
-                      <i class="fas fa-check-circle"></i>
-                      <span>No Setup Fees</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <button
                 type="submit"
@@ -1325,84 +1155,83 @@
     <!-- =================================================================== -->
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-16">
-      <div class="container mx-auto px-6">
-        <div class="text-center">
-          <div class="mb-6">
-            <picture>
-              <source
-                srcset="assets/Logo-Crop-Large-1024x295.webp"
-                type="image/webp"
-              />
-              <img
-                src="assets/Logo-Crop-Large-1024x295.png"
-                alt="Tap.Giving - Church Digital Giving Technology Solutions"
-                class="h-10 w-auto mx-auto filter brightness-0 invert"
-                loading="lazy"
-              />
-            </picture>
-          </div>
-          <p class="text-gray-400 mb-8 text-lg font-medium">
-            Transforming church giving with simple tap technology
-          </p>
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <img
+                        src="assets/Logo-Crop-Large-1024x295.png"
+                        alt="Tap.Giving Logo"
+                        class="h-8 w-auto mb-4 brightness-0 invert"
+                    />
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Simple, transparent NFC giving solutions that work with your
+                        existing church platform. No monthly fees, no lock-in.
+                    </p>
+                    <div class="mb-6">
+                        <a
+                            href="/contact.html"
+                            class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                        >
+                            <i class="fas fa-envelope mr-2"></i>
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
 
-          <div class="mb-8">
-            <a
-              href="/contact.html"
-              class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-            >
-              <i class="fas fa-envelope mr-3"></i>
-              Contact Us
-            </a>
-          </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a
+                                href="/"
+                                class="text-gray-300 hover:text-white transition duration-300"
+                            >Home</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/pricing.html"
+                                class="text-gray-300 hover:text-white transition duration-300"
+                            >Pricing</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/blog.html"
+                                class="text-gray-300 hover:text-white transition duration-300"
+                            >Blog</a>
+                        </li>
+                        <li>
+                            <a
+                                href="/contact.html"
+                                class="text-gray-300 hover:text-white transition duration-300"
+                            >Contact</a>
+                        </li>
+                    </ul>
+                </div>
 
-          <!-- Sources Section -->
-          <div class="mb-8">
-            <h3
-              class="text-gray-400 text-sm font-semibold mb-4 uppercase tracking-wider"
-            >
-              Research Sources
-            </h3>
-            <div
-              class="text-gray-500 text-xs leading-relaxed max-w-4xl mx-auto"
-            >
-              <p class="mb-2">
-                • Digital giving statistics: Ministry Brands 2024 State of
-                Church Giving Report
-              </p>
-              <p class="mb-2">
-                • Contactless payment trends: NFC Forum Contactless Trends and
-                User Adoption Study 2024
-              </p>
-              <p class="mb-2">
-                • Church giving research: Digital Giving Trends Report 2025
-              </p>
-              <p>
-                • Participation rates based on industry studies showing
-                contactless donations average 3x higher than cash donations
-              </p>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/tapgiving" target="_blank" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/tap.giving" target="_blank" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div class="border-t border-gray-800 pt-8">
-            <div class="mb-4 space-x-4">
-              <a
-                href="/privacy.html"
-                class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm"
-                >Privacy Policy</a
-              >
-              <a
-                href="/terms.html"
-                class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm"
-                >Terms of Service</a
-              >
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <div class="mb-4 space-x-4">
+                    <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+                    <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+                </div>
+                <p class="text-gray-500 text-sm font-medium">
+                    © 2025 Tap.Giving. All rights reserved. | Increasing church giving
+                    through innovative technology.
+                </p>
             </div>
-            <p class="text-gray-500 text-sm font-medium">
-              © 2025 Tap.Giving. All rights reserved. | Increasing church giving
-              through innovative technology.
-            </p>
-          </div>
         </div>
-      </div>
     </footer>
 
     <!-- Exit Intent Popup Library -->
