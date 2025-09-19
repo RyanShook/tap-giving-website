@@ -280,6 +280,56 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Lazy-load Wistia demo video only when requested
+document.addEventListener('DOMContentLoaded', function() {
+    const videoContainer = document.querySelector('[data-wistia-id]');
+    if (!videoContainer) {
+        return;
+    }
+
+    const trigger = videoContainer.querySelector('[data-load-video]');
+    if (!trigger) {
+        return;
+    }
+
+    trigger.addEventListener('click', function() {
+        const videoId = videoContainer.getAttribute('data-wistia-id');
+        if (!videoId) {
+            return;
+        }
+
+        embedWistiaVideo(videoContainer, videoId);
+    });
+});
+
+function embedWistiaVideo(container, videoId) {
+    if (container.dataset.videoLoaded === 'true') {
+        return;
+    }
+
+    container.dataset.videoLoaded = 'true';
+
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://fast.wistia.net/embed/iframe/${videoId}?seo=false&videoFoam=true`;
+    iframe.title = 'Tap.Giving demo video';
+    iframe.allow = 'autoplay; fullscreen';
+    iframe.setAttribute('allowfullscreen', 'true');
+    iframe.loading = 'lazy';
+    iframe.className = 'absolute inset-0 w-full h-full';
+    iframe.style.border = '0';
+
+    container.innerHTML = '';
+    container.appendChild(iframe);
+
+    if (!document.querySelector('script[src*="fast.wistia.net/assets/external/E-v1.js"]')) {
+        const wistiaScript = document.createElement('script');
+        wistiaScript.src = 'https://fast.wistia.net/assets/external/E-v1.js';
+        wistiaScript.async = true;
+        wistiaScript.defer = true;
+        document.body.appendChild(wistiaScript);
+    }
+}
+
 // Urgency timer (optional - you can uncomment if you want a countdown)
 /*
 document.addEventListener('DOMContentLoaded', function() {
