@@ -112,12 +112,10 @@ function selectPricingTier(plateCount) {
         if (plateSlider && plateCountDisplay) {
             // Set the slider value
             plateSlider.value = plateCount;
-            
-            // Update the display
-            plateCountDisplay.textContent = plateCount;
-            
-            // Trigger the calculator update
-            updateFormCalculator();
+
+            // Trigger the calculator update via the existing input handler
+            const inputEvent = new Event('input', { bubbles: true });
+            plateSlider.dispatchEvent(inputEvent);
             
             // Add a subtle highlight effect to show the form was updated
             const calculatorSection = plateSlider.closest('.bg-gradient-to-br');
@@ -258,6 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe sections for animation
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
+        section.classList.add('fade-section');
         observer.observe(section);
     });
 });
