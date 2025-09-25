@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFC Frequently Asked Questions - Tap.Giving</title>
+    <meta name="description" content="Learn why Tap.Giving recommends locking NFC tap plates, how to use the lock-then-redirect method, and what to know about password protecting NFC tags." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tap.giving/nfc-faq.html" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+        media="print"
+        onload="this.media='all'"
+    />
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+    </noscript>
+
+    <link
+        rel="preload"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+    </noscript>
+
+    <!-- Structured Data for NFC FAQ Page -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "NFC Frequently Asked Questions - Tap.Giving",
+        "description": "Answers to common questions about locking NFC tap plates, using the lock then redirect method, and password protecting NFC tags.",
+        "url": "https://tap.giving/nfc-faq.html",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Tap.Giving",
+            "url": "https://tap.giving/"
+        }
+    }
+    </script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#eff6ff",
+                100: "#dbeafe",
+                200: "#bfdbfe",
+                300: "#93c5fd",
+                400: "#60a5fa",
+                500: "#3b82f6",
+                600: "#2563eb",
+                700: "#1d4ed8",
+                800: "#1e40af",
+                900: "#1e3a8a"
+              },
+              accent: {
+                50: "#f0fdf4",
+                100: "#dcfce7",
+                200: "#bbf7d0",
+                300: "#86efac",
+                400: "#4ade80",
+                500: "#22c55e",
+                600: "#16a34a",
+                700: "#15803d",
+                800: "#166534",
+                900: "#14532d"
+              }
+            },
+            fontFamily: {
+              inter: ["Inter", "system-ui", "sans-serif"]
+            },
+            animation: {
+              "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite"
+            }
+          }
+        }
+      };
+    </script>
+</head>
+<body class="font-inter antialiased bg-white">
+    <!-- ======================================== -->
+    <!-- CONSISTENT HEADER ACROSS ALL PAGES      -->
+    <!-- ======================================== -->
+    <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-16">
+                <!-- Left: Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <img
+                            src="assets/Logo-Crop-Large-1024x295.png"
+                            alt="Tap.Giving - Church NFC Giving Solution Logo"
+                            class="h-8 w-auto"
+                            width="1024"
+                            height="295"
+                            loading="eager"
+                        />
+                    </a>
+                </div>
+
+                <!-- Center: Desktop Navigation -->
+                <nav class="hidden md:flex flex-1 justify-center space-x-8">
+                    <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+                    <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
+                    <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+                </nav>
+
+                <!-- Right: Actions -->
+                <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
+                    <!-- Quick Action Button - Always Visible -->
+                    <button
+                        onclick="scrollToForm()"
+                        class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap"
+                    >
+                        Order Now
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button
+                        type="button"
+                        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                        onclick="toggleMobileMenu()"
+                    >
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="md:hidden" id="mobile-menu" style="display: none">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+                    <a href="/blog.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
+                    <a href="/contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="bg-gray-50 border-b border-gray-200" aria-label="Breadcrumb">
+        <div class="container mx-auto px-6 py-3">
+            <ol class="flex items-center space-x-2 text-sm">
+                <li>
+                    <a href="/" class="text-gray-500 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-home mr-1"></i>Home
+                    </a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                    <span class="text-gray-900 font-medium">NFC Frequently Asked Questions</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-16">
+        <!-- Hero -->
+        <section class="max-w-4xl mx-auto text-center mb-16">
+            <span class="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent text-sm font-bold uppercase tracking-widest">Secure Every Tap</span>
+            <h1 class="text-4xl md:text-5xl font-black text-gray-900 leading-tight mt-6 mb-6">NFC Frequently Asked Questions</h1>
+            <p class="text-xl text-gray-600 leading-relaxed">
+                When you order Tap.Giving plates you decide how open they are. Learn the difference between locked and unlocked NFC chips, why we recommend the lock-then-redirect method, and what password protection can—and cannot—do.
+            </p>
+        </section>
+
+        <!-- Configuration Options -->
+        <section class="max-w-5xl mx-auto bg-white border border-gray-200 rounded-3xl shadow-xl p-10 mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Two ways to configure your Tap.Giving plates</h2>
+            <p class="text-gray-600 leading-relaxed mb-10">
+                Every order can ship either locked (our default) or unlocked. Both options scan the same way for your guests—the difference is who can change the destination stored on the chip.
+            </p>
+            <div class="space-y-10 md:grid md:grid-cols-2 md:gap-10 md:space-y-0">
+                <div class="bg-primary-50 border border-primary-100 rounded-3xl p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Option 1: Locked (recommended)</h3>
+                    <p class="text-gray-600 leading-relaxed mb-5">
+                        We encode each plate with a short URL you own, then make the NFC memory read-only. Anyone can still tap and open the link, but only you control where that URL points.
+                    </p>
+                    <ul class="space-y-3 text-gray-600 leading-relaxed mb-6">
+                        <li>Prevents guests with NFC phones from overwriting your message.</li>
+                        <li>Keeps donor journeys consistent months after deployment.</li>
+                        <li>Makes physical maintenance easy—no spot-checking for tampering.</li>
+                    </ul>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-3">Lock then redirect workflow</h4>
+                    <ol class="space-y-3 text-gray-600 leading-relaxed list-decimal list-inside">
+                        <li>Provide a branded URL you control (for example <code class="break-all bg-gray-100 px-2 py-0.5 rounded">give.yourchurch.org/sunday</code>).</li>
+                        <li>We program that URL and lock the chip so it cannot be rewritten.</li>
+                        <li>Use your website or registrar to redirect the URL to the current campaign. Change the redirect any time without touching the plate.</li>
+                    </ol>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-3xl p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Option 2: Unlocked (requires password)</h3>
+                    <p class="text-gray-600 leading-relaxed mb-5">
+                        Leaving plates unlocked means any person with physical access and an NFC-enabled phone can rewrite the destination. If you choose this option, plan to password protect every plate right away.
+                    </p>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-3">How to add a password with NFC Tools</h4>
+                    <ol class="space-y-3 text-gray-600 leading-relaxed list-decimal list-inside mb-6">
+                        <li>
+                            Download the free
+                            <a href="https://apps.apple.com/us/app/nfc-tools/id1252962749" target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700 font-semibold">NFC Tools for iOS</a>
+                            or
+                            <a href="https://play.google.com/store/apps/details?id=com.wakdev.wdnfc" target="_blank" rel="noopener" class="text-primary-600 hover:text-primary-700 font-semibold">NFC Tools for Android</a>.
+                        </li>
+                        <li>Tap <strong>Other → Set Password</strong>, create a short passcode you will not forget, and touch the plate to save it.</li>
+                        <li>When you need to edit the plate, choose <strong>Remove Password</strong>, enter the same code, make your changes, then set the password again.</li>
+                    </ol>
+                    <div class="bg-gray-50 border border-gray-200 rounded-2xl p-5">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-2">Important limitations</h4>
+                        <ul class="space-y-2 text-gray-600 leading-relaxed">
+                            <li>Passwords only block rewriting—they do not stop scanning or guarantee full tamper resistance.</li>
+                            <li>Forgotten passwords cannot be recovered. The plate stays scannable but the stored link becomes permanent.</li>
+                            <li>A determined person could still guess or remove the password with enough time and proximity.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Panel -->
+        <section class="max-w-5xl mx-auto mt-16">
+            <div class="bg-gradient-to-r from-primary-600 to-accent-600 text-white rounded-3xl shadow-2xl p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2">Need help planning your tap experience?</h2>
+                    <p class="text-white/90 leading-relaxed">Our team can pre-program URLs, advise on redirect best practices, or walk you through password workflows tailored to your campus.</p>
+                </div>
+                <a href="/contact.html" class="inline-flex items-center bg-white text-primary-700 font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5">
+                    <i class="fas fa-comments mr-3"></i>Contact Tap.Giving
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================================== -->
+    <!-- CONSISTENT FOOTER ACROSS ALL PAGES      -->
+    <!-- ======================================== -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-12 mt-20">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div>
+                <div class="flex items-center space-x-3 mb-6">
+                    <img
+                        src="assets/Logo-Crop-Large-1024x295.png"
+                        alt="Tap.Giving Logo"
+                        class="h-10 w-auto"
+                        width="1024"
+                        height="295"
+                        loading="lazy"
+                    />
+                    <span class="text-white text-lg font-semibold">Tap.Giving</span>
+                </div>
+                <p class="text-gray-400 leading-relaxed">
+                    Tap.Giving equips churches with secure, branded NFC tap plates that make generosity effortless for guests and members.
+                </p>
+                <div class="mt-6">
+                    <a
+                        href="/#contact"
+                        class="inline-flex items-center bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 text-white px-5 py-3 rounded-xl font-semibold transition duration-300 shadow-lg hover:shadow-xl"
+                    >
+                        <i class="fas fa-arrow-right mr-3"></i>
+                        Start Your Order
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                <div class="space-y-3 text-gray-400">
+                    <p>
+                        <i class="fas fa-envelope text-primary-400 mr-3"></i>
+                        <a href="mailto:hello@tap.giving" class="hover:text-white transition duration-300">hello@tap.giving</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone text-primary-400 mr-3"></i>
+                        (314) 312-0913
+                    </p>
+                    <a
+                        href="/contact.html"
+                        class="inline-flex items-center text-white hover:text-accent-300 transition duration-300 bg-white/10 px-4 py-2 rounded-xl font-medium"
+                    >
+                        <i class="fas fa-envelope mr-2"></i>
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="/" class="text-gray-300 hover:text-white transition duration-300">Home</a>
+                    </li>
+                    <li>
+                        <a href="/pricing.html" class="text-gray-300 hover:text-white transition duration-300">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="/blog.html" class="text-gray-300 hover:text-white transition duration-300">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/contact.html" class="text-gray-300 hover:text-white transition duration-300">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/tapgiving" target="_blank" class="text-gray-300 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/tap.giving" target="_blank" class="text-gray-300 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+            <div class="mb-4 space-x-4">
+                <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+                <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+            </div>
+            <p class="text-gray-500 text-sm font-medium">
+                © 2025 Tap.Giving. All rights reserved. | Increasing church giving through innovative technology.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById("mobile-menu");
+            const menuIcon = document.getElementById("menu-icon");
+            const isHidden = mobileMenu.style.display === "none" || !mobileMenu.style.display;
+
+            if (isHidden) {
+                mobileMenu.style.display = "block";
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-times");
+            } else {
+                mobileMenu.style.display = "none";
+                menuIcon.classList.remove("fa-times");
+                menuIcon.classList.add("fa-bars");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+            mobileMenuLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    const mobileMenu = document.getElementById("mobile-menu");
+                    const menuIcon = document.getElementById("menu-icon");
+                    mobileMenu.style.display = "none";
+                    menuIcon.classList.remove("fa-times");
+                    menuIcon.classList.add("fa-bars");
+                });
+            });
+        });
+
+        function scrollToForm() {
+            window.location.href = "/#contact";
+        }
+    </script>
+
+    <!-- Google Analytics (Global) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3B3M72XEP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L3B3M72XEP');
+    </script>
+</body>
+</html>
