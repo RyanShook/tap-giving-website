@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChurchTap vs Tap.Giving - NFC Church Giving Solutions Comparison</title>
+    <meta name="description" content="Compare ChurchTap vs Tap.Giving NFC giving solutions for churches. See the differences in durability, pricing transparency, and platform flexibility.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tap.giving/blog/churchtap-vs-tap-giving.html">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "ChurchTap vs Tap.Giving - NFC Church Giving Solutions Comparison",
+        "description": "Detailed comparison of ChurchTap vs Tap.Giving NFC giving solutions. Compare durability, pricing, and features.",
+        "url": "https://tap.giving/blog/churchtap-vs-tap-giving.html",
+        "datePublished": "2025-09-04T10:00:00-05:00",
+        "dateModified": "2025-09-04T10:00:00-05:00",
+        "author": {
+            "@type": "Organization",
+            "name": "Tap.Giving"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tap.Giving",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://tap.giving/assets/Logo-Crop-Large-1024x295.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://tap.giving/blog/churchtap-vs-tap-giving.html"
+        },
+        "about": [
+            {
+                "@type": "SoftwareApplication",
+                "name": "ChurchTap"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "Tap.Giving"
+            }
+        ]
+    }
+    </script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#eff6ff", 100: "#dbeafe", 200: "#bfdbfe", 300: "#93c5fd", 400: "#60a5fa", 500: "#3b82f6", 600: "#2563eb", 700: "#1d4ed8", 800: "#1e40af", 900: "#1e3a8a",
+              },
+              accent: {
+                50: "#f0fdf4", 100: "#dcfce7", 200: "#bbf7d0", 300: "#86efac", 400: "#4ade80", 500: "#22c55e", 600: "#16a34a", 700: "#15803d", 800: "#166534", 900: "#14532d",
+              },
+            },
+            fontFamily: {
+              inter: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          }
+        }
+      };
+    </script>
+</head>
+<body class="font-inter antialiased bg-white">
+    <!-- ======================================== -->
+    <!-- CONSISTENT HEADER ACROSS ALL PAGES      -->
+    <!-- ======================================== -->
+    <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-16">
+                <!-- Left: Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <img
+                            src="../assets/Logo-Crop-Large-1024x295.png"
+                            alt="Tap.Giving - Church NFC Giving Solution Logo"
+                            class="h-8 w-auto"
+                            width="1024"
+                            height="295"
+                            loading="eager"
+                        />
+                    </a>
+                </div>
+
+                <!-- Center: Desktop Navigation -->
+                <nav class="hidden md:flex flex-1 justify-center space-x-8">
+                    <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+                    <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
+                    <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+                </nav>
+
+                <!-- Right: Actions -->
+                <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
+                    <!-- Quick Action Button - Always Visible -->
+                    <button
+                        onclick="scrollToForm()"
+                        class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap"
+                    >
+                        Order Now
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button
+                        type="button"
+                        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                        onclick="toggleMobileMenu()"
+                    >
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="md:hidden" id="mobile-menu" style="display: none">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+                    <a href="/blog.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
+                    <a href="/contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-gray-50 py-4" aria-label="Breadcrumb">
+        <div class="container mx-auto px-6">
+            <ol class="flex items-center space-x-2">
+                <li>
+                    <a href="/" class="text-gray-500 hover:text-blue-600 transition duration-300">Home</a>
+                </li>
+                <li>
+                    <span class="text-gray-400">/</span>
+                </li>
+                <li>
+                    <a href="/blog.html" class="text-gray-500 hover:text-blue-600 transition duration-300">Blog</a>
+                </li>
+                <li>
+                    <span class="text-gray-400">/</span>
+                </li>
+                <li>
+                    <span class="text-gray-900 font-medium">ChurchTap vs Tap.Giving</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 lg:py-24">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="mb-6">
+                        <span class="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent text-sm font-bold uppercase tracking-wider">NFC Solution Comparison</span>
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
+                        ChurchTap vs
+                        <span class="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Tap.Giving</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+                        Compare two NFC giving solutions for churches. See the differences in durability, pricing transparency, and material quality.
+                    </p>
+
+                    <!-- Quick Stats -->
+                    <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg border border-blue-100">
+                            <div class="text-3xl font-bold text-gray-900 mb-2">Stickers</div>
+                            <div class="text-sm text-gray-600">ChurchTap material</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl shadow-lg border-2 border-blue-300">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">Plastic Plates</div>
+                            <div class="text-sm text-gray-700 font-semibold">Tap.Giving material</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg border border-blue-100">
+                            <div class="text-3xl font-bold text-green-600 mb-2">$0</div>
+                            <div class="text-sm text-gray-600">Monthly fees</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Comparison Table -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">Side-by-Side Comparison</h2>
+                        <p class="text-xl text-gray-600">See exactly how ChurchTap compares to Tap.Giving</p>
+                    </div>
+
+                    <!-- Comparison Table -->
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-gradient-to-r from-blue-50 to-blue-100">
+                                    <tr>
+                                        <th class="px-6 py-4 text-left text-lg font-bold text-gray-900">Feature</th>
+                                        <th class="px-6 py-4 text-center text-lg font-bold text-gray-700">ChurchTap</th>
+                                        <th class="px-6 py-4 text-center text-lg font-bold text-blue-600 bg-gradient-to-r from-blue-100 to-blue-200">Tap.Giving</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <!-- Technology -->
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 font-semibold text-gray-900">Technology Type</td>
+                                        <td class="px-6 py-4 text-center text-gray-700 font-bold">NFC (Tap-based)</td>
+                                        <td class="px-6 py-4 text-center text-blue-600 font-bold bg-blue-50">NFC (Tap-based)</td>
+                                    </tr>
+
+                                    <!-- Material -->
+                                    <tr class="hover:bg-gray-50 bg-gray-25">
+                                        <td class="px-6 py-4 font-semibold text-gray-900">Material Construction</td>
+                                        <td class="px-6 py-4 text-center text-gray-700">Vinyl stickers</td>
+                                        <td class="px-6 py-4 text-center text-green-600 bg-green-50">2mm thick plastic plates</td>
+                                    </tr>
+
+                                    <!-- Durability -->
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 font-semibold text-gray-900">Durability</td>
+                                        <td class="px-6 py-4 text-center text-gray-700">Reports of peeling in hot/humid conditions</td>
+                                        <td class="px-6 py-4 text-center text-green-600 bg-green-50">Long-lasting plastic construction</td>
+                                    </tr>
+
+                                    <!-- Pricing Transparency -->
+                                    <tr class="hover:bg-gray-50 bg-gray-25">
+                                        <td class="px-6 py-4 font-semibold text-gray-900">Pricing Transparency</td>
+                                        <td class="px-6 py-4 text-center text-gray-700">Contact for quote</td>
+                                        <td class="px-6 py-4 text-center text-green-600 bg-green-50">$3.50-5.00 per plate (published)</td>
+                                    </tr>
+
+                                    <!-- Monthly Fees -->
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 font-semibold text-gray-900">Monthly Fees</td>
+                                        <td class="px-6 py-4 text-center text-gray-700">$0</td>
+                                        <td class="px-6 py-4 text-center text-green-600 bg-green-50">$0</td>
+                                    </tr>
+
+                                    <!-- Platform Integration -->
+                                    <tr class="hover:bg-gray-50 bg-gray-25">
+                                        <td class="px-6 py-4 font-semibold text-gray-900">Platform Integration</td>
+                                        <td class="px-6 py-4 text-center text-gray-700">Any platform</td>
+                                        <td class="px-6 py-4 text-center text-green-600 bg-green-50">Any platform</td>
+                                    </tr>
+
+                                    <!-- Adhesive -->
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 font-semibold text-gray-900">Adhesive Quality</td>
+                                        <td class="px-6 py-4 text-center text-gray-700">3M adhesive (sticker backing)</td>
+                                        <td class="px-6 py-4 text-center text-green-600 bg-green-50">Specialty 3M adhesive (plastic)</td>
+                                    </tr>
+
+                                    <!-- Phone Compatibility -->
+                                    <tr class="hover:bg-gray-50 bg-gray-25">
+                                        <td class="px-6 py-4 font-semibold text-gray-900">Phone Compatibility</td>
+                                        <td class="px-6 py-4 text-center text-gray-700">NFC-enabled smartphones</td>
+                                        <td class="px-6 py-4 text-center text-blue-600 bg-blue-50">NFC-enabled smartphones</td>
+                                    </tr>
+
+                                    <!-- Custom Branding -->
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-6 py-4 font-semibold text-gray-900">Custom Branding</td>
+                                        <td class="px-6 py-4 text-center text-gray-700">Available</td>
+                                        <td class="px-6 py-4 text-center text-green-600 bg-green-50">Available</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Material Comparison -->
+        <section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">Material & Build Quality</h2>
+                        <p class="text-xl text-gray-600">Understanding the construction differences</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- ChurchTap -->
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                            <div class="text-center mb-6">
+                                <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-sticky-note text-gray-600 text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Vinyl Sticker Construction</h3>
+                                <p class="text-gray-600">ChurchTap</p>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="font-semibold text-gray-900 mb-2">Materials:</p>
+                                    <ul class="list-disc ml-6 space-y-1 text-gray-700">
+                                        <li>Vinyl sticker material</li>
+                                        <li>3M adhesive backing</li>
+                                        <li>Embedded NFC chip</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <p class="font-semibold text-gray-900 mb-2">Considerations:</p>
+                                    <ul class="list-disc ml-6 space-y-1 text-gray-700">
+                                        <li>Customer reports of peeling in heat/humidity</li>
+                                        <li>May require replacement over time</li>
+                                        <li>Indoor use recommended</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tap.Giving -->
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl shadow-lg border-2 border-blue-300">
+                            <div class="text-center mb-6">
+                                <div class="w-16 h-16 bg-blue-200 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-layer-group text-blue-600 text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Plastic Plate Construction</h3>
+                                <p class="text-gray-700 font-semibold">Tap.Giving</p>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="font-semibold text-gray-900 mb-2">Materials:</p>
+                                    <ul class="list-disc ml-6 space-y-1 text-gray-700">
+                                        <li>2mm thick durable plastic</li>
+                                        <li>Specialty 3M adhesive</li>
+                                        <li>Oversized NFC chip</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <p class="font-semibold text-gray-900 mb-2">Benefits:</p>
+                                    <ul class="list-disc ml-6 space-y-1 text-gray-700">
+                                        <li>Superior durability in all conditions</li>
+                                        <li>Better scan reliability</li>
+                                        <li>Long-lasting adhesion</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 p-4 bg-blue-200 rounded-lg">
+                                <p class="text-center text-sm font-semibold text-blue-900">Professional-grade construction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Differences Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">Key Considerations</h2>
+                        <p class="text-xl text-gray-600">Important factors in your decision</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Durability -->
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Superior Durability</h3>
+                            <p class="text-gray-600 mb-4">Tap.Giving's 2mm plastic construction outlasts vinyl stickers, especially in hot/humid climates where stickers may peel.</p>
+                            <div class="text-center">
+                                <span class="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">Long-lasting</span>
+                            </div>
+                        </div>
+
+                        <!-- Pricing Transparency -->
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-tag text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Transparent Pricing</h3>
+                            <p class="text-gray-600 mb-4">Tap.Giving publishes clear pricing ($3.50-5.00/plate). ChurchTap requires contacting for quotes.</p>
+                            <div class="text-center">
+                                <span class="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold">No surprises</span>
+                            </div>
+                        </div>
+
+                        <!-- Scan Quality -->
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+                            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-signal text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Better Scan Performance</h3>
+                            <p class="text-gray-600 mb-4">Oversized NFC chips in plastic plates provide more reliable scanning than thin vinyl stickers.</p>
+                            <div class="text-center">
+                                <span class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Consistent reads</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-center mt-10">
+                        Want to learn more about NFC giving? Check the
+                        <a href="/pricing.html" class="text-primary-600 hover:text-primary-700 font-semibold">Tap.Giving pricing guide</a>
+                        and
+                        <a href="/contact.html" class="text-primary-600 hover:text-primary-700 font-semibold">contact us</a>
+                        for a consultation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learn More CTA -->
+        <section class="bg-gradient-to-br from-blue-600 to-blue-800 py-16 text-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl lg:text-4xl font-black mb-6">Choose Durable NFC Plates for Your Church</h2>
+                    <p class="text-xl opacity-90 mb-8 leading-relaxed">
+                        Tap.Giving offers professional-grade plastic NFC plates with transparent pricing, superior durability, and no monthly fees.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/#contact" class="bg-white hover:bg-gray-50 text-blue-600 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            Get Started
+                        </a>
+                        <a href="/pricing.html" class="bg-transparent hover:bg-white/10 border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            View Pricing
+                        </a>
+                    </div>
+
+                    <div class="mt-8 p-4 bg-blue-500/20 rounded-lg border border-blue-400/30">
+                        <p class="text-blue-100 text-sm font-semibold">✅ 2mm plastic construction ✅ Transparent pricing ✅ Superior durability</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <img src="../assets/Logo-Crop-Large-1024x295.png" alt="Tap.Giving Logo" class="h-8 w-auto mb-4 brightness-0 invert">
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Simple, transparent NFC giving solutions that work with your existing church platform. No monthly fees, no lock-in.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">NFC Giving Plates</li>
+                        <li class="text-gray-300">Hardware Setup</li>
+                        <li class="text-gray-300">Platform Integration</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="/pricing.html" class="text-gray-300 hover:text-white transition duration-300">Pricing</a></li>
+                        <li><a href="/privacy.html" class="text-gray-300 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="text-gray-300 hover:text-white transition duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <div class="mb-4 space-x-4">
+                    <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+                    <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+                </div>
+                <p class="text-gray-500 text-sm font-medium">
+                    © 2025 Tap.Giving. All rights reserved. | Increasing church giving through innovative technology.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'block';
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                mobileMenu.style.display = 'none';
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
+
+        function scrollToForm() {
+            window.location.href = '/#contact';
+        }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3B3M72XEP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L3B3M72XEP', {
+            page_title: 'ChurchTap vs Tap.Giving Comparison',
+            page_location: window.location.href
+        });
+    </script>
+</body>
+</html>
