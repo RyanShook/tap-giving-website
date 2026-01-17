@@ -30,7 +30,7 @@
 ### 1. Hero Section ✅ IMPLEMENTED
 - **Headline**: "Increase Church Giving by Over 300% with Tap-to-Give Technology"
 - **Subheading**: "No setup fees. No monthly costs. Limited time pricing as low as $3.50 per plate."
-- **Urgency badge**: "⚡ Pricing Increases Soon - Lock In Today"
+- **Value badge**: "Volume Discounts Available - No Monthly Fees"
 - **Primary CTA**: "Get Free Quote" (leads to form)
 - **Secondary CTA**: "See Pricing Calculator" (leads to interactive slider)
 - **Hero visual**: Placeholder for NFC plate demonstration image
@@ -61,7 +61,7 @@
 - **No Hidden Fees**: Free shipping, no setup costs, no monthly fees
 - **Calculator Title**: "Estimated NFC Tap Plates Needed"
 - **Minimum Order**: 100 plates ($500 minimum)
-- **Delivery**: 2-3 weeks with free shipping
+- **Delivery**: 3-5 weeks with free shipping
 
 ### 6. Social Proof & Trust Building
 - **Research-backed statistics**: "Churches increase donations by over 300% with tap-to-give technology"
@@ -78,10 +78,10 @@
 - **Implementation**: How easy it is, support provided
 
 ### 8. Final CTA Section
-- **Urgency**: "Limited Time Pricing - Rates Increasing Soon"
+- **Value prop**: "Volume Discounts - No Setup Fees - No Monthly Costs"
 - **Social proof**: "Join hundreds of churches increasing their giving by 300%"
 - **Risk reversal**: No setup fees, transparent pricing
-- **Primary CTA**: "Lock In Your Pricing Today"
+- **Primary CTA**: "Get Started"
 - **Secondary options**: Phone number for immediate contact (832) 510-8788
 
 ## Conversion Form Strategy ✅ IMPLEMENTED

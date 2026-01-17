@@ -54,7 +54,7 @@ This landing page is optimized for maximum conversion based on research-backed s
 - **Minimum order**: 100 plates
 - **Free shipping** included  
 - **No setup fees, no monthly fees**
-- **Delivery time**: 2-3 weeks
+- **Delivery time**: 3-5 weeks
 
 ## 🔧 Technical Features
 

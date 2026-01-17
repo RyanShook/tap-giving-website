@@ -520,13 +520,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Exit Intent Popup Configuration
+// DISABLED - To re-enable, remove the return statement below
 document.addEventListener('DOMContentLoaded', function() {
+    // Exit intent popup disabled
+    return;
+
     // Check if bioEp library is loaded
     if (typeof bioEp === 'undefined') {
         console.error('bioEp library not loaded. Make sure bioep.min.js is included.');
         return;
     }
-    
+
     console.log('Initializing exit intent popup...');
     
     // Initialize exit intent popup after page loads
