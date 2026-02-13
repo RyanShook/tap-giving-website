@@ -12,6 +12,7 @@
 const REDIRECTS: Record<string, string> = {
 	'lifted': 'https://my.tap.giving/@lifted',
 	'bayside': 'https://my.tap.giving/@bayside',
+	'bethany': 'https://my.tap.giving/@bethanybaptist',
 };
 
 // ============================================================================
