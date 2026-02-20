@@ -9,35 +9,11 @@
         }
       ],
       "fields": {
-        "firstName": {
-          "type": "text",
-          "required": true
-        },
-        "lastName": {
-          "type": "text", 
-          "required": true
-        },
         "email": {
           "type": "email",
           "required": true
         },
         "phone": {
-          "type": "text",
-          "required": true
-        },
-        "churchName": {
-          "type": "text",
-          "required": false
-        },
-        "subject": {
-          "type": "text",
-          "required": true
-        },
-        "quantity": {
-          "type": "text",
-          "required": false
-        },
-        "message": {
           "type": "text",
           "required": true
         }
