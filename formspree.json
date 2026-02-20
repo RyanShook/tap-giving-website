@@ -5,12 +5,9 @@
       "actions": [
         {
           "type": "email",
-          "to": "hello@tap.giving",
-          "subject": "New Contact Form Submission - {{subject}} - Tap.Giving",
-          "template": "Contact Form Submission\n\nName: {{firstName}} {{lastName}}\nEmail: {{email}}\nPhone: {{phone}}\nChurch: {{churchName}}\nSubject: {{subject}}\n\nMessage:\n{{message}}"
+          "to": "hello@tap.giving"
         }
       ],
-      "replyTo": "{{email}}",
       "fields": {
         "firstName": {
           "type": "text",
@@ -25,20 +22,23 @@
           "required": true
         },
         "phone": {
-          "type": "tel",
-          "required": false
+          "type": "text",
+          "required": true
         },
         "churchName": {
           "type": "text",
           "required": false
         },
         "subject": {
-          "type": "select",
-          "required": true,
-          "options": ["quote", "support", "demo", "partnership", "other"]
+          "type": "text",
+          "required": true
+        },
+        "quantity": {
+          "type": "text",
+          "required": false
         },
         "message": {
-          "type": "textarea",
+          "type": "text",
           "required": true
         }
       }
