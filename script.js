@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const data = Object.fromEntries(formData);
             
             // Basic validation
-            if (!data.church_name || !data.pastor_name || !data.email) {
+            if (!data.church_name || !data.pastor_name || !data.email || !data.phone || !data.quantity) {
                 alert('Please fill in all required fields.');
                 return;
             }
