@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donorbox Tap-to-Give Setup Guide: 3 Steps to NFC Giving | Tap.Giving</title>
+    <meta name="description" content="Set up tap-to-give with Donorbox in 3 easy steps. Learn how to use NFC giving plates to boost church donations with your existing Donorbox account.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tap.giving/blog/donorbox-tap-to-give-setup.html">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Donorbox Tap-to-Give Setup Guide: 3 Steps to NFC Giving",
+        "description": "How to set up tap-to-give NFC giving plates with Donorbox for your church.",
+        "url": "https://tap.giving/blog/donorbox-tap-to-give-setup.html",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Get Your NFC Giving Plates",
+                "text": "Order custom NFC giving plates from Tap.Giving with your church branding, pre-programmed to your Donorbox giving page."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Set Up Your Donorbox Giving Link",
+                "text": "Find your Donorbox campaign URL and configure it as the destination for your NFC plates."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Place Plates and Start Collecting",
+                "text": "Place NFC giving plates on chair backs, lobby tables, and welcome areas. Members tap their phone to give instantly through Donorbox."
+            }
+        ],
+        "author": {
+            "@type": "Organization",
+            "name": "Tap.Giving"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tap.Giving",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://tap.giving/assets/Logo-Crop-Large-1024x295.png"
+            }
+        }
+    }
+    </script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#eff6ff", 100: "#dbeafe", 200: "#bfdbfe", 300: "#93c5fd", 400: "#60a5fa", 500: "#3b82f6", 600: "#2563eb", 700: "#1d4ed8", 800: "#1e40af", 900: "#1e3a8a",
+              },
+              accent: {
+                50: "#f0fdf4", 100: "#dcfce7", 200: "#bbf7d0", 300: "#86efac", 400: "#4ade80", 500: "#22c55e", 600: "#16a34a", 700: "#15803d", 800: "#166534", 900: "#14532d",
+              },
+            },
+            fontFamily: {
+              inter: ['Inter', 'system-ui', 'sans-serif'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          }
+        }
+      };
+    </script>
+</head>
+<body class="font-inter antialiased bg-white">
+    <!-- ======================================== -->
+    <!-- CONSISTENT HEADER ACROSS ALL PAGES      -->
+    <!-- ======================================== -->
+    <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-16">
+                <!-- Left: Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <img
+                            src="../assets/Logo-Crop-Large-1024x295.png"
+                            alt="Tap.Giving - Church NFC Giving Solution Logo"
+                            class="h-8 w-auto"
+                            width="1024"
+                            height="295"
+                            loading="eager"
+                        />
+                    </a>
+                </div>
+
+                <!-- Center: Desktop Navigation -->
+                <nav class="hidden md:flex flex-1 justify-center space-x-8">
+                    <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+                    <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
+                    <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+                </nav>
+
+                <!-- Right: Actions -->
+                <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
+                    <button
+                        onclick="scrollToForm()"
+                        class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap"
+                    >
+                        Order Now
+                    </button>
+
+                    <button
+                        type="button"
+                        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                        onclick="toggleMobileMenu()"
+                    >
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="md:hidden" id="mobile-menu" style="display: none">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+                    <a href="/blog.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
+                    <a href="/contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-gray-50 py-4" aria-label="Breadcrumb">
+        <div class="container mx-auto px-6">
+            <ol class="flex items-center space-x-2">
+                <li>
+                    <a href="/" class="text-gray-500 hover:text-blue-600 transition duration-300">Home</a>
+                </li>
+                <li><span class="text-gray-400">/</span></li>
+                <li>
+                    <a href="/blog.html" class="text-gray-500 hover:text-blue-600 transition duration-300">Blog</a>
+                </li>
+                <li><span class="text-gray-400">/</span></li>
+                <li>
+                    <span class="text-gray-900 font-medium">Donorbox Tap-to-Give Setup</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 lg:py-24">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="mb-6">
+                        <span class="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent text-sm font-bold uppercase tracking-wider">Setup Guide</span>
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
+                        Donorbox
+                        <span class="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Tap-to-Give</span>
+                        Setup Guide
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+                        Already use Donorbox for church giving? Add NFC tap-to-give in 3 simple steps. Members tap a plate with their phone and land directly on your Donorbox donation form - no app, no QR scanning.
+                    </p>
+
+                    <!-- Quick Stats -->
+                    <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg border border-blue-100">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">3 Steps</div>
+                            <div class="text-sm text-gray-600">Simple setup process</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl shadow-lg border-2 border-blue-300">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">No App</div>
+                            <div class="text-sm text-gray-700 font-semibold">Works on any smartphone</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg border border-blue-100">
+                            <div class="text-3xl font-bold text-green-600 mb-2">$0/mo</div>
+                            <div class="text-sm text-gray-600">No extra subscriptions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Tap-to-Give Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl lg:text-4xl font-black text-gray-900 mb-6 text-center">Why Add NFC to Donorbox?</h2>
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-200 p-8 lg:p-12">
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Donorbox already gives you embeddable donation forms, recurring giving, and QR codes. But during a service, there's still friction. Members have to scan a code, type a URL, or remember to give when they get home. Most don't follow through.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            NFC tap-to-give removes that friction entirely. A member taps their phone on a plate and your Donorbox form opens instantly. No camera alignment, no URL typing, no app download. It's the fastest path from "I want to give" to "I just gave."
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-blue-50 p-5 rounded-xl border border-blue-200 text-center">
+                                <i class="fas fa-bolt text-blue-500 text-2xl mb-3"></i>
+                                <p class="text-sm font-semibold text-blue-700">Faster than QR codes</p>
+                                <p class="text-xs text-gray-500 mt-1">Tap instead of scan</p>
+                            </div>
+                            <div class="bg-blue-50 p-5 rounded-xl border border-blue-200 text-center">
+                                <i class="fas fa-mobile-screen text-blue-500 text-2xl mb-3"></i>
+                                <p class="text-sm font-semibold text-blue-700">No app required</p>
+                                <p class="text-xs text-gray-500 mt-1">Works on any smartphone</p>
+                            </div>
+                            <div class="bg-blue-50 p-5 rounded-xl border border-blue-200 text-center">
+                                <i class="fas fa-layer-group text-blue-500 text-2xl mb-3"></i>
+                                <p class="text-sm font-semibold text-blue-700">Adds to your stack</p>
+                                <p class="text-xs text-gray-500 mt-1">Complements QR &amp; online giving</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 1 -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-white text-2xl font-black">1</span>
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-black text-gray-900">Get Your NFC Giving Plates</h2>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-200 p-8 lg:p-12">
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            You need NFC plates that hold up to weekly church use - attached to chair backs, placed on lobby tables, or displayed at welcome centers. Cheap NFC stickers peel and look unprofessional. Rigid PVC plates last.
+                        </p>
+
+                        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200 mb-8">
+                            <h3 class="text-lg font-bold text-blue-800 mb-3"><i class="fas fa-star mr-2"></i>The Easy Way</h3>
+                            <p class="text-gray-700 mb-4">
+                                <a href="https://tap.giving" class="text-blue-600 hover:text-blue-700 font-semibold underline">Tap.Giving</a> makes NFC giving plates specifically for churches. You get:
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check text-green-600 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Custom branded plates</strong> with your church logo and design</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check text-green-600 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Pre-programmed</strong> to your Donorbox giving URL</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check text-green-600 mt-1"></i>
+                                    <span class="text-gray-700"><strong>QR code backup</strong> printed on every plate for older phones</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check text-green-600 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Free shipping</strong> and no monthly fees - <a href="/pricing.html" class="text-blue-600 hover:text-blue-700 font-semibold underline">$3.50-$4.50/plate</a></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                            <h3 class="text-lg font-bold text-gray-800 mb-3"><i class="fas fa-wrench mr-2"></i>The DIY Way</h3>
+                            <p class="text-gray-600 mb-4">
+                                You can buy blank NFC tags (NTAG215 or NTAG216) and program them yourself using the free <strong>NFC Tools</strong> app (iOS and Android):
+                            </p>
+                            <ol class="space-y-2 text-gray-600">
+                                <li class="flex items-start gap-3">
+                                    <span class="font-bold text-gray-400">1.</span>
+                                    <span>Download NFC Tools on your phone</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="font-bold text-gray-400">2.</span>
+                                    <span>Open the app and select "Write" then "Add a record"</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="font-bold text-gray-400">3.</span>
+                                    <span>Choose "URL" and paste your Donorbox campaign link</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="font-bold text-gray-400">4.</span>
+                                    <span>Hold your phone to the NFC tag to write the data</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="font-bold text-gray-400">5.</span>
+                                    <span>Repeat for every tag</span>
+                                </li>
+                            </ol>
+                            <p class="text-sm text-gray-500 mt-4">
+                                This works, but you'll spend time programming each tag individually, and plain stickers don't look as polished as branded plates.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2 -->
+        <section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-white text-2xl font-black">2</span>
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-black text-gray-900">Set Up Your Donorbox Giving Link</h2>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-200 p-8 lg:p-12">
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Your NFC plates need a destination - the page members land on when they tap. With Donorbox, this is your campaign's donation form URL.
+                        </p>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Finding Your Donorbox Giving URL</h3>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-4 bg-gray-50 p-4 rounded-xl">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-blue-600 font-bold text-sm">1</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Log in to your <strong>Donorbox dashboard</strong></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-gray-50 p-4 rounded-xl">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-blue-600 font-bold text-sm">2</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Go to your <strong>Campaigns</strong> and select your giving campaign</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-gray-50 p-4 rounded-xl">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-blue-600 font-bold text-sm">3</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Copy your campaign donation URL</p>
+                                    <p class="text-sm text-gray-500 mt-1">It looks like: <code class="bg-gray-200 px-2 py-0.5 rounded text-sm">donorbox.org/your-church-giving</code></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 rounded-2xl p-6 border border-green-200 mb-6">
+                            <h3 class="text-lg font-bold text-green-800 mb-2"><i class="fas fa-lightbulb mr-2"></i>Pro Tip</h3>
+                            <p class="text-gray-700">
+                                Donorbox lets you create multiple campaigns. You can set up a dedicated "Sunday Giving" or "Tithe" campaign and link your NFC plates directly to it - members skip the campaign selection and go straight to the donation amount.
+                            </p>
+                        </div>
+
+                        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                            <p class="text-gray-700">
+                                <strong>Ordering from <a href="https://tap.giving" class="text-blue-600 hover:text-blue-700 underline">Tap.Giving</a>?</strong> Just share your Donorbox campaign URL when you place your order. Your plates arrive pre-programmed and ready to use - no NFC Tools app needed.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3 -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-white text-2xl font-black">3</span>
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-black text-gray-900">Place Plates and Start Collecting</h2>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-200 p-8 lg:p-12">
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            With your NFC plates programmed and your Donorbox campaign ready, place them where people will actually use them. Accessibility is everything.
+                        </p>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Best Placement Locations</h3>
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="flex items-start gap-4 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-chair text-purple-600 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Every Chair / Pew Back</h4>
+                                    <p class="text-gray-600 text-sm">The most effective placement. Members can give during the offering without leaving their seat.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-door-open text-blue-600 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Lobby / Entrance Tables</h4>
+                                    <p class="text-gray-600 text-sm">Catch people on their way in or out. Visitors who want to give on their first visit can do so easily.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                                <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-mug-hot text-green-600 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Coffee Bar / Fellowship Area</h4>
+                                    <p class="text-gray-600 text-sm">Casual setting where people already have their phones out. A natural moment for generosity.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                                <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-hand-holding-heart text-orange-600 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-1">Welcome Center</h4>
+                                    <p class="text-gray-600 text-sm">Introduce visitors to your giving platform alongside connection cards and ministry info.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 rounded-2xl p-6 border border-yellow-200 mb-6">
+                            <h3 class="text-lg font-bold text-yellow-800 mb-2"><i class="fas fa-bullhorn mr-2"></i>Announce It</h3>
+                            <p class="text-gray-700">
+                                The first few weeks, tell your congregation about the plates. A simple "You can now give by tapping your phone on the plate in front of you" during the offering goes a long way. Once people try it, they'll use it every week.
+                            </p>
+                        </div>
+
+                        <div class="bg-green-50 rounded-2xl p-6 border border-green-200">
+                            <h3 class="text-lg font-bold text-green-800 mb-2"><i class="fas fa-check-circle mr-2"></i>What Happens When Someone Taps</h3>
+                            <ol class="space-y-2 text-gray-700">
+                                <li class="flex items-start gap-3">
+                                    <span class="font-bold text-green-600">1.</span>
+                                    <span>Member holds their phone near the NFC plate</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="font-bold text-green-600">2.</span>
+                                    <span>Phone displays a notification with your Donorbox link</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="font-bold text-green-600">3.</span>
+                                    <span>They tap the notification and your Donorbox donation form opens</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="font-bold text-green-600">4.</span>
+                                    <span>They choose an amount and complete their gift</span>
+                                </li>
+                            </ol>
+                            <p class="text-sm text-gray-500 mt-4">The whole process takes under 30 seconds. Phones that don't support NFC can scan the QR code printed on the plate instead.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">Common Questions</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Do I have to buy NFC tags through Donorbox?</h3>
+                            <p class="text-gray-600">No. Donorbox partners with TapTag, but any NFC tag programmed with your Donorbox URL will work. <a href="https://tap.giving" class="text-blue-600 hover:text-blue-700 font-semibold underline">Tap.Giving</a> plates are custom branded to your church, include QR codes, and ship free at $3.50-$4.50 per plate.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Do I need to change anything in Donorbox?</h3>
+                            <p class="text-gray-600">No. NFC plates simply open your existing Donorbox donation form in the member's browser. Same campaigns, same payment processing, same reporting dashboard.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">What's the difference between Tap.Giving plates and Donorbox's TapTag?</h3>
+                            <p class="text-gray-600">Donorbox's TapTag directs to a Linktree-style menu with multiple links. <a href="https://tap.giving" class="text-blue-600 hover:text-blue-700 font-semibold underline">Tap.Giving</a> plates go straight to your donation form - one less step between the tap and the gift. Plus, Tap.Giving publishes pricing upfront while TapTag requires contacting sales.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">What phones does it work with?</h3>
+                            <p class="text-gray-600">NFC works on iPhone 7 and newer (iOS 14+), and virtually all Android phones made since 2015. For phones without NFC, the QR code on each plate serves as a backup.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Does this cost anything monthly?</h3>
+                            <p class="text-gray-600">The NFC plates from <a href="/pricing.html" class="text-blue-600 hover:text-blue-700 font-semibold underline">Tap.Giving</a> are a one-time purchase with no monthly fees. You continue paying whatever you already pay Donorbox for their platform.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Can I use these plates if I switch away from Donorbox?</h3>
+                            <p class="text-gray-600">Yes. NFC plates can be reprogrammed to any URL. If you switch to Planning Center, Tithe.ly, Pushpay, or any other platform, just reprogram the plates with your new giving link.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-gradient-to-br from-blue-600 to-blue-800 py-16 text-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl lg:text-4xl font-black mb-6">Ready to Add Tap-to-Give?</h2>
+                    <p class="text-xl opacity-90 mb-8 leading-relaxed">
+                        Get custom NFC giving plates pre-programmed to your Donorbox donation form. Free shipping, no monthly fees, plates start at $3.50 each.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/#contact" class="bg-white hover:bg-gray-50 text-blue-600 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            Get a Quote
+                        </a>
+                        <a href="/pricing.html" class="bg-transparent hover:bg-white/10 border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            See Pricing
+                        </a>
+                    </div>
+
+                    <div class="mt-8 p-4 bg-blue-500/20 rounded-lg border border-blue-400/30">
+                        <p class="text-blue-100 text-sm font-semibold">Works with Donorbox, Planning Center, Tithe.ly, Pushpay, and any giving platform with a URL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <img src="../assets/Logo-Crop-Large-1024x295.png" alt="Tap.Giving Logo" class="h-8 w-auto mb-4 brightness-0 invert">
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Simple, transparent NFC giving solutions that work with your existing church platform. No monthly fees, no lock-in.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">NFC Giving Plates</li>
+                        <li class="text-gray-300">Hardware Setup</li>
+                        <li class="text-gray-300">Platform Integration</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="/pricing.html" class="text-gray-300 hover:text-white transition duration-300">Pricing</a></li>
+                        <li><a href="/privacy.html" class="text-gray-300 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="text-gray-300 hover:text-white transition duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <div class="mb-4 space-x-4">
+                    <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+                    <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+                </div>
+                <p class="text-gray-500 text-sm font-medium">
+                    © 2026 Tap.Giving. All rights reserved. | Increasing church giving through innovative technology.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'block';
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                mobileMenu.style.display = 'none';
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+    <!-- Crisp Chat -->
+    <script type="text/javascript">
+        window.$crisp=[];window.CRISP_WEBSITE_ID="ad8857a0-36b5-4cab-97d2-ad9913058ee1";
+        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3B3M72XEP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L3B3M72XEP');
+    </script>
+</body>
+</html>

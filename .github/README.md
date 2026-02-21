@@ -242,7 +242,7 @@ trackEvent('scroll', 'engagement', '50%');
 - [ ] Optimize for Core Web Vitals
 - [ ] Add customer testimonials as they come in
 - [ ] Update statistics regularly with new research
-- [ ] Add Google Analytics for detailed metrics
+- [ ] Add Google Analytics for metrics
 
 ## 📞 Contact Information
 
