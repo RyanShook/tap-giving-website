@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (plates >= 200) {
             pricePerUnit = 4.00;
         } else {
-            pricePerUnit = 5.00;
+            pricePerUnit = 4.50;
         }
 
         const total = plates * pricePerUnit;
