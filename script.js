@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">Order Started 🎉</h3>
                         <p class="text-gray-600 mb-6">Congratulations on taking your first step toward increased generosity and engagement! Our team will reach out to you within 24 hours to discuss your artwork and order details.</p>
-                        <p class="text-primary-600 font-semibold">Have questions? Text us at <a href="sms:+18325108788" class="text-primary-600 hover:text-primary-700 underline">(832) 510-8788</a></p>
+                        <p class="text-primary-600 font-semibold">Want to design your own tap plate? <a href="https://www.canva.com/design/DAHB7dHl1WM/7zObqE04mR1O67TUvV8KOw/view?utm_content=DAHB7dHl1WM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Use our free Canva template</a></p>
                         <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                             <p class="text-green-800 text-sm font-semibold">✅ Order Successfully Submitted</p>
                             <p class="text-green-700 text-sm">Your order details have been sent to hello@tap.giving</p>
