@@ -142,6 +142,8 @@
       };
     </script>
 
+    <!-- Hide body until Tailwind is ready to prevent layout shift -->
+    <style>body{opacity:0}</style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -442,7 +444,8 @@
 
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="font-sans antialiased">
+  <body class="font-sans antialiased" style="transition:opacity .15s ease-in">
+    <script>document.body.style.opacity='1'</script>
     <!-- =================================================================== -->
     <!-- HEADER SECTION: Sticky navigation with logo and primary CTA        -->
     <!-- Purpose: Immediate access to contact and quote request              -->
