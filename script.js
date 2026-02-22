@@ -135,48 +135,46 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData);
-            
+
             // Basic validation
             if (!data.email) {
-                alert('Please fill in all required fields.');
+                alert('Please enter your email address.');
                 return;
             }
-            
+
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
                 alert('Please enter a valid email address.');
                 return;
             }
-            
+
             // Show loading state
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.innerHTML;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>Submitting...';
             submitButton.disabled = true;
 
-            // Submit to real Formspree endpoint
-            fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    return response.json().catch(() => ({ ok: true })); // Handle non-JSON responses
-                } else {
+            try {
+                // Submit to real Formspree endpoint
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
                     throw new Error('Form submission failed');
                 }
-            })
-            .then(data => {
+
                 // Success - show thank you message
                 contactForm.innerHTML = `
                     <div class="text-center py-12">
@@ -192,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 `;
-                
+
                 // Track successful conversion
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'form_submit', {
@@ -200,14 +198,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         event_label: 'contact_form'
                     });
                 }
-            })
-            .catch(error => {
+            } catch (error) {
                 console.error('Form submission error:', error);
-                
+
                 // Reset button state
                 submitButton.innerHTML = originalButtonText;
                 submitButton.disabled = false;
-                
+
                 // Show user-friendly error message
                 const errorDiv = document.createElement('div');
                 errorDiv.className = 'bg-red-50 border border-red-200 rounded-lg p-4 mb-6';
@@ -222,17 +219,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 `;
-                
+
                 // Insert error message at the top of the form
                 contactForm.insertBefore(errorDiv, contactForm.firstChild);
-                
+
                 // Remove error message after 5 seconds
                 setTimeout(() => {
                     if (errorDiv.parentNode) {
                         errorDiv.parentNode.removeChild(errorDiv);
                     }
                 }, 5000);
-            });
+            }
         });
     }
 });
