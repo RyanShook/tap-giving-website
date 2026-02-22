@@ -15,7 +15,7 @@
         },
         "phone": {
           "type": "text",
-          "required": true
+          "required": false
         }
       }
     }
