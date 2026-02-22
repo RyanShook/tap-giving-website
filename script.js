@@ -135,12 +135,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
             // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
+            var formData = new FormData(contactForm);
+            var data = Object.fromEntries(formData);
 
             // Basic validation
             if (!data.email) {
@@ -149,82 +149,73 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
                 alert('Please enter a valid email address.');
                 return;
             }
 
             // Show loading state
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.innerHTML;
+            var submitButton = contactForm.querySelector('button[type="submit"]');
+            var originalButtonText = submitButton.innerHTML;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>Submitting...';
             submitButton.disabled = true;
 
-            try {
-                // Submit to real Formspree endpoint
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
+            // Submit to real Formspree endpoint
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', contactForm.action);
+            xhr.setRequestHeader('Accept', 'application/json');
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // Success - show thank you message
+                    contactForm.innerHTML = '<div class="text-center py-12">' +
+                        '<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">' +
+                        '<span class="text-green-600 text-2xl">✓</span>' +
+                        '</div>' +
+                        '<h3 class="text-2xl font-bold text-gray-900 mb-4">Order Started 🎉</h3>' +
+                        '<p class="text-gray-600 mb-6">Congratulations on taking your first step toward increased generosity and engagement! Our team will reach out to you within 24 hours to discuss your artwork and order details.</p>' +
+                        '<p class="text-primary-600 font-semibold">Want to design your own tap plate? <a href="https://www.canva.com/design/DAHB7dHl1WM/7zObqE04mR1O67TUvV8KOw/view?utm_content=DAHB7dHl1WM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Use our free Canva template</a></p>' +
+                        '<div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">' +
+                        '<p class="text-green-800 text-sm font-semibold">✅ Order Successfully Submitted</p>' +
+                        '<p class="text-green-700 text-sm">Your order details have been sent to hello@tap.giving</p>' +
+                        '</div></div>';
+
+                    // Track successful conversion
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'form_submit', {
+                            event_category: 'engagement',
+                            event_label: 'contact_form'
+                        });
                     }
-                });
-
-                if (!response.ok) {
-                    throw new Error('Form submission failed');
+                } else {
+                    showFormError();
                 }
+            };
+            xhr.onerror = function() {
+                showFormError();
+            };
+            xhr.send(formData);
 
-                // Success - show thank you message
-                contactForm.innerHTML = `
-                    <div class="text-center py-12">
-                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-green-600 text-2xl">✓</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Order Started 🎉</h3>
-                        <p class="text-gray-600 mb-6">Congratulations on taking your first step toward increased generosity and engagement! Our team will reach out to you within 24 hours to discuss your artwork and order details.</p>
-                        <p class="text-primary-600 font-semibold">Want to design your own tap plate? <a href="https://www.canva.com/design/DAHB7dHl1WM/7zObqE04mR1O67TUvV8KOw/view?utm_content=DAHB7dHl1WM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 underline">Use our free Canva template</a></p>
-                        <div class="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                            <p class="text-green-800 text-sm font-semibold">✅ Order Successfully Submitted</p>
-                            <p class="text-green-700 text-sm">Your order details have been sent to hello@tap.giving</p>
-                        </div>
-                    </div>
-                `;
-
-                // Track successful conversion
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'form_submit', {
-                        event_category: 'engagement',
-                        event_label: 'contact_form'
-                    });
-                }
-            } catch (error) {
-                console.error('Form submission error:', error);
-
+            function showFormError() {
                 // Reset button state
                 submitButton.innerHTML = originalButtonText;
                 submitButton.disabled = false;
 
                 // Show user-friendly error message
-                const errorDiv = document.createElement('div');
+                var errorDiv = document.createElement('div');
                 errorDiv.className = 'bg-red-50 border border-red-200 rounded-lg p-4 mb-6';
-                errorDiv.innerHTML = `
-                    <div class="flex items-center">
-                        <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3">
-                            <span class="text-red-600 text-sm">!</span>
-                        </div>
-                        <div>
-                            <p class="text-red-800 font-semibold">There was an error submitting the form.</p>
-                            <p class="text-red-700 text-sm">Please try again or call us directly at (832) 510-8788.</p>
-                        </div>
-                    </div>
-                `;
+                errorDiv.innerHTML = '<div class="flex items-center">' +
+                    '<div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center mr-3">' +
+                    '<span class="text-red-600 text-sm">!</span></div>' +
+                    '<div><p class="text-red-800 font-semibold">There was an error submitting the form.</p>' +
+                    '<p class="text-red-700 text-sm">Please try again or call us directly at (832) 510-8788.</p>' +
+                    '</div></div>';
 
                 // Insert error message at the top of the form
                 contactForm.insertBefore(errorDiv, contactForm.firstChild);
 
                 // Remove error message after 5 seconds
-                setTimeout(() => {
+                setTimeout(function() {
                     if (errorDiv.parentNode) {
                         errorDiv.parentNode.removeChild(errorDiv);
                     }
