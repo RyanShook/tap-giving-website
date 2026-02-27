@@ -194,7 +194,8 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "LocalBusiness",
+        "@id": "https://tap.giving/#business",
         "name": "Tap.Giving",
         "url": "https://tap.giving/",
         "logo": {
@@ -206,7 +207,12 @@
           "height": 512,
           "caption": "Tap.Giving Logo"
         },
+        "image": "https://tap.giving/assets/phone-and-plate.webp",
         "description": "The most affordable NFC tap-to-give solution for churches. No setup fees, no monthly costs. Prices as low as $3.50 per plate.",
+        "telephone": "+1-832-510-8788",
+        "email": "hello@tap.giving",
+        "priceRange": "$$",
+        "additionalType": "https://www.wikidata.org/wiki/Q1414816",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-832-510-8788",
@@ -217,19 +223,22 @@
         "address": {
           "@type": "PostalAddress",
           "addressRegion": "TX",
-          "addressLocality": "Houston",
           "addressCountry": "US"
         },
         "areaServed": [
           {
             "@type": "Country",
             "name": "United States"
-          },
-          {
-            "@type": "State",
-            "name": "Texas"
           }
         ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
         "sameAs": [
           "https://www.facebook.com/tapgiving",
           "https://www.instagram.com/tap.giving"
