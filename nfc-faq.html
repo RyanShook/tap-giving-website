@@ -8,6 +8,24 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://tap.giving/nfc-faq.html" />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="NFC FAQ - Locked vs Unlocked Tap Plates | Tap.Giving" />
+    <meta property="og:description" content="Learn about locked vs unlocked NFC tap plates, the lock-then-redirect method, and password protection for church giving plates." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tap.giving/nfc-faq.html" />
+    <meta property="og:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Tap.Giving" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NFC Tap Plate FAQ | Tap.Giving" />
+    <meta name="twitter:description" content="Locked vs unlocked NFC plates, password protection, and the lock-then-redirect method explained." />
+    <meta name="twitter:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta name="twitter:site" content="@tapgiving" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,6 +68,70 @@
             "name": "Tap.Giving",
             "url": "https://tap.giving/"
         }
+    }
+    </script>
+
+    <!-- FAQPage Structured Data for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the difference between locked and unlocked NFC plates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Locked plates have their NFC memory set to read-only after encoding your URL. Anyone can still tap and open the link, but the data cannot be overwritten. Unlocked plates allow anyone with physical access and an NFC phone to rewrite the destination URL."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the lock-then-redirect method for NFC plates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The lock-then-redirect method involves programming a branded URL you control onto the NFC plate, then locking the chip so it cannot be rewritten. You can then use your website or domain registrar to redirect that URL to any current campaign page, changing the destination anytime without touching the physical plate."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I lock or leave my NFC tap plates unlocked?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tap.Giving recommends locking your plates (the default option). Locked plates prevent tampering, keep donor journeys consistent, and eliminate maintenance. If you need to change the destination, simply update the redirect on your domain instead of reprogramming the plate."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I password protect unlocked NFC plates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Download the free NFC Tools app for iOS or Android. Tap Other then Set Password, create a short passcode, and touch the plate to save it. When you need to edit the plate, choose Remove Password, enter the code, make changes, then set the password again. Note: passwords only block rewriting, not scanning."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tap.giving/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "NFC FAQ",
+                "item": "https://tap.giving/nfc-faq.html"
+            }
+        ]
     }
     </script>
 
