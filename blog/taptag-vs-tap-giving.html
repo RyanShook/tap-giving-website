@@ -8,6 +8,23 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://tap.giving/blog/taptag-vs-tap-giving.html">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="TapTag vs Tap.Giving - Church NFC Giving Plate Pricing Comparison | Tap.Giving" />
+    <meta property="og:description" content="Compare TapTag NFC tags vs Tap.Giving NFC giving plates for churches. See pricing differences, hidden fees, and why Tap.Giving saves churches 44%+ on NFC giving hardware." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tap.giving/blog/taptag-vs-tap-giving.html" />
+    <meta property="og:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Tap.Giving" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TapTag vs Tap.Giving - Church NFC Giving Plate Pricing Comparison | Tap.Giving" />
+    <meta name="twitter:description" content="Compare TapTag NFC tags vs Tap.Giving NFC giving plates for churches. See pricing differences, hidden fees, and why Tap.Giving saves churches 44%+ on NFC giving hardware." />
+    <meta name="twitter:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta name="twitter:site" content="@tapgiving" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +51,7 @@
             "name": "Tap.Giving",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://tap.giving/assets/Logo-Crop-Large-1024x295.png"
+                "url": "https://tap.giving/assets/Logo-Crop-Large-1024x295.webp"
             }
         },
         "mainEntityOfPage": {
@@ -78,6 +95,7 @@
     </script>
 </head>
 <body class="font-inter antialiased bg-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-blue-600 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">Skip to main content</a>
     <!-- ======================================== -->
     <!-- CONSISTENT HEADER ACROSS ALL PAGES      -->
     <!-- ======================================== -->
@@ -88,7 +106,7 @@
                 <div class="flex-shrink-0">
                     <a href="/" class="flex items-center">
                         <img
-                            src="../assets/Logo-Crop-Large-1024x295.png"
+                            src="../assets/Logo-Crop-Large-1024x295.webp"
                             alt="Tap.Giving - Church NFC Giving Solution Logo"
                             class="h-8 w-auto"
                             width="1024"
@@ -99,7 +117,7 @@
                 </div>
 
                 <!-- Center: Desktop Navigation -->
-                <nav class="hidden md:flex flex-1 justify-center space-x-8">
+                <nav class="hidden md:flex flex-1 justify-center space-x-8" aria-label="Main navigation">
                     <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
                     <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
                     <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
@@ -163,7 +181,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 lg:py-24">
             <div class="container mx-auto px-6">
@@ -461,7 +479,7 @@
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="col-span-2">
-                    <img src="../assets/Logo-Crop-Large-1024x295.png" alt="Tap.Giving Logo" class="h-8 w-auto mb-4 brightness-0 invert">
+                    <img src="../assets/Logo-Crop-Large-1024x295.webp" alt="Tap.Giving Logo" class="h-8 w-auto mb-4 brightness-0 invert">
                     <p class="text-gray-300 mb-6 leading-relaxed">
                         Simple, transparent NFC giving solutions that work with your existing church platform. No monthly fees, no lock-in.
                     </p>
@@ -509,10 +527,12 @@
                 mobileMenu.style.display = 'block';
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
+          menuIcon.closest('button').setAttribute('aria-expanded', 'true');
             } else {
                 mobileMenu.style.display = 'none';
                 menuIcon.classList.remove('fa-times');
                 menuIcon.classList.add('fa-bars');
+          menuIcon.closest('button').setAttribute('aria-expanded', 'false');
             }
         }
     </script>

@@ -8,6 +8,23 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://tap.giving/order.html">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Order NFC Tap-to-Give Plates - Tap.Giving" />
+    <meta property="og:description" content="Order custom NFC tap-to-give plates for your church. Transparent pricing from $3.50-$4.50 per plate. No setup fees, no monthly costs, free shipping included." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tap.giving/order.html" />
+    <meta property="og:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Tap.Giving" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Order NFC Tap-to-Give Plates - Tap.Giving" />
+    <meta name="twitter:description" content="Order custom NFC tap-to-give plates for your church. Transparent pricing from $3.50-$4.50 per plate. No setup fees, no monthly costs, free shipping included." />
+    <meta name="twitter:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta name="twitter:site" content="@tapgiving" />
     
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -74,6 +91,7 @@
     </script>
 </head>
 <body class="font-inter antialiased bg-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-blue-600 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">Skip to main content</a>
     <!-- Header -->
     <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,7 +100,7 @@
                 <div class="flex-shrink-0">
                     <a href="/" class="flex items-center">
                         <img
-                            src="assets/Logo-Crop-Large-1024x295.png"
+                            src="assets/Logo-Crop-Large-1024x295.webp"
                             alt="Tap.Giving - Church NFC Giving Solution Logo"
                             class="h-8 w-auto"
                             width="1024"
@@ -93,7 +111,7 @@
                 </div>
 
                 <!-- Center: Desktop Navigation -->
-                <nav class="hidden md:flex flex-1 justify-center space-x-8">
+                <nav class="hidden md:flex flex-1 justify-center space-x-8" aria-label="Main navigation">
                     <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
                     <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
                     <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
@@ -135,7 +153,7 @@
     </header>
 
     <!-- Order Form Section -->
-    <main>
+    <main id="main-content">
         <section
             id="order"
             class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-primary-800 py-20"
@@ -318,7 +336,7 @@
                         <picture>
                             <source srcset="assets/Logo-Crop-Large-1024x295.webp" type="image/webp">
                             <img
-                                src="assets/Logo-Crop-Large-1024x295.png"
+                                src="assets/Logo-Crop-Large-1024x295.webp"
                                 alt="Tap.Giving Logo"
                                 class="h-12 w-auto mx-auto"
                                 loading="lazy"
@@ -402,10 +420,12 @@
                 mobileMenu.style.display = "block";
                 menuIcon.classList.remove("fa-bars");
                 menuIcon.classList.add("fa-times");
+          menuIcon.closest("button").setAttribute("aria-expanded", "true");
             } else {
                 mobileMenu.style.display = "none";
                 menuIcon.classList.remove("fa-times");
                 menuIcon.classList.add("fa-bars");
+          menuIcon.closest("button").setAttribute("aria-expanded", "false");
             }
         }
 
@@ -419,6 +439,7 @@
                     mobileMenu.style.display = "none";
                     menuIcon.classList.remove("fa-times");
                     menuIcon.classList.add("fa-bars");
+          menuIcon.closest("button").setAttribute("aria-expanded", "false");
                 });
             });
         });

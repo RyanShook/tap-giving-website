@@ -8,6 +8,23 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://tap.giving/blog/tithely-vs-tap-giving.html">
     <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tithely Tap-to-Give vs Tap.Giving - Complete Comparison 2026" />
+    <meta property="og:description" content="Tithely Tap-to-Give vs Tap.Giving: Complete 2026 comparison. Save $7,340 over 5 years with transparent pricing vs Tithely&#39;s $1,200 setup + $99/month fees." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tap.giving/blog/tithely-vs-tap-giving.html" />
+    <meta property="og:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Tap.Giving" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tithely Tap-to-Give vs Tap.Giving - Complete Comparison 2026" />
+    <meta name="twitter:description" content="Tithely Tap-to-Give vs Tap.Giving: Complete 2026 comparison. Save $7,340 over 5 years with transparent pricing vs Tithely&#39;s $1,200 setup + $99/month fees." />
+    <meta name="twitter:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta name="twitter:site" content="@tapgiving" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,18 +122,19 @@
     </script>
 </head>
 <body class="font-inter antialiased bg-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-blue-600 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">Skip to main content</a>
     <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="/" class="flex items-center">
-                        <img src="../assets/Logo-Crop-Large-1024x295.png" alt="Tap.Giving Logo" class="h-8 w-auto">
+                        <img src="../assets/Logo-Crop-Large-1024x295.webp" alt="Tap.Giving Logo" class="h-8 w-auto">
                     </a>
                 </div>
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex space-x-8">
+                <nav class="hidden md:flex space-x-8" aria-label="Main navigation">
                     <a href="/" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Home</a>
                     <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
                     <a href="/how-it-works.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">How It Works</a>
@@ -175,7 +193,7 @@
       </div>
     </nav>
 
-    <main class="container mx-auto px-6 py-16">
+    <main id="main-content" class="container mx-auto px-6 py-16">
         <!-- Hero Section -->
         <div class="max-w-6xl mx-auto text-center mb-16">
             <div class="mb-6">
@@ -623,7 +641,7 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="col-span-2">
                     <img
-                        src="../assets/Logo-Crop-Large-1024x295.png"
+                        src="../assets/Logo-Crop-Large-1024x295.webp"
                         alt="Tap.Giving Logo"
                         class="h-8 w-auto mb-4 brightness-0 invert"
                     />
@@ -721,10 +739,12 @@
                 mobileMenu.style.display = 'block';
                 menuIcon.classList.remove('fa-bars');
                 menuIcon.classList.add('fa-times');
+          menuIcon.closest('button').setAttribute('aria-expanded', 'true');
             } else {
                 mobileMenu.style.display = 'none';
                 menuIcon.classList.remove('fa-times');
                 menuIcon.classList.add('fa-bars');
+          menuIcon.closest('button').setAttribute('aria-expanded', 'false');
             }
         }
 
@@ -738,6 +758,7 @@
                     mobileMenu.style.display = 'none';
                     menuIcon.classList.remove('fa-times');
                     menuIcon.classList.add('fa-bars');
+          menuIcon.closest('button').setAttribute('aria-expanded', 'false');
                 });
             });
         });
