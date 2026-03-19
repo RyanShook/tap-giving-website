@@ -78,6 +78,30 @@
 
     <!-- Blog Posts -->
     <url>
+        <loc>https://tap.giving/blog/realm-tap-to-give-setup.html</loc>
+        <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/anedot-tap-to-give-setup.html</loc>
+        <lastmod>2026-05-13T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/givelify-tap-to-give-setup.html</loc>
+        <lastmod>2026-05-06T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/how-to-mount-nfc-plates-church-chairs.html</loc>
+        <lastmod>2026-05-17T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://tap.giving/blog/nfc-giving-explained-church-tech-guide.html</loc>
         <lastmod>2026-05-10T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
@@ -91,139 +115,139 @@
     </url>
     <url>
         <loc>https://tap.giving/blog/first-time-visitors-nfc-giving.html</loc>
-        <lastmod>2026-04-26T00:00:00+00:00</lastmod>
+        <lastmod>2026-04-22T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/launch-nfc-giving-church-guide.html</loc>
-        <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+        <lastmod>2026-04-15T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/year-end-giving-nfc-strategy.html</loc>
-        <lastmod>2026-04-12T00:00:00+00:00</lastmod>
+        <lastmod>2026-04-08T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/nfc-giving-small-churches.html</loc>
-        <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+        <lastmod>2026-04-01T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/nfc-giving-roi-church-numbers.html</loc>
-        <lastmod>2026-03-29T00:00:00+00:00</lastmod>
+        <lastmod>2026-03-25T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/qr-codes-vs-nfc-church-giving.html</loc>
-        <lastmod>2026-03-22T00:00:00+00:00</lastmod>
+        <lastmod>2026-03-18T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/why-churches-love-tap-giving.html</loc>
-        <lastmod>2026-03-12T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://tap.giving/blog/easter-tap-to-give-church-strategy.html</loc>
         <lastmod>2026-03-04T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://tap.giving/blog/easter-tap-to-give-church-strategy.html</loc>
+        <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://tap.giving/blog/christmas-eve-nfc-giving-strategy.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2025-12-09T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/nfc-tap-plates-church-growth.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2026-02-18T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/tap-to-give-platform-comparison.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2025-12-02T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/tithely-vs-tap-giving.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2025-08-26T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/subsplash-tap-vs-tap-giving.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2025-09-16T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/securegive-tap-vs-tap-giving.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2025-10-07T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/overflow-tap-vs-tap-giving.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2025-07-15T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/churchtap-vs-tap-giving.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2025-10-28T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/taptag-vs-tap-giving.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2025-11-25T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/tap-tag-vs-tap-giving.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2025-08-05T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/seritag-vs-tap-giving.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2025-11-11T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/tithely-tap-to-give-setup.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2025-12-16T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/planning-center-tap-to-give-setup.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2026-01-07T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/pushpay-tap-to-give-setup.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2026-01-21T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://tap.giving/blog/donorbox-tap-to-give-setup.html</loc>
-        <lastmod>2026-03-03T00:00:00+00:00</lastmod>
+        <lastmod>2026-02-04T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
