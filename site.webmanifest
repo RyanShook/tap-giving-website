@@ -1,0 +1,16 @@
+{
+  "name": "Tap.Giving - NFC Church Giving Solution",
+  "short_name": "Tap.Giving",
+  "description": "Simple, affordable NFC tap-to-give plates for churches. No monthly fees.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
