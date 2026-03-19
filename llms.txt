@@ -17,6 +17,7 @@ Tap.Giving provides NFC (Near Field Communication) tap plates that churches embe
 ## Pages
 
 - [Home](https://tap.giving/): Main landing page with product overview, stats, and order form
+- [About](https://tap.giving/about.html): Founded by a pastor — our story and mission
 - [Pricing](https://tap.giving/pricing.html): Transparent volume pricing tiers and cost comparison
 - [How It Works](https://tap.giving/how-it-works.html): 3-step process — Tap, Give, Done
 - [Order](https://tap.giving/order.html): Order form for NFC tap plates
