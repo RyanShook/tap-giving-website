@@ -53,4 +53,5 @@ Tap.Giving provides NFC (Near Field Communication) tap plates that churches embe
 
 - Email: hello@tap.giving
 - Phone: (832) 510-8788
+- Address: 8000 Research Forest Dr, Spring, TX 77382
 - Website: https://tap.giving
