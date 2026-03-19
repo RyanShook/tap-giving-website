@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        NFC Giving Explained: A Church Tech Team&rsquo;s Complete Guide | Tap.Giving
+    </title>
+    <meta name="description"
+        content="Everything your church tech team needs to know about NFC giving: how the chips work, phone compatibility, security, locking vs unlocking, and troubleshooting tips." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tap.giving/blog/nfc-giving-explained-church-tech-guide.html" />
+    <link rel="icon" type="image/png" href="../assets/favicon.png" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title"
+        content="NFC Giving Explained: A Church Tech Team's Complete Guide | Tap.Giving" />
+    <meta property="og:description"
+        content="Everything your church tech team needs to know about NFC giving: how the chips work, phone compatibility, security, locking vs unlocking, and troubleshooting tips." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tap.giving/blog/nfc-giving-explained-church-tech-guide.html" />
+    <meta property="og:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Tap.Giving" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title"
+        content="NFC Giving Explained: A Church Tech Team's Complete Guide | Tap.Giving" />
+    <meta name="twitter:description"
+        content="Everything your church tech team needs to know about NFC giving: how the chips work, phone compatibility, security, locking vs unlocking, and troubleshooting tips." />
+    <meta name="twitter:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta name="twitter:site" content="@tapgiving" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet" />
+    </noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    </noscript>
+
+    <!-- Structured Data for Blog Post -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "NFC Giving Explained: A Church Tech Team's Complete Guide",
+        "description": "Everything your church tech team needs to know about NFC giving: how the chips work, phone compatibility, security, locking vs unlocking, and troubleshooting tips.",
+        "author": {
+          "@type": "Organization",
+          "name": "Tap.Giving"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tap.Giving",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://tap.giving/assets/Logo-Crop-Large-1024x295.webp"
+          }
+        },
+        "datePublished": "2026-05-10T10:00:00-06:00",
+        "dateModified": "2026-05-10T10:00:00-06:00",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://tap.giving/blog/nfc-giving-explained-church-tech-guide.html"
+        },
+        "image": "https://tap.giving/assets/phone-and-plate.webp",
+        "url": "https://tap.giving/blog/nfc-giving-explained-church-tech-guide.html"
+      }
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: "#eff6ff",
+                            100: "#dbeafe",
+                            200: "#bfdbfe",
+                            300: "#93c5fd",
+                            400: "#60a5fa",
+                            500: "#3b82f6",
+                            600: "#2563eb",
+                            700: "#1d4ed8",
+                            800: "#1e40af",
+                            900: "#1e3a8a",
+                        },
+                        accent: {
+                            50: "#f0fdf4",
+                            100: "#dcfce7",
+                            200: "#bbf7d0",
+                            300: "#86efac",
+                            400: "#4ade80",
+                            500: "#22c55e",
+                            600: "#16a34a",
+                            700: "#15803d",
+                            800: "#166534",
+                            900: "#14532d",
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tap.giving/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://tap.giving/blog.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "NFC Giving Explained",
+                "item": "https://tap.giving/blog/nfc-giving-explained-church-tech-guide.html"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body class="font-inter antialiased bg-white">
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-blue-600 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">Skip
+        to main content</a>
+    <!-- ======================================== -->
+    <!-- CONSISTENT HEADER ACROSS ALL PAGES      -->
+    <!-- ======================================== -->
+    <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <img src="../assets/Logo-Crop-Large-1024x295.webp"
+                            alt="Tap.Giving - Church NFC Giving Solution Logo" class="h-8 w-auto" width="1024"
+                            height="295" loading="eager" />
+                    </a>
+                </div>
+                <nav class="hidden md:flex flex-1 justify-center space-x-8" aria-label="Main navigation">
+                    <a href="/pricing.html"
+                        class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+                    <a href="/blog.html"
+                        class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
+                    <a href="/contact.html"
+                        class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+                </nav>
+                <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
+                    <button onclick="scrollToForm()"
+                        class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap">
+                        Order Now
+                    </button>
+                    <button type="button"
+                        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                        aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu()">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md:hidden" id="mobile-menu" style="display: none">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="/pricing.html"
+                        class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+                    <a href="/blog.html"
+                        class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
+                    <a href="/contact.html"
+                        class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-gray-50 py-4" aria-label="Breadcrumb">
+        <div class="container mx-auto px-6">
+            <ol class="flex items-center space-x-2">
+                <li><a href="/" class="text-gray-500 hover:text-blue-600 transition duration-300">Home</a></li>
+                <li><span class="text-gray-400">/</span></li>
+                <li><a href="/blog.html" class="text-gray-500 hover:text-blue-600 transition duration-300">Blog</a></li>
+                <li><span class="text-gray-400">/</span></li>
+                <li><span class="text-gray-900 font-medium">NFC Giving Explained</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container mx-auto px-6 py-16">
+        <article class="max-w-4xl mx-auto">
+            <header class="text-center mb-16">
+                <div class="mb-6">
+                    <span
+                        class="bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider">Guide</span>
+                </div>
+                <h1 class="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">
+                    NFC Giving Explained: A Church Tech Team&rsquo;s Complete Guide
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+                    You&rsquo;re the person your church turns to when they need to know how something actually works.
+                    Before you champion NFC giving to your leadership team, you want the full picture&mdash;how the chips
+                    work, which phones are compatible, what the security story looks like, and what can go wrong. This
+                    guide covers all of it.
+                </p>
+                <div class="flex items-center justify-center space-x-6 text-sm text-gray-500">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-calendar mr-2"></i>
+                        <span>May 10, 2026</span>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span>8 min read</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Table of Contents -->
+            <nav class="bg-gray-50 p-6 rounded-2xl mb-12">
+                <h3 class="font-bold text-gray-900 mb-4">Table of Contents</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li><a href="#what-is-nfc" class="hover:text-primary-600 transition duration-200">1. What Is NFC and How Does It Work?</a></li>
+                    <li><a href="#phone-compatibility" class="hover:text-primary-600 transition duration-200">2. Phone Compatibility: What Works and What Doesn&rsquo;t</a></li>
+                    <li><a href="#locked-vs-unlocked" class="hover:text-primary-600 transition duration-200">3. Locked vs. Unlocked NFC Chips: Why It Matters</a></li>
+                    <li><a href="#tap-flow" class="hover:text-primary-600 transition duration-200">4. What Happens When Someone Taps: The Full Technical Flow</a></li>
+                    <li><a href="#security" class="hover:text-primary-600 transition duration-200">5. Security: What Church Leaders Need to Know</a></li>
+                    <li><a href="#tech-team-faq" class="hover:text-primary-600 transition duration-200">6. Common Questions from Tech Teams</a></li>
+                </ul>
+            </nav>
+
+            <!-- Section 1: What Is NFC -->
+            <section id="what-is-nfc" class="mb-16">
+                <div class="flex items-center mb-8">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mr-5 flex-shrink-0">
+                        <span class="text-white text-2xl font-black">1</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">What Is NFC and How Does It Work?</h2>
+                </div>
+
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    NFC stands for <strong>Near Field Communication</strong>. It&rsquo;s a short-range wireless
+                    technology that allows two devices to exchange data when they&rsquo;re very close together&mdash;within
+                    about 4 cm (1.5 inches). If you&rsquo;ve ever tapped your phone to pay at a coffee shop or held a
+                    hotel key card to a door lock, you&rsquo;ve used NFC. It operates at 13.56 MHz, a frequency that&rsquo;s
+                    been standardized globally for contactless communication since the early 2000s.
+                </p>
+
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    For church giving, two NFC modes matter: <strong>passive tags</strong> (the plate) and
+                    <strong>active readers</strong> (the phone). A Tap.Giving plate contains an NTAG chip&mdash;a tiny
+                    integrated circuit connected to a small antenna coil. The chip has no battery and no power source of
+                    its own. When a phone&rsquo;s NFC reader gets close enough, it generates an electromagnetic field
+                    that powers the chip via <strong>electromagnetic induction</strong>. The chip wakes up, reads its
+                    stored data (a URL), and transmits it back to the phone. The phone&rsquo;s operating system
+                    recognizes the URL and prompts the user to open it.
+                </p>
+
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    The entire exchange happens in milliseconds. No pairing. No Wi-Fi. No Bluetooth. No app. Just
+                    proximity and physics.
+                </p>
+
+                <h3 class="text-xl font-bold text-gray-900 mb-4">How NFC Compares to Other Wireless Technologies</h3>
+
+                <div class="overflow-x-auto mb-8">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-50">
+                                <th class="p-4 font-bold text-gray-900 border-b border-gray-200"></th>
+                                <th class="p-4 font-bold text-primary-700 border-b border-gray-200">NFC</th>
+                                <th class="p-4 font-bold text-gray-900 border-b border-gray-200">Bluetooth</th>
+                                <th class="p-4 font-bold text-gray-900 border-b border-gray-200">QR Code</th>
+                                <th class="p-4 font-bold text-gray-900 border-b border-gray-200">Wi-Fi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 text-sm">
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 font-semibold text-gray-900">Range</td>
+                                <td class="p-4 bg-primary-50 font-medium">~4 cm</td>
+                                <td class="p-4">~10 m</td>
+                                <td class="p-4">Camera distance</td>
+                                <td class="p-4">~50 m</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 font-semibold text-gray-900">Speed to connect</td>
+                                <td class="p-4 bg-primary-50 font-medium">&lt;0.1 seconds</td>
+                                <td class="p-4">2&ndash;5 seconds</td>
+                                <td class="p-4">1&ndash;3 seconds</td>
+                                <td class="p-4">3&ndash;10 seconds</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 font-semibold text-gray-900">Requires app?</td>
+                                <td class="p-4 bg-primary-50 font-medium">No</td>
+                                <td class="p-4">Yes</td>
+                                <td class="p-4">Camera app</td>
+                                <td class="p-4">No (browser)</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4 font-semibold text-gray-900">Power source</td>
+                                <td class="p-4 bg-primary-50 font-medium">None (passive)</td>
+                                <td class="p-4">Battery</td>
+                                <td class="p-4">None (printed)</td>
+                                <td class="p-4">AC power</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold text-gray-900">Reliability</td>
+                                <td class="p-4 bg-primary-50 font-medium">Very high</td>
+                                <td class="p-4">Moderate</td>
+                                <td class="p-4">Depends on lighting</td>
+                                <td class="p-4">Depends on signal</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="bg-gradient-to-br from-accent-50 to-primary-50 border-l-4 border-accent-500 p-6 rounded-r-2xl mb-8">
+                    <h3 class="font-bold text-gray-900 mb-3">Why This Matters for Sunday Morning</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        NFC&rsquo;s killer advantage in a church setting is its simplicity. There&rsquo;s no pairing step,
+                        no network dependency at the point of tap, and no app to install. Bluetooth requires pairing. QR
+                        codes require the user to open their camera, frame the code, and wait for recognition. Wi-Fi requires
+                        your building&rsquo;s network to be working. NFC just requires proximity&mdash;and it works every
+                        time.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2: Phone Compatibility -->
+            <section id="phone-compatibility" class="mb-16">
+                <div class="flex items-center mb-8">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mr-5 flex-shrink-0">
+                        <span class="text-white text-2xl font-black">2</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">Phone Compatibility: What Works and What Doesn&rsquo;t</h2>
+                </div>
+
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    This is usually the first question tech teams ask: &ldquo;Will it work on everyone&rsquo;s phone?&rdquo;
+                    The short answer is that over 90% of smartphones sold since 2020 include NFC hardware. Here&rsquo;s
+                    the detailed breakdown.
+                </p>
+
+                <div class="space-y-8 mb-8">
+                    <!-- iPhone -->
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-apple text-gray-800 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">iPhone</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            NFC tag reading has been built into every iPhone since the <strong>iPhone 7</strong> (2016),
+                            running iOS 11 or later. However, the experience varies by model:
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-green-50 p-4 rounded-xl">
+                                <p class="font-semibold text-gray-900 mb-1">iPhone XS and later (2018+)</p>
+                                <p class="text-gray-600 text-sm">
+                                    <strong>Background tag reading</strong>&mdash;the phone reads NFC tags natively
+                                    without any app or action. Just hold the phone near the plate and a notification
+                                    appears automatically. This is the seamless experience.
+                                </p>
+                            </div>
+                            <div class="bg-yellow-50 p-4 rounded-xl">
+                                <p class="font-semibold text-gray-900 mb-1">iPhone 7, 8, and X</p>
+                                <p class="text-gray-600 text-sm">
+                                    NFC reading works, but the user needs to open the <strong>NFC Tag Reader</strong>
+                                    from Control Center first. It&rsquo;s one extra step, but these phones are
+                                    increasingly rare in 2026.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Android -->
+                    <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-android text-green-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Android</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            NFC has been available on most Android phones since <strong>Android 4.4 KitKat</strong> (2013).
+                            On Android, NFC tag reading is native and automatic&mdash;no extra app, no special mode. Just
+                            tap and go. The phone reads the tag, displays a notification, and the user taps to open the
+                            URL in their browser.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            The main exception: some budget Android phones (typically under $100) may not include NFC hardware.
+                            If you&rsquo;re curious about a specific model, check the phone&rsquo;s settings for an &ldquo;NFC&rdquo;
+                            toggle under <em>Connected Devices</em> or <em>Connections</em>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm text-center">
+                        <div class="text-4xl font-black text-primary-600 mb-2">90%+</div>
+                        <div class="text-sm text-gray-600 font-medium mb-1">of smartphones sold since 2020</div>
+                        <div class="text-gray-500 text-sm">include NFC hardware</div>
+                    </div>
+                    <div class="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm text-center">
+                        <div class="text-4xl font-black text-accent-600 mb-2">0</div>
+                        <div class="text-sm text-gray-600 font-medium mb-1">apps to download</div>
+                        <div class="text-gray-500 text-sm">on modern iPhones and all NFC-equipped Androids</div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-accent-50 to-primary-50 border-l-4 border-accent-500 p-6 rounded-r-2xl mb-8">
+                    <h3 class="font-bold text-gray-900 mb-3">What If Someone&rsquo;s Phone Doesn&rsquo;t Have NFC?</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Nothing bad happens. The plate simply doesn&rsquo;t respond&mdash;there&rsquo;s no error message,
+                        no awkward beep, no confused screen. The person just passes the plate along. They can still give
+                        through your church&rsquo;s regular online giving page, text-to-give, cash, or check. NFC plates
+                        add a giving channel; they don&rsquo;t replace existing ones.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 3: Locked vs Unlocked -->
+            <section id="locked-vs-unlocked" class="mb-16">
+                <div class="flex items-center mb-8">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mr-5 flex-shrink-0">
+                        <span class="text-white text-2xl font-black">3</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">Locked vs. Unlocked NFC Chips: Why It Matters</h2>
+                </div>
+
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    If you&rsquo;re evaluating NFC giving solutions&mdash;or thinking about doing it yourself&mdash;this
+                    is the section that will save you from a potential headache. Not all NFC chips are configured the same
+                    way, and the difference has real security implications.
+                </p>
+
+                <div class="space-y-6 mb-8">
+                    <!-- Unlocked -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-red-100">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-lock-open text-red-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Unlocked Chip</h3>
+                                <span class="text-xs font-semibold text-red-600 bg-red-50 px-2 py-0.5 rounded-full">Security risk</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            An unlocked NFC chip can be rewritten by anyone with a free NFC writing app on their phone.
+                            If your offering plates sit in a public area&mdash;a lobby, an exit table, an unattended
+                            sanctuary&mdash;someone could overwrite your giving URL with a malicious link. It only takes
+                            a few seconds. This is the default state of most off-the-shelf NFC tags.
+                        </p>
+                    </div>
+
+                    <!-- Locked -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-yellow-100">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-lock text-yellow-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Locked Chip</h3>
+                                <span class="text-xs font-semibold text-yellow-600 bg-yellow-50 px-2 py-0.5 rounded-full">Secure but rigid</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            A locked chip has its URL permanently written and cannot be changed&mdash;by anyone, ever.
+                            This is secure: no one can tamper with it. But it&rsquo;s inflexible. If you change giving
+                            platforms, update your URL structure, or want to point the plate to a special campaign, you&rsquo;d
+                            need entirely new chips.
+                        </p>
+                    </div>
+
+                    <!-- Lock-then-redirect -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-green-200">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4">
+                                <i class="fas fa-shield-alt text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Lock + Redirect (What Tap.Giving Uses)</h3>
+                                <span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">Best of both worlds</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Tap.Giving chips are <strong>locked to a redirect URL</strong> that you control through your
+                            account. The chip itself is tamper-proof&mdash;no one can overwrite it. But the destination
+                            the redirect points to is fully flexible. Switch giving platforms? Just update the redirect.
+                            Run a special campaign? Point it to a different page for the weekend. You get permanent chip
+                            security with on-demand destination flexibility.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-l-4 border-blue-400 p-6 rounded-r-2xl mb-8">
+                    <h3 class="font-bold text-gray-900 mb-3">
+                        <i class="fas fa-book text-blue-500 mr-2"></i>
+                        Want the Full Deep Dive?
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Our <a href="/nfc-faq.html" class="text-primary-600 hover:text-primary-700 font-semibold">NFC
+                        FAQ page</a> covers chip locking, redirect management, and other technical details in even more
+                        depth. It&rsquo;s a good resource to bookmark for your team.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 4: The Full Technical Flow -->
+            <section id="tap-flow" class="mb-16">
+                <div class="flex items-center mb-8">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mr-5 flex-shrink-0">
+                        <span class="text-white text-2xl font-black">4</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">What Happens When Someone Taps: The Full Technical Flow</h2>
+                </div>
+
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    From the moment a phone gets close to the plate to the moment the giving page loads, about two seconds
+                    pass. Here&rsquo;s what&rsquo;s happening under the hood during those two seconds:
+                </p>
+
+                <div class="relative">
+                    <div
+                        class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-400 via-primary-400 to-accent-400">
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="relative flex items-start ml-12">
+                            <div
+                                class="absolute -left-[3.25rem] w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">1</span>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">Phone detects electromagnetic field</h3>
+                                <p class="text-gray-600 text-sm">The phone&rsquo;s NFC antenna senses the passive chip&rsquo;s presence when it enters the ~4 cm range.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-start ml-12">
+                            <div
+                                class="absolute -left-[3.25rem] w-10 h-10 bg-purple-400 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">2</span>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">Phone powers the NTAG chip</h3>
+                                <p class="text-gray-600 text-sm">The phone&rsquo;s NFC reader generates a radio field that powers the passive chip via electromagnetic induction. No battery needed.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-start ml-12">
+                            <div
+                                class="absolute -left-[3.25rem] w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">3</span>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">Chip transmits its NDEF record</h3>
+                                <p class="text-gray-600 text-sm">The chip sends back its stored data&mdash;an NDEF (NFC Data Exchange Format) record containing a URL&mdash;to the phone.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-start ml-12">
+                            <div
+                                class="absolute -left-[3.25rem] w-10 h-10 bg-primary-400 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">4</span>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">Phone&rsquo;s OS reads the NDEF record</h3>
+                                <p class="text-gray-600 text-sm">iOS or Android recognizes the record as a URL type and prepares to handle it.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-start ml-12">
+                            <div
+                                class="absolute -left-[3.25rem] w-10 h-10 bg-accent-500 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">5</span>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">Phone displays a notification</h3>
+                                <p class="text-gray-600 text-sm">A banner or prompt appears asking the user if they&rsquo;d like to open the URL. On Android, this may open automatically depending on settings.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-start ml-12">
+                            <div
+                                class="absolute -left-[3.25rem] w-10 h-10 bg-accent-400 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">6</span>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">User taps the notification</h3>
+                                <p class="text-gray-600 text-sm">One tap on the notification&mdash;the only user action in the entire flow.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-start ml-12">
+                            <div
+                                class="absolute -left-[3.25rem] w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">7</span>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">Browser opens the giving page</h3>
+                                <p class="text-gray-600 text-sm">The phone&rsquo;s default browser opens your church&rsquo;s giving page&mdash;Tithely, Subsplash, Planning Center, or whichever platform you use.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-start ml-12">
+                            <div
+                                class="absolute -left-[3.25rem] w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">8</span>
+                            </div>
+                            <div class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">User completes donation</h3>
+                                <p class="text-gray-600 text-sm">The giver enters their amount and payment method through your giving platform&rsquo;s secure interface. Done.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 bg-gradient-to-br from-purple-50 to-pink-50 border-l-4 border-purple-400 p-6 rounded-r-2xl">
+                    <h3 class="font-bold text-gray-900 mb-3">Notice What&rsquo;s NOT in This Flow</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        No app download. No account creation. No Bluetooth pairing. No QR code scanning. No typing a
+                        URL. No Wi-Fi connection required at the point of tap. The entire interaction is <strong>one
+                        physical gesture + one screen tap</strong>. That&rsquo;s why adoption rates are so high&mdash;there&rsquo;s
+                        almost nothing to learn and nothing to go wrong.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 5: Security -->
+            <section id="security" class="mb-16">
+                <div class="flex items-center mb-8">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mr-5 flex-shrink-0">
+                        <span class="text-white text-2xl font-black">5</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">Security: What Church Leaders Need to Know</h2>
+                </div>
+
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    Security is a legitimate concern, especially when giving is involved. Here&rsquo;s a straightforward
+                    assessment of the security model behind NFC giving plates&mdash;no hand-waving, just facts.
+                </p>
+
+                <div class="space-y-6 mb-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                                <i class="fas fa-database text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">The Chip Contains Only a URL</h4>
+                                <p class="text-gray-600">No financial data. No personal information. No donor records. The NFC chip stores a single URL&mdash;nothing more. It&rsquo;s functionally identical to a hyperlink printed on a piece of paper, except it&rsquo;s delivered wirelessly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                                <i class="fas fa-server text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Payment Processing Happens Elsewhere</h4>
+                                <p class="text-gray-600">All payment processing occurs on your giving platform&rsquo;s secure servers&mdash;Tithely, Subsplash, Planning Center, Pushpay, or whichever service you use. These platforms are PCI-DSS compliant and handle encryption, tokenization, and fraud detection. The NFC plate is just the doorway; the security infrastructure is behind it.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                                <i class="fas fa-lock text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Locked Chips Prevent Tampering</h4>
+                                <p class="text-gray-600">Tap.Giving plates use locked NTAG chips. Once programmed, the data cannot be overwritten, erased, or modified by anyone&mdash;not with an app, not with specialized hardware. The chip is permanently set.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                                <i class="fas fa-shield-alt text-yellow-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">HTTPS Encryption on the Redirect</h4>
+                                <p class="text-gray-600">The redirect URL uses HTTPS, meaning the connection between the user&rsquo;s phone and the giving page is encrypted in transit. This is the same encryption standard used by banks and e-commerce sites.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                                <i class="fas fa-ruler text-indigo-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">4 cm Range Makes Interception Impossible</h4>
+                                <p class="text-gray-600">NFC operates at a maximum range of about 4 cm. To intercept an NFC communication, an attacker would need to be physically within inches of the transaction&mdash;effectively impossible in a room full of people without being noticed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900 mb-4">How NFC Compares to Other Giving Methods on Security</h3>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-green-50 p-6 rounded-2xl text-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-wifi text-green-600"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">NFC Plates</h4>
+                        <p class="text-sm text-gray-600">Locked chip, HTTPS redirect, 4 cm range. Tamper-proof if locked properly.</p>
+                    </div>
+                    <div class="bg-yellow-50 p-6 rounded-2xl text-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-qrcode text-yellow-600"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">QR Codes</h4>
+                        <p class="text-sm text-gray-600">Can be covered with a malicious sticker redirecting to a phishing page. No built-in tamper detection.</p>
+                    </div>
+                    <div class="bg-red-50 p-6 rounded-2xl text-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-sms text-red-600"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Text-to-Give</h4>
+                        <p class="text-sm text-gray-600">SMS is unencrypted by default. Susceptible to SIM swapping and spoofing attacks.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Tech Team FAQ -->
+            <section id="tech-team-faq" class="mb-16">
+                <div class="flex items-center mb-8">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mr-5 flex-shrink-0">
+                        <span class="text-white text-2xl font-black">6</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900">Common Questions from Tech Teams</h2>
+                </div>
+
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    These are the questions we hear most often from the technically-minded folks at churches. If your
+                    question isn&rsquo;t here, feel free to <a href="/contact.html"
+                    class="text-primary-600 hover:text-primary-700 font-semibold">reach out</a>&mdash;we&rsquo;re happy
+                    to go as deep as you need.
+                </p>
+
+                <div class="space-y-6">
+                    <!-- FAQ 1 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <h3 class="font-bold text-gray-900 mb-3">
+                            <i class="fas fa-battery-empty text-gray-400 mr-2"></i>
+                            &ldquo;Do the plates need batteries?&rdquo;
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            No. NFC giving plates use <strong>passive</strong> NFC chips. The chip has no battery and no
+                            power source. It&rsquo;s powered entirely by the electromagnetic field generated by the
+                            phone&rsquo;s NFC reader at the moment of the tap. There&rsquo;s nothing to charge, nothing
+                            to replace, and nothing that depletes over time.
+                        </p>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <h3 class="font-bold text-gray-900 mb-3">
+                            <i class="fas fa-wifi text-gray-400 mr-2"></i>
+                            &ldquo;Do they need Wi-Fi or cellular?&rdquo;
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            The plate itself doesn&rsquo;t need any network connection. The NFC exchange between the chip
+                            and the phone is a direct, local radio interaction. However, the <strong>phone</strong> does
+                            need data connectivity (Wi-Fi or cellular) to load the giving page after the tap. This is the
+                            same requirement as any online giving method&mdash;the phone needs to reach the internet to
+                            process a donation.
+                        </p>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <h3 class="font-bold text-gray-900 mb-3">
+                            <i class="fas fa-hourglass-half text-gray-400 mr-2"></i>
+                            &ldquo;What&rsquo;s the lifespan of an NFC chip?&rdquo;
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Virtually unlimited. NTAG chips have no moving parts, no battery to degrade, and no
+                            components that wear out from normal use. They&rsquo;re rated for <strong>100,000+ read
+                            cycles</strong>. If your church passed the plate 100 times every Sunday, it would take over
+                            19 years to reach that number&mdash;and that&rsquo;s the rated minimum, not the failure
+                            point. In practical terms, the plate&rsquo;s physical material will wear out long before the
+                            chip does.
+                        </p>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <h3 class="font-bold text-gray-900 mb-3">
+                            <i class="fas fa-code text-gray-400 mr-2"></i>
+                            &ldquo;Can we program our own NFC tags instead?&rdquo;
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            You can. Blank NTAG tags are inexpensive and writable with free apps. But there are trade-offs.
+                            You&rsquo;d need to manage your own redirect infrastructure (what happens when you change
+                            giving platforms?), handle chip locking yourself (and accept the security risk if you
+                            don&rsquo;t), and source or fabricate your own physical plates. Tap.Giving handles
+                            programming, permanent locking, redirect management, and ships finished plates ready to use.
+                            Our <a href="/blog/diy-nfc-giving-no-monthly-fees.html"
+                            class="text-primary-600 hover:text-primary-700 font-semibold">DIY NFC giving guide</a>
+                            covers both approaches honestly.
+                        </p>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <h3 class="font-bold text-gray-900 mb-3">
+                            <i class="fas fa-mobile-alt text-gray-400 mr-2"></i>
+                            &ldquo;Will phone cases block NFC?&rdquo;
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Standard cases&mdash;plastic, leather, silicone, TPU&mdash;do not block NFC signals. NFC
+                            operates through these materials without any issue. The only cases that can interfere are
+                            very thick metal cases or wallets with built-in RFID-blocking material. These are
+                            specifically designed to block radio signals and represent less than 1% of cases in use. If
+                            someone has one of these rare cases, they can simply hold their phone slightly closer or
+                            remove the case briefly.
+                        </p>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                        <h3 class="font-bold text-gray-900 mb-3">
+                            <i class="fas fa-credit-card text-gray-400 mr-2"></i>
+                            &ldquo;What about Apple Pay? Will tapping the plate trigger a payment?&rdquo;
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            No. This is a common concern, but NFC tags and NFC payment terminals use <strong>different
+                            protocols</strong>. Apple Pay (and Google Pay) only activate when the phone detects a payment
+                            terminal that initiates a specific EMV contactless payment handshake. An NFC tag sends an
+                            NDEF record&mdash;a completely different data format. The phone&rsquo;s operating system
+                            knows the difference and handles each accordingly. Tapping a giving plate will never
+                            accidentally trigger Apple Pay, Google Pay, or any payment wallet.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="mb-16">
+                <div class="bg-gradient-to-r from-primary-600 to-accent-600 p-8 rounded-3xl text-white text-center">
+                    <h3 class="text-2xl font-bold mb-4">
+                        Now You Know How It Works&mdash;Ready to Try It?
+                    </h3>
+                    <p class="text-xl opacity-90 mb-6">
+                        You&rsquo;ve got the technical details. You know it&rsquo;s secure, compatible, and built to last.
+                        The next step is getting plates in your hands so you can see it for yourself.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/"
+                            class="bg-white hover:bg-gray-50 text-primary-600 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            <i class="fas fa-home mr-2"></i>Learn More at Tap.Giving
+                        </a>
+                        <a href="/order.html"
+                            class="bg-white/20 hover:bg-white/30 text-white border-2 border-white/50 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            <i class="fas fa-shopping-cart mr-2"></i>Order Plates Now
+                        </a>
+                    </div>
+                    <p class="text-sm opacity-75 mt-4">
+                        Questions? Email <a href="mailto:hello@tap.giving" class="underline hover:no-underline">hello@tap.giving</a>
+                        or call <a href="tel:+18325108788" class="underline hover:no-underline">(832) 510-8788</a>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Related Posts -->
+            <section>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <a href="/blog/diy-nfc-giving-no-monthly-fees.html"
+                        class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <span
+                            class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Guide</span>
+                        <h3 class="font-bold text-gray-900 mt-3 mb-2">DIY Tap-to-Give for Churches</h3>
+                        <p class="text-sm text-gray-600">How to set up NFC giving without monthly fees.</p>
+                    </a>
+                    <a href="/blog/why-churches-love-tap-giving.html"
+                        class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <span
+                            class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold">Insights</span>
+                        <h3 class="font-bold text-gray-900 mt-3 mb-2">Why Churches Love Tap.Giving: 7 Reasons</h3>
+                        <p class="text-sm text-gray-600">Discover why hundreds of churches are choosing Tap.Giving.</p>
+                    </a>
+                    <a href="/blog/launch-nfc-giving-church-guide.html"
+                        class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <span
+                            class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Guide</span>
+                        <h3 class="font-bold text-gray-900 mt-3 mb-2">How to Launch NFC Tap-to-Give This Month</h3>
+                        <p class="text-sm text-gray-600">Step-by-step from order to launch Sunday.</p>
+                    </a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16" role="contentinfo">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <img src="../assets/Logo-Crop-Large-1024x295.webp" alt="Tap.Giving Logo"
+                        class="h-8 w-auto mb-4 brightness-0 invert" />
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Simple, transparent NFC giving solutions that work with your existing church platform. No
+                        monthly fees, no lock-in.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">NFC Giving Plates</li>
+                        <li class="text-gray-300">Hardware Setup</li>
+                        <li class="text-gray-300">Platform Integration</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/blog.html" class="text-gray-300 hover:text-white transition duration-300">Blog</a>
+                        </li>
+                        <li><a href="/pricing.html"
+                                class="text-gray-300 hover:text-white transition duration-300">Pricing</a></li>
+                        <li><a href="/nfc-faq.html"
+                                class="text-gray-300 hover:text-white transition duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <div class="mb-4 space-x-4">
+                    <a href="/privacy.html"
+                        class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+                    <a href="/terms.html"
+                        class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+                </div>
+                <p class="text-gray-500 text-sm font-medium">
+                    &copy; 2026 Tap.Giving. All rights reserved. | Increasing church giving through innovative
+                    technology.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Crisp Chat -->
+    <script type="text/javascript">
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "ad8857a0-36b5-4cab-97d2-ad9913058ee1";
+        (function () {
+            d = document;
+            s = d.createElement("script");
+            s.src = "https://client.crisp.chat/l.js";
+            s.async = 1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3B3M72XEP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-L3B3M72XEP');
+    </script>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById("mobile-menu");
+            const menuIcon = document.getElementById("menu-icon");
+            const isHidden = mobileMenu.style.display === "none" || !mobileMenu.style.display;
+            if (isHidden) {
+                mobileMenu.style.display = "block";
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-times");
+                menuIcon.closest("button").setAttribute("aria-expanded", "true");
+            } else {
+                mobileMenu.style.display = "none";
+                menuIcon.classList.remove("fa-times");
+                menuIcon.classList.add("fa-bars");
+                menuIcon.closest("button").setAttribute("aria-expanded", "false");
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+            mobileMenuLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    const mobileMenu = document.getElementById("mobile-menu");
+                    const menuIcon = document.getElementById("menu-icon");
+                    mobileMenu.style.display = "none";
+                    menuIcon.classList.remove("fa-times");
+                    menuIcon.classList.add("fa-bars");
+                    menuIcon.closest("button").setAttribute("aria-expanded", "false");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

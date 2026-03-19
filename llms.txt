@@ -28,6 +28,8 @@ Tap.Giving provides NFC (Near Field Communication) tap plates that churches embe
 
 ## Blog Posts
 
+- [NFC Giving Explained: A Church Tech Team's Complete Guide](https://tap.giving/blog/nfc-giving-explained-church-tech-guide.html)
+- [DIY Tap-to-Give for Churches: NFC Giving Without Monthly Fees](https://tap.giving/blog/diy-nfc-giving-no-monthly-fees.html)
 - [Why Churches Love Tap.Giving: 7 Reasons Pastors Are Making the Switch](https://tap.giving/blog/why-churches-love-tap-giving.html)
 - [Easter Tap-to-Give: How NFC Plates Help Churches Maximize Their Biggest Sunday](https://tap.giving/blog/easter-tap-to-give-church-strategy.html)
 - [Christmas Eve NFC Giving Strategy](https://tap.giving/blog/christmas-eve-nfc-giving-strategy.html)

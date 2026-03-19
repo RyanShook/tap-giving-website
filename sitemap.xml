@@ -72,6 +72,18 @@
 
     <!-- Blog Posts -->
     <url>
+        <loc>https://tap.giving/blog/nfc-giving-explained-church-tech-guide.html</loc>
+        <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/diy-nfc-giving-no-monthly-fees.html</loc>
+        <lastmod>2026-05-03T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://tap.giving/blog/first-time-visitors-nfc-giving.html</loc>
         <lastmod>2026-04-26T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
