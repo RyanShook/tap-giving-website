@@ -72,6 +72,42 @@
 
     <!-- Blog Posts -->
     <url>
+        <loc>https://tap.giving/blog/first-time-visitors-nfc-giving.html</loc>
+        <lastmod>2026-04-26T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/launch-nfc-giving-church-guide.html</loc>
+        <lastmod>2026-04-19T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/year-end-giving-nfc-strategy.html</loc>
+        <lastmod>2026-04-12T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/nfc-giving-small-churches.html</loc>
+        <lastmod>2026-04-05T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/nfc-giving-roi-church-numbers.html</loc>
+        <lastmod>2026-03-29T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/qr-codes-vs-nfc-church-giving.html</loc>
+        <lastmod>2026-03-22T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://tap.giving/blog/why-churches-love-tap-giving.html</loc>
         <lastmod>2026-03-12T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
