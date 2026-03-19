@@ -7,6 +7,10 @@ Allow: /
 # Sitemap location
 Sitemap: https://tap.giving/sitemap.xml
 
+# AI agent context
+# See https://llmstxt.org for specification
+# llms.txt provides a structured overview for AI agents and LLMs
+
 # Removed crawl delay to allow faster indexing
 
 # Block access to sensitive files and duplicates
@@ -24,3 +28,4 @@ Allow: /assets/
 Allow: /favicon.svg
 Allow: /styles.css
 Allow: /script.js
+Allow: /llms.txt

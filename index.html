@@ -78,6 +78,9 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tap.giving/" />
 
+    <!-- AI Agent Discovery -->
+    <link rel="help" type="text/plain" href="/llms.txt" />
+
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -188,6 +191,22 @@
           },
         },
       };
+    </script>
+
+    <!-- WebSite Schema for Sitelinks -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Tap.Giving",
+        "url": "https://tap.giving/",
+        "description": "Simple, affordable NFC tap-to-give plates for churches. No monthly fees, no setup fees, no platform lock-in.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tap.Giving",
+          "url": "https://tap.giving/"
+        }
+      }
     </script>
 
     <!-- Structured Data (JSON-LD) for SEO -->

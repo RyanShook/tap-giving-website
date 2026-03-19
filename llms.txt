@@ -1,0 +1,56 @@
+# Tap.Giving
+
+> Simple, affordable NFC tap-to-give plates for churches. No monthly fees, no setup fees, no platform lock-in. Works with any giving platform.
+
+Tap.Giving provides NFC (Near Field Communication) tap plates that churches embed in their offering plates or pew backs. When a congregant taps their smartphone on the plate, it instantly opens the church's existing giving page — no app download, no account creation. Plates are a one-time purchase starting at $3.50 each with free shipping.
+
+## Key Facts
+
+- One-time cost: $3.50–$4.50 per plate (volume discounts available)
+- Zero monthly fees, zero setup fees
+- Works with any giving platform: Tithely, Pushpay, Subsplash, Planning Center, Donorbox, and more
+- No app required — works with any NFC-enabled smartphone
+- NFC chips are passive (no batteries), maintenance-free, and durable
+- Plates arrive pre-programmed with the church's giving link
+- Churches can update the linked URL at any time
+
+## Pages
+
+- [Home](https://tap.giving/): Main landing page with product overview, stats, and order form
+- [Pricing](https://tap.giving/pricing.html): Transparent volume pricing tiers and cost comparison
+- [How It Works](https://tap.giving/how-it-works.html): 3-step process — Tap, Give, Done
+- [Order](https://tap.giving/order.html): Order form for NFC tap plates
+- [Blog](https://tap.giving/blog.html): Articles on church giving technology, platform comparisons, and strategy
+- [NFC FAQ](https://tap.giving/nfc-faq.html): Technical FAQ on locked vs unlocked NFC plates and security
+- [Contact](https://tap.giving/contact.html): Contact form and support information
+- [Pushpay + Tap.Giving](https://tap.giving/pushpay.html): Landing page for Pushpay users
+- [Tithe.ly + Tap.Giving](https://tap.giving/tithely.html): Landing page for Tithe.ly users
+
+## Blog Posts
+
+- [Why Churches Love Tap.Giving: 7 Reasons Pastors Are Making the Switch](https://tap.giving/blog/why-churches-love-tap-giving.html)
+- [Easter Tap-to-Give: How NFC Plates Help Churches Maximize Their Biggest Sunday](https://tap.giving/blog/easter-tap-to-give-church-strategy.html)
+- [Christmas Eve NFC Giving Strategy](https://tap.giving/blog/christmas-eve-nfc-giving-strategy.html)
+- [How NFC Tap Plates Are Driving Church Growth](https://tap.giving/blog/nfc-tap-plates-church-growth.html)
+- [2026 Tap-to-Give Platform Comparison](https://tap.giving/blog/tap-to-give-platform-comparison.html)
+- [Tithely vs Tap.Giving](https://tap.giving/blog/tithely-vs-tap-giving.html)
+- [Subsplash Tap vs Tap.Giving](https://tap.giving/blog/subsplash-tap-vs-tap-giving.html)
+- [SecureGive Tap vs Tap.Giving](https://tap.giving/blog/securegive-tap-vs-tap-giving.html)
+- [Overflow Tap vs Tap.Giving](https://tap.giving/blog/overflow-tap-vs-tap-giving.html)
+- [ChurchTap vs Tap.Giving](https://tap.giving/blog/churchtap-vs-tap-giving.html)
+- [TapTag vs Tap.Giving](https://tap.giving/blog/taptag-vs-tap-giving.html)
+- [Tap Tag vs Tap.Giving](https://tap.giving/blog/tap-tag-vs-tap-giving.html)
+- [Seritag vs Tap.Giving](https://tap.giving/blog/seritag-vs-tap-giving.html)
+
+## Setup Guides
+
+- [Tithely Tap-to-Give Setup](https://tap.giving/blog/tithely-tap-to-give-setup.html)
+- [Planning Center Tap-to-Give Setup](https://tap.giving/blog/planning-center-tap-to-give-setup.html)
+- [Pushpay Tap-to-Give Setup](https://tap.giving/blog/pushpay-tap-to-give-setup.html)
+- [Donorbox Tap-to-Give Setup](https://tap.giving/blog/donorbox-tap-to-give-setup.html)
+
+## Contact
+
+- Email: hello@tap.giving
+- Phone: (832) 510-8788
+- Website: https://tap.giving
