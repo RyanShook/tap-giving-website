@@ -78,6 +78,18 @@
 
     <!-- Blog Posts -->
     <url>
+        <loc>https://tap.giving/blog/nfc-giving-catholic-parishes.html</loc>
+        <lastmod>2026-06-24T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/nucleus-tap-to-give-setup.html</loc>
+        <lastmod>2026-06-17T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://tap.giving/blog/linktree-nfc-church-giving-free-landing-page.html</loc>
         <lastmod>2026-05-24T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
