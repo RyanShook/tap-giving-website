@@ -211,50 +211,38 @@
                 <p class="text-center text-sm text-gray-500 mt-4">Available in multiple colors to match your church branding</p>
             </div>
 
+                    <div class="mb-6 text-center">
+                        <div class="inline-flex items-center bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-6 py-3 rounded-full text-sm font-bold shadow-lg">
+                            <i class="fas fa-tag mr-2"></i>
+                            Limited-time offer: 10% off your first order on our already low prices!
+                        </div>
+                    </div>
+
                     <div class="form-container bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20">
-                        <!-- Order Form -->
                         <form
-                            id="orderForm"
-                            action="https://formspree.io/p/2803072267095900016/f/contact"
+                            id="contactForm"
                             method="POST"
+                            onsubmit="return handleCheckout(event)"
                         >
-                            <!-- Personal Information -->
-                            <div class="form-row grid md:grid-cols-2 gap-8 mb-8">
-                                <div class="space-y-2">
-                                    <label
-                                        for="pastorName"
-                                        class="block text-sm font-bold text-gray-800 mb-3"
-                                    >
-                                        <i class="fas fa-user mr-2 text-primary-600"></i>Your Name *
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="pastorName"
-                                        name="pastor_name"
-                                        required
-                                        class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white"
-                                        placeholder="Your name"
-                                    />
-                                </div>
+                            <div class="mb-6">
                                 <div class="space-y-2">
                                     <label
                                         for="churchName"
                                         class="block text-sm font-bold text-gray-800 mb-3"
                                     >
-                                        <i class="fas fa-church mr-2 text-primary-600"></i>Church Name *
+                                        <i class="fas fa-church mr-2 text-primary-600"></i>Church Name
                                     </label>
                                     <input
                                         type="text"
                                         id="churchName"
                                         name="church_name"
-                                        required
                                         class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white"
                                         placeholder="Your church's name"
                                     />
                                 </div>
                             </div>
 
-                            <div class="mb-8">
+                            <div class="grid md:grid-cols-2 gap-8 mb-6">
                                 <div class="space-y-2">
                                     <label
                                         for="email"
@@ -268,92 +256,69 @@
                                         name="email"
                                         required
                                         class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white"
-                                        placeholder="your@email.com"
+                                    />
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        for="phone"
+                                        class="block text-sm font-bold text-gray-800 mb-3"
+                                    >
+                                        <i class="fas fa-mobile-screen-button mr-2 text-primary-600"></i>Phone Number
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white"
+                                        placeholder="(555) 123-4567"
                                     />
                                 </div>
                             </div>
 
-                            <!-- Pricing Calculator -->
-                            <div class="mb-10 bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 border border-primary-100">
-                                <h4 class="text-xl font-bold text-gray-900 mb-6 text-center">
-                                    <i class="fas fa-chart-line mr-2 text-primary-600"></i>
-                                    Select Number of NFC Tap Plates
-                                </h4>
-
-                                <div class="mb-6">
-                                    <label class="block text-lg font-bold text-gray-800 mb-4 text-center">
-                                        Number of Plates:
-                                        <span
-                                            id="formPlateCount"
-                                            class="bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent"
-                                        >250</span>
+                            <div class="mb-6">
+                                <div class="space-y-2">
+                                    <label
+                                        for="quantity"
+                                        class="block text-sm font-bold text-gray-800 mb-3"
+                                    >
+                                        <i class="fas fa-layer-group mr-2 text-primary-600"></i>How many plates do you need?
                                     </label>
-                                    <div class="relative">
-                                        <input
-                                            type="range"
-                                            id="formPlateSlider"
-                                            name="plate_quantity"
-                                            min="100"
-                                            max="1000"
-                                            step="50"
-                                            value="250"
-                                            class="w-full h-4 bg-gradient-to-r from-primary-200 to-primary-300 rounded-full appearance-none cursor-pointer slider"
-                                        />
-                                        <div class="flex justify-between text-sm font-semibold text-gray-500 mt-4">
-                                            <span class="bg-gray-100 px-3 py-1 rounded-full">100</span>
-                                            <span class="bg-gray-100 px-3 py-1 rounded-full">1000+</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="text-center">
-                                    <div class="text-4xl font-black bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-2">
-                                        $<span id="formPricePerPlate">4.50</span>
-                                    </div>
-                                    <p class="text-gray-600 font-semibold mb-4">per plate</p>
-                                    <div class="text-2xl font-bold text-gray-900 mb-4">
-                                        Total Investment:
-                                        <span class="bg-gradient-to-r from-accent-600 to-accent-700 bg-clip-text text-transparent">
-                                            $<span id="formTotalPrice">1125</span>
-                                        </span>
-                                    </div>
-                                    <div class="space-y-2">
-                                        <div class="flex justify-center items-center space-x-2 text-accent-600 font-bold">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>Free shipping included</span>
-                                        </div>
-                                        <div class="flex justify-center items-center space-x-2 text-accent-600 font-bold">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>No Monthly Fees</span>
-                                        </div>
-                                        <div class="flex justify-center items-center space-x-2 text-accent-600 font-bold">
-                                            <i class="fas fa-check-circle"></i>
-                                            <span>No Setup Fees</span>
-                                        </div>
-                                    </div>
+                                    <select
+                                        id="quantity"
+                                        name="quantity"
+                                        class="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white"
+                                    >
+                                        <option value="">Select quantity</option>
+                                        <option value="100">100</option>
+                                        <option value="150">150</option>
+                                        <option value="200">200</option>
+                                        <option value="250">250</option>
+                                        <option value="300">300</option>
+                                        <option value="350">350</option>
+                                        <option value="400">400</option>
+                                        <option value="450">450</option>
+                                        <option value="500">500</option>
+                                        <option value="550">550</option>
+                                        <option value="600">600</option>
+                                        <option value="650">650</option>
+                                        <option value="700">700</option>
+                                        <option value="750">750</option>
+                                        <option value="800">800</option>
+                                        <option value="850">850</option>
+                                        <option value="900">900</option>
+                                        <option value="950">950</option>
+                                        <option value="1000+">1000+</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <button
                                 type="submit"
-                                class="group w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 mb-6"
+                                class="group w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-10 py-5 rounded-2xl text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-primary-500/25 transform hover:-translate-y-1 mb-4"
                             >
                                 <i class="fas fa-arrow-right mr-3 group-hover:scale-110 transition-transform duration-300"></i>
-                                Submit Order Request
+                                Next Step
                             </button>
-
-                            <div class="text-center">
-                                <p class="text-gray-600 mb-3 font-medium">
-                                    Questions? Text us directly for faster help
-                                </p>
-                                <a
-                                    href="sms:+18325108788?body=I have questions about ordering tap to give plates."
-                                    class="inline-flex items-center space-x-3 bg-gradient-to-r from-accent-600 to-accent-700 hover:from-accent-700 hover:to-accent-800 text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-                                >
-                                    <i class="fas fa-sms text-lg"></i>
-                                    <span>(832) 510-8788</span>
-                                </a>
-                            </div>
                         </form>
                     </div>
                 </div>
@@ -487,34 +452,58 @@
         }
     </script>
 
-    <!-- Pricing Calculator Script -->
+    <!-- Checkout Redirect — same logic as index.html
+         Uses sendBeacon for Formspree (survives page redirect on mobile)
+         then redirects to Stripe Payment Link based on quantity tier.
+    -->
     <script>
-        // Pricing calculator functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const slider = document.getElementById('formPlateSlider');
-            const plateCountDisplay = document.getElementById('formPlateCount');
-            const pricePerPlateDisplay = document.getElementById('formPricePerPlate');
-            const totalPriceDisplay = document.getElementById('formTotalPrice');
+      function handleCheckout(e) {
+        e.preventDefault();
+        var form = document.getElementById('contactForm');
+        var formData = new FormData(form);
+        var qty = parseInt(formData.get('quantity')) || 100;
 
-            function calculatePrice(plateCount) {
-                if (plateCount >= 400) return 3.50;
-                if (plateCount >= 200) return 4.00;
-                return 5.00;
-            }
+        var link;
+        if (qty >= 400) {
+          link = 'https://buy.stripe.com/5kQeVe5Mjd7I5GS0CM8k802';
+        } else if (qty >= 200) {
+          link = 'https://buy.stripe.com/4gM7sMeiP2t45GS5X68k801';
+        } else {
+          link = 'https://buy.stripe.com/7sY6oI6Qn3x8c5g85e8k800';
+        }
+        link += '?prefilled_promo_code=WELCOME10';
+        var email = formData.get('email');
+        if (email) {
+          link += '&prefilled_email=' + encodeURIComponent(email);
+        }
 
-            function updatePricing() {
-                const plateCount = parseInt(slider.value);
-                const pricePerPlate = calculatePrice(plateCount);
-                const totalPrice = plateCount * pricePerPlate;
+        var redirected = false;
+        function doRedirect() {
+          if (!redirected) {
+            redirected = true;
+            window.location.href = link;
+          }
+        }
 
-                plateCountDisplay.textContent = plateCount;
-                pricePerPlateDisplay.textContent = pricePerPlate.toFixed(2);
-                totalPriceDisplay.textContent = totalPrice.toLocaleString();
-            }
+        var beaconData = new URLSearchParams(formData).toString();
+        var beaconSent = navigator.sendBeacon && navigator.sendBeacon(
+          'https://formspree.io/p/2803072267095900016/f/contact',
+          new Blob([beaconData], { type: 'application/x-www-form-urlencoded' })
+        );
 
-            slider.addEventListener('input', updatePricing);
-            updatePricing(); // Initialize on page load
-        });
+        if (beaconSent) {
+          doRedirect();
+        } else {
+          fetch('https://formspree.io/p/2803072267095900016/f/contact', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          }).then(doRedirect).catch(doRedirect);
+          setTimeout(doRedirect, 2000);
+        }
+
+        return false;
+      }
     </script>
 
     <!-- Google Analytics -->
