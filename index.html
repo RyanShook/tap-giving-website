@@ -1493,63 +1493,48 @@
          the redirect happens too fast. Do NOT replace sendBeacon with fetch
          unless you also add a delay before the redirect.
 
-         Stripe Payment Link tiers:
-         - 100-199 plates @ $4.50 → buy.stripe.com/7sY6oI...
-         - 200-399 plates @ $4.00 → buy.stripe.com/4gM7sM...
-         - 400+   plates @ $3.50 → buy.stripe.com/5kQeVe...
-         WELCOME10 promo code (10% off) is pre-loaded on all links.
+         Lead form submission:
+         1. Sends lead data to Formspree via sendBeacon
+         2. Fires auto-reply email via Cloudflare Worker (tap.giving/api/autoreply)
+         3. Redirects to thank-you.html
     -->
     <script>
       function handleCheckout(e) {
         e.preventDefault();
         var form = document.getElementById('contactForm');
         var formData = new FormData(form);
-        var qty = parseInt(formData.get('quantity')) || 100;
 
-        // Build Stripe link
-        var link;
-        if (qty >= 400) {
-          link = 'https://buy.stripe.com/5kQeVe5Mjd7I5GS0CM8k802';
-        } else if (qty >= 200) {
-          link = 'https://buy.stripe.com/4gM7sMeiP2t45GS5X68k801';
-        } else {
-          link = 'https://buy.stripe.com/7sY6oI6Qn3x8c5g85e8k800';
-        }
-        link += '?prefilled_promo_code=WELCOME10';
-        var email = formData.get('email');
-        if (email) {
-          link += '&prefilled_email=' + encodeURIComponent(email);
-        }
-
-        // Send lead to Formspree, then redirect once complete (or after 2s timeout)
-        var redirected = false;
-        function doRedirect() {
-          if (!redirected) {
-            redirected = true;
-            window.location.href = link;
-          }
-        }
-
-        // Use navigator.sendBeacon as primary method (survives page navigation)
+        // Send lead to Formspree via sendBeacon (survives page navigation)
         var beaconData = new URLSearchParams(formData).toString();
         var beaconSent = navigator.sendBeacon && navigator.sendBeacon(
           'https://formspree.io/p/2803072267095900016/f/contact',
           new Blob([beaconData], { type: 'application/x-www-form-urlencoded' })
         );
 
-        if (beaconSent) {
-          // Beacon queued successfully — redirect immediately
-          doRedirect();
-        } else {
-          // Fallback: fetch with timeout
+        if (!beaconSent) {
+          // Fallback: fetch (fire-and-forget)
           fetch('https://formspree.io/p/2803072267095900016/f/contact', {
             method: 'POST',
             body: formData,
             headers: { 'Accept': 'application/json' }
-          }).then(doRedirect).catch(doRedirect);
-          setTimeout(doRedirect, 2000);
+          }).catch(function() {});
         }
 
+        // Fire-and-forget: trigger auto-reply email via Cloudflare Worker
+        var autoreplyData = {
+          church: formData.get('church') || '',
+          email: formData.get('email') || '',
+          name: formData.get('name') || '',
+          quantity: formData.get('quantity') || ''
+        };
+        fetch('https://tap.giving/api/autoreply', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(autoreplyData)
+        }).catch(function() {});
+
+        // Redirect to thank-you page
+        window.location.href = '/thank-you.html';
         return false;
       }
     </script>

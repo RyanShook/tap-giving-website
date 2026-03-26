@@ -820,29 +820,6 @@
         e.preventDefault();
         var form = document.getElementById('contactForm');
         var formData = new FormData(form);
-        var qty = parseInt(formData.get('quantity')) || 100;
-
-        var link;
-        if (qty >= 400) {
-          link = 'https://buy.stripe.com/5kQeVe5Mjd7I5GS0CM8k802';
-        } else if (qty >= 200) {
-          link = 'https://buy.stripe.com/4gM7sMeiP2t45GS5X68k801';
-        } else {
-          link = 'https://buy.stripe.com/7sY6oI6Qn3x8c5g85e8k800';
-        }
-        link += '?prefilled_promo_code=WELCOME10';
-        var email = formData.get('email');
-        if (email) {
-          link += '&prefilled_email=' + encodeURIComponent(email);
-        }
-
-        var redirected = false;
-        function doRedirect() {
-          if (!redirected) {
-            redirected = true;
-            window.location.href = link;
-          }
-        }
 
         var beaconData = new URLSearchParams(formData).toString();
         var beaconSent = navigator.sendBeacon && navigator.sendBeacon(
@@ -850,17 +827,27 @@
           new Blob([beaconData], { type: 'application/x-www-form-urlencoded' })
         );
 
-        if (beaconSent) {
-          doRedirect();
-        } else {
+        if (!beaconSent) {
           fetch('https://formspree.io/p/2803072267095900016/f/contact', {
             method: 'POST',
             body: formData,
             headers: { 'Accept': 'application/json' }
-          }).then(doRedirect).catch(doRedirect);
-          setTimeout(doRedirect, 2000);
+          }).catch(function() {});
         }
 
+        var autoreplyData = {
+          church: formData.get('church') || '',
+          email: formData.get('email') || '',
+          name: formData.get('name') || '',
+          quantity: formData.get('quantity') || ''
+        };
+        fetch('https://tap.giving/api/autoreply', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(autoreplyData)
+        }).catch(function() {});
+
+        window.location.href = '/thank-you.html';
         return false;
       }
     </script>
