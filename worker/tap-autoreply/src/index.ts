@@ -41,19 +41,28 @@ function buildEmailHtml(data: LeadData): string {
 
   <p>Thanks for your interest in tap-to-give plates. I'm Ryan, founder of Tap.Giving, and I'll personally follow up within 24 hours.</p>
 
-  <p><strong>Quick overview of what we offer:</strong></p>
+  <p><strong>Want to speed things up?</strong> Reply to this email with two things and I'll have a free mockup of your plate ready when we talk:</p>
+  <ol style="padding-left: 20px;">
+    <li><strong>Your church logo</strong> (any format works)</li>
+    <li><strong>Your giving page URL</strong> (Tithely, Pushpay, or whatever you use)</li>
+  </ol>
+
+  <p>Here's what one of our customers' plates looks like installed:</p>
+  <p><img src="https://tap.giving/assets/pews-crop.jpg" alt="Tap.Giving NFC plate installed at Encounter the Lord Church" style="max-width: 100%; border-radius: 8px;" /></p>
+
+  <p><strong>Quick overview:</strong></p>
   <ul style="padding-left: 20px;">
     <li>4" NFC tap plates customized with your church's branding</li>
     <li>$3.50–$4.50 per plate depending on quantity</li>
     <li>Free shipping, no monthly fees, no setup fees</li>
-    <li>Plates work with any giving platform (Tithely, Pushpay, etc.)</li>
-    <li>Production and shipping takes 2–3 weeks</li>
+    <li>Works with any giving platform</li>
+    <li>Production and delivery in 2–3 weeks</li>
   </ul>
 
-  <p>If you'd like to get a head start, you can design your plate using our free template:<br>
+  <p>You can also design your own plate using our free Canva template:<br>
   <a href="${CANVA_TEMPLATE_URL}" style="color: #2563eb;">Open Canva Template</a></p>
 
-  <p>Feel free to reply to this email or call me at <a href="tel:+18325108788" style="color: #2563eb;">(832) 510-8788</a>.</p>
+  <p>Just reply here or call me at <a href="tel:+18325108788" style="color: #2563eb;">(832) 510-8788</a>.</p>
 
   <p>Ryan Shook<br>
   Founder, <a href="https://tap.giving" style="color: #2563eb;">Tap.Giving</a></p>
@@ -69,18 +78,23 @@ function buildEmailText(data: LeadData): string {
 
 Thanks for your interest in tap-to-give plates. I'm Ryan, founder of Tap.Giving, and I'll personally follow up within 24 hours.
 
-Quick overview of what we offer:
+Want to speed things up? Reply to this email with two things and I'll have a free mockup of your plate ready when we talk:
+
+1. Your church logo (any format works)
+2. Your giving page URL (Tithely, Pushpay, or whatever you use)
+
+Quick overview:
 
 - 4" NFC tap plates customized with your church's branding
 - $3.50–$4.50 per plate depending on quantity
 - Free shipping, no monthly fees, no setup fees
-- Plates work with any giving platform (Tithely, Pushpay, etc.)
-- Production and shipping takes 2–3 weeks
+- Works with any giving platform
+- Production and delivery in 2–3 weeks
 
-If you'd like to get a head start, you can design your plate using our free template:
+You can also design your own plate using our free Canva template:
 ${CANVA_TEMPLATE_URL}
 
-Feel free to reply to this email or call me at (832) 510-8788.
+Just reply here or call me at (832) 510-8788.
 
 Ryan Shook
 Founder, Tap.Giving
