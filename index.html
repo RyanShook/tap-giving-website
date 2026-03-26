@@ -1488,7 +1488,23 @@
 
     <script src="script.js?v=2"></script>
 
-    <!-- Checkout Redirect -->
+    <!-- Checkout Redirect
+         IMPORTANT: This form submit handler does TWO things:
+         1. Sends the lead data to Formspree (so we get the email/phone/church info)
+         2. Redirects the user to a Stripe Payment Link based on their selected quantity tier
+
+         We use navigator.sendBeacon() for the Formspree submission because it
+         guarantees delivery even when the page is navigating away. A regular
+         fetch() will be cancelled by mobile browsers before it completes if
+         the redirect happens too fast. Do NOT replace sendBeacon with fetch
+         unless you also add a delay before the redirect.
+
+         Stripe Payment Link tiers:
+         - 100-199 plates @ $4.50 → buy.stripe.com/7sY6oI...
+         - 200-399 plates @ $4.00 → buy.stripe.com/4gM7sM...
+         - 400+   plates @ $3.50 → buy.stripe.com/5kQeVe...
+         WELCOME10 promo code (10% off) is pre-loaded on all links.
+    -->
     <script>
       function handleCheckout(e) {
         e.preventDefault();
