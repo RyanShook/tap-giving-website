@@ -623,8 +623,8 @@
 
                     <div
                         class="form-container bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20">
-                        <form id="contactForm" action="https://formspree.io/p/2803072267095900016/f/contact"
-                            method="POST">
+                        <form id="contactForm" method="POST"
+                            onsubmit="return handleCheckout(event)">
                             <input type="hidden" name="source" value="tithely-landing-page" />
                             <input type="hidden" name="platform" value="Tithe.ly" />
 
@@ -811,6 +811,57 @@
         }
     </script>
     <script src="script.js?v=2"></script>
+
+    <!-- Checkout Redirect — sends lead to Formspree via sendBeacon, then redirects to Stripe -->
+    <script>
+      function handleCheckout(e) {
+        e.preventDefault();
+        var form = document.getElementById('contactForm');
+        var formData = new FormData(form);
+        var qty = parseInt(formData.get('quantity')) || 100;
+
+        var link;
+        if (qty >= 400) {
+          link = 'https://buy.stripe.com/5kQeVe5Mjd7I5GS0CM8k802';
+        } else if (qty >= 200) {
+          link = 'https://buy.stripe.com/4gM7sMeiP2t45GS5X68k801';
+        } else {
+          link = 'https://buy.stripe.com/7sY6oI6Qn3x8c5g85e8k800';
+        }
+        link += '?prefilled_promo_code=WELCOME10';
+        var email = formData.get('email');
+        if (email) {
+          link += '&prefilled_email=' + encodeURIComponent(email);
+        }
+
+        var redirected = false;
+        function doRedirect() {
+          if (!redirected) {
+            redirected = true;
+            window.location.href = link;
+          }
+        }
+
+        var beaconData = new URLSearchParams(formData).toString();
+        var beaconSent = navigator.sendBeacon && navigator.sendBeacon(
+          'https://formspree.io/p/2803072267095900016/f/contact',
+          new Blob([beaconData], { type: 'application/x-www-form-urlencoded' })
+        );
+
+        if (beaconSent) {
+          doRedirect();
+        } else {
+          fetch('https://formspree.io/p/2803072267095900016/f/contact', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          }).then(doRedirect).catch(doRedirect);
+          setTimeout(doRedirect, 2000);
+        }
+
+        return false;
+      }
+    </script>
 </body>
 
 </html>
