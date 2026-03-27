@@ -152,7 +152,7 @@ export default {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({
-					from: 'Ryan Shook <ryan@tap.giving>',
+					from: 'Ryan Shook <ryan@send.tap.giving>',
 					reply_to: 'ryan@tap.giving',
 					to: [data.email],
 					subject: "Got your request — I'll follow up shortly",

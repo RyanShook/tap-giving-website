@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started with Tap.Giving</title>
+  <meta name="description" content="Everything you need to launch tap-to-give at your church. Installation guide, announcement slides, phone settings, and troubleshooting." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+  </noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </noscript>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: "#eff6ff", 100: "#dbeafe", 200: "#bfdbfe", 300: "#93c5fd",
+              400: "#60a5fa", 500: "#3b82f6", 600: "#2563eb", 700: "#1d4ed8",
+              800: "#1e40af", 900: "#1e3a8a",
+            },
+            accent: {
+              50: "#f0fdf4", 100: "#dcfce7", 200: "#bbf7d0", 300: "#86efac",
+              400: "#4ade80", 500: "#22c55e", 600: "#16a34a", 700: "#15803d",
+              800: "#166534", 900: "#14532d",
+            },
+          },
+          fontFamily: {
+            inter: ["Inter", "system-ui", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+    .accordion-content.open { max-height: 2000px; }
+    .accordion-arrow { transition: transform 0.3s ease; }
+    .accordion-arrow.open { transform: rotate(180deg); }
+  </style>
+</head>
+
+<body class="font-inter antialiased bg-white">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-blue-600 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center h-16">
+        <div class="flex-shrink-0">
+          <a href="/" class="flex items-center">
+            <img src="assets/Logo-Crop-Large-1024x295.webp" alt="Tap.Giving Logo"
+              class="h-8 w-auto" width="1024" height="295" loading="eager" />
+          </a>
+        </div>
+        <nav class="hidden md:flex flex-1 justify-center space-x-8" aria-label="Main navigation">
+          <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+          <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
+          <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
+          <a href="/"
+            class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap">
+            Order Now
+          </a>
+          <button type="button"
+            class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu()">
+            <span class="sr-only">Open main menu</span>
+            <i class="fas fa-bars text-xl" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+      <div class="md:hidden" id="mobile-menu" style="display: none">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+          <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+          <a href="/blog.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
+          <a href="/contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="container mx-auto px-6 py-16">
+
+    <!-- Hero -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="mb-6">
+        <span class="inline-block bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-semibold">Getting Started</span>
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+        Getting Started with <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Tap.Giving</span>
+      </h1>
+      <p class="text-xl text-gray-600 leading-relaxed">
+        Everything you need to get your church ready for tap-to-give. Follow these steps and you&rsquo;ll be live on launch day.
+      </p>
+    </div>
+
+    <!-- Quick Start Checklist -->
+    <section class="mb-16">
+      <div class="max-w-2xl mx-auto">
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-10">
+          <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Launch Checklist</h2>
+          <div class="space-y-4">
+            <label class="flex items-start space-x-4 bg-white rounded-xl px-6 py-4 shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+              <input type="checkbox" class="mt-1.5 h-5 w-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+              <div>
+                <p class="font-semibold text-gray-900">Pick your launch Sunday</p>
+                <p class="text-gray-500 text-sm">Choose a date 1&ndash;2 weeks after plates arrive so your team has time to install and test.</p>
+              </div>
+            </label>
+            <label class="flex items-start space-x-4 bg-white rounded-xl px-6 py-4 shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+              <input type="checkbox" class="mt-1.5 h-5 w-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+              <div>
+                <p class="font-semibold text-gray-900">Install plates on pews or chairs</p>
+                <p class="text-gray-500 text-sm">See the installation guide below. Most churches finish in under an hour.</p>
+              </div>
+            </label>
+            <label class="flex items-start space-x-4 bg-white rounded-xl px-6 py-4 shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+              <input type="checkbox" class="mt-1.5 h-5 w-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+              <div>
+                <p class="font-semibold text-gray-900">Test every plate</p>
+                <p class="text-gray-500 text-sm">Tap each plate with your phone to make sure it opens the correct giving page.</p>
+              </div>
+            </label>
+            <label class="flex items-start space-x-4 bg-white rounded-xl px-6 py-4 shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+              <input type="checkbox" class="mt-1.5 h-5 w-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+              <div>
+                <p class="font-semibold text-gray-900">Announce it to your congregation</p>
+                <p class="text-gray-500 text-sm">Use our announcement slide template during service. A quick 30-second explanation is all it takes.</p>
+              </div>
+            </label>
+            <label class="flex items-start space-x-4 bg-white rounded-xl px-6 py-4 shadow-sm cursor-pointer hover:shadow-md transition-shadow">
+              <input type="checkbox" class="mt-1.5 h-5 w-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+              <div>
+                <p class="font-semibold text-gray-900">Have volunteers demo during first service</p>
+                <p class="text-gray-500 text-sm">Station 2&ndash;3 volunteers in the lobby to help people tap for the first time. This makes a huge difference.</p>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Guide -->
+    <section class="mb-16" id="installation">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-black text-gray-900 text-center mb-10">Installation Guide</h2>
+
+        <div class="space-y-6">
+          <!-- Adhesive -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-tape text-primary-600 text-lg"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Adhesive Back (Most Common)</h3>
+                <p class="text-gray-600 mb-4">Every plate comes with a strong adhesive back. This works great on smooth, flat surfaces like finished wood pews, plastic chair backs, and metal surfaces.</p>
+                <ol class="space-y-2 text-gray-600">
+                  <li class="flex items-start space-x-2"><span class="font-bold text-primary-600 mt-0.5">1.</span><span>Clean the surface with a dry cloth. Make sure it&rsquo;s free of dust and oils.</span></li>
+                  <li class="flex items-start space-x-2"><span class="font-bold text-primary-600 mt-0.5">2.</span><span>Peel the adhesive backing off the plate.</span></li>
+                  <li class="flex items-start space-x-2"><span class="font-bold text-primary-600 mt-0.5">3.</span><span>Place the plate on the back of the pew or chair, centered and at a comfortable reach height.</span></li>
+                  <li class="flex items-start space-x-2"><span class="font-bold text-primary-600 mt-0.5">4.</span><span>Press firmly for 10 seconds. The adhesive strengthens over 24 hours.</span></li>
+                </ol>
+                <p class="text-gray-500 text-sm mt-4"><strong>Tip:</strong> Place plates on the back of the pew in front, so the person seated behind can easily reach it.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screws -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-screwdriver text-accent-600 text-lg"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Screw Mount</h3>
+                <p class="text-gray-600 mb-4">For churches that want a permanent mount. Plates can be ordered with pre-drilled holes. Works best on wooden pew backs.</p>
+                <ol class="space-y-2 text-gray-600">
+                  <li class="flex items-start space-x-2"><span class="font-bold text-accent-600 mt-0.5">1.</span><span>Hold the plate in position and mark the screw holes with a pencil.</span></li>
+                  <li class="flex items-start space-x-2"><span class="font-bold text-accent-600 mt-0.5">2.</span><span>Pre-drill pilot holes (recommended to avoid splitting wood).</span></li>
+                  <li class="flex items-start space-x-2"><span class="font-bold text-accent-600 mt-0.5">3.</span><span>Align the plate and secure with small screws. Don&rsquo;t overtighten.</span></li>
+                </ol>
+                <p class="text-gray-500 text-sm mt-4"><strong>Note:</strong> Plates with screw holes also include adhesive backing, so you have both options.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elastic Bands -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-chair text-purple-600 text-lg"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Elastic Bands (For Chairs)</h3>
+                <p class="text-gray-600 mb-4">If your church uses stackable or folding chairs, elastic bands wrap around the chair back to hold the plate in place. No adhesive needed &mdash; easy to remove and reposition.</p>
+                <ol class="space-y-2 text-gray-600">
+                  <li class="flex items-start space-x-2"><span class="font-bold text-purple-600 mt-0.5">1.</span><span>Loop the elastic band around the back of the chair.</span></li>
+                  <li class="flex items-start space-x-2"><span class="font-bold text-purple-600 mt-0.5">2.</span><span>Slide the plate into position on the band.</span></li>
+                  <li class="flex items-start space-x-2"><span class="font-bold text-purple-600 mt-0.5">3.</span><span>Adjust so the plate sits flat and centered on the chair back.</span></li>
+                </ol>
+                <p class="text-gray-500 text-sm mt-4"><strong>Tip:</strong> Standard bands fit most church chairs. Let us know your chair dimensions if you&rsquo;re unsure.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Placement Tips -->
+          <div class="bg-gradient-to-br from-slate-50 to-gray-100 rounded-2xl p-8">
+            <h3 class="text-lg font-bold text-gray-900 mb-4"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Placement Tips</h3>
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1.5 text-sm"></i><span>Mount at seated arm height &mdash; people should be able to tap without leaning forward.</span></li>
+              <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1.5 text-sm"></i><span>Center the plate on the pew/chair back so it&rsquo;s visible and accessible from any seat.</span></li>
+              <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1.5 text-sm"></i><span>You don&rsquo;t need a plate on every row. Every 2&ndash;3 rows works well for most churches.</span></li>
+              <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1.5 text-sm"></i><span>Avoid placing plates near metal framing, which can interfere with NFC signals.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Announcement Slide -->
+    <section class="mb-16" id="announce">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-black text-gray-900 text-center mb-4">Announce It to Your Church</h2>
+        <p class="text-gray-600 text-center text-lg mb-10">The biggest mistake churches make is installing plates without telling anyone. A quick announcement during service makes all the difference.</p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-10">
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+              <i class="fas fa-desktop text-primary-600 text-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Announcement Slide</h3>
+            <p class="text-gray-600 mb-4">Drop this into your worship software (ProPresenter, EasyWorship, PowerPoint, etc.) and display it during the giving moment.</p>
+            <a href="https://www.canva.com/design/DAHB7dHl1WM/PesDgn77CpfGpuBBLmFxcA/view?utm_content=DAHB7dHl1WM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview"
+              target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold transition duration-300">
+              <i class="fas fa-palette mr-2"></i> Customize in Canva
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+              <i class="fas fa-microphone text-accent-600 text-lg"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">What to Say</h3>
+            <p class="text-gray-600 mb-4">Here&rsquo;s a simple script your pastor or worship leader can use:</p>
+            <div class="bg-gray-50 rounded-xl p-4 text-gray-700 text-sm leading-relaxed italic">
+              &ldquo;We&rsquo;ve added a new way to give. You&rsquo;ll notice plates on the pew backs &mdash; just tap your phone on one and it&rsquo;ll open our giving page. No app needed. If you&rsquo;ve never tried it, give it a tap right now.&rdquo;
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-slate-50 to-gray-100 rounded-2xl p-8">
+          <h3 class="text-lg font-bold text-gray-900 mb-4"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Launch Day Tips</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1.5 text-sm"></i><span><strong>Announce from the stage.</strong> Don&rsquo;t rely on people noticing the plates on their own. A verbal introduction is essential.</span></li>
+            <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1.5 text-sm"></i><span><strong>Have volunteers in the lobby.</strong> Station 2&ndash;3 people to demo the tap and help anyone whose phone doesn&rsquo;t work immediately.</span></li>
+            <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1.5 text-sm"></i><span><strong>Announce it for 3&ndash;4 weeks in a row.</strong> Not everyone is there every Sunday, and it takes repetition for new habits to form.</span></li>
+            <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1.5 text-sm"></i><span><strong>Include it in your bulletin or newsletter.</strong> A short note explaining how tap-to-give works goes a long way.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phone Settings / NFC Help -->
+    <section class="mb-16" id="phone-settings">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-black text-gray-900 text-center mb-4">Phone Settings &amp; NFC Help</h2>
+        <p class="text-gray-600 text-center text-lg mb-10">Most phones work out of the box, but here&rsquo;s how to help anyone who has trouble.</p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-10">
+          <!-- iPhone -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <div class="flex items-center space-x-3 mb-4">
+              <i class="fab fa-apple text-gray-900 text-2xl"></i>
+              <h3 class="text-xl font-bold text-gray-900">iPhone</h3>
+            </div>
+            <p class="text-gray-600 mb-4">iPhone XR/XS and newer read NFC automatically &mdash; no setup needed. Just hold the top of the phone near the plate.</p>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1 text-xs"></i><span><strong>iPhone 7&ndash;X:</strong> Open the Camera app or Control Center NFC reader, then tap.</span></li>
+              <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1 text-xs"></i><span><strong>iPhone XR/XS and newer:</strong> Just tap. NFC reads in the background automatically.</span></li>
+              <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1 text-xs"></i><span><strong>Tap near the top of the phone</strong> &mdash; the NFC antenna is at the top edge.</span></li>
+            </ul>
+          </div>
+
+          <!-- Android -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+            <div class="flex items-center space-x-3 mb-4">
+              <i class="fab fa-android text-green-600 text-2xl"></i>
+              <h3 class="text-xl font-bold text-gray-900">Android</h3>
+            </div>
+            <p class="text-gray-600 mb-4">Most Android phones have NFC built in. If tapping doesn&rsquo;t work, check these settings:</p>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1 text-xs"></i><span>Go to <strong>Settings &rarr; Connected Devices &rarr; NFC</strong> and make sure it&rsquo;s turned on.</span></li>
+              <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1 text-xs"></i><span>On Samsung: <strong>Settings &rarr; Connections &rarr; NFC and Contactless Payments &rarr; On</strong></span></li>
+              <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1 text-xs"></i><span><strong>Tap near the center of the phone</strong> &mdash; most Android NFC antennas are in the middle of the back.</span></li>
+              <li class="flex items-start space-x-2"><i class="fas fa-check text-accent-500 mt-1 text-xs"></i><span>Remove thick cases if the tap isn&rsquo;t registering. Most cases work fine, but very thick or metal cases can block NFC.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Troubleshooting FAQ -->
+    <section class="mb-16" id="troubleshooting">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-black text-gray-900 text-center mb-10">Troubleshooting</h2>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+            <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+              <span class="font-semibold text-gray-900 text-lg">Phone taps but nothing happens</span>
+              <i class="fas fa-chevron-down accordion-arrow text-gray-400"></i>
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <ul class="space-y-2 text-gray-600">
+                <li><strong>Make sure the phone is unlocked.</strong> NFC won&rsquo;t trigger on a locked screen for most Android phones.</li>
+                <li><strong>Tap slowly and hold for 1&ndash;2 seconds.</strong> Don&rsquo;t just bump it &mdash; hold the phone flat against the plate.</li>
+                <li><strong>Try tapping a different spot.</strong> The NFC antenna location varies by phone model.</li>
+                <li><strong>Check NFC is enabled</strong> in phone settings (see above).</li>
+                <li><strong>Remove the phone case</strong> temporarily if it&rsquo;s very thick or has a metal plate inside (like a magnetic mount).</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+            <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+              <span class="font-semibold text-gray-900 text-lg">Plate opens the wrong page</span>
+              <i class="fas fa-chevron-down accordion-arrow text-gray-400"></i>
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-gray-600">Each plate is programmed with your giving URL during production. If the wrong page is opening, contact us at <a href="mailto:hello@tap.giving" class="text-primary-600 hover:text-primary-700 font-semibold">hello@tap.giving</a> and we&rsquo;ll help troubleshoot. In most cases, we can reprogram the URL remotely if the NFC tag was left unlocked.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+            <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+              <span class="font-semibold text-gray-900 text-lg">Adhesive isn&rsquo;t sticking</span>
+              <i class="fas fa-chevron-down accordion-arrow text-gray-400"></i>
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <ul class="space-y-2 text-gray-600">
+                <li><strong>Clean the surface first.</strong> Dust, oils, and lacquer build-up can weaken adhesive. Wipe with rubbing alcohol and let dry.</li>
+                <li><strong>Give it 24 hours.</strong> The adhesive reaches full strength after a day. Avoid bumping the plate during this time.</li>
+                <li><strong>Rough or textured surfaces</strong> may need extra help. Use nano double-sided tape (available at hardware stores) for additional hold.</li>
+                <li><strong>Consider screw mounting</strong> for high-traffic areas or if adhesive keeps failing.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+            <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+              <span class="font-semibold text-gray-900 text-lg">Can I change the URL on the plate later?</span>
+              <i class="fas fa-chevron-down accordion-arrow text-gray-400"></i>
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-gray-600">If your plates were programmed with an unlocked NFC tag, yes &mdash; you can reprogram them using a free NFC writing app (like NFC Tools on iPhone or Android). If the tags were locked during production, the URL is permanent. We recommend leaving tags unlocked unless you have a specific reason to lock them. Contact us if you need help.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+            <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+              <span class="font-semibold text-gray-900 text-lg">Do I need one plate per seat?</span>
+              <i class="fas fa-chevron-down accordion-arrow text-gray-400"></i>
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-gray-600">No. Most churches place one plate every 2&ndash;3 seats or on every other row. The goal is for everyone to be within arm&rsquo;s reach of a plate. For a church with 200 seats, 80&ndash;100 plates typically covers it well.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+            <button onclick="toggleAccordion(this)" class="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+              <span class="font-semibold text-gray-900 text-lg">How durable are the plates?</span>
+              <i class="fas fa-chevron-down accordion-arrow text-gray-400"></i>
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-gray-600">Plates are made from 3mm PVC with a UV-printed surface. They&rsquo;re waterproof, scratch-resistant, and designed for years of daily use. The NFC chip inside has no battery and doesn&rsquo;t wear out &mdash; it&rsquo;s powered by the phone&rsquo;s signal when tapped.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="mb-16">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="bg-gradient-to-br from-slate-50 to-gray-100 rounded-3xl p-10">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Need Help?</h2>
+          <p class="text-gray-600 text-lg mb-6">I&rsquo;m here to make sure your launch goes smoothly.</p>
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center justify-center space-x-3">
+              <i class="fas fa-envelope text-primary-600"></i>
+              <a href="mailto:hello@tap.giving" class="text-primary-600 hover:text-primary-700 font-semibold transition duration-300">hello@tap.giving</a>
+            </div>
+            <div class="flex items-center justify-center space-x-3">
+              <i class="fas fa-phone text-primary-600"></i>
+              <a href="tel:+18325108788" class="text-primary-600 hover:text-primary-700 font-semibold transition duration-300">(832) 510-8788</a>
+            </div>
+          </div>
+          <p class="text-gray-500 text-sm">Ryan Shook, Founder &mdash; Tap.Giving</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="col-span-2">
+          <img src="assets/Logo-Crop-Large-1024x295.webp" alt="Tap.Giving Logo"
+            class="h-8 w-auto mb-4 brightness-0 invert" />
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Simple, transparent NFC giving solutions that work with your
+            existing church platform. No monthly fees, no lock-in.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
+            <li><a href="/pricing.html" class="text-gray-300 hover:text-white transition duration-300">Pricing</a></li>
+            <li><a href="/blog.html" class="text-gray-300 hover:text-white transition duration-300">Blog</a></li>
+            <li><a href="/contact.html" class="text-gray-300 hover:text-white transition duration-300">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/tapgiving" target="_blank" rel="noopener noreferrer"
+              class="text-gray-300 hover:text-white transition duration-300">
+              <i class="fab fa-facebook-f text-2xl"></i>
+            </a>
+            <a href="https://www.instagram.com/tap.giving" target="_blank" rel="noopener noreferrer"
+              class="text-gray-300 hover:text-white transition duration-300">
+              <i class="fab fa-instagram text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+        <div class="mb-4 space-x-4">
+          <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+          <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+        </div>
+        <p class="text-gray-500 text-sm font-medium">
+          &copy; 2026 Tap.Giving. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const isHidden = mobileMenu.style.display === "none" || !mobileMenu.style.display;
+      if (isHidden) {
+        mobileMenu.style.display = "block";
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-times");
+        menuIcon.closest("button").setAttribute("aria-expanded", "true");
+      } else {
+        mobileMenu.style.display = "none";
+        menuIcon.classList.remove("fa-times");
+        menuIcon.classList.add("fa-bars");
+        menuIcon.closest("button").setAttribute("aria-expanded", "false");
+      }
+    }
+
+    function toggleAccordion(btn) {
+      var content = btn.nextElementSibling;
+      var arrow = btn.querySelector('.accordion-arrow');
+      content.classList.toggle('open');
+      arrow.classList.toggle('open');
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("#mobile-menu a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          document.getElementById("mobile-menu").style.display = "none";
+          var icon = document.getElementById("menu-icon");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+          icon.closest("button").setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  </script>
+
+  <!-- Crisp Chat -->
+  <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "ad8857a0-36b5-4cab-97d2-ad9913058ee1";
+    (function () {
+      d = document;
+      s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3B3M72XEP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-L3B3M72XEP');
+  </script>
+</body>
+
+</html>

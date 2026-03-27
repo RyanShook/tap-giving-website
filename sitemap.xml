@@ -50,6 +50,12 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://tap.giving/launch.html</loc>
+        <lastmod>2026-03-26T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://tap.giving/privacy.html</loc>
         <lastmod>2026-03-03T00:00:00+00:00</lastmod>
         <changefreq>yearly</changefreq>

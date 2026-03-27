@@ -79,6 +79,8 @@ Ryan handles everything manually right now:
 - **about.html** — Founder story (pastor background), mission, trust-building.
 - **contact.html** — Contact form, phone, email.
 - **order-confirmed.html** — Post-payment confirmation (noindex). Shows timeline, next steps.
+- **thank-you.html** — Post-lead-form confirmation (noindex). Drives mockup requests (logo + URL ask), social proof, pricing.
+- **launch.html** — Post-purchase launch kit (noindex). Installation guide, announcement slides/script, phone settings, troubleshooting FAQ. Sent to customers after order ships. URL: tap.giving/launch
 
 ### Competitor Integration Pages
 - **pushpay.html** — Landing page for Pushpay users. Message: "Keep Pushpay, add our plates."
