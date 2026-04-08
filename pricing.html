@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>
-    NFC Tap-to-Give Pricing - Transparent Church Giving Solutions | Tap.Giving
+    NFC Tap-to-Give Pricing for Churches | Tap.Giving
   </title>
   <meta name="description"
     content="Transparent pricing for NFC tap-to-give church solutions. No setup fees, no monthly costs. Volume discounts from $3.50-$4.50 per plate. Free shipping included." />
@@ -45,6 +45,70 @@
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </noscript>
+
+  <!-- Structured Data for Product with Pricing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Tap.Giving NFC Tap-to-Give Plates",
+    "description": "Custom-printed NFC tap-to-give plates for churches. One-time purchase, no monthly fees, works with any giving platform.",
+    "brand": {
+      "@type": "Organization",
+      "name": "Tap.Giving"
+    },
+    "image": "https://tap.giving/assets/phone-and-plate.webp",
+    "url": "https://tap.giving/pricing.html",
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "3.50",
+      "highPrice": "4.50",
+      "priceCurrency": "USD",
+      "offerCount": 3,
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "100-199 NFC Tap-to-Give Plates",
+          "price": "4.50",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "4.50",
+            "priceCurrency": "USD",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": "1",
+              "unitCode": "C62"
+            }
+          },
+          "availability": "https://schema.org/InStock",
+          "shippingDetails": {
+            "@type": "OfferShippingDetails",
+            "shippingRate": {
+              "@type": "MonetaryAmount",
+              "value": "0",
+              "currency": "USD"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "200-399 NFC Tap-to-Give Plates",
+          "price": "4.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "400+ NFC Tap-to-Give Plates",
+          "price": "3.50",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      ]
+    }
+  }
+  </script>
 
   <!-- Structured Data for Breadcrumbs -->
   <script type="application/ld+json">
@@ -311,7 +375,7 @@
           Giving</span>
       </h1>
       <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-        No setup fees. No monthly costs. No hidden charges. Just transparent
+        NFC tap-to-give plates with no setup fees, no monthly costs, and no hidden charges. Just transparent
         volume pricing with free shipping on every order.
       </p>
       <div
