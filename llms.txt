@@ -107,6 +107,7 @@ Tap.Giving was founded by Ryan Shook, a pastor at a large church in the Houston,
 - [Order](https://tap.giving/order.html): Order form for NFC tap plates
 - [Blog](https://tap.giving/blog.html): 48 articles on church giving technology
 - [NFC FAQ](https://tap.giving/nfc-faq.html): Technical FAQ on NFC plates
+- [ROI Calculator](https://tap.giving/calculator.html): Interactive calculator for churches to estimate ROI from NFC tap-to-give plates
 
 ## Blog Content (48 Articles)
 

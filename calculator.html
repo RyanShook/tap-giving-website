@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NFC Giving ROI Calculator for Churches | Tap.Giving</title>
+  <meta name="description"
+    content="Calculate your church's ROI from NFC tap-to-give plates. Enter your congregation size and see projected giving increase, cost comparison, and break-even timeline." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tap.giving/calculator.html" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="help" type="text/plain" href="/llms.txt" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="NFC Giving ROI Calculator for Churches | Tap.Giving" />
+  <meta property="og:description"
+    content="Calculate your church's ROI from NFC tap-to-give plates. Enter your congregation size and see projected giving increase, cost comparison, and break-even timeline." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tap.giving/calculator.html" />
+  <meta property="og:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Tap.Giving" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NFC Giving ROI Calculator for Churches | Tap.Giving" />
+  <meta name="twitter:description"
+    content="Calculate your church's ROI from NFC tap-to-give plates. See projected giving increase and break-even timeline." />
+  <meta name="twitter:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+  <meta name="twitter:image:alt" content="NFC giving ROI calculator for churches - Tap.Giving" />
+  <meta name="twitter:site" content="@tapgiving" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+  </noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </noscript>
+
+  <!-- Structured Data: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "NFC Giving ROI Calculator for Churches",
+    "description": "Calculate your church's ROI from NFC tap-to-give plates. Enter your congregation size and see projected giving increase, cost comparison, and break-even timeline.",
+    "url": "https://tap.giving/calculator.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Tap.Giving",
+      "url": "https://tap.giving/"
+    },
+    "about": {
+      "@type": "Service",
+      "name": "Church NFC Giving Solutions",
+      "provider": {
+        "@type": "Organization",
+        "name": "Tap.Giving"
+      }
+    }
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://tap.giving/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "ROI Calculator",
+        "item": "https://tap.giving/calculator.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "NFC Giving ROI Calculator",
+    "description": "Free calculator that helps churches estimate their return on investment from NFC tap-to-give plates based on congregation size, attendance, and current giving platform.",
+    "url": "https://tap.giving/calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Tap.Giving",
+      "url": "https://tap.giving/"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is the ROI for NFC giving plates calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The ROI calculation uses your church's average attendance, visitor count, and average gift amount. It estimates new weekly gifts from visitors using industry data showing 53% of NFC givers are first-time givers. It then projects annual giving increase, compares it against the one-time plate cost, and calculates break-even timeline and first-year ROI percentage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What assumptions does the calculator use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The calculator uses conservative, research-backed assumptions: a 53% first-time giver conversion rate for visitors who interact with NFC plates, your entered average gift amount, and actual Tap.Giving volume pricing ($3.50-$4.50 per plate). Competitor costs are based on publicly available pricing from each platform."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much do churches save with NFC plates vs. giving platform subscriptions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Savings vary by platform. Churches switching from Pushpay can save over $85,000 over 5 years. Even compared to more affordable platforms like Tithely Plus ($1,428/year), a church saves thousands because Tap.Giving plates are a one-time purchase with no recurring fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I share the ROI results with my finance committee?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The calculator includes a ready-to-share summary section that formats your custom results into a clear, copy-paste-friendly format designed for church finance committees and leadership teams."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: "#eff6ff",
+              100: "#dbeafe",
+              200: "#bfdbfe",
+              300: "#93c5fd",
+              400: "#60a5fa",
+              500: "#3b82f6",
+              600: "#2563eb",
+              700: "#1d4ed8",
+              800: "#1e40af",
+              900: "#1e3a8a",
+            },
+            accent: {
+              50: "#f0fdf4",
+              100: "#dcfce7",
+              200: "#bbf7d0",
+              300: "#86efac",
+              400: "#4ade80",
+              500: "#22c55e",
+              600: "#16a34a",
+              700: "#15803d",
+              800: "#166534",
+              900: "#14532d",
+            },
+          },
+          fontFamily: {
+            inter: ["Inter", "system-ui", "sans-serif"],
+          },
+          animation: {
+            "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-inter antialiased bg-white">
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-blue-600 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">Skip
+    to main content</a>
+
+  <!-- ======================================== -->
+  <!-- CONSISTENT HEADER ACROSS ALL PAGES      -->
+  <!-- ======================================== -->
+  <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center h-16">
+        <!-- Left: Logo -->
+        <div class="flex-shrink-0">
+          <a href="/" class="flex items-center">
+            <img src="assets/Logo-Crop-Large-1024x295.webp" alt="Tap.Giving - Church NFC Giving Solution Logo"
+              class="h-8 w-auto" width="1024" height="295" loading="eager" />
+          </a>
+        </div>
+
+        <!-- Center: Desktop Navigation -->
+        <nav class="hidden md:flex flex-1 justify-center space-x-8" aria-label="Main navigation">
+          <a href="/pricing.html"
+            class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+          <a href="/blog.html"
+            class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
+          <a href="/contact.html"
+            class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+        </nav>
+
+        <!-- Right: Actions -->
+        <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
+          <a href="/order.html"
+            class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap">
+            Order Now
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button type="button"
+            class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu()">
+            <span class="sr-only">Open main menu</span>
+            <i class="fas fa-bars text-xl" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div class="md:hidden" id="mobile-menu" style="display: none">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+          <a href="/pricing.html"
+            class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+          <a href="/blog.html"
+            class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
+          <a href="/contact.html"
+            class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-gray-50 border-b border-gray-200" aria-label="Breadcrumb">
+    <div class="container mx-auto px-6 py-3">
+      <ol class="flex items-center space-x-2 text-sm">
+        <li>
+          <a href="/" class="text-gray-500 hover:text-blue-600 transition-colors">
+            <i class="fas fa-home mr-1"></i>Home
+          </a>
+        </li>
+        <li class="flex items-center">
+          <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+          <span class="text-gray-900 font-medium">ROI Calculator</span>
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-16">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <div class="mb-6">
+          <span
+            class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent text-sm font-bold uppercase tracking-wider">Free
+            ROI Calculator</span>
+        </div>
+        <h1 class="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
+          NFC Giving
+          <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">ROI
+            Calculator</span>
+        </h1>
+        <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+          How much could your church gain from NFC tap-to-give plates? This ROI calculator uses your real numbers
+          &mdash; congregation size, attendance, visitor count, and current giving platform &mdash; to project
+          giving increases, cost savings, and break-even timeline. No guesswork, just data-backed estimates you can
+          share with your finance committee.
+        </p>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-primary-800 py-16">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div
+          class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br from-primary-400/20 to-accent-400/20 blur-3xl animate-pulse-slow">
+        </div>
+        <div
+          class="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-accent-400/20 to-primary-400/20 blur-3xl animate-pulse-slow">
+        </div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-12">
+
+            <!-- Input Panel -->
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-8">
+                <i class="fas fa-sliders-h mr-3 text-accent-400"></i>Your Church Details
+              </h2>
+              <div class="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/20">
+
+                <div class="space-y-6">
+                  <!-- Congregation Size -->
+                  <div>
+                    <label for="congregationSize" class="block text-sm font-bold text-gray-800 mb-2">
+                      <i class="fas fa-users mr-2 text-primary-600"></i>Congregation Size (total members)
+                    </label>
+                    <input type="number" id="congregationSize" value="150" min="20" max="10000"
+                      class="w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white" />
+                  </div>
+
+                  <!-- Average Sunday Attendance -->
+                  <div>
+                    <label for="avgAttendance" class="block text-sm font-bold text-gray-800 mb-2">
+                      <i class="fas fa-church mr-2 text-primary-600"></i>Average Sunday Attendance
+                    </label>
+                    <input type="number" id="avgAttendance" value="100" min="10" max="10000"
+                      class="w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white" />
+                  </div>
+
+                  <!-- Average Visitors Per Week -->
+                  <div>
+                    <label for="weeklyVisitors" class="block text-sm font-bold text-gray-800 mb-2">
+                      <i class="fas fa-user-plus mr-2 text-primary-600"></i>Average Visitors Per Week
+                    </label>
+                    <input type="number" id="weeklyVisitors" value="5" min="0" max="500"
+                      class="w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white" />
+                  </div>
+
+                  <!-- Average Gift Amount -->
+                  <div>
+                    <label for="avgGift" class="block text-sm font-bold text-gray-800 mb-2">
+                      <i class="fas fa-hand-holding-dollar mr-2 text-primary-600"></i>Current Average Gift Amount
+                    </label>
+                    <div class="relative">
+                      <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-bold">$</span>
+                      <input type="number" id="avgGift" value="50" min="1" max="10000"
+                        class="w-full pl-9 pr-5 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white" />
+                    </div>
+                  </div>
+
+                  <!-- Current Giving Platform -->
+                  <div>
+                    <label for="currentPlatform" class="block text-sm font-bold text-gray-800 mb-2">
+                      <i class="fas fa-laptop mr-2 text-primary-600"></i>Current Giving Platform
+                    </label>
+                    <select id="currentPlatform"
+                      class="w-full px-5 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500 transition-all duration-300 font-medium bg-gray-50 focus:bg-white">
+                      <option value="tithely">Tithely</option>
+                      <option value="pushpay">Pushpay</option>
+                      <option value="givelify">Givelify</option>
+                      <option value="donorbox">Donorbox</option>
+                      <option value="other">Other / None</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-100">
+                  <p class="text-sm text-blue-800 font-medium">
+                    <i class="fas fa-info-circle mr-2"></i>Results update instantly as you adjust the inputs. All
+                    calculations use conservative, research-backed assumptions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-8">
+                <i class="fas fa-chart-line mr-3 text-accent-400"></i>Your Projected ROI
+              </h2>
+              <div class="space-y-4">
+
+                <!-- Plates Needed & Cost -->
+                <div class="bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl p-6 border border-white/20">
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Plates Needed</p>
+                      <p class="text-3xl font-black text-gray-900" id="resultPlates">125</p>
+                      <p class="text-xs text-gray-400 mt-1">Attendance + 25% buffer</p>
+                    </div>
+                    <div>
+                      <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">One-Time Cost</p>
+                      <p class="text-3xl font-black text-primary-600" id="resultCost">$563</p>
+                      <p class="text-xs text-gray-400 mt-1" id="resultPricePerPlate">$4.50/plate</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Savings Card (green) -->
+                <div
+                  class="bg-gradient-to-br from-accent-50 to-emerald-50 rounded-2xl shadow-xl p-6 border border-accent-200">
+                  <p class="text-sm font-semibold text-accent-700 uppercase tracking-wider mb-1">
+                    <i class="fas fa-piggy-bank mr-1"></i> 5-Year Savings vs. <span id="platformLabel">Tithely</span>
+                  </p>
+                  <p class="text-4xl font-black text-accent-700" id="resultSavings">$6,577</p>
+                  <div class="mt-3 grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                      <p class="text-gray-500">Their 5-year cost</p>
+                      <p class="font-bold text-gray-700" id="resultCompetitorCost">$7,140</p>
+                    </div>
+                    <div>
+                      <p class="text-gray-500">Your one-time cost</p>
+                      <p class="font-bold text-accent-700" id="resultYourCost">$563</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visitor Giving Projections (blue) -->
+                <div
+                  class="bg-gradient-to-br from-primary-50 to-blue-50 rounded-2xl shadow-xl p-6 border border-primary-200">
+                  <p class="text-sm font-semibold text-primary-700 uppercase tracking-wider mb-1">
+                    <i class="fas fa-chart-bar mr-1"></i> Projected Annual Giving Increase
+                  </p>
+                  <p class="text-4xl font-black text-primary-700" id="resultAnnualIncrease">$6,890</p>
+                  <div class="mt-3 grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                      <p class="text-gray-500">New weekly gifts from visitors</p>
+                      <p class="font-bold text-gray-700" id="resultWeeklyGifts">2.65</p>
+                    </div>
+                    <div>
+                      <p class="text-gray-500">Avg. gift amount</p>
+                      <p class="font-bold text-gray-700" id="resultAvgGiftDisplay">$50</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Break-Even & ROI -->
+                <div class="grid grid-cols-2 gap-4">
+                  <div
+                    class="bg-gradient-to-br from-purple-50 to-violet-50 rounded-2xl shadow-xl p-6 border border-purple-200">
+                    <p class="text-sm font-semibold text-purple-700 uppercase tracking-wider mb-1">
+                      <i class="fas fa-clock mr-1"></i> Break-Even
+                    </p>
+                    <p class="text-3xl font-black text-purple-700" id="resultBreakEven">4.2</p>
+                    <p class="text-xs text-purple-500 mt-1">weeks</p>
+                  </div>
+                  <div
+                    class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl shadow-xl p-6 border border-amber-200">
+                    <p class="text-sm font-semibold text-amber-700 uppercase tracking-wider mb-1">
+                      <i class="fas fa-trophy mr-1"></i> First-Year ROI
+                    </p>
+                    <p class="text-3xl font-black text-amber-700" id="resultROI">1,124%</p>
+                    <p class="text-xs text-amber-500 mt-1">return on investment</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Share With Finance Committee -->
+    <section class="bg-gradient-to-br from-slate-50 to-gray-100 py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-8">
+            <h2 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
+              Share With Your
+              <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Finance
+                Committee</span>
+            </h2>
+            <p class="text-lg text-gray-600">
+              Copy the summary below and paste it into an email to your leadership team.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+            <pre id="shareSummary"
+              class="whitespace-pre-wrap text-sm text-gray-700 font-mono leading-relaxed bg-gray-50 rounded-xl p-6 border border-gray-200 max-h-80 overflow-y-auto"></pre>
+            <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+              <button onclick="copySummary()"
+                class="inline-flex items-center justify-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                <i class="fas fa-copy mr-2"></i>
+                <span id="copyBtnText">Copy to Clipboard</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-primary-900 to-primary-800 py-16">
+      <div class="absolute inset-0 overflow-hidden">
+        <div
+          class="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br from-primary-400/20 to-accent-400/20 blur-3xl animate-pulse-slow">
+        </div>
+      </div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl lg:text-4xl font-black text-white mb-6">
+            Ready to Get Started?
+          </h2>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Your numbers show the ROI. Now let us build your custom NFC plates &mdash; one-time cost, no monthly fees, free shipping.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/order.html"
+              class="inline-flex items-center justify-center bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white px-10 py-4 rounded-2xl text-lg font-bold transition-all duration-300 shadow-2xl hover:shadow-accent-500/25 transform hover:-translate-y-1">
+              <i class="fas fa-paper-plane mr-3"></i>
+              Order Your Plates
+            </a>
+            <a href="/pricing.html"
+              class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white px-10 py-4 rounded-2xl text-lg font-bold transition-all duration-300 border border-white/20">
+              <i class="fas fa-tag mr-3"></i>
+              View Pricing Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container mx-auto px-6 py-16">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
+            Frequently Asked
+            <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Questions</span>
+          </h2>
+        </div>
+
+        <div class="space-y-6">
+          <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">
+              <i class="fas fa-calculator mr-2 text-primary-600"></i>How is the ROI for NFC giving plates calculated?
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              The calculation uses your church's average attendance, visitor count, and average gift amount. It estimates
+              new weekly gifts from visitors using industry data showing
+              <a href="/blog/nfc-giving-roi-church-numbers.html"
+                class="text-primary-600 hover:text-primary-700 font-semibold">53% of NFC givers are first-time
+                givers</a>. It then projects annual giving increase, compares it against the one-time plate cost, and
+              calculates your break-even timeline and first-year ROI percentage.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">
+              <i class="fas fa-database mr-2 text-primary-600"></i>What assumptions does the calculator use?
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              We use conservative, research-backed assumptions: a 53% first-time giver conversion rate for visitors who
+              interact with NFC plates, your entered average gift amount, and actual
+              <a href="/pricing.html" class="text-primary-600 hover:text-primary-700 font-semibold">Tap.Giving volume
+                pricing</a> ($3.50&ndash;$4.50 per plate). Competitor platform costs are based on publicly available
+              pricing.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">
+              <i class="fas fa-piggy-bank mr-2 text-primary-600"></i>How much do churches save with NFC plates vs. giving
+              platform subscriptions?
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Savings vary by platform. Churches using Pushpay ($17,700/year) can save over $85,000 over 5 years.
+              Even compared to more affordable platforms like Tithely Plus ($1,428/year), churches save thousands because
+              Tap.Giving plates are a one-time purchase with no recurring fees. Check out our
+              <a href="/blog/church-giving-technology-guide.html"
+                class="text-primary-600 hover:text-primary-700 font-semibold">complete church giving technology
+                guide</a> for a full breakdown.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">
+              <i class="fas fa-share-alt mr-2 text-primary-600"></i>Can I share the ROI results with my finance committee?
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Yes. The calculator includes a ready-to-share summary section above that formats your custom results into a
+              clear, copy-paste-friendly format designed for church finance committees and leadership teams. Just click
+              "Copy to Clipboard" and paste it into an email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-14">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="col-span-2">
+          <img src="assets/Logo-Crop-Large-1024x295.webp" alt="Tap.Giving Logo"
+            class="h-8 w-auto mb-4 brightness-0 invert" />
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Simple, transparent NFC giving solutions that work with your
+            existing church platform. No monthly fees, no lock-in.
+          </p>
+          <div class="mb-6">
+            <a href="/contact.html"
+              class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              <i class="fas fa-envelope mr-2"></i>
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-lg font-semibold mb-4" role="heading" aria-level="2">Product</p>
+          <ul class="space-y-2">
+            <li><a href="/pricing.html" class="text-gray-300 hover:text-white transition duration-300">Pricing</a></li>
+            <li><a href="/how-it-works.html" class="text-gray-300 hover:text-white transition duration-300">How It
+                Works</a></li>
+            <li><a href="/order.html" class="text-gray-300 hover:text-white transition duration-300">Order Plates</a>
+            </li>
+            <li><a href="/nfc-faq.html" class="text-gray-300 hover:text-white transition duration-300">NFC FAQ</a></li>
+            <li><a href="/about.html" class="text-gray-300 hover:text-white transition duration-300">About</a></li>
+            <li><a href="/contact.html" class="text-gray-300 hover:text-white transition duration-300">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-lg font-semibold mb-4" role="heading" aria-level="2">Resources</p>
+          <ul class="space-y-2">
+            <li><a href="/blog.html" class="text-gray-300 hover:text-white transition duration-300">Blog</a></li>
+            <li><a href="/blog/church-giving-technology-guide.html"
+                class="text-gray-300 hover:text-white transition duration-300">Church Giving Guide</a></li>
+            <li><a href="/blog/best-church-donation-technology-2026.html"
+                class="text-gray-300 hover:text-white transition duration-300">Best Donation Tech 2026</a></li>
+            <li><a href="/blog/tap-to-give-platform-comparison.html"
+                class="text-gray-300 hover:text-white transition duration-300">Platform Comparison</a></li>
+            <li><a href="/blog/nfc-giving-roi-church-numbers.html"
+                class="text-gray-300 hover:text-white transition duration-300">NFC Giving ROI</a></li>
+          </ul>
+          <p class="text-lg font-semibold mb-4 mt-6" role="heading" aria-level="2">Works With</p>
+          <ul class="space-y-2">
+            <li><a href="/tithely.html" class="text-gray-300 hover:text-white transition duration-300">Tithely</a></li>
+            <li><a href="/pushpay.html" class="text-gray-300 hover:text-white transition duration-300">Pushpay</a></li>
+            <li><a href="/blog/givelify-tap-to-give-setup.html"
+                class="text-gray-300 hover:text-white transition duration-300">Givelify</a></li>
+            <li><a href="/blog/donorbox-tap-to-give-setup.html"
+                class="text-gray-300 hover:text-white transition duration-300">Donorbox</a></li>
+            <li><a href="/blog/planning-center-tap-to-give-setup.html"
+                class="text-gray-300 hover:text-white transition duration-300">Planning Center</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="text-lg font-semibold mb-4" role="heading" aria-level="2">Contact</p>
+          <ul class="space-y-3 mb-6">
+            <li>
+              <a href="mailto:hello@tap.giving"
+                class="text-gray-300 hover:text-white transition duration-300 flex items-center">
+                <i class="fas fa-envelope mr-2 text-primary-400"></i> hello@tap.giving
+              </a>
+            </li>
+            <li>
+              <a href="tel:+18325108788"
+                class="text-gray-300 hover:text-white transition duration-300 flex items-center">
+                <i class="fas fa-phone mr-2 text-primary-400"></i> (832) 510-8788
+              </a>
+            </li>
+          </ul>
+          <p class="text-lg font-semibold mb-4" role="heading" aria-level="2">Follow Us</p>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/tapgiving" target="_blank" rel="noopener noreferrer"
+              class="text-gray-300 hover:text-white transition duration-300"
+              aria-label="Follow Tap.Giving on Facebook">
+              <i class="fab fa-facebook-f text-2xl"></i>
+            </a>
+            <a href="https://www.instagram.com/tap.giving" target="_blank" rel="noopener noreferrer"
+              class="text-gray-300 hover:text-white transition duration-300"
+              aria-label="Follow Tap.Giving on Instagram">
+              <i class="fab fa-instagram text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+        <div class="mb-4 space-x-4">
+          <a href="/privacy.html"
+            class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+          <a href="/terms.html"
+            class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+        </div>
+        <p class="text-gray-400 text-sm font-medium">
+          &copy; 2026 Tap.Giving. All rights reserved. | Increasing church giving
+          through innovative technology.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const isHidden =
+        mobileMenu.style.display === "none" || !mobileMenu.style.display;
+
+      if (isHidden) {
+        mobileMenu.style.display = "block";
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-times");
+        menuIcon.closest("button").setAttribute("aria-expanded", "true");
+      } else {
+        mobileMenu.style.display = "none";
+        menuIcon.classList.remove("fa-times");
+        menuIcon.classList.add("fa-bars");
+        menuIcon.closest("button").setAttribute("aria-expanded", "false");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileMenuLinks = document.querySelectorAll("#mobile-menu a");
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          const menuIcon = document.getElementById("menu-icon");
+          mobileMenu.style.display = "none";
+          menuIcon.classList.remove("fa-times");
+          menuIcon.classList.add("fa-bars");
+          menuIcon.closest("button").setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  </script>
+
+  <!-- ROI Calculator Logic -->
+  <script>
+    (function () {
+      // Platform annual costs (publicly available pricing)
+      var platformCosts = {
+        tithely: { name: "Tithely Plus", annual: 1428 },
+        pushpay: { name: "Pushpay", annual: 17700 },
+        givelify: { name: "Givelify", annual: 0 },
+        donorbox: { name: "Donorbox", annual: 600 },
+        other: { name: "Subscription Platform", annual: 1200 }
+      };
+
+      // Tap.Giving tier pricing
+      function getPricePerPlate(qty) {
+        if (qty >= 400) return 3.50;
+        if (qty >= 200) return 4.00;
+        return 4.50;
+      }
+
+      function getTierLabel(qty) {
+        if (qty >= 400) return "$3.50/plate (400+ tier)";
+        if (qty >= 200) return "$4.00/plate (200-399 tier)";
+        return "$4.50/plate (100-199 tier)";
+      }
+
+      // First-time giver rate (conservative, research-backed)
+      var FIRST_TIME_GIVER_RATE = 0.53;
+      var WEEKS_PER_YEAR = 52;
+
+      function formatCurrency(n) {
+        return "$" + Math.round(n).toLocaleString("en-US");
+      }
+
+      function calculate() {
+        var congregationSize = Math.max(20, parseInt(document.getElementById("congregationSize").value) || 150);
+        var avgAttendance = Math.max(10, parseInt(document.getElementById("avgAttendance").value) || 100);
+        var weeklyVisitors = Math.max(0, parseInt(document.getElementById("weeklyVisitors").value) || 5);
+        var avgGift = Math.max(1, parseFloat(document.getElementById("avgGift").value) || 50);
+        var platformKey = document.getElementById("currentPlatform").value;
+        var platform = platformCosts[platformKey] || platformCosts.other;
+
+        // Plates needed: attendance + 25% buffer, minimum 100
+        var platesNeeded = Math.max(100, Math.ceil(avgAttendance * 1.25));
+
+        // One-time cost
+        var pricePerPlate = getPricePerPlate(platesNeeded);
+        var oneTimeCost = platesNeeded * pricePerPlate;
+
+        // Competitor costs over 5 years
+        var competitorFiveYear = platform.annual * 5;
+        var fiveYearSavings = competitorFiveYear - oneTimeCost;
+
+        // Projected new weekly gifts from visitors
+        var newWeeklyGifts = weeklyVisitors * FIRST_TIME_GIVER_RATE;
+
+        // Annual giving increase
+        var weeklyGivingIncrease = newWeeklyGifts * avgGift;
+        var annualGivingIncrease = weeklyGivingIncrease * WEEKS_PER_YEAR;
+
+        // Break-even (weeks)
+        var breakEvenWeeks = weeklyGivingIncrease > 0 ? oneTimeCost / weeklyGivingIncrease : 999;
+
+        // First-year ROI
+        var firstYearROI = oneTimeCost > 0 ? ((annualGivingIncrease - oneTimeCost) / oneTimeCost) * 100 : 0;
+
+        // Update DOM
+        document.getElementById("resultPlates").textContent = platesNeeded.toLocaleString("en-US");
+        document.getElementById("resultCost").textContent = formatCurrency(oneTimeCost);
+        document.getElementById("resultPricePerPlate").textContent = getTierLabel(platesNeeded);
+
+        document.getElementById("platformLabel").textContent = platform.name;
+        if (competitorFiveYear > 0) {
+          document.getElementById("resultSavings").textContent = formatCurrency(Math.max(0, fiveYearSavings));
+          document.getElementById("resultCompetitorCost").textContent = formatCurrency(competitorFiveYear);
+        } else {
+          document.getElementById("resultSavings").textContent = "N/A";
+          document.getElementById("resultCompetitorCost").textContent = "$0 (free tier)";
+        }
+        document.getElementById("resultYourCost").textContent = formatCurrency(oneTimeCost);
+
+        document.getElementById("resultAnnualIncrease").textContent = formatCurrency(annualGivingIncrease);
+        document.getElementById("resultWeeklyGifts").textContent = newWeeklyGifts.toFixed(1);
+        document.getElementById("resultAvgGiftDisplay").textContent = formatCurrency(avgGift);
+
+        if (breakEvenWeeks < 999 && breakEvenWeeks > 0) {
+          document.getElementById("resultBreakEven").textContent = breakEvenWeeks.toFixed(1);
+        } else {
+          document.getElementById("resultBreakEven").textContent = "N/A";
+        }
+
+        if (firstYearROI > 0) {
+          document.getElementById("resultROI").textContent = Math.round(firstYearROI).toLocaleString("en-US") + "%";
+        } else {
+          document.getElementById("resultROI").textContent = "N/A";
+        }
+
+        // Update share summary
+        updateShareSummary({
+          congregationSize: congregationSize,
+          avgAttendance: avgAttendance,
+          weeklyVisitors: weeklyVisitors,
+          avgGift: avgGift,
+          platform: platform,
+          platesNeeded: platesNeeded,
+          pricePerPlate: pricePerPlate,
+          oneTimeCost: oneTimeCost,
+          competitorFiveYear: competitorFiveYear,
+          fiveYearSavings: fiveYearSavings,
+          newWeeklyGifts: newWeeklyGifts,
+          annualGivingIncrease: annualGivingIncrease,
+          breakEvenWeeks: breakEvenWeeks,
+          firstYearROI: firstYearROI
+        });
+      }
+
+      function updateShareSummary(d) {
+        var lines = [];
+        lines.push("NFC TAP-TO-GIVE ROI SUMMARY");
+        lines.push("Generated by Tap.Giving (tap.giving/calculator.html)");
+        lines.push("==========================================");
+        lines.push("");
+        lines.push("CHURCH DETAILS");
+        lines.push("  Congregation size:      " + d.congregationSize.toLocaleString("en-US"));
+        lines.push("  Avg. Sunday attendance: " + d.avgAttendance.toLocaleString("en-US"));
+        lines.push("  Weekly visitors:        " + d.weeklyVisitors);
+        lines.push("  Avg. gift amount:       " + formatCurrency(d.avgGift));
+        lines.push("  Current platform:       " + d.platform.name);
+        lines.push("");
+        lines.push("INVESTMENT");
+        lines.push("  Plates needed:          " + d.platesNeeded.toLocaleString("en-US") + " (attendance + 25% buffer)");
+        lines.push("  Price per plate:        $" + d.pricePerPlate.toFixed(2));
+        lines.push("  One-time total cost:    " + formatCurrency(d.oneTimeCost));
+        lines.push("  Ongoing monthly fees:   $0");
+        lines.push("");
+        lines.push("COST COMPARISON (5 YEARS)");
+        lines.push("  " + d.platform.name + " cost:".padEnd(24) + formatCurrency(d.competitorFiveYear));
+        lines.push("  Tap.Giving cost:        " + formatCurrency(d.oneTimeCost));
+        lines.push("  5-year savings:         " + formatCurrency(Math.max(0, d.fiveYearSavings)));
+        lines.push("");
+        lines.push("PROJECTED GIVING INCREASE");
+        lines.push("  New weekly visitor gifts: " + d.newWeeklyGifts.toFixed(1) + " (53% first-time giver rate)");
+        lines.push("  Annual giving increase:   " + formatCurrency(d.annualGivingIncrease));
+        lines.push("  Break-even timeline:      " + (d.breakEvenWeeks < 999 ? d.breakEvenWeeks.toFixed(1) + " weeks" : "N/A"));
+        lines.push("  First-year ROI:           " + (d.firstYearROI > 0 ? Math.round(d.firstYearROI).toLocaleString("en-US") + "%" : "N/A"));
+        lines.push("");
+        lines.push("==========================================");
+        lines.push("Tap.Giving: One-time cost. No monthly fees.");
+        lines.push("Learn more: https://tap.giving/pricing.html");
+        lines.push("Order plates: https://tap.giving/order.html");
+
+        document.getElementById("shareSummary").textContent = lines.join("\n");
+      }
+
+      // Attach event listeners
+      var inputs = ["congregationSize", "avgAttendance", "weeklyVisitors", "avgGift", "currentPlatform"];
+      inputs.forEach(function (id) {
+        var el = document.getElementById(id);
+        el.addEventListener("input", calculate);
+        el.addEventListener("change", calculate);
+      });
+
+      // Initial calculation
+      calculate();
+
+      // Copy to clipboard function
+      window.copySummary = function () {
+        var text = document.getElementById("shareSummary").textContent;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            var btn = document.getElementById("copyBtnText");
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy to Clipboard"; }, 2000);
+          });
+        } else {
+          // Fallback for older browsers
+          var textarea = document.createElement("textarea");
+          textarea.value = text;
+          textarea.style.position = "fixed";
+          textarea.style.opacity = "0";
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textarea);
+          var btn = document.getElementById("copyBtnText");
+          btn.textContent = "Copied!";
+          setTimeout(function () { btn.textContent = "Copy to Clipboard"; }, 2000);
+        }
+
+        // GA4 event
+        if (typeof gtag === "function") {
+          gtag("event", "calculator_copy_summary", {
+            event_category: "engagement",
+            event_label: "roi_calculator"
+          });
+        }
+      };
+    })();
+  </script>
+
+  <!-- Crisp Chat -->
+  <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "ad8857a0-36b5-4cab-97d2-ad9913058ee1";
+    (function () {
+      d = document;
+      s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3B3M72XEP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-L3B3M72XEP');
+  </script>
+</body>
+
+</html>
