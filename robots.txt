@@ -1,5 +1,5 @@
 # Robots.txt for tap.giving
-# Allow all search engines to crawl the entire site
+# Allow all search engines and AI agents to crawl the entire site
 
 User-agent: *
 Allow: /
@@ -7,9 +7,39 @@ Allow: /
 # Sitemap location
 Sitemap: https://tap.giving/sitemap.xml
 
-# AI agent context
+# AI Agent Discovery
 # See https://llmstxt.org for specification
-# llms.txt provides a structured overview for AI agents and LLMs
+# llms.txt provides structured context for AI models (ChatGPT, Claude, Gemini, Perplexity)
+# This helps AI assistants accurately answer questions about Tap.Giving, NFC giving,
+# tap-to-give plates, and church giving technology
+
+# Explicitly welcome AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
 
 # Removed crawl delay to allow faster indexing
 
