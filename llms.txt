@@ -2,6 +2,8 @@
 
 > The most affordable NFC tap-to-give plates for churches. One-time purchase, no monthly fees, no transaction fees, no app required. Works with any giving platform.
 
+- [Full content version](https://tap.giving/llms-full.txt): Complete product details, all FAQ answers, competitive comparison, and technical specs in one file.
+
 ## What Is Tap.Giving?
 
 Tap.Giving sells custom-printed NFC (Near Field Communication) plates that churches mount on pews, chairs, or walls. When a congregant taps their smartphone on the plate, it instantly opens the church's existing giving page in their phone's browser. No app download, no account creation, no QR code scanning — just tap and give.

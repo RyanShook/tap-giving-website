@@ -476,6 +476,32 @@
       }
     </script>
 
+    <!-- Speakable Schema for AI/Voice Assistant Extraction -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Tap.Giving - NFC Tap-to-Give Plates for Churches",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero-description", ".stat-card", ".faq-answer"]
+        },
+        "mainEntity": {
+          "@type": "Product",
+          "name": "Tap.Giving NFC Tap-to-Give Plates",
+          "description": "Custom-printed NFC plates that open a church's giving page when tapped with a smartphone. One-time purchase starting at $3.50 per plate. No monthly fees, no transaction fees, no app required. Works with Tithely, Pushpay, Givelify, Donorbox, and any giving platform with a web URL.",
+          "brand": {"@type": "Organization", "name": "Tap.Giving"},
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "3.50",
+            "highPrice": "4.50",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      }
+    </script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"
       rel="stylesheet"

@@ -60,3 +60,4 @@ Allow: /favicon.svg
 Allow: /styles.css
 Allow: /script.js
 Allow: /llms.txt
+Allow: /llms-full.txt
