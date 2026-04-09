@@ -29,6 +29,9 @@ Tap.Giving provides NFC (Near Field Communication) tap plates that churches embe
 
 ## Blog Posts
 
+- [Plan Your Fall Church Technology Rollout: A Pastor's Timeline](https://tap.giving/blog/fall-church-technology-rollout.html)
+- [Mother's Day Church Giving: Capturing Your 2nd-Highest Attendance Sunday](https://tap.giving/blog/mothers-day-church-giving.html)
+- [NFC Giving for Methodist Churches: Modernizing the Collection](https://tap.giving/blog/nfc-giving-methodist-churches.html)
 - [Beat the Summer Giving Slump: How to Keep Donations Steady](https://tap.giving/blog/summer-church-giving-slump.html)
 - [NFC Giving for Baptist Churches: A Practical Guide](https://tap.giving/blog/nfc-giving-baptist-churches.html)
 - [How to Increase Online Giving at Your Church: 7 Proven Strategies](https://tap.giving/blog/how-to-increase-online-giving-church.html)

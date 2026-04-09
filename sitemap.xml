@@ -353,4 +353,22 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://tap.giving/blog/nfc-giving-methodist-churches.html</loc>
+        <lastmod>2026-04-09T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/mothers-day-church-giving.html</loc>
+        <lastmod>2026-04-09T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://tap.giving/blog/fall-church-technology-rollout.html</loc>
+        <lastmod>2026-04-09T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
