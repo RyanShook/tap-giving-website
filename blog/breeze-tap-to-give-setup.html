@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breeze ChMS Tap-to-Give Setup: Add NFC Giving to Your Church | Tap.Giving</title>
+    <meta name="description" content="Step-by-step guide to setting up NFC tap-to-give with Breeze ChMS. Find your Breeze giving URL, order NFC plates, and launch tap-to-give at your church in minutes.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tap.giving/blog/breeze-tap-to-give-setup.html">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Breeze ChMS Tap-to-Give Setup: Add NFC Giving to Your Church | Tap.Giving" />
+    <meta property="og:description" content="Step-by-step guide to setting up NFC tap-to-give with Breeze ChMS. Find your Breeze giving URL, order NFC plates, and launch tap-to-give at your church in minutes." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tap.giving/blog/breeze-tap-to-give-setup.html" />
+    <meta property="og:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Tap.Giving" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Breeze ChMS Tap-to-Give Setup: Add NFC Giving to Your Church | Tap.Giving" />
+    <meta name="twitter:description" content="Step-by-step guide to setting up NFC tap-to-give with Breeze ChMS. Find your Breeze giving URL, order NFC plates, and launch tap-to-give at your church in minutes." />
+    <meta name="twitter:image" content="https://tap.giving/assets/phone-and-plate.webp" />
+    <meta name="twitter:image:alt" content="NFC tap-to-give plates for church donations - Tap.Giving" />
+    <meta name="twitter:site" content="@tapgiving" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+    <!-- Structured Data: HowTo -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Breeze ChMS Tap-to-Give Setup: Add NFC Giving to Your Church",
+        "description": "How to set up tap-to-give NFC giving plates with Breeze ChMS for your church.",
+        "url": "https://tap.giving/blog/breeze-tap-to-give-setup.html",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Find Your Breeze Giving URL",
+                "text": "Log into your Breeze ChMS dashboard, navigate to the Giving section, and copy your online giving page URL in the format yourchurch.breezechms.com/give/online."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Order NFC Giving Plates",
+                "text": "Order custom NFC giving plates from Tap.Giving pre-programmed to your Breeze giving URL, or purchase blank NFC tags and program them yourself."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Mount Plates and Launch",
+                "text": "Mount plates on pew backs, chair backs, and high-traffic areas. Announce the new giving option to your congregation for the first few weeks."
+            }
+        ],
+        "author": {
+            "@type": "Organization",
+            "name": "Tap.Giving"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Tap.Giving",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://tap.giving/assets/Logo-Crop-Large-1024x295.webp"
+            }
+        }
+    }
+    </script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: "#eff6ff", 100: "#dbeafe", 200: "#bfdbfe", 300: "#93c5fd", 400: "#60a5fa", 500: "#3b82f6", 600: "#2563eb", 700: "#1d4ed8", 800: "#1e40af", 900: "#1e3a8a",
+              },
+              accent: {
+                50: "#f0fdf4", 100: "#dcfce7", 200: "#bbf7d0", 300: "#86efac", 400: "#4ade80", 500: "#22c55e", 600: "#16a34a", 700: "#15803d", 800: "#166534", 900: "#14532d",
+              },
+            },
+            fontFamily: {
+              inter: ['Inter', 'system-ui', 'sans-serif'],
+            },
+          }
+        }
+      };
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://tap.giving/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://tap.giving/blog.html"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Breeze ChMS Tap-to-Give Setup",
+                "item": "https://tap.giving/blog/breeze-tap-to-give-setup.html"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Does NFC tap-to-give work with Breeze ChMS?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. NFC plates store a URL that opens when someone taps their phone. You point that URL to your Breeze online giving page. Breeze handles the payment processing exactly as it normally does. No integration or configuration needed on the Breeze side."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will donations from NFC taps show up in my Breeze reports?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. When someone taps a plate and gives through your Breeze giving page, the donation is processed and recorded by Breeze the same as any other online gift. It appears in your giving reports, donor profiles, and giving statements with no extra configuration."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to change anything in my Breeze account to use NFC plates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. The NFC plate simply opens a URL in the phone's browser. Your Breeze giving page, fund options, recurring giving settings, and payment processing all stay exactly the same. There is nothing to configure, install, or connect."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can NFC plates link to a specific fund in Breeze?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You can point NFC plates to your general giving page and let the giver select a fund, or you can use a fund-specific URL so the plate goes directly to a particular fund like tithes, building, or missions. Check your Breeze giving settings for fund-specific links."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does NFC work through phone cases?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Standard phone cases made of silicone, plastic, or leather do not block NFC. Only thick metal cases or wallets with RFID-blocking material will interfere. The vast majority of phone cases work fine."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do NFC tags need batteries or WiFi?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. NFC tags are completely passive. They draw power from the phone's NFC reader during the tap. There is nothing to charge, no WiFi needed, and no maintenance required. They work indefinitely."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="font-inter antialiased bg-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-blue-600 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <img src="../assets/Logo-Crop-Large-1024x295.webp" alt="Tap.Giving - Church NFC Giving Solution Logo" class="h-8 w-auto" width="1024" height="295" loading="eager" />
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex flex-1 justify-center space-x-8" aria-label="Main navigation">
+                    <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+                    <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
+                    <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
+                    <a href="https://tap.giving/#contact"
+                        class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap">
+                        Order Now
+                    </a>
+
+                    <button
+                        type="button"
+                        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                        aria-controls="mobile-menu"
+                        aria-expanded="false"
+                        onclick="toggleMobileMenu()"
+                    >
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="md:hidden" id="mobile-menu" style="display: none">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                    <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+                    <a href="/blog.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
+                    <a href="/contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-gray-50 py-4" aria-label="Breadcrumb">
+        <div class="container mx-auto px-6">
+            <ol class="flex items-center space-x-2">
+                <li><a href="/" class="text-gray-500 hover:text-blue-600 transition duration-300">Home</a></li>
+                <li><span class="text-gray-400">/</span></li>
+                <li><a href="/blog.html" class="text-gray-500 hover:text-blue-600 transition duration-300">Blog</a></li>
+                <li><span class="text-gray-400">/</span></li>
+                <li><span class="text-gray-900 font-medium">Breeze ChMS Tap-to-Give Setup</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 lg:py-24">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="mb-6">
+                        <span class="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent text-sm font-bold uppercase tracking-wider">Setup Guide</span>
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
+                        Breeze ChMS
+                        <span class="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Tap-to-Give</span>
+                        Setup Guide
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+                        Already use Breeze for church management and giving? Add NFC tap-to-give in 3 steps. Members tap a plate with their phone and land directly on your Breeze giving page &mdash; no app download, no QR scanning.
+                    </p>
+
+                    <!-- Quick Stats -->
+                    <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg border border-blue-100">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">3 Steps</div>
+                            <div class="text-sm text-gray-600">Simple setup process</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl shadow-lg border-2 border-blue-300">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">No App</div>
+                            <div class="text-sm text-gray-700 font-semibold">Works on any smartphone</div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-lg border border-blue-100">
+                            <div class="text-3xl font-bold text-green-600 mb-2">$0/mo</div>
+                            <div class="text-sm text-gray-600">No extra subscriptions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Table of Contents -->
+        <section class="py-8 bg-white border-b border-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <nav aria-label="Table of contents" class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                        <h2 class="text-lg font-bold text-gray-900 mb-4">In This Guide</h2>
+                        <ol class="space-y-2 text-sm">
+                            <li><a href="#why-nfc-breeze" class="text-blue-600 hover:text-blue-700 underline">Why Add NFC to Breeze ChMS?</a></li>
+                            <li><a href="#step-1" class="text-blue-600 hover:text-blue-700 underline">Step 1: Find Your Breeze Giving URL</a></li>
+                            <li><a href="#step-2" class="text-blue-600 hover:text-blue-700 underline">Step 2: Get NFC Giving Plates</a></li>
+                            <li><a href="#step-3" class="text-blue-600 hover:text-blue-700 underline">Step 3: Mount Plates and Launch</a></li>
+                            <li><a href="#tips" class="text-blue-600 hover:text-blue-700 underline">Tips and Troubleshooting</a></li>
+                            <li><a href="#faq" class="text-blue-600 hover:text-blue-700 underline">FAQ</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Tap-to-Give Section -->
+        <section id="why-nfc-breeze" class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl lg:text-4xl font-black text-gray-900 mb-6 text-center">Why Add NFC to Breeze ChMS?</h2>
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-200 p-8 lg:p-12">
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Breeze is one of the most popular church management systems for small-to-mid-size congregations, and for good reason. It handles people management, event tracking, volunteer coordination, and online giving &mdash; all at a price point that makes sense for churches without enterprise budgets. Starting around $72/month, it gives you a lot of capability without the complexity of larger platforms.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Breeze&rsquo;s online giving already works well. Members can give through your Breeze-hosted giving page, set up recurring donations, and choose between funds. The giving reports and donor management tools are solid. But during a Sunday service, there&rsquo;s still a gap. Members have to remember a URL, open a browser, or pull up a bookmark. Visitors have no idea where to start. Most don&rsquo;t follow through.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                            NFC tap-to-give closes that gap. A member taps their phone on a plate mounted to the pew or chair in front of them, and your Breeze giving page opens instantly. No typing, no camera, no app download. It&rsquo;s the fastest path from &ldquo;I want to give&rdquo; to &ldquo;I just gave.&rdquo;
+                        </p>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="bg-blue-50 p-5 rounded-xl border border-blue-200 text-center">
+                                <i class="fas fa-bolt text-blue-500 text-2xl mb-3"></i>
+                                <p class="text-sm font-semibold text-blue-700">Faster than QR codes</p>
+                                <p class="text-xs text-gray-500 mt-1">Tap instead of scan</p>
+                            </div>
+                            <div class="bg-blue-50 p-5 rounded-xl border border-blue-200 text-center">
+                                <i class="fas fa-mobile-screen text-blue-500 text-2xl mb-3"></i>
+                                <p class="text-sm font-semibold text-blue-700">No app required</p>
+                                <p class="text-xs text-gray-500 mt-1">Works on any smartphone</p>
+                            </div>
+                            <div class="bg-blue-50 p-5 rounded-xl border border-blue-200 text-center">
+                                <i class="fas fa-layer-group text-blue-500 text-2xl mb-3"></i>
+                                <p class="text-sm font-semibold text-blue-700">Adds to your stack</p>
+                                <p class="text-xs text-gray-500 mt-1">Complements Breeze giving</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 1: Find Your Breeze Giving URL -->
+        <section id="step-1" class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-white text-2xl font-black">1</span>
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-black text-gray-900">Find Your Breeze Giving URL</h2>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-200 p-8 lg:p-12">
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            Every Breeze church has a unique online giving page. This is the URL your NFC plates will open when someone taps their phone. Here&rsquo;s how to find it.
+                        </p>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Where to Find It</h3>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-4 bg-gray-50 p-4 rounded-xl">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-blue-600 font-bold text-sm">1</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Log in to your <strong>Breeze ChMS dashboard</strong></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-gray-50 p-4 rounded-xl">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-blue-600 font-bold text-sm">2</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Go to <strong>More &gt; Giving</strong> (or <strong>Giving</strong> in the left sidebar)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-gray-50 p-4 rounded-xl">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-blue-600 font-bold text-sm">3</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Click <strong>Online Giving</strong> and look for your giving page link</p>
+                                    <p class="text-sm text-gray-500 mt-1">Format: <code class="bg-gray-200 px-2 py-0.5 rounded text-sm">yourchurch.breezechms.com/give/online</code></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 bg-gray-50 p-4 rounded-xl">
+                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span class="text-blue-600 font-bold text-sm">4</span>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 font-medium">Copy the URL &mdash; this is what your NFC plates will open</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200 mb-6">
+                            <h3 class="text-base font-bold text-amber-800 mb-2"><i class="fas fa-info-circle mr-2"></i>Direct URL vs. Embedded Giving Page</h3>
+                            <p class="text-gray-700 text-sm">
+                                You can use your direct Breeze giving URL or a giving page on your church website that embeds Breeze&rsquo;s giving form. Either works. The direct Breeze URL is simpler and loads faster on mobile, which matters since 95%+ of people who tap will be on their phones. If you use a custom domain page, make sure it&rsquo;s fully mobile-optimized.
+                            </p>
+                        </div>
+
+                        <div class="bg-green-50 rounded-2xl p-6 border border-green-200">
+                            <h3 class="text-base font-bold text-green-800 mb-2"><i class="fas fa-lightbulb mr-2"></i>Fund-Specific Links</h3>
+                            <p class="text-gray-700 text-sm">
+                                If you want the tap to go straight to a specific fund &mdash; tithes, building fund, missions &mdash; check your Breeze giving settings for fund-specific URLs. You can program different plates for different funds, or use one plate that opens your general giving page and lets the giver select. Both approaches work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2: Get NFC Hardware -->
+        <section id="step-2" class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-white text-2xl font-black">2</span>
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-black text-gray-900">Get NFC Giving Plates</h2>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-200 p-8 lg:p-12">
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            You need NFC plates that hold up to weekly church use &mdash; attached to chair backs, placed on lobby tables, or displayed at welcome centers. Cheap NFC stickers peel and look unprofessional. Rigid PVC plates last.
+                        </p>
+
+                        <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200 mb-8">
+                            <h3 class="text-lg font-bold text-blue-800 mb-3"><i class="fas fa-star mr-2"></i>The Easy Way</h3>
+                            <p class="text-gray-700 mb-4">
+                                <a href="https://tap.giving" class="text-blue-600 hover:text-blue-700 font-semibold underline">Tap.Giving</a> makes NFC giving plates specifically for churches. You get:
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check text-green-600 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Custom branded plates</strong> with your church logo and design</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check text-green-600 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Pre-programmed</strong> to your Breeze giving URL</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check text-green-600 mt-1"></i>
+                                    <span class="text-gray-700"><strong>QR code fallback</strong> printed on each plate for older phones</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fas fa-check text-green-600 mt-1"></i>
+                                    <span class="text-gray-700"><strong>Free shipping</strong> and no monthly fees</span>
+                                </li>
+                            </ul>
+                            <div class="mt-4 bg-blue-100 rounded-xl p-4">
+                                <p class="text-blue-800 text-sm font-semibold">
+                                    <a href="/pricing.html" class="underline hover:no-underline">Pricing</a>: $3.50&ndash;$4.50/plate depending on quantity. Use code <strong>WELCOME10</strong> for 10% off your first order.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200 mb-8">
+                            <h3 class="text-lg font-bold text-gray-900 mb-3">The DIY Way</h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Buy NTAG215 or NTAG216 tags from Amazon or an NFC supplier. Program each one with the free NFC Tools app (iOS/Android):
+                            </p>
+                            <ol class="space-y-2 text-gray-600 text-sm ml-4">
+                                <li>1. Open NFC Tools &gt; Write &gt; Add a record &gt; URL</li>
+                                <li>2. Paste your Breeze giving URL</li>
+                                <li>3. Hold your phone to the tag until it confirms the write</li>
+                                <li>4. Repeat for each tag</li>
+                            </ol>
+                            <p class="text-gray-500 text-xs mt-3">
+                                This is the cheapest option but the most time-consuming. NFC stickers also tend to peel and look less professional than rigid plates. For more on DIY options, see our <a href="/blog/diy-nfc-giving-no-monthly-fees.html" class="text-blue-600 hover:text-blue-700 underline">DIY NFC giving guide</a>.
+                            </p>
+                        </div>
+
+                        <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200">
+                            <h3 class="text-base font-bold text-amber-800 mb-2"><i class="fas fa-info-circle mr-2"></i>Choosing an NFC Chip Type</h3>
+                            <p class="text-gray-700 text-sm">
+                                NTAG215 (504 bytes) is enough for a standard Breeze giving URL. NTAG216 (888 bytes) gives you room for longer URLs with tracking parameters. For a typical Breeze link, either works fine. Avoid the cheaper NTAG213 (144 bytes) &mdash; it can&rsquo;t store longer URLs with query parameters.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3: Mount and Launch -->
+        <section id="step-3" class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <span class="text-white text-2xl font-black">3</span>
+                        </div>
+                        <h2 class="text-3xl lg:text-4xl font-black text-gray-900">Mount Plates and Launch</h2>
+                    </div>
+
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-200 p-8 lg:p-12">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Placement</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Where you put the plates determines how many people use them. The goal is to place one within arm&rsquo;s reach of every seat during the offering. For detailed mounting instructions, see our <a href="/blog/how-to-mount-nfc-plates-church-chairs.html" class="text-blue-600 hover:text-blue-700 underline">mounting guide</a>.
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-4 mb-8">
+                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                                <h4 class="font-bold text-gray-900 mb-1 text-sm"><i class="fas fa-chair text-blue-500 mr-2"></i>Chair / Pew Backs</h4>
+                                <p class="text-gray-600 text-xs">Most effective. Put one on every chair or every other pew. Use adhesive backing or screw mounts depending on your furniture.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                                <h4 class="font-bold text-gray-900 mb-1 text-sm"><i class="fas fa-door-open text-blue-500 mr-2"></i>Lobby Tables</h4>
+                                <p class="text-gray-600 text-xs">Good for catching people before and after service. Works well next to bulletins or event flyers.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                                <h4 class="font-bold text-gray-900 mb-1 text-sm"><i class="fas fa-mug-hot text-blue-500 mr-2"></i>Coffee Area</h4>
+                                <p class="text-gray-600 text-xs">People already have their phones out. Low-pressure environment for first-time givers.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                                <h4 class="font-bold text-gray-900 mb-1 text-sm"><i class="fas fa-hand-holding-heart text-blue-500 mr-2"></i>Welcome Center</h4>
+                                <p class="text-gray-600 text-xs">Introduces visitors to giving alongside connection cards. Especially useful for first-time guests.</p>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Announcing to Your Congregation</h3>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            NFC is intuitive once someone tries it, but most people won&rsquo;t try without being told. For the first 2&ndash;3 weeks, have your pastor mention it during the offering. Something simple works:
+                        </p>
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 mb-6">
+                            <p class="text-gray-700 italic text-sm">&ldquo;You can now give by tapping your phone on the plate in front of you. Just hold your phone near it and it&rsquo;ll take you straight to our giving page. No app needed.&rdquo;</p>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            After the initial announcement period, most members who want to use it will have tried it. It becomes self-sustaining &mdash; they see the plate, remember the tap, and give. For a full launch playbook, see our <a href="/blog/launch-nfc-giving-church-guide.html" class="text-blue-600 hover:text-blue-700 underline">NFC giving launch guide</a>.
+                        </p>
+
+                        <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">What the Member Experiences</h3>
+                        <ol class="space-y-3 text-gray-600">
+                            <li class="flex items-start gap-3">
+                                <span class="font-bold text-blue-600 text-sm mt-0.5">1.</span>
+                                <span>They hold their phone near the plate (within 2&ndash;3 cm)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="font-bold text-blue-600 text-sm mt-0.5">2.</span>
+                                <span>A notification appears with your Breeze giving URL &mdash; they tap it</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="font-bold text-blue-600 text-sm mt-0.5">3.</span>
+                                <span>Your Breeze giving form opens in their browser</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="font-bold text-blue-600 text-sm mt-0.5">4.</span>
+                                <span>They select an amount, choose a fund, and submit</span>
+                            </li>
+                        </ol>
+                        <p class="text-gray-500 text-sm mt-4">
+                            On iPhones, NFC reads automatically (iPhone 7+ with iOS 14+). On most Androids (2015+), NFC is on by default but some models need it toggled on in settings. For phones without NFC, the QR code on the plate works as a fallback.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips and Troubleshooting -->
+        <section id="tips" class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-black text-gray-900 mb-8">Tips and Troubleshooting</h2>
+
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">Test your plates before Sunday morning.</h3>
+                            <p class="text-gray-600 text-sm">After mounting, tap each plate with your own phone to confirm it opens the correct Breeze giving page. Catch issues on a Thursday, not during the offering.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">NFC doesn&rsquo;t work through metal.</h3>
+                            <p class="text-gray-600 text-sm">If your pews or chairs have a metal backing, mount the plate on a non-metal surface or use a small spacer. Wood, plastic, and fabric all work fine.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">Phone cases are fine.</h3>
+                            <p class="text-gray-600 text-sm">Standard phone cases (silicone, plastic, leather) don&rsquo;t block NFC. Only thick metal cases or wallets with RFID-blocking material will interfere.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">Tags don&rsquo;t expire or run out of battery.</h3>
+                            <p class="text-gray-600 text-sm">NFC tags are passive. They draw power from the phone&rsquo;s NFC reader during the tap. There&rsquo;s nothing to charge, replace, or maintain.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">You can reprogram tags later.</h3>
+                            <p class="text-gray-600 text-sm">If you switch from Breeze to another giving platform, change your giving URL, or want to point to a different fund, you can rewrite the tag with a new URL using the NFC Tools app &mdash; unless the tag was write-locked during programming.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">Nothing changes in your Breeze dashboard.</h3>
+                            <p class="text-gray-600 text-sm">Donations from NFC taps show up in Breeze the same as any other online gift. There&rsquo;s no separate reporting, no integration to configure. The plate just opens a URL. Giving reports, donor profiles, and giving statements all work as normal.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">This doesn&rsquo;t replace your other giving channels.</h3>
+                            <p class="text-gray-600 text-sm">NFC tap-to-give is one more way to give alongside your Breeze online giving page, text-to-give, and the Breeze app. Different members prefer different methods. More options means more participation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-black text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">Does NFC tap-to-give work with Breeze ChMS?</h3>
+                            <p class="text-gray-600 text-sm">Yes. NFC plates store a URL that opens when someone taps their phone. You point that URL to your Breeze online giving page. Breeze handles the payment processing exactly as it normally does. No integration or configuration needed on the Breeze side.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">Will donations from NFC taps show up in my Breeze reports?</h3>
+                            <p class="text-gray-600 text-sm">Yes. When someone taps a plate and gives through your Breeze giving page, the donation is processed and recorded by Breeze the same as any other online gift. It appears in your giving reports, donor profiles, and giving statements with no extra configuration.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">Do I need to change anything in my Breeze account to use NFC plates?</h3>
+                            <p class="text-gray-600 text-sm">No. The NFC plate simply opens a URL in the phone&rsquo;s browser. Your Breeze giving page, fund options, recurring giving settings, and payment processing all stay exactly the same. There is nothing to configure, install, or connect.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">Can NFC plates link to a specific fund in Breeze?</h3>
+                            <p class="text-gray-600 text-sm">Yes. You can point NFC plates to your general giving page and let the giver select a fund, or you can use a fund-specific URL so the plate goes directly to a particular fund like tithes, building, or missions. Check your Breeze giving settings for fund-specific links.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">Does NFC work through phone cases?</h3>
+                            <p class="text-gray-600 text-sm">Yes. Standard phone cases made of silicone, plastic, or leather do not block NFC. Only thick metal cases or wallets with RFID-blocking material will interfere. The vast majority of phone cases work fine.</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">Do NFC tags need batteries or WiFi?</h3>
+                            <p class="text-gray-600 text-sm">No. NFC tags are completely passive. They draw power from the phone&rsquo;s NFC reader during the tap. There is nothing to charge, no WiFi needed, and no maintenance required. They work indefinitely.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-gradient-to-br from-blue-600 to-blue-800 py-16 text-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl lg:text-4xl font-black mb-6">Ready to Add Tap-to-Give to Your Breeze Church?</h2>
+                    <p class="text-xl opacity-90 mb-8 leading-relaxed">
+                        <a href="https://tap.giving" class="underline hover:no-underline">Tap.Giving</a> makes custom NFC giving plates pre-programmed to your Breeze giving URL. Free shipping, no monthly fees, <a href="/pricing.html" class="underline hover:no-underline">plates start at $3.50 each</a>. Use code <strong>WELCOME10</strong> for 10% off.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://tap.giving/#contact" class="bg-white hover:bg-gray-50 text-blue-600 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            Get a Quote
+                        </a>
+                        <a href="/order.html" class="bg-transparent hover:bg-white/10 border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            Order Plates Now
+                        </a>
+                    </div>
+
+                    <div class="mt-8 p-4 bg-blue-500/20 rounded-lg border border-blue-400/30">
+                        <p class="text-blue-100 text-sm font-semibold">Works with Breeze, Tithely, Planning Center, Pushpay, Donorbox, and any giving platform with a URL</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <a href="/blog/tithely-tap-to-give-setup.html"
+                            class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Guide</span>
+                            <h3 class="font-bold text-gray-900 mt-3 mb-2">Tithely Tap-to-Give Setup Guide</h3>
+                            <p class="text-sm text-gray-600">Step-by-step NFC setup for Tithely churches.</p>
+                        </a>
+                        <a href="/blog/planning-center-tap-to-give-setup.html"
+                            class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Guide</span>
+                            <h3 class="font-bold text-gray-900 mt-3 mb-2">Planning Center Tap-to-Give Setup</h3>
+                            <p class="text-sm text-gray-600">3 steps to add NFC giving with Planning Center.</p>
+                        </a>
+                        <a href="/blog/church-giving-technology-guide.html"
+                            class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold">Guide</span>
+                            <h3 class="font-bold text-gray-900 mt-3 mb-2">Church Giving Technology Guide</h3>
+                            <p class="text-sm text-gray-600">Everything you need to know about digital giving for churches.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <img src="../assets/Logo-Crop-Large-1024x295.webp" alt="Tap.Giving Logo" class="h-8 w-auto mb-4 brightness-0 invert">
+                    <p class="text-gray-300 mb-6 leading-relaxed">Simple, transparent NFC giving solutions that work with your existing church platform. No monthly fees, no lock-in.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Solutions</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">NFC Giving Plates</li>
+                        <li class="text-gray-300">Hardware Setup</li>
+                        <li class="text-gray-300">Platform Integration</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="/pricing.html" class="text-gray-300 hover:text-white transition duration-300">Pricing</a></li>
+                        <li><a href="/privacy.html" class="text-gray-300 hover:text-white transition duration-300">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="text-gray-300 hover:text-white transition duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <div class="mb-4 space-x-4">
+                    <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+                    <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+                </div>
+                <p class="text-gray-500 text-sm font-medium">&copy; 2026 Tap.Giving. All rights reserved. | Increasing church giving through innovative technology.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'block';
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+                menuIcon.closest('button').setAttribute('aria-expanded', 'true');
+            } else {
+                mobileMenu.style.display = 'none';
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.closest('button').setAttribute('aria-expanded', 'false');
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+
+    <script type="text/javascript">
+        window.$crisp=[];window.CRISP_WEBSITE_ID="ad8857a0-36b5-4cab-97d2-ad9913058ee1";
+        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3B3M72XEP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L3B3M72XEP');
+    </script>
+</body>
+</html>

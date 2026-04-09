@@ -147,6 +147,7 @@ Tap.Giving was founded by Ryan Shook, a pastor at a large church in the Houston,
 - [SecureGive Tap vs Tap.Giving](https://tap.giving/blog/securegive-tap-vs-tap-giving.html)
 
 ### Platform Setup Guides
+- [Breeze ChMS Setup](https://tap.giving/blog/breeze-tap-to-give-setup.html)
 - [Tithely Setup](https://tap.giving/blog/tithely-tap-to-give-setup.html)
 - [Pushpay Setup](https://tap.giving/blog/pushpay-tap-to-give-setup.html)
 - [Givelify Setup](https://tap.giving/blog/givelify-tap-to-give-setup.html)
