@@ -328,84 +328,95 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
+    <footer class="bg-gray-900 text-white py-14">
         <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
-                <!-- Logo and Contact Info -->
-                <div class="text-center mb-12">
-                    <div class="mb-6">
-                        <picture>
-                            <source srcset="assets/Logo-Crop-Large-1024x295.webp" type="image/webp">
-                            <img
-                                src="assets/Logo-Crop-Large-1024x295.webp"
-                                alt="Tap.Giving Logo"
-                                class="h-12 w-auto mx-auto"
-                                loading="lazy"
-                            />
-                        </picture>
-                    </div>
-                    
-                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-gray-300">
-                        <a href="tel:+18325108788" class="flex items-center space-x-2 hover:text-white transition duration-300">
-                            <i class="fas fa-phone"></i>
-                            <span>(832) 510-8788</span>
-                        </a>
-                        <a href="mailto:hello@tap.giving" class="flex items-center space-x-2 hover:text-white transition duration-300">
-                            <i class="fas fa-envelope"></i>
-                            <span>hello@tap.giving</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Navigation Links -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-                    <div>
-                        <p class="font-bold text-white mb-4">Product</p>
-                        <ul class="space-y-2">
-                            <li><a href="/pricing.html" class="text-gray-300 hover:text-white transition duration-300">Pricing</a></li>
-                            <li><a href="/order.html" class="text-gray-300 hover:text-white transition duration-300">Order</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <p class="font-bold text-white mb-4">Compare</p>
-                        <ul class="space-y-2">
-                            <li><a href="/blog/tithely-vs-tap-giving.html" class="text-gray-300 hover:text-white transition duration-300">vs Tithely</a></li>
-                            <li><a href="/blog/subsplash-tap-vs-tap-giving.html" class="text-gray-300 hover:text-white transition duration-300">vs Subsplash</a></li>
-                            <li><a href="/blog/securegive-tap-vs-tap-giving.html" class="text-gray-300 hover:text-white transition duration-300">vs SecureGive</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <p class="font-bold text-white mb-4">Resources</p>
-                        <ul class="space-y-2">
-                            <li><a href="/blog.html" class="text-gray-300 hover:text-white transition duration-300">Blog</a></li>
-                            <li><a href="/contact.html" class="text-gray-300 hover:text-white transition duration-300">Contact</a></li>
-                            <li><a href="/how-it-works.html" class="text-gray-300 hover:text-white transition duration-300">How It Works</a></li>
-                            <li><a href="/nfc-faq.html" class="text-gray-300 hover:text-white transition duration-300">FAQ</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <p class="font-bold text-white mb-4">Legal</p>
-                        <ul class="space-y-2">
-                            <li><a href="/privacy.html" class="text-gray-300 hover:text-white transition duration-300">Privacy Policy</a></li>
-                            <li><a href="/terms.html" class="text-gray-300 hover:text-white transition duration-300">Terms of Service</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Copyright -->
-                <div class="border-t border-gray-800 pt-8 mt-8 text-center">
-                    <div class="mb-4 space-x-4">
-                        <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
-                        <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
-                    </div>
-                    <p class="text-gray-400 text-sm font-medium">
-                        © 2026 Tap.Giving. All rights reserved. | Increasing church giving
-                        through innovative technology.
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <img src="assets/Logo-Crop-Large-1024x295.webp" alt="Tap.Giving Logo"
+                        class="h-8 w-auto mb-4 brightness-0 invert" />
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Simple, transparent NFC giving solutions that work with your
+                        existing church platform. No monthly fees, no lock-in.
                     </p>
+                    <div class="mb-6">
+                        <a href="/contact.html"
+                            class="inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Contact Us
+                        </a>
+                    </div>
                 </div>
+
+                <div>
+                    <p class="text-lg font-semibold mb-4" role="heading" aria-level="2">Product</p>
+                    <ul class="space-y-2">
+                        <li><a href="/pricing.html" class="text-gray-300 hover:text-white transition duration-300">Pricing</a></li>
+                        <li><a href="/how-it-works.html" class="text-gray-300 hover:text-white transition duration-300">How It Works</a></li>
+                        <li><a href="/order.html" class="text-gray-300 hover:text-white transition duration-300">Order Plates</a></li>
+                        <li><a href="/nfc-faq.html" class="text-gray-300 hover:text-white transition duration-300">NFC FAQ</a></li>
+                        <li><a href="/about.html" class="text-gray-300 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="/contact.html" class="text-gray-300 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="text-lg font-semibold mb-4" role="heading" aria-level="2">Resources</p>
+                    <ul class="space-y-2">
+                        <li><a href="/blog.html" class="text-gray-300 hover:text-white transition duration-300">Blog</a></li>
+                        <li><a href="/blog/church-giving-technology-guide.html" class="text-gray-300 hover:text-white transition duration-300">Church Giving Guide</a></li>
+                        <li><a href="/blog/best-church-donation-technology-2026.html" class="text-gray-300 hover:text-white transition duration-300">Best Donation Tech 2026</a></li>
+                        <li><a href="/blog/tap-to-give-platform-comparison.html" class="text-gray-300 hover:text-white transition duration-300">Platform Comparison</a></li>
+                        <li><a href="/blog/nfc-giving-roi-church-numbers.html" class="text-gray-300 hover:text-white transition duration-300">NFC Giving ROI</a></li>
+                    </ul>
+                    <p class="text-lg font-semibold mb-4 mt-6" role="heading" aria-level="2">Works With</p>
+                    <ul class="space-y-2">
+                        <li><a href="/tithely.html" class="text-gray-300 hover:text-white transition duration-300">Tithely</a></li>
+                        <li><a href="/pushpay.html" class="text-gray-300 hover:text-white transition duration-300">Pushpay</a></li>
+                        <li><a href="/blog/givelify-tap-to-give-setup.html" class="text-gray-300 hover:text-white transition duration-300">Givelify</a></li>
+                        <li><a href="/blog/donorbox-tap-to-give-setup.html" class="text-gray-300 hover:text-white transition duration-300">Donorbox</a></li>
+                        <li><a href="/blog/planning-center-tap-to-give-setup.html" class="text-gray-300 hover:text-white transition duration-300">Planning Center</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="text-lg font-semibold mb-4" role="heading" aria-level="2">Contact</p>
+                    <ul class="space-y-3 mb-6">
+                        <li>
+                            <a href="mailto:hello@tap.giving" class="text-gray-300 hover:text-white transition duration-300 flex items-center">
+                                <i class="fas fa-envelope mr-2 text-primary-400"></i> hello@tap.giving
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+18325108788" class="text-gray-300 hover:text-white transition duration-300 flex items-center">
+                                <i class="fas fa-phone mr-2 text-primary-400"></i> (832) 510-8788
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="text-lg font-semibold mb-4" role="heading" aria-level="2">Follow Us</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/tapgiving" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-300 hover:text-white transition duration-300"
+                            aria-label="Follow Tap.Giving on Facebook">
+                            <i class="fab fa-facebook-f text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/tap.giving" target="_blank" rel="noopener noreferrer"
+                            class="text-gray-300 hover:text-white transition duration-300"
+                            aria-label="Follow Tap.Giving on Instagram">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+                <div class="mb-4 space-x-4">
+                    <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+                    <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+                </div>
+                <p class="text-gray-400 text-sm font-medium">
+                    &copy; 2026 Tap.Giving. All rights reserved. | Increasing church giving
+                    through innovative technology.
+                </p>
             </div>
         </div>
     </footer>
