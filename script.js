@@ -176,26 +176,26 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Lazy-load Wistia demo video only when requested
+// Auto-load Wistia demo video when scrolled into view
 document.addEventListener('DOMContentLoaded', function() {
     const videoContainer = document.querySelector('[data-wistia-id]');
     if (!videoContainer) {
         return;
     }
 
-    const trigger = videoContainer.querySelector('[data-load-video]');
-    if (!trigger) {
-        return;
-    }
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                const videoId = videoContainer.getAttribute('data-wistia-id');
+                if (videoId) {
+                    embedWistiaVideo(videoContainer, videoId);
+                }
+                observer.disconnect();
+            }
+        });
+    }, { threshold: 0.25 });
 
-    trigger.addEventListener('click', function() {
-        const videoId = videoContainer.getAttribute('data-wistia-id');
-        if (!videoId) {
-            return;
-        }
-
-        embedWistiaVideo(videoContainer, videoId);
-    });
+    observer.observe(videoContainer);
 });
 
 function embedWistiaVideo(container, videoId) {
@@ -206,7 +206,7 @@ function embedWistiaVideo(container, videoId) {
     container.dataset.videoLoaded = 'true';
 
     const iframe = document.createElement('iframe');
-    iframe.src = `https://fast.wistia.net/embed/iframe/${videoId}?seo=false&videoFoam=true`;
+    iframe.src = `https://fast.wistia.net/embed/iframe/${videoId}?seo=false&videoFoam=true&autoPlay=true&silentAutoPlay=true&muted=true`;
     iframe.title = 'Tap.Giving demo video';
     iframe.allow = 'autoplay; fullscreen';
     iframe.setAttribute('allowfullscreen', 'true');
