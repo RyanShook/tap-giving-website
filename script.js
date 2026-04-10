@@ -210,7 +210,6 @@ function embedWistiaVideo(container, videoId) {
     iframe.title = 'Tap.Giving demo video';
     iframe.allow = 'autoplay; fullscreen';
     iframe.setAttribute('allowfullscreen', 'true');
-    iframe.loading = 'lazy';
     iframe.className = 'absolute inset-0 w-full h-full';
     iframe.style.border = '0';
 
