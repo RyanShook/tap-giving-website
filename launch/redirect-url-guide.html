@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Set Up a Redirect URL for Your Tap.Giving Plates</title>
+  <meta name="description"
+    content="Learn how to choose and set up the best redirect URL for your NFC tap-to-give plates. Options include Linktree, Nucleus launcher, or a custom redirect on your church website." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display&display=swap"
+      rel="stylesheet" />
+  </noscript>
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </noscript>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: "#eff6ff", 100: "#dbeafe", 200: "#bfdbfe", 300: "#93c5fd",
+              400: "#60a5fa", 500: "#3b82f6", 600: "#2563eb", 700: "#1d4ed8",
+              800: "#1e40af", 900: "#1e3a8a",
+            },
+            accent: {
+              50: "#f0fdf4", 100: "#dcfce7", 200: "#bbf7d0", 300: "#86efac",
+              400: "#4ade80", 500: "#22c55e", 600: "#16a34a", 700: "#15803d",
+              800: "#166534", 900: "#14532d",
+            },
+          },
+          fontFamily: {
+            inter: ["Inter", "system-ui", "sans-serif"],
+            display: ["DM Serif Display", "Georgia", "serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="font-inter antialiased bg-white">
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-blue-600 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:font-semibold">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="bg-white/95 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-gray-200/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center h-16">
+        <div class="flex-shrink-0">
+          <a href="/" class="flex items-center">
+            <img src="/assets/Logo-Crop-Large-1024x295.webp" alt="Tap.Giving Logo" class="h-8 w-auto" width="1024"
+              height="295" loading="eager" />
+          </a>
+        </div>
+        <nav class="hidden md:flex flex-1 justify-center space-x-8" aria-label="Main navigation">
+          <a href="/pricing.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Pricing</a>
+          <a href="/blog.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Blog</a>
+          <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-4 flex-shrink-0 ml-auto md:ml-0">
+          <a href="/"
+            class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 whitespace-nowrap">
+            Order Now
+          </a>
+          <button type="button"
+            class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            aria-controls="mobile-menu" aria-expanded="false" onclick="toggleMobileMenu()">
+            <span class="sr-only">Open main menu</span>
+            <i class="fas fa-bars text-xl" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+      <div class="md:hidden" id="mobile-menu" style="display: none">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+          <a href="/pricing.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Pricing</a>
+          <a href="/blog.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Blog</a>
+          <a href="/contact.html" class="block px-3 py-2 text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 border-b border-gray-100">
+      <div class="container mx-auto px-6 py-3">
+        <nav class="text-sm text-gray-500">
+          <a href="/launch.html" class="hover:text-primary-600 transition-colors">Launch Kit</a>
+          <span class="mx-2">/</span>
+          <span class="text-gray-900 font-medium">Redirect URL Guide</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto">
+          <span class="inline-block bg-primary-100 text-primary-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 tracking-wide uppercase">Guide</span>
+          <h1 class="font-display text-4xl lg:text-5xl text-gray-900 mb-6 leading-tight">
+            Setting Up Your Redirect URL
+          </h1>
+          <p class="text-xl text-gray-500 leading-relaxed">
+            The URL you choose for your plates is permanent &mdash; so it&rsquo;s important to pick one that gives you flexibility. Here&rsquo;s how to think about it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How NFC Encoding Works -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="font-display text-3xl text-gray-900 mb-6">How NFC Encoding Works</h2>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-2xl p-8 mb-10">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i class="fas fa-lock text-amber-600"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-2">Your plates are encoded and locked to one URL</h3>
+                <p class="text-gray-700 leading-relaxed">
+                  For security, every plate is programmed with a single URL during production and then locked. This means the NFC chip cannot be reprogrammed or tampered with after your order is placed. Your congregation will always land exactly where you intended &mdash; no one can change it.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-gray-600 text-lg leading-relaxed mb-6">
+            Because the URL is permanent, you want to pick one that you control and can update on the other end. That way, if you ever change giving platforms, switch websites, or want to redirect to a seasonal campaign, you just update where the URL points &mdash; not the plates themselves.
+          </p>
+
+          <div class="bg-gray-50 rounded-2xl p-8 mb-6">
+            <h3 class="font-bold text-gray-900 mb-3">The goal is simple:</h3>
+            <p class="text-gray-600 text-lg">Pick a URL you own that <strong>redirects</strong> to your giving page. That way you can change the destination anytime without touching the plates.</p>
+          </div>
+
+          <p class="text-gray-500 text-sm">
+            Below are the three most common approaches. Any of them work great.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Options -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-display text-3xl text-gray-900 mb-4">Your Options</h2>
+          <p class="text-gray-500 text-lg mb-12">Three ways to set up a flexible redirect URL. Choose whichever fits your church best.</p>
+
+          <div class="space-y-8">
+
+            <!-- Option 1: Website Redirect -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <div class="flex items-start space-x-5">
+                <div class="w-14 h-14 bg-primary-50 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-globe text-primary-600 text-xl"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-3">
+                    <h3 class="text-xl font-bold text-gray-900">Set up a redirect on your website</h3>
+                    <span class="text-xs font-semibold text-accent-700 bg-accent-50 px-2.5 py-1 rounded-full">Recommended</span>
+                  </div>
+                  <p class="text-gray-600 mb-5">
+                    Create a short, memorable URL on your own domain like <strong>yourchurch.com/tap</strong> or <strong>yourchurch.com/give</strong> that redirects to your giving page. You can change where it points anytime.
+                  </p>
+
+                  <div class="bg-gray-50 rounded-xl p-6 mb-5">
+                    <h4 class="font-semibold text-gray-900 text-sm mb-3">How to set it up</h4>
+                    <p class="text-gray-600 text-sm mb-4">The exact steps depend on your website platform. Here are the most common:</p>
+
+                    <div class="space-y-4">
+                      <div>
+                        <p class="font-semibold text-gray-800 text-sm">WordPress</p>
+                        <p class="text-gray-500 text-sm">Install the <strong>Redirection</strong> plugin (free). Go to Tools &rarr; Redirection. Add a new redirect from <code class="bg-gray-200 px-1.5 py-0.5 rounded text-xs">/tap</code> to your giving page URL.</p>
+                      </div>
+                      <div>
+                        <p class="font-semibold text-gray-800 text-sm">Squarespace</p>
+                        <p class="text-gray-500 text-sm">Go to Settings &rarr; Advanced &rarr; URL Mappings. Add: <code class="bg-gray-200 px-1.5 py-0.5 rounded text-xs">/tap -> https://your-giving-page.com [301]</code></p>
+                      </div>
+                      <div>
+                        <p class="font-semibold text-gray-800 text-sm">Wix</p>
+                        <p class="text-gray-500 text-sm">Go to Settings &rarr; Custom Code &rarr; URL Redirect Manager. Add a redirect from <code class="bg-gray-200 px-1.5 py-0.5 rounded text-xs">/tap</code> to your giving page.</p>
+                      </div>
+                      <div>
+                        <p class="font-semibold text-gray-800 text-sm">Any platform with .htaccess</p>
+                        <p class="text-gray-500 text-sm">Add this line: <code class="bg-gray-200 px-1.5 py-0.5 rounded text-xs">Redirect 301 /tap https://your-giving-page.com</code></p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-check-circle text-accent-500 mt-0.5"></i>
+                    <div>
+                      <p class="text-sm text-gray-600"><strong>Why this is the best option:</strong> You own the URL, it looks professional, and you can change the destination in seconds from your website admin panel. If you ever switch giving platforms, just update the redirect.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Option 2: Linktree -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <div class="flex items-start space-x-5">
+                <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-link text-green-600 text-xl"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Use Linktree</h3>
+                  <p class="text-gray-600 mb-5">
+                    Linktree gives you a simple landing page at <strong>linktr.ee/yourchurch</strong> with buttons that link to your giving page, website, social media, or anything else. Many churches already have one.
+                  </p>
+
+                  <div class="bg-gray-50 rounded-xl p-6 mb-5">
+                    <h4 class="font-semibold text-gray-900 text-sm mb-3">How to set it up</h4>
+                    <div class="space-y-3">
+                      <div class="flex items-start space-x-3">
+                        <span class="w-6 h-6 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-bold text-gray-500">1</span>
+                        <span class="text-gray-600 text-sm">Sign up at <strong>linktr.ee</strong> (free plan works fine).</span>
+                      </div>
+                      <div class="flex items-start space-x-3">
+                        <span class="w-6 h-6 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-bold text-gray-500">2</span>
+                        <span class="text-gray-600 text-sm">Add a link with a title like &ldquo;Give&rdquo; or &ldquo;Donate&rdquo; pointing to your giving page.</span>
+                      </div>
+                      <div class="flex items-start space-x-3">
+                        <span class="w-6 h-6 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-bold text-gray-500">3</span>
+                        <span class="text-gray-600 text-sm">Give us your Linktree URL (e.g. <strong>linktr.ee/yourchurch</strong>) as the plate URL.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-info-circle text-primary-400 mt-0.5"></i>
+                    <p class="text-sm text-gray-500"><strong>Good for:</strong> Churches that want a multi-purpose landing page. You can add links to your giving page, sermon archive, events, and more &mdash; all in one place.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Option 3: Nucleus -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <div class="flex items-start space-x-5">
+                <div class="w-14 h-14 bg-violet-50 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <i class="fas fa-rocket text-violet-600 text-xl"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">Use Nucleus Launcher</h3>
+                  <p class="text-gray-600 mb-5">
+                    Nucleus is a launcher built specifically for churches. It gives your congregation a clean, branded page with links to giving, groups, events, prayer requests, and more.
+                  </p>
+
+                  <div class="bg-gray-50 rounded-xl p-6 mb-5">
+                    <h4 class="font-semibold text-gray-900 text-sm mb-3">How to set it up</h4>
+                    <div class="space-y-3">
+                      <div class="flex items-start space-x-3">
+                        <span class="w-6 h-6 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-bold text-gray-500">1</span>
+                        <span class="text-gray-600 text-sm">Sign up at <strong>nucleus.church</strong>.</span>
+                      </div>
+                      <div class="flex items-start space-x-3">
+                        <span class="w-6 h-6 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-bold text-gray-500">2</span>
+                        <span class="text-gray-600 text-sm">Add your church branding, giving link, and any other links your congregation needs.</span>
+                      </div>
+                      <div class="flex items-start space-x-3">
+                        <span class="w-6 h-6 bg-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-bold text-gray-500">3</span>
+                        <span class="text-gray-600 text-sm">Give us your Nucleus URL as the plate URL.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start space-x-3">
+                    <i class="fas fa-info-circle text-primary-400 mt-0.5"></i>
+                    <p class="text-sm text-gray-500"><strong>Good for:</strong> Churches that want a branded, church-specific landing page with more than just a giving link. Nucleus is designed for church use and looks great on mobile.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-display text-3xl text-gray-900 mb-8">Quick Comparison</h2>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b-2 border-gray-200">
+                  <th class="py-4 pr-6 text-sm font-semibold text-gray-900">Option</th>
+                  <th class="py-4 pr-6 text-sm font-semibold text-gray-900">Example URL</th>
+                  <th class="py-4 pr-6 text-sm font-semibold text-gray-900">Cost</th>
+                  <th class="py-4 pr-6 text-sm font-semibold text-gray-900">Can change destination?</th>
+                  <th class="py-4 text-sm font-semibold text-gray-900">Best for</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm text-gray-600">
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 pr-6 font-semibold text-gray-900">Website redirect</td>
+                  <td class="py-4 pr-6"><code class="bg-gray-100 px-2 py-0.5 rounded text-xs">yourchurch.com/tap</code></td>
+                  <td class="py-4 pr-6">Free</td>
+                  <td class="py-4 pr-6"><i class="fas fa-check text-accent-500"></i> Yes, anytime</td>
+                  <td class="py-4">Professional, branded experience</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-4 pr-6 font-semibold text-gray-900">Linktree</td>
+                  <td class="py-4 pr-6"><code class="bg-gray-100 px-2 py-0.5 rounded text-xs">linktr.ee/yourchurch</code></td>
+                  <td class="py-4 pr-6">Free</td>
+                  <td class="py-4 pr-6"><i class="fas fa-check text-accent-500"></i> Yes, anytime</td>
+                  <td class="py-4">Multi-link landing page</td>
+                </tr>
+                <tr>
+                  <td class="py-4 pr-6 font-semibold text-gray-900">Nucleus</td>
+                  <td class="py-4 pr-6"><code class="bg-gray-100 px-2 py-0.5 rounded text-xs">nucleus.church/yourchurch</code></td>
+                  <td class="py-4 pr-6">Free &amp; paid plans</td>
+                  <td class="py-4 pr-6"><i class="fas fa-check text-accent-500"></i> Yes, anytime</td>
+                  <td class="py-4">Church-specific branded launcher</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What NOT to do -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="font-display text-3xl text-gray-900 mb-8">What to Avoid</h2>
+
+          <div class="space-y-5">
+            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-xmark text-red-500"></i>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900 mb-1">Don&rsquo;t use a giving platform URL directly</p>
+                  <p class="text-gray-500 text-sm">If you encode <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs">tithely.com/your-church</code> directly on the plates and later switch to Pushpay, you&rsquo;d need all new plates. Use a redirect URL you control instead.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-xmark text-red-500"></i>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900 mb-1">Don&rsquo;t use a long or ugly URL</p>
+                  <p class="text-gray-500 text-sm">Even though people won&rsquo;t type it, the URL may briefly flash in their browser. Something clean like <code class="bg-gray-100 px-1.5 py-0.5 rounded text-xs">yourchurch.com/tap</code> looks better than a 50-character Tithely link.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="fas fa-xmark text-red-500"></i>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900 mb-1">Don&rsquo;t use a URL you don&rsquo;t control</p>
+                  <p class="text-gray-500 text-sm">Make sure you have admin access to whatever URL you choose. If it&rsquo;s on your church website, confirm your web team can set up a redirect.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-display text-3xl text-gray-900 mb-4">Not sure which to pick?</h2>
+          <p class="text-gray-500 text-lg mb-8">Just email me your situation and I&rsquo;ll help you figure it out.</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="mailto:ryan@tap.giving"
+              class="inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3.5 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              <i class="fas fa-envelope mr-2"></i> ryan@tap.giving
+            </a>
+            <a href="/launch.html"
+              class="inline-flex items-center text-gray-500 hover:text-primary-600 font-semibold transition-colors px-6 py-3.5">
+              <i class="fas fa-arrow-left mr-2"></i> Back to Launch Kit
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="col-span-2">
+          <img src="/assets/Logo-Crop-Large-1024x295-white.webp" alt="Tap.Giving Logo"
+ class="h-8 w-auto mb-4" />
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Simple, transparent NFC giving solutions that work with your
+            existing church platform. No monthly fees, no lock-in.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
+            <li><a href="/pricing.html" class="text-gray-300 hover:text-white transition duration-300">Pricing</a></li>
+            <li><a href="/blog.html" class="text-gray-300 hover:text-white transition duration-300">Blog</a></li>
+            <li><a href="/contact.html" class="text-gray-300 hover:text-white transition duration-300">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/tapgiving" target="_blank" rel="noopener noreferrer"
+              class="text-gray-300 hover:text-white transition duration-300">
+              <i class="fab fa-facebook-f text-2xl"></i>
+            </a>
+            <a href="https://www.instagram.com/tap.giving" target="_blank" rel="noopener noreferrer"
+              class="text-gray-300 hover:text-white transition duration-300">
+              <i class="fab fa-instagram text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 mt-8 text-center">
+        <div class="mb-4 space-x-4">
+          <a href="/privacy.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Privacy Policy</a>
+          <a href="/terms.html" class="text-gray-400 hover:text-accent-400 transition duration-300 text-sm">Terms of Service</a>
+        </div>
+        <p class="text-gray-500 text-sm font-medium">
+          &copy; 2026 Tap.Giving. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const isHidden = mobileMenu.style.display === "none" || !mobileMenu.style.display;
+      if (isHidden) {
+        mobileMenu.style.display = "block";
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-times");
+        menuIcon.closest("button").setAttribute("aria-expanded", "true");
+      } else {
+        mobileMenu.style.display = "none";
+        menuIcon.classList.remove("fa-times");
+        menuIcon.classList.add("fa-bars");
+        menuIcon.closest("button").setAttribute("aria-expanded", "false");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("#mobile-menu a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          document.getElementById("mobile-menu").style.display = "none";
+          var icon = document.getElementById("menu-icon");
+          icon.classList.remove("fa-times");
+          icon.classList.add("fa-bars");
+          icon.closest("button").setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  </script>
+
+  <!-- Crisp Chat -->
+  <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "ad8857a0-36b5-4cab-97d2-ad9913058ee1";
+    (function () {
+      d = document;
+      s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3B3M72XEP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-L3B3M72XEP');
+  </script>
+</body>
+
+</html>
