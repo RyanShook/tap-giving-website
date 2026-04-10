@@ -55,6 +55,8 @@ Tap.Giving is hardware, not software. We are not a payment processor. Churches k
 
 ## 2. Product Details and Specifications
 
+Product page: https://tap.giving/tap-to-give-plate.html
+
 - Plates are 100mm (4 inches) in diameter
 - Material: PVC
 - NFC chip: NTAG215 (industry standard, compatible with all modern smartphones)
