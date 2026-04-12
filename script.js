@@ -137,7 +137,7 @@ function selectPricingTier(plateCount) {
 document.addEventListener('DOMContentLoaded', function() {
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px 200px 0px'
     };
 
     const observer = new IntersectionObserver(function(entries) {
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.disconnect();
             }
         });
-    }, { threshold: 0.25 });
+    }, { threshold: 0.1, rootMargin: '0px 0px 600px 0px' });
 
     observer.observe(videoContainer);
 });
