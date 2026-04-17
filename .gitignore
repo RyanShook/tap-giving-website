@@ -1,2 +1,54 @@
+# OS files
 .DS_Store
 */.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Editor lock files
+.~lock.*
+*~
+
+# Sensitive data
+*.xlsx
+
+# AI tool configs
+.adal/
+.agents/
+.augment/
+.bob/
+.claude/settings.local.json
+.claude/skills/
+.codebuddy/
+.commandcode/
+.continue/
+.cortex/
+.crush/
+.factory/
+.firecrawl/
+.goose/
+.iflow/
+.junie/
+.kilocode/
+.kiro/
+.kode/
+.mcpjam/
+.mux/
+.neovate/
+.openhands/
+.pi/
+.playwright-mcp/
+.pochi/
+.qoder/
+.qwen/
+.roo/
+.trae/
+.vibe/
+.windsurf/
+.zencoder/
+skills/
+skills-lock.json
