@@ -1,133 +1,183 @@
 # Lead → Checkout Plan
 
-Goal: after someone fills out the lead form, guide them into a self-serve Stripe checkout. They should be able to place a real order without emailing Ryan. Whoever drops off still gets followed up manually — nothing about the current lead capture breaks.
+Goal: after someone fills out the lead form, take them to a single `/checkout.html` page on tap.giving where they pick a design, set a destination URL, and pay — without ever leaving the site. Stripe Checkout is **embedded**, not a redirect. If they drop off, the lead was already captured on the previous step so Ryan can still follow up manually.
 
-Supersedes the earlier `CHECKOUT-PLAN.md` (which jumps straight from the lead form to a Stripe Elements page). This version adds a design + destination-URL step in between.
+Supersedes the earlier `CHECKOUT-PLAN.md`.
 
-## The new flow (three pages)
+## The flow (two pages)
 
 ```
-Page 1: Lead form          Page 2: Design + Destination        Page 3: Stripe Checkout
-(home, blog, /order)   →   (replaces /thank-you.html)    →     (Stripe-hosted)
+Page 1: Lead form                  Page 2: /checkout.html
+(home, blog, /order)         →     everything happens here
+                                   (design + destination + Stripe embedded)
 
-name, church,              pick 1 of 3 designs or "upload       preloaded quantity
-plates, email,             my own" + enter giving URL or        preloaded discount
-phone                      use tap.giving landing page          card / Apple Pay / G Pay
-                                                                shipping address
-                                                                place order
-
-                           → if user drops off here,
-                             lead is already captured
-                             from Page 1 submit
+name, church, plates,              → if user drops off, lead is already
+email, phone                         captured from Page 1 submit
 ```
 
-Success page after Stripe → `/order-confirmed.html` (already exists).
+Success page after Stripe succeeds → `/order-confirmed.html` (already exists).
 
 ## Page 1 — Lead form (small tweaks)
 
-Form already lives in `order.html` (and homepage/blog embeds) and submits via `handleCheckout()` around `order.html:472`.
+Form lives in `order.html` (and homepage/blog embeds). Submit logic is in `order.html:472` (`handleCheckout`).
 
 Changes:
-1. Add a separate `name` field (currently only `church_name`, `email`, `phone`, `quantity`). User confirmed name should be collected.
-2. Keep the existing Formspree `sendBeacon` + `/api/autoreply` calls exactly as they are — that's how we still get the lead if the user abandons later.
-3. Replace `window.location.href = '/thank-you.html'` with a redirect to the new Page 2 (e.g. `/design.html`), passing the lead data via `sessionStorage` (primary) and URL query params (fallback, useful if they share the link).
+1. Add a separate `name` field (currently missing; only `church_name`, `email`, `phone`, `quantity`).
+2. Keep the existing Formspree `sendBeacon` and `/api/autoreply` calls exactly as they are — that's how we preserve the lead if they abandon checkout.
+3. Replace `window.location.href = '/thank-you.html'` with a redirect to `/checkout.html`, passing the lead data via `sessionStorage`.
 
 ```js
 sessionStorage.setItem('leadData', JSON.stringify({
   name, church, email, phone, quantity
 }));
-window.location.href = '/design.html';
+window.location.href = '/checkout.html';
 ```
 
-## Page 2 — Design + Destination (`/design.html`)
+## Page 2 — `/checkout.html`
 
-New page that replaces the "we'll follow up" dead-end. Single scroll, two sections, one Continue button.
+Single page, single scroll, single "Checkout" button at the bottom. Layout:
 
-Section A — **Pick your design**
-- Four tiles in a responsive grid:
-  1. Design 1 (image in `/assets/`)
-  2. Design 2
-  3. Design 3
-  4. "Upload my own artwork" (no upload widget here — we collect the file later; selecting this just records their intent)
-- Click-to-select behavior, selected tile highlighted, value stored in a hidden input.
+```
+─────────────────────────────────────────────────────────────
+  One more step to complete your tap plate order!
+─────────────────────────────────────────────────────────────
 
-Section B — **Where should the plate link to?**
-- Radio choice:
-  - "Use my own giving URL" → reveals a text input for the URL.
-  - "Use a tap.giving landing page" → shows a one-line example (e.g. `tap.giving/yourchurch`) and a slug input that previews the final URL. Validation: lowercase, no spaces.
-- Short helper copy: "You can change this later."
+  Select design
+  ┌────────┐  ┌────────┐  ┌────────┐  ┌────────────────┐
+  │ Opt A  │  │ Opt B  │  │ Opt C  │  │ Upload my own  │
+  │ image  │  │ image  │  │ image  │  │    artwork     │
+  └────────┘  └────────┘  └────────┘  └────────────────┘
 
-Footer:
-- Order summary chip on the right (quantity + name prefilled, read-only).
-- "Continue to checkout" button → calls our Worker to create a Stripe Checkout Session, then `window.location.href = session.url`.
-- Optional explainer video slot at the top ("Watch a 60-second overview") — leave a div + TODO, don't block launch on it.
+  Select Tap Plate destination
+  ( ) Enter URL        [ newlifechurch.org/tap        ]
+  ( ) Use Tap.Giving landing page  (view example)
 
-Data carried forward: everything from Page 1 plus `designChoice` (`design-1` | `design-2` | `design-3` | `custom-upload`) and `destination` (either `{type: 'own', url}` or `{type: 'landing', slug}`).
+  ─── Payment ────────────────────────────────────────────
+  Quantity:  [ − ]  200  [ + ]    @ $4.00/plate = $800.00
+             (min 100, max 1000 — tier breaks shown below)
 
-## Page 3 — Stripe Checkout (hosted)
+  ┌───────────────────────────────────────────────────┐
+  │  Stripe Embedded Checkout iframe                  │
+  │  - Email (prefilled)                              │
+  │  - Card / Apple Pay / Google Pay                  │
+  │  - Shipping address                               │
+  │  - "Add promotion code" link (discount field)     │
+  └───────────────────────────────────────────────────┘
 
-Recommendation: use **Stripe Checkout Sessions** (Stripe-hosted page), not embedded Elements. Simpler for a static site, handles card + Apple Pay + Google Pay + shipping address collection out of the box, and accepts a coupon for the preloaded discount.
+  [ Checkout ]
+─────────────────────────────────────────────────────────────
+```
 
-Flow:
-1. Page 2's Continue button `POST`s to our Cloudflare Worker at `/api/create-checkout-session`.
-2. Worker creates a `checkout.session` with:
-   - `line_items`: one item, our NFC Plate price, `quantity` from the lead form.
-   - `discounts`: `[{ coupon: LEAD_DISCOUNT_COUPON_ID }]` for the preloaded discount (create one coupon in Stripe, store its ID as a Worker secret).
-   - `customer_email`: prefilled from Page 1.
-   - `shipping_address_collection`: US only to start.
-   - `metadata`: `{ name, church, phone, quantity, designChoice, destinationType, destinationValue }` so everything needed to fulfill lands in Stripe.
-   - `success_url`: `https://tap.giving/order-confirmed.html?session_id={CHECKOUT_SESSION_ID}`.
-   - `cancel_url`: `https://tap.giving/design.html` (so they land back where they were).
-3. Worker returns `{ url }`. Page 2 redirects to it.
-4. Stripe hosts the card / address / Apple-Pay / Google-Pay UI. No Stripe keys touch our static site.
+### Section 1 — Select design
+Four tiles in a responsive grid. Click-to-select, selected tile gets a highlighted ring, value stored in a hidden field. No file upload on this page — if they pick "Upload my own artwork" we just record the intent and collect the file later (post-checkout email).
 
-Pricing: reuse the tiers already in `CHECKOUT-PLAN.md` (100–199 @ $4.50, 200–399 @ $4.00, 400+ @ $3.50). The Worker computes the unit amount from the quantity and builds the line item with that price in cents.
+### Section 2 — Select Tap Plate destination
+Radio with two options:
+- **Enter URL** → text input with placeholder `newlifechurch.org/tap`.
+- **Use Tap.Giving landing page** → shows "view example" link (opens a sample landing page in a new tab) plus a slug input that previews `tap.giving/yourslug`.
+
+Helper copy: "You can change this later."
+
+### Section 3 — Quantity + Stripe Embedded Checkout
+
+Quantity stepper above the Stripe iframe:
+- Prefilled from the lead form.
+- Min 100, max 1000.
+- Live display of unit price and total, using these tiers (from `pricing.html`):
+
+| Quantity    | Price / plate |
+|-------------|---------------|
+| 100 – 199   | $4.50         |
+| 200 – 399   | $4.00         |
+| 400 – 1000  | $3.50         |
+
+Free shipping always.
+
+Stripe **Embedded Checkout** mounts below the stepper. That iframe handles card / Apple Pay / Google Pay / shipping address / promo code entry — we don't need to build any of it. The "Add promotion code" field inside embedded Checkout is the discount-code spot (enable via `allow_promotion_codes: true` on the session).
+
+The page's own **Checkout** button is just the Stripe submit button inside the embedded iframe — no separate button needed. We can keep a sticky "Complete order" CTA label above or around the iframe for clarity.
+
+### Behavior when quantity / design / destination changes
+
+Stripe Checkout Sessions are **immutable** once created. When the user changes quantity, design, or destination, we need to recreate the session and remount embedded Checkout. Flow:
+
+1. On page load, if leadData is present, request a session immediately with the prefilled quantity.
+2. Whenever the user changes quantity, design, or destination, debounce ~400 ms, then:
+   - Call the Worker to create a new Checkout Session with updated line-item quantity + metadata.
+   - Destroy the existing embedded-checkout instance, mount a new one with the new `client_secret`.
+3. Show a subtle loading state over the payment area while the new session loads.
+
+This is the main tradeoff of embedded vs hosted: we pay the cost of re-creating sessions, but the user never leaves tap.giving.
+
+## Stripe integration
+
+Use **Stripe Embedded Checkout** — the drop-in JS embed, not Stripe Elements/Payment Element. Load Stripe.js, call `stripe.initEmbeddedCheckout({ clientSecret })`, mount to a div.
+
+Server side (Cloudflare Worker) creates the session:
+
+```
+POST /api/create-checkout-session
+Body: { quantity, name, church, email, phone, designChoice, destinationType, destinationValue }
+
+Worker:
+  - Validate quantity 100..1000
+  - Look up unit price from tier table
+  - Create Checkout Session:
+      ui_mode: 'embedded'
+      line_items: [{
+        price_data: { currency: 'usd', product: <PRODUCT_ID>, unit_amount: <cents> },
+        quantity: <quantity>
+      }]
+      mode: 'payment'
+      allow_promotion_codes: true
+      customer_email: <email>
+      shipping_address_collection: { allowed_countries: ['US'] }
+      metadata: { name, church, phone, designChoice, destinationType, destinationValue }
+      return_url: 'https://tap.giving/order-confirmed.html?session_id={CHECKOUT_SESSION_ID}'
+
+Response: { client_secret, unit_amount_cents, total_cents }
+```
+
+Webhook stays the same as before — `checkout.session.completed` emails Ryan a full order summary with all metadata.
+
+Secrets to add to the Worker: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRODUCT_ID`.
 
 ## Lead capture resilience
 
-- Formspree beacon + `/api/autoreply` email fire on Page 1 submit, before any redirect. So any drop-off from Page 2 or Page 3 still leaves Ryan with a real lead to follow up on.
-- Add a GA event on each step (`lead_submitted`, `design_selected`, `checkout_started`, `checkout_completed`) so we can see where people fall off.
-
-## Worker endpoints to add
-
-Extend the existing Cloudflare Worker at `worker/tap-autoreply/` (or split into a second worker — either is fine):
-
-| Route | Method | Purpose |
-|---|---|---|
-| `/api/create-checkout-session` | POST | Creates Stripe Checkout Session, returns `url` |
-| `/api/stripe-webhook` | POST | Handles `checkout.session.completed` → email Ryan the full order details (metadata included) |
-
-Secrets to add to the Worker: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `LEAD_DISCOUNT_COUPON_ID`.
+- Formspree `sendBeacon` + `/api/autoreply` still fire on Page 1 submit, before the redirect. Any drop-off on `/checkout.html` still leaves a real lead to follow up.
+- Fire GA events: `lead_submitted`, `design_selected`, `destination_set`, `checkout_session_created`, `checkout_completed`. Lets us see where people fall off.
 
 ## Files to create / modify
 
 | File | Action |
 |---|---|
-| `order.html` (and any other lead form embeds) | Add `name` input; change redirect target to `/design.html`; keep existing Formspree + autoreply calls |
-| `index.html` | Same form changes if the form is embedded on home |
-| `blog/*.html` | If the form is embedded in blog posts, same changes (or make it a shared snippet) |
-| `/design.html` | **New** — design picker + destination URL + continue button |
-| `/thank-you.html` | Keep as fallback for users who complete the form but have JS disabled |
-| `/order-confirmed.html` | Already exists; reads `session_id` from URL and shows a confirmation summary |
-| `worker/tap-autoreply/src/index.ts` | Add `/api/create-checkout-session` and `/api/stripe-webhook` routes |
+| `order.html` (+ any other lead form embeds) | Add `name` input; redirect to `/checkout.html`; keep Formspree + autoreply |
+| `index.html` | Same form changes if embedded on home |
+| `blog/*.html` | Same changes where the form is embedded (or convert to shared snippet) |
+| `/checkout.html` | **New** — design + destination + quantity stepper + Stripe Embedded Checkout |
+| `/thank-you.html` | Keep as fallback for users with JS disabled |
+| `/order-confirmed.html` | Already exists; reads `session_id` from URL and shows a summary |
+| `worker/tap-autoreply/src/index.ts` | Add `/api/create-checkout-session` + `/api/stripe-webhook` routes |
 | `.env.example` | Document new Stripe env vars |
 
 ## Build order (smallest useful slices first)
 
-1. Add `name` field to lead form and redirect to a placeholder `/design.html`.
-2. Build `/design.html` UI (design tiles + destination section) with data read from `sessionStorage`. Continue button is a no-op.
-3. Create the Stripe product + coupon in the Stripe dashboard.
-4. Add Worker route `/api/create-checkout-session`; wire Page 2's Continue button to it.
-5. Add Worker route `/api/stripe-webhook`; hook up email notification on `checkout.session.completed`.
-6. Update `/order-confirmed.html` to fetch and show the completed session summary by `session_id`.
-7. (Later) artwork upload flow for users who picked "upload my own artwork" — can be a post-checkout email link to a simple upload page.
-8. (Later) explainer video on `/design.html`.
+1. Add `name` field to lead form; redirect to a stub `/checkout.html`.
+2. Build `/checkout.html` UI only (design tiles, destination, quantity stepper with live total). No Stripe yet.
+3. Create Stripe product in the dashboard; grab the product ID.
+4. Add Worker route `/api/create-checkout-session`; return `client_secret`.
+5. Mount Stripe Embedded Checkout on `/checkout.html`; hook up session creation on load.
+6. Add the debounced "recreate session on change" handler for quantity / design / destination.
+7. Add Worker route `/api/stripe-webhook`; email Ryan on `checkout.session.completed`.
+8. Update `/order-confirmed.html` to read `session_id` from the URL and render a summary.
+9. (Later) artwork upload page/flow for users who picked "Upload my own artwork" — send them a post-checkout email with an upload link.
+10. (Later) explainer video block on `/checkout.html`.
 
 ## Open questions
 
-- [ ] What are the three stock designs? Need final art assets + filenames.
-- [ ] Exact discount amount / type for the preloaded coupon (percent vs flat, expires?).
-- [ ] Is the giving URL required at checkout or can it stay blank and be collected later?
-- [ ] Artwork upload — do it now on Page 2, or email them a link after checkout? (Plan assumes: later.)
-- [ ] Shipping: US-only at launch, or international?
-- [ ] Max plate quantity cap?
+- [ ] Final art / filenames for Option A, B, C.
+- [ ] Is there a preloaded discount on every session, or just the manual "Add promotion code" field? (Plan assumes manual — simpler. Can also auto-apply a coupon via `discounts: [{ coupon }]` if we want every lead to get one.)
+- [ ] Giving URL required, or optional and collected later?
+- [ ] Artwork upload — on this page or post-checkout email link? (Plan: later.)
+- [ ] Shipping countries — US only at launch?
+- [ ] Cap above 1000 ever needed, or hard stop there?
