@@ -99,7 +99,7 @@ Content strategy covers three categories:
 ### Other Files
 - **script.js** — Pricing calculator, form handling, Stripe redirect logic, scroll animations, GA4 events, exit-intent popup (currently disabled), Wistia lazy loading.
 - **styles.css** — Custom animations, mobile optimizations, accessibility (reduced-motion, high-contrast).
-- **.htaccess** — HTTPS redirect, caching, GZIP, security headers, UTM stripping.
+- **worker/tap-redirects/** — Cloudflare Worker. Handles www→non-www redirect, church slug redirects (tap.giving/lifted → giving page), and legacy file redirects (old root-level comparison pages → /blog/).
 - **sitemap.xml**, **robots.txt**, **llms.txt** — SEO infrastructure.
 - **CHECKOUT-PLAN.md** — Future plan for embedded Stripe Elements checkout (not yet built).
 
@@ -223,7 +223,7 @@ Tap.Giving is **hardware, not software**. We sell plates. Competitors sell subsc
 | script.js | All interactive behavior — pricing calc, forms, Stripe redirect, analytics |
 | index.html | Primary conversion page — changes here affect revenue |
 | _template.html | Base template for new pages |
-| .htaccess | Caching, redirects, security — don't break this |
+| worker/tap-redirects/src/index.ts | Cloudflare Worker — church slug redirects and legacy file 301s |
 | CHECKOUT-PLAN.md | Future checkout architecture plan |
 | sitemap.xml | Must be updated when pages are added/removed |
 | blog.html | Blog index — auto-lists all posts |

@@ -16,6 +16,19 @@ const REDIRECTS: Record<string, string> = {
 };
 
 // ============================================================================
+// LEGACY FILE REDIRECTS — old root-level comparison pages moved to /blog/
+// Consolidated to eliminate duplicate content. Keep forever for backlink value.
+// ============================================================================
+const FILE_REDIRECTS: Record<string, string> = {
+	'/overflow-tap-vs-tap-giving.html': '/blog/overflow-tap-vs-tap-giving.html',
+	'/securegive-tap-vs-tap-giving.html': '/blog/securegive-tap-vs-tap-giving.html',
+	'/subsplash-tap-vs-tap-giving.html': '/blog/subsplash-tap-vs-tap-giving.html',
+	'/tap-tag-vs-tap-giving.html': '/blog/tap-tag-vs-tap-giving.html',
+	'/tap-to-give-platform-comparison.html': '/blog/tap-to-give-platform-comparison.html',
+	'/tithely-vs-tap-giving.html': '/blog/tithely-vs-tap-giving.html',
+};
+
+// ============================================================================
 // WORKER LOGIC (no need to modify below unless customizing behavior)
 // ============================================================================
 
@@ -34,6 +47,13 @@ export default {
 		}
 
 		const path = url.pathname.toLowerCase();
+
+		// Legacy file redirects (old root URLs → /blog/ canonical)
+		const fileDestination = FILE_REDIRECTS[path];
+		if (fileDestination) {
+			url.pathname = fileDestination;
+			return Response.redirect(url.toString(), 301);
+		}
 
 		// Remove leading slash and get the slug
 		const slug = path.replace(/^\//, '').replace(/\/$/, '');
